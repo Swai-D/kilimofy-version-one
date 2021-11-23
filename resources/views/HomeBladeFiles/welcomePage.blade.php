@@ -69,7 +69,7 @@
 
         <!-- FORM -->
 
-        <form class="form" method="POST" action="{{ route('login') }}">
+        <form class="form" method="POST" action="/kilimofy/user/login">
           @csrf
 
           @if($errors->any())
