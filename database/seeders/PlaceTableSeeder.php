@@ -14,7 +14,7 @@ class PlaceTableSeeder extends Seeder
     {
       //1. Arusha
 
-      App\Models\Place::create([
+      \App\Models\Place::create([
           'Region' => 'Arusha',
           'District' => 'Arusha Mjini',
           'SoilPh' => '5-8.5',
@@ -36,7 +36,7 @@ class PlaceTableSeeder extends Seeder
       ]);
 
       //2
-      App\Models\Place::create([
+      \App\Models\Place::create([
           'Region' => 'Arusha',
           'District' => 'Longido',
           'SoilPh' => '6.5-8.5',
@@ -58,7 +58,7 @@ class PlaceTableSeeder extends Seeder
       ]);
 
       //3
-      App\Models\Place::create([
+      \App\Models\Place::create([
           'Region' => 'Arusha',
           'District' => 'Monduli',
           'SoilPh' => '5-8.5',
@@ -80,7 +80,7 @@ class PlaceTableSeeder extends Seeder
       ]);
 
       //4
-      App\Models\Place::create([
+      \App\Models\Place::create([
           'Region' => 'Arusha',
           'District' => 'Karatu',
           'SoilPh' => '4-8.5',
@@ -102,7 +102,7 @@ class PlaceTableSeeder extends Seeder
       ]);
 
       //5
-      App\Models\Place::create([
+      \App\Models\Place::create([
           'Region' => 'Arusha',
           'District' => 'Ngorongoro',
           'SoilPh' => '4-8.5',
@@ -124,7 +124,7 @@ class PlaceTableSeeder extends Seeder
       ]);
 
         //2. Dar
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Dar-es-salaam',
             'District' => 'Ilala',
             'SoilPh' => '5-7',
@@ -146,7 +146,7 @@ class PlaceTableSeeder extends Seeder
         ]);
 
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Dar-es-salaam',
             'District' => 'Kinondoni',
             'SoilPh' => '5-7',
@@ -167,7 +167,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Dar-es-salaam',
             'District' => 'Temeke',
             'SoilPh' => '5-7',
@@ -190,7 +190,7 @@ class PlaceTableSeeder extends Seeder
 
         // 3. Geita
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Geita',
             'District' => 'Bukombe',
             'SoilPh' => '4-8.5',
@@ -211,7 +211,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Geita',
             'District' => 'Chato',
             'SoilPh' => '4.5-8.5',
@@ -232,7 +232,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Geita',
             'District' => 'Geita',
             'SoilPh' => '5-7',
@@ -253,7 +253,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Geita',
             'District' => 'Mbogwe',
             'SoilPh' => '4.5-7.5',
@@ -274,7 +274,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Geita',
             'District' => 'Nyang\'hwale',
             'SoilPh' => '5.5-8.5',
@@ -297,7 +297,7 @@ class PlaceTableSeeder extends Seeder
 
 
         // 4. Iringa
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Iringa',
             'District' => 'Iringa Mjini',
             'SoilPh' => '4.5-7.5',
@@ -318,7 +318,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Iringa',
             'District' => 'Kilolo',
             'SoilPh' => '4-7',
@@ -339,7 +339,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Iringa',
             'District' => 'Mufindi',
             'SoilPh' => '4-7',
@@ -361,7 +361,7 @@ class PlaceTableSeeder extends Seeder
         ]);
 
        // 5. Kagera
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Kagera',
             'District' => 'Biharamulo',
             'SoilPh' => '4-7.5',
@@ -382,7 +382,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Kagera',
             'District' => 'Bukoba',
             'SoilPh' => '4-7',
@@ -403,7 +403,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Kagera',
             'District' => 'Karagwe',
             'SoilPh' => '4-7',
@@ -424,7 +424,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Kagera',
             'District' => 'Kyerwa',
             'SoilPh' => '4-7',
@@ -445,7 +445,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Kagera',
             'District' => 'Misenyi',
             'SoilPh' => '4-7',
@@ -466,7 +466,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Kagera',
             'District' => 'Muleba',
             'SoilPh' => '4-7',
@@ -487,7 +487,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Kagera',
             'District' => 'Ngara',
             'SoilPh' => '4-7',
@@ -509,7 +509,7 @@ class PlaceTableSeeder extends Seeder
         ]);
 
      // 6. Katavi
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Katavi',
             'District' => 'Mlele',
             'SoilPh' => '6-8',
@@ -530,7 +530,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Katavi',
             'District' => 'Tanganyika',
             'SoilPh' => '5-7',
@@ -551,7 +551,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Katavi',
             'District' => 'Mpanda',
             'SoilPh' => '5-8.5',
@@ -572,7 +572,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Katavi',
             'District' => 'Mpimbwe',
             'SoilPh' => '5-8.5',
@@ -594,7 +594,7 @@ class PlaceTableSeeder extends Seeder
         ]);
 
        // 7. Mara
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mara',
             'District' => 'Bunda',
             'SoilPh' => '6.5-8.5',
@@ -615,7 +615,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mara',
             'District' => 'Butiama',
             'SoilPh' => '6.5-8.5',
@@ -636,7 +636,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mara',
             'District' => 'Musoma',
             'SoilPh' => '6.5-8.5',
@@ -657,7 +657,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mara',
             'District' => 'Rorya',
             'SoilPh' => '5-7',
@@ -678,7 +678,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mara',
             'District' => 'Serengeti',
             'SoilPh' => '6.5-8.5',
@@ -699,7 +699,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mara',
             'District' => 'Tarime',
             'SoilPh' => '4-7',
@@ -721,7 +721,7 @@ class PlaceTableSeeder extends Seeder
         ]);
 
        // 8. Mbeya
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mbeya',
             'District' => 'Busekelo',
             'SoilPh' => '4-7',
@@ -742,7 +742,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mbeya',
             'District' => 'Chunya',
             'SoilPh' => '5-7',
@@ -763,7 +763,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mbeya',
             'District' => 'Kyela',
             'SoilPh' => '5-7.5',
@@ -784,7 +784,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mbeya',
             'District' => 'Mbarali',
             'SoilPh' => '5-7',
@@ -805,7 +805,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mbeya',
             'District' => 'Mbeya mjini',
             'SoilPh' => '5-7',
@@ -826,7 +826,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mbeya',
             'District' => 'Rungwe',
             'SoilPh' => '4-7',
@@ -848,7 +848,7 @@ class PlaceTableSeeder extends Seeder
         ]);
 
         // 9. MOROGOO
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Morogoro',
             'District' => 'Gairo',
             'SoilPh' => '5-7',
@@ -869,7 +869,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Morogoro',
             'District' => 'Kilombero',
             'SoilPh' => '4-7',
@@ -890,7 +890,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Morogoro',
             'District' => 'Kilosa',
             'SoilPh' => '4-7',
@@ -911,7 +911,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Morogoro',
             'District' => 'Malinyi',
             'SoilPh' => '4-7',
@@ -932,7 +932,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Morogoro',
             'District' => 'Morogoro Mjini',
             'SoilPh' => '4-7',
@@ -953,7 +953,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Morogoro',
             'District' => 'Mvomero',
             'SoilPh' => '4-7',
@@ -974,7 +974,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Morogoro',
             'District' => 'Ulanga',
             'SoilPh' => '4-7',
@@ -996,7 +996,7 @@ class PlaceTableSeeder extends Seeder
         ]);
 
        // 10. Mtwara
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mtwara',
             'District' => 'Masasi',
             'SoilPh' => '5-7',
@@ -1017,7 +1017,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mtwara',
             'District' => 'Mtwara',
             'SoilPh' => '5-7',
@@ -1038,7 +1038,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mtwara',
             'District' => 'Tandahimba',
             'SoilPh' => '5-7',
@@ -1059,7 +1059,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mtwara',
             'District' => 'Newala',
             'SoilPh' => '5-7',
@@ -1080,7 +1080,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mtwara',
             'District' => 'Nanyumbu',
             'SoilPh' => '5-7',
@@ -1101,7 +1101,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mtwara',
             'District' => 'Nanyamba',
             'SoilPh' => '5-7',
@@ -1123,7 +1123,7 @@ class PlaceTableSeeder extends Seeder
         ]);
 
         // 11. Mwanza
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mwanza',
             'District' => 'Buchosa',
             'SoilPh' => '6.5-8.5',
@@ -1144,7 +1144,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mwanza',
             'District' => 'Kwimba',
             'SoilPh' => '5-7',
@@ -1165,7 +1165,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mwanza',
             'District' => 'Magu',
             'SoilPh' => '6.5-8.5',
@@ -1186,7 +1186,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mwanza',
             'District' => 'Misungwi',
             'SoilPh' => '6.5-7.5',
@@ -1207,7 +1207,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mwanza',
             'District' => 'mwanza',
             'SoilPh' => '5-7',
@@ -1228,7 +1228,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mwanza',
             'District' => 'Sengerema',
             'SoilPh' => '5-7',
@@ -1249,7 +1249,7 @@ class PlaceTableSeeder extends Seeder
             'updated_at' => '2020-09-24 18:18:15',
         ]);
 
-        App\Models\Place::create([
+        \App\Models\Place::create([
             'Region' => 'Mwanza',
             'District' => 'Ukerewe',
             'SoilPh' => '5-7',
