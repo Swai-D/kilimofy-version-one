@@ -18,7 +18,8 @@
         "overtrue/laravel-like": "^4.0",
         "pusher/pusher-php-server": "^7.0",
         "stevebauman/location": "^6.2",
-        "twilio/sdk": "^6.31"
+        "twilio/sdk": "^6.31",
+        "ext-gd": "*" 
     },
     "require-dev": {
         "facade/ignition": "^2.5",
