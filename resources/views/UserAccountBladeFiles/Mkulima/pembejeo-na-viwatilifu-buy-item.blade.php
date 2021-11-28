@@ -234,7 +234,7 @@
           <!-- /TOTALS LINE LIST -->
 
           <!-- BUTTON -->
-          <a class="button primary" href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Checkout-item/{{$item_info->id}}">Kamilisha Malipo</a>
+          <a class="button primary" href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Checkout-item/{{$item_info->id}}-{{Auth::user()->name}}-Kamilisha-Malipo">Kamilisha Malipo</a>
           <!-- /BUTTON -->
 
           <!-- BUTTON -->

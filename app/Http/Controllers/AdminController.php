@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+
+use App\Models\Headline;
 use App\Models\Forum;
 use App\Models\User;
 use App\Models\Staff;
 use App\Models\Item;
+
 use Auth;
 use Image;
 
@@ -99,11 +102,58 @@ class AdminController extends Controller
       return view('AdminBladeFiles.users-action-list', compact('user_list'));
     }
 
+    Public function headline_action_list()
+    {
+      $headline_list = Headline::all();
+      // dd($user_list);
+      return view('AdminBladeFiles.Headline-action-list', compact('headline_list'));
+    }
+
 
     public function forum_category_form()
     {
       return view('AdminBladeFiles.New-Forum-Category-Form');
     }
+
+    public function crops_price_form()
+    {
+      return view('AdminBladeFiles.Crops-Price-Update-Form');
+    }
+
+    public function headline_updates()
+    {
+      return view('AdminBladeFiles.Headlines-Updates-Form');
+    }
+
+
+    public function headline_updates_store(Request $request)
+    {
+      $data = request()->validate([
+        'Headline_Title' => ['required','string'],
+        'Headline_Link' => ['required','string'],
+        'Headline_Image' => ['required'],
+      ]);
+
+      if (isset($data)) {
+        $headline = new Headline();
+        $headline->Headline_Title = $request->Headline_Title;
+        $headline->Headline_Link = $request->Headline_Link;
+        $mime = $request->file('Headline_Image')->getMimeType();
+
+        if (strstr($mime, "image/")) {
+          $headline_image = $request->file('Headline_Image');
+          $filename = time().'.'.$headline_image->getClientOriginalExtension();
+           Image::make($headline_image)->resize(300, 300)->save(public_path('/Uploads/HeadlinesImage/'.$filename));
+           $headline->Headline_Image = $filename;
+        }
+
+        $headline->save();
+      }
+
+      return redirect()->back()->with('Message', 'Headlines  was Created Succesfuly !');
+
+    }
+
 
 
     public function create_forum_category(Request $request)

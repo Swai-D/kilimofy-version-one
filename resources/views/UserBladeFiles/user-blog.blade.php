@@ -641,31 +641,35 @@
   <!-- /POPUP CLOSE BUTTON -->
 
   <!-- POPUP BOX TITLE -->
-  <p class="popup-box-title">Create Album +</p>
+  <p class="popup-box-title">Create Blog  +</p>
   <!-- /POPUP BOX TITLE -->
 
   <!-- FORM -->
-  <form class="form">
+  <form class="form" action="/kilimofy/Blog/User-Create-Blog-Post" method="post" enctype="multipart/form-data">
+    @csrf
   <!-- FORM UPLOADABLES -->
     <div class="row">
-      <div class="col-md-12">
-        <div class="card card-outline card-info">
-          <div class="card-header">
-            <h3 class="card-title">
-              Summernote
-            </h3>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-            <textarea id="summernote">
-              Place <em>some</em> <u>text</u> <strong>here</strong>
-            </textarea>
-          </div>
-          <div class="card-footer">
-            Visit <a href="https://github.com/summernote/summernote/">Summernote</a> documentation for more examples and information about the plugin.
-          </div>
-        </div>
-      </div>
+
+       <div class="col-md-12">
+         <div class="card card-outline card-info">
+           <div class="card-header">
+             <h3 class="card-title">
+               Blog Post
+             </h3>
+           </div>
+           <!-- /.card-header -->
+           <div class="card-body">
+             <input type="hidden" name="user_name" value="{{Auth::user()->name}}">
+             <input type="hidden" name="avatar" value="{{Auth::user()->avatar}}">
+             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+              <textarea class="form-control" name="summernote" id="summernote"></textarea>
+           </div>
+           <div class="card-footer">
+
+           </div>
+         </div>
+       </div>
+
       <!-- /.col-->
     </div>
     <!-- ./row -->
@@ -674,11 +678,11 @@
     <!-- POPUP BOX ACTIONS -->
     <div class="popup-box-actions">
       <!-- POPUP BOX ACTION -->
-      <p class="popup-box-action button white popup-album-creation-trigger">Discard All</p>
+      <button type="reset" class="popup-box-action button white popup-album-creation-trigger">Discard All</button>
       <!-- /POPUP BOX ACTION -->
 
       <!-- POPUP BOX ACTION -->
-      <button class="popup-box-action button secondary">Post Album!</button>
+      <button type="submit" class="popup-box-action button secondary">Post Blog!</button>
       <!-- /POPUP BOX ACTION -->
     </div>
     <!-- /POPUP BOX ACTIONS -->

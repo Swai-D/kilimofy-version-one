@@ -206,7 +206,7 @@
             <a href="#" class="nav-link @yield('active-table')">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                User's Tables
+                Tables
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -221,6 +221,13 @@
                 <a href="/kilimofy/Admin/users-action-list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Users Action List</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="/kilimofy/Admin/Headline-action-list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Headline List</p>
                 </a>
               </li>
 
@@ -268,15 +275,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/editors.html" class="nav-link">
+                <a href="/kilimofy/Admin/Crops-Price-Update-Form" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Editors</p>
+                  <p>Crops Price Update</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/validation.html" class="nav-link">
+                <a href="/kilimofy/Admin/Headlines-Updates-Form" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Validation</p>
+                  <p>Headlines</p>
                 </a>
               </li>
             </ul>
@@ -301,7 +308,7 @@
   @yield('content')
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">Kilimofy.io</a>.</strong>
+    <strong>Copyright &copy; 2014-2021 <a href="https://kilimofy.herokuapp.com/">www.Kilimofy.com</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.1.0

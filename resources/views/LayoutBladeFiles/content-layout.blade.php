@@ -160,7 +160,7 @@
                     <!-- /QUEST PREVIEW TITLE -->
 
                     <!-- QUEST PREVIEW TEXT -->
-                    <p class="quest-preview-text">Mada ({{$kilimo_topics_count}})</p>
+                    <p class="quest-preview-text">Mada ({{$kilimo_topics_count_collection}})</p>
                     <!-- /QUEST PREVIEW TEXT -->
                   </div>
                   <!-- /QUEST PREVIEW INFO -->
@@ -191,7 +191,7 @@
                     <!-- /QUEST PREVIEW TITLE -->
 
                     <!-- QUEST PREVIEW TEXT -->
-                    <p class="quest-preview-text">Mada ()</p>
+                    <p class="quest-preview-text">Mada ({{$ufugaji_topics_count_collection}})</p>
                     <!-- /QUEST PREVIEW TEXT -->
                   </div>
                   <!-- /QUEST PREVIEW INFO -->
@@ -217,11 +217,11 @@
                     <!-- /QUEST PREVIEW IMAGE -->
 
                     <!-- QUEST PREVIEW TITLE -->
-                    <p class="quest-preview-title">Uvuvi</p>
+                    <p class="quest-preview-title">Usafirishaji</p>
                     <!-- /QUEST PREVIEW TITLE -->
 
                     <!-- QUEST PREVIEW TEXT -->
-                    <p class="quest-preview-text">Mada ()</p>
+                    <p class="quest-preview-text">Mada ({{$usafirishaji_topics_count_collection}})</p>
                     <!-- /QUEST PREVIEW TEXT -->
                   </div>
                   <!-- /QUEST PREVIEW INFO -->
@@ -416,14 +416,14 @@
               <!-- OPTION ITEM -->
               <div class="option-item">
                 <!-- OPTION ITEM ICON -->
-                <svg class="option-item-icon icon-blog-posts">
+                <svg class="option-item-icon icon-blog-posts popup-album-creation-trigger">
                   <use xlink:href="#svg-blog-posts"></use>
                 </svg>
                 <!-- /OPTION ITEM ICON -->
 
               <div class="option-item-title">
                 <!-- OPTION ITEM TITLE -->
-                <p class="option-item-title">Blog Post</p>
+                <p class="option-item-title popup-album-creation-trigger">Blog Post</p>
                 <!-- /OPTION ITEM TITLE -->
               </div>
               </div>
@@ -1134,7 +1134,7 @@
           <!-- /WIDGET BOX CONTROLS -->
 
           <!-- WIDGET BOX TITLE -->
-          <p class="widget-box-title">Bei za Mazao Kwa Gunia</p>
+          <p class="widget-box-title">Bei za Mazao </p>
 
           <!-- /WIDGET BOX TITLE -->
 
@@ -1164,7 +1164,7 @@
                   <!-- REACTION STAT -->
                   <div class="reaction-stat">
                     <!-- REACTION STAT IMAGE -->
-                    <img class="reaction-stat-image" src="/assets/img/crops/maize.png" alt="reaction-happy">
+                    <img class="reaction-stat-image" src="/assets/img/crops/maize.png" alt="maize-png">
                     <!-- /REACTION STAT IMAGE -->
 
                     <!-- REACTION STAT TITLE -->
@@ -1446,156 +1446,52 @@
           <!-- /WIDGET BOX SETTINGS -->
 
           <!-- WIDGET BOX TITLE -->
-          <p class="widget-box-title">Headlines <span class="highlighted">4</span></p>
+          <p class="widget-box-title">Headlines <span class="highlighted"> {{$headlines_count}}</span></p>
           <!-- /WIDGET BOX TITLE -->
 
           <!-- WIDGET BOX CONTENT -->
           <div class="widget-box-content">
             <!-- VIDEO BOX LIST -->
             <div class="video-box-list">
+              @foreach($headlines as $headline)
               <!-- VIDEO BOX -->
               <div class="video-box small">
-                <!-- VIDEO BOX COVER -->
-                <div class="video-box-cover popup-first-headline-trigger">
-                  <!-- VIDEO BOX COVER IMAGE -->
-                  <figure class="video-box-cover-image liquid">
-                    <img src="/assets/img/cover/30.jpg" alt="cover-30">
-                  </figure>
-                  <!-- /VIDEO BOX COVER IMAGE -->
+               <a href="{{$headline->Headline_Link}}" target="_blank">
+                 <!-- VIDEO BOX COVER -->
+                 <div class="video-box-cover ">
+                   <!-- VIDEO BOX COVER IMAGE -->
+                   <figure class="video-box-cover-image liquid">
+                     <img src="/Uploads/HeadlinesImage/{{$headline->Headline_Image}}" alt="cover-30">
+                   </figure>
+                   <!-- /VIDEO BOX COVER IMAGE -->
 
-                  <!-- PLAY BUTTON -->
-                  <div class="play-button">
-                    <!-- PLAY BUTTON ICON -->
-                    <svg class="play-button-icon icon-play">
-                      <use xlink:href="#svg-play"></use>
-                    </svg>
-                    <!-- /PLAY BUTTON ICON -->
-                  </div>
-                  <!-- /PLAY BUTTON -->
+                   <!-- PLAY BUTTON -->
+                   <div class="play-button">
+                     <!-- PLAY BUTTON ICON -->
+                     <svg class="play-button-icon icon-play">
+                       <use xlink:href="#svg-play"></use>
+                     </svg>
+                     <!-- /PLAY BUTTON ICON -->
+                   </div>
+                   <!-- /PLAY BUTTON -->
 
-                  <!-- VIDEO BOX INFO -->
-                  <div class="video-box-info">
-                    <!-- VIDEO BOX TITLE -->
-                    <p class="video-box-title">My Latest Cosplay</p>
-                    <!-- /VIDEO BOX TITLE -->
+                   <!-- VIDEO BOX INFO -->
+                   <div class="video-box-info">
+                     <!-- VIDEO BOX TITLE -->
+                     <p class="video-box-title">{{$headline->Headline_Title}}</p>
+                     <!-- /VIDEO BOX TITLE -->
 
-                    <!-- VIDEO BOX TEXT -->
-                    <p class="video-box-text">1 hour ago</p>
-                    <!-- /VIDEO BOX TEXT -->
-                  </div>
-                  <!-- /VIDEO BOX INFO -->
-                </div>
-                <!-- /VIDEO BOX COVER -->
+                     <!-- VIDEO BOX TEXT -->
+                     <p class="video-box-text">{{$headline->created_at->diffForHumans()}}</p>
+                     <!-- /VIDEO BOX TEXT -->
+                   </div>
+                   <!-- /VIDEO BOX INFO -->
+                 </div>
+                 <!-- /VIDEO BOX COVER -->
+               </a>
               </div>
               <!-- /VIDEO BOX -->
-
-              <!-- VIDEO BOX -->
-              <div class="video-box small">
-                <!-- VIDEO BOX COVER -->
-                <div class="video-box-cover popup-video_two-trigger">
-                  <!-- VIDEO BOX COVER IMAGE -->
-                  <figure class="video-box-cover-image liquid">
-                    <img src="/assets/img/cover/44.jpg" alt="cover-44">
-                  </figure>
-                  <!-- /VIDEO BOX COVER IMAGE -->
-
-                  <!-- PLAY BUTTON -->
-                  <div class="play-button">
-                    <!-- PLAY BUTTON ICON -->
-                    <svg class="play-button-icon icon-play">
-                      <use xlink:href="#svg-play"></use>
-                    </svg>
-                    <!-- /PLAY BUTTON ICON -->
-                  </div>
-                  <!-- /PLAY BUTTON -->
-
-                  <!-- VIDEO BOX INFO -->
-                  <div class="video-box-info">
-                    <!-- VIDEO BOX TITLE -->
-                    <p class="video-box-title">Jenny primary Photoshoot</p>
-                    <!-- /VIDEO BOX TITLE -->
-
-                    <!-- VIDEO BOX TEXT -->
-                    <p class="video-box-text">12 days ago</p>
-                    <!-- /VIDEO BOX TEXT -->
-                  </div>
-                  <!-- /VIDEO BOX INFO -->
-                </div>
-                <!-- /VIDEO BOX COVER -->
-              </div>
-              <!-- /VIDEO BOX -->
-
-              <!-- VIDEO BOX -->
-              <div class="video-box small">
-                <!-- VIDEO BOX COVER -->
-                <div class="video-box-cover popup-video_three-trigger">
-                  <!-- VIDEO BOX COVER IMAGE -->
-                  <figure class="video-box-cover-image liquid">
-                    <img src="/assets/img/cover/42.jpg" alt="cover-42">
-                  </figure>
-                  <!-- /VIDEO BOX COVER IMAGE -->
-
-                  <!-- PLAY BUTTON -->
-                  <div class="play-button">
-                    <!-- PLAY BUTTON ICON -->
-                    <svg class="play-button-icon icon-play">
-                      <use xlink:href="#svg-play"></use>
-                    </svg>
-                    <!-- /PLAY BUTTON ICON -->
-                  </div>
-                  <!-- /PLAY BUTTON -->
-
-                  <!-- VIDEO BOX INFO -->
-                  <div class="video-box-info">
-                    <!-- VIDEO BOX TITLE -->
-                    <p class="video-box-title">Tabatha Arcade Gaming Tips</p>
-                    <!-- /VIDEO BOX TITLE -->
-
-                    <!-- VIDEO BOX TEXT -->
-                    <p class="video-box-text">5 days ago</p>
-                    <!-- /VIDEO BOX TEXT -->
-                  </div>
-                  <!-- /VIDEO BOX INFO -->
-                </div>
-                <!-- /VIDEO BOX COVER -->
-              </div>
-              <!-- /VIDEO BOX -->
-
-              <!-- VIDEO BOX -->
-              <div class="video-box small">
-                <!-- VIDEO BOX COVER -->
-                <div class="video-box-cover popup-video_four-trigger">
-                  <!-- VIDEO BOX COVER IMAGE -->
-                  <figure class="video-box-cover-image liquid">
-                    <img src="/assets/img/cover/50.jpg" alt="cover-50">
-                  </figure>
-                  <!-- /VIDEO BOX COVER IMAGE -->
-
-                  <!-- PLAY BUTTON -->
-                  <div class="play-button">
-                    <!-- PLAY BUTTON ICON -->
-                    <svg class="play-button-icon icon-play">
-                      <use xlink:href="#svg-play"></use>
-                    </svg>
-                    <!-- /PLAY BUTTON ICON -->
-                  </div>
-                  <!-- /PLAY BUTTON -->
-
-                  <!-- VIDEO BOX INFO -->
-                  <div class="video-box-info">
-                    <!-- VIDEO BOX TITLE -->
-                    <p class="video-box-title">My Latest Cosplay</p>
-                    <!-- /VIDEO BOX TITLE -->
-
-                    <!-- VIDEO BOX TEXT -->
-                    <p class="video-box-text">1 hour ago</p>
-                    <!-- /VIDEO BOX TEXT -->
-                  </div>
-                  <!-- /VIDEO BOX INFO -->
-                </div>
-                <!-- /VIDEO BOX COVER -->
-              </div>
-              <!-- /VIDEO BOX -->
+               @endforeach
             </div>
             <!-- /VIDEO BOX LIST -->
           </div>
@@ -1607,3 +1503,68 @@
     </div>
     <!-- /GRID -->
 </div>
+
+
+
+<!-- POPUP BOX -->
+<div class="popup-box popup-album-creation">
+  <!-- POPUP CLOSE BUTTON -->
+  <div class="popup-close-button popup-album-creation-trigger">
+    <!-- POPUP CLOSE BUTTON ICON -->
+    <svg class="popup-close-button-icon icon-cross">
+      <use xlink:href="#svg-cross"></use>
+    </svg>
+    <!-- /POPUP CLOSE BUTTON ICON -->
+  </div>
+  <!-- /POPUP CLOSE BUTTON -->
+
+  <!-- POPUP BOX TITLE -->
+  <p class="popup-box-title">Create Blog  +</p>
+  <!-- /POPUP BOX TITLE -->
+
+  <!-- FORM -->
+  <form class="form" action="/kilimofy/Blog/User-Create-Blog-Post" method="post" enctype="multipart/form-data">
+    @csrf
+  <!-- FORM UPLOADABLES -->
+    <div class="row">
+
+       <div class="col-md-12">
+         <div class="card card-outline card-info">
+           <div class="card-header">
+             <h3 class="card-title">
+               Blog Post
+             </h3>
+           </div>
+           <!-- /.card-header -->
+           <div class="card-body">
+             <input type="hidden" name="user_name" value="{{Auth::user()->name}}">
+             <input type="hidden" name="avatar" value="{{Auth::user()->avatar}}">
+             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+              <textarea class="form-control" name="summernote" id="summernote"></textarea>
+           </div>
+           <div class="card-footer">
+
+           </div>
+         </div>
+       </div>
+
+      <!-- /.col-->
+    </div>
+    <!-- ./row -->
+    <!-- /FORM UPLOADABLES -->
+
+    <!-- POPUP BOX ACTIONS -->
+    <div class="popup-box-actions">
+      <!-- POPUP BOX ACTION -->
+      <button type="reset" class="popup-box-action button white popup-album-creation-trigger">Discard All</button>
+      <!-- /POPUP BOX ACTION -->
+
+      <!-- POPUP BOX ACTION -->
+      <button type="submit" class="popup-box-action button secondary">Post Blog!</button>
+      <!-- /POPUP BOX ACTION -->
+    </div>
+    <!-- /POPUP BOX ACTIONS -->
+  </form>
+  <!-- /FORM -->
+</div>
+<!-- /POPUP BOX -->

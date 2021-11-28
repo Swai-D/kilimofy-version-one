@@ -18,7 +18,7 @@
          <!-- /SECTION PRETITLE -->
 
          <!-- SECTION TITLE -->
-         <h2 class="section-title">Kilimofy Photo(s) </h2>
+         <h2 class="section-title">Photo(s) </h2>
          <!-- /SECTION TITLE -->
        </div>
        <!-- /SECTION HEADER INFO -->
@@ -45,7 +45,7 @@
        @foreach($user_photo_gallery as $user_photo)
          @if($user_photo->Photo !=NULL)
          <!-- ALBUM PREVIEW -->
-         <a class="album-preview" href="profile-photos-inside.html">
+         <a class="album-preview" href="/kilimofy/Post/read_comments/{{$user_photo->id}}-about-{{$user->name}}'s-post">
            <!-- ALBUM PREVIEW IMAGE -->
            <figure class="album-preview-image liquid">
              <img src="/Uploads/PostPhotos/{{$user_photo->Photo}}" alt="album-image-">
@@ -59,7 +59,8 @@
            <!-- ALBUM PREVIEW INFO -->
            <div class="album-preview-info">
              <!-- ALBUM PREVIEW TITLE -->
-             <p class="album-preview-title">{{$user_photo->Caption}}</p>
+
+             <p class="album-preview-title">{{\Illuminate\Support\Str::limit($user_photo->Caption, 50, '...Read More')}} </p>
              <!-- /ALBUM PREVIEW TITLE -->
 
              <!-- ALBUM PREVIEW TEXT -->

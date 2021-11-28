@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Stevebauman\Location\Facades\Location;
 use Hashids\Hashids;
 
+use App\Models\Headline;
 use App\Models\Group;
 use App\Models\Place;
 use App\Models\Forum;
@@ -161,32 +162,24 @@ class PembejeoNaViwatilifuController extends Controller
        // dd($user_location_details);
 
       //Get Topics
-      $kilimo_topics_count_collection = Forum::where('Category', 'Kilimo')->get();
+      $kilimo_topics_count_collection = Forum::where('Category', 'Kilimo')->count();
       // dd($kilimo_topics_count_collection);
 
       //Get Topics
-      $ufugaji_topics_count_collection = Forum::where('Category', 'Ufugaji')->get();
-      // dd($kilimo_topics_count_collection);
+      $ufugaji_topics_count_collection = Forum::where('Category', 'Ufugaji')->count();
+      // dd($ufugaji_topics_count_collection);
 
       //Get Topics
-      $usafirishaji_topics_count_collection = Forum::where('Category', 'Usafirisaji')->get();
-      // dd($kilimo_topics_count_collection);
+      $usafirishaji_topics_count_collection = Forum::where('Category', 'Usafirisaji')->count();
+      // dd($usafirishaji_topics_count_collection);
 
-      //Get $kilimo_topics_count out of an array
-      foreach ($kilimo_topics_count_collection as $kilimo_topics_count_collection) {
-        $kilimo_topics_count = $kilimo_topics_count_collection['Topics'];
-      }
-
-      $kilimo_topics_count = 0;
-      //Get $ufugaji_topics_count out of an array
-      // foreach ($ufugaji_topics_count_collection as $ufugaji_topics_count_collection) {
-      //   $ufugaji_topics_count = $ufugaji_topics_count_collection['Topics'];
-      // }
 
       $users = User::paginate(5);
       $users_count = User::count();
+      $headlines = Headline::all();
+      $headlines_count = Headline::count();
 
-      return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'kilimo_topics_count', 'users', 'users_count'));
+      return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'users', 'users_count','headlines', 'headlines_count', 'kilimo_topics_count_collection','ufugaji_topics_count_collection', 'usafirishaji_topics_count_collection'));
 
     }
 

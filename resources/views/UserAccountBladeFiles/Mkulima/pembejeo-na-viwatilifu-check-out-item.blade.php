@@ -26,6 +26,7 @@
   </div>
   <!-- /SECTION HEADER -->
 
+
   <!-- GRID -->
   <div class="grid grid-8-4 small-space">
     <!-- GRID COLUMN -->
@@ -46,8 +47,7 @@
               <div class="form-item">
                 <!-- FORM INPUT -->
                 <div class="form-input small">
-                  <label for="billing-first-name">First Name</label>
-                  <input type="text" id="billing-first-name" name="billing_first_name">
+                  <input type="text" id="billing-first-name" name="billing_first_name" value="{{Auth::user()->name}}">
                 </div>
                 <!-- /FORM INPUT -->
               </div>
@@ -57,8 +57,7 @@
               <div class="form-item">
                 <!-- FORM INPUT -->
                 <div class="form-input small">
-                  <label for="billing-last-name">Last Name</label>
-                  <input type="text" id="billing-last-name" name="billing_last_name">
+                  <input type="text" id="billing-last-name" name="billing_last_name" value="{{Auth::user()->user_phone_number}}">
                 </div>
                 <!-- /FORM INPUT -->
               </div>
@@ -66,88 +65,6 @@
             </div>
             <!-- /FORM ROW -->
 
-            <!-- FORM ROW -->
-            <div class="form-row split">
-              <!-- FORM ITEM -->
-              <div class="form-item">
-                <!-- FORM INPUT -->
-                <div class="form-input small">
-                  <label for="billing-email">Email</label>
-                  <input type="text" id="billing-email" name="billing_email">
-                </div>
-                <!-- /FORM INPUT -->
-              </div>
-              <!-- /FORM ITEM -->
-
-              <!-- FORM ITEM -->
-              <div class="form-item">
-                <!-- FORM INPUT -->
-                <div class="form-input small">
-                  <label for="billing-phone-number">Phone Number</label>
-                  <input type="text" id="billing-phone-number" name="billing_phone_number">
-                </div>
-                <!-- /FORM INPUT -->
-              </div>
-              <!-- /FORM ITEM -->
-            </div>
-            <!-- /FORM ROW -->
-
-            <!-- FORM ROW -->
-            <div class="form-row">
-              <!-- FORM ITEM -->
-              <div class="form-item">
-                <!-- FORM INPUT -->
-                <div class="form-input small">
-                  <label for="billing-address">Full Address</label>
-                  <input type="text" id="billing-address" name="billing_address">
-                </div>
-                <!-- /FORM INPUT -->
-              </div>
-              <!-- /FORM ITEM -->
-            </div>
-            <!-- /FORM ROW -->
-
-            <!-- FORM ROW -->
-            <div class="form-row split">
-              <!-- FORM ITEM -->
-              <div class="form-item">
-                <!-- FORM SELECT -->
-                <div class="form-select">
-                  <label for="billing-country">Country</label>
-                  <select id="billing-country" name="billing_country">
-                    <option value="0">Select your Country</option>
-                    <option value="1">United States</option>
-                  </select>
-                  <!-- FORM SELECT ICON -->
-                  <svg class="form-select-icon icon-small-arrow">
-                    <use xlink:href="#svg-small-arrow"></use>
-                  </svg>
-                  <!-- /FORM SELECT ICON -->
-                </div>
-                <!-- /FORM SELECT -->
-              </div>
-              <!-- /FORM ITEM -->
-
-              <!-- FORM ITEM -->
-              <div class="form-item">
-                <!-- FORM SELECT -->
-                <div class="form-select">
-                  <label for="billing-state">State</label>
-                  <select id="billing-state" name="billing_state">
-                    <option value="0">Select your State</option>
-                    <option value="1">New York</option>
-                  </select>
-                  <!-- FORM SELECT ICON -->
-                  <svg class="form-select-icon icon-small-arrow">
-                    <use xlink:href="#svg-small-arrow"></use>
-                  </svg>
-                  <!-- /FORM SELECT ICON -->
-                </div>
-                <!-- /FORM SELECT -->
-              </div>
-              <!-- /FORM ITEM -->
-            </div>
-            <!-- /FORM ROW -->
 
             <!-- FORM ROW -->
             <div class="form-row split">
@@ -174,8 +91,7 @@
               <div class="form-item">
                 <!-- FORM INPUT -->
                 <div class="form-input small">
-                  <label for="billing-zip-code">ZIP Code</label>
-                  <input type="text" id="billing-zip-code" name="billing_zip_code">
+                                  <input type="text" id="billing-zip-code" name="billing_zip_code" value="{{$item_number}}">
                 </div>
                 <!-- /FORM INPUT -->
               </div>
@@ -183,7 +99,22 @@
             </div>
             <!-- /FORM ROW -->
 
-            <!-- FORM ROW -->
+          <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM INPUT -->
+                <div class="form-input small">
+                  <label for="billing-address">Full Address</label>
+                  <input type="text" id="billing-address" name="billing_address">
+                </div>
+                <!-- /FORM INPUT -->
+              </div>
+              <!-- /FORM ITEM -->
+            </div>
+            <!-- /FORM ROW -->
+
+          <!-- FORM ROW -->
             <div class="form-row">
               <!-- FORM ITEM -->
               <div class="form-item">
@@ -215,6 +146,7 @@
 
         <!-- SIDEBAR BOX ITEMS -->
         <div class="sidebar-box-items">
+        @foreach($item_details as $item_details)
           <!-- TOTALS LINE LIST -->
           <div class="totals-line-list separator-bottom">
             <!-- TOTALS LINE -->
@@ -222,105 +154,26 @@
               <!-- TOTALS LINE INFO -->
               <div class="totals-line-info">
                 <!-- TOTALS LINE TITLE -->
-                <p class="totals-line-title"><span class="bold">Twitch Stream UI Pack</span></p>
+                <p class="totals-line-title"><span class="bold">{{$item_details->item_name}}</span></p>
                 <!-- /TOTALS LINE TITLE -->
 
                 <!-- TOTALS LINE TEXT -->
-                <p class="totals-line-text">Regular License</p>
+                <p class="totals-line-text">{{$item_details->item_category}}</p>
                 <!-- /TOTALS LINE TEXT -->
               </div>
               <!-- /TOTALS LINE INFO -->
 
               <!-- PRICE TITLE -->
-              <p class="price-title"><span class="currency">$</span> 12.00 x 1</p>
+              <p class="price-title"><span class="currency">Tsh</span> {{number_format($item_details->item_price)}} x 1</p>
               <!-- /PRICE TITLE -->
             </div>
             <!-- /TOTALS LINE -->
 
-            <!-- TOTALS LINE -->
-            <div class="totals-line">
-              <!-- TOTALS LINE INFO -->
-              <div class="totals-line-info">
-                <!-- TOTALS LINE TITLE -->
-                <p class="totals-line-title"><span class="bold">Gaming Coin Badges Pack</span></p>
-                <!-- /TOTALS LINE TITLE -->
-
-                <!-- TOTALS LINE TEXT -->
-                <p class="totals-line-text">Regular License</p>
-                <!-- /TOTALS LINE TEXT -->
-              </div>
-              <!-- /TOTALS LINE INFO -->
-
-              <!-- PRICE TITLE -->
-              <p class="price-title"><span class="currency">$</span> 6.00 x 1</p>
-              <!-- /PRICE TITLE -->
-            </div>
-            <!-- /TOTALS LINE -->
-
-            <!-- TOTALS LINE -->
-            <div class="totals-line">
-              <!-- TOTALS LINE INFO -->
-              <div class="totals-line-info">
-                <!-- TOTALS LINE TITLE -->
-                <p class="totals-line-title"><span class="bold">Pixel Diamond Gaming Magazine</span></p>
-                <!-- /TOTALS LINE TITLE -->
-
-                <!-- TOTALS LINE TEXT -->
-                <p class="totals-line-text">Regular License</p>
-                <!-- /TOTALS LINE TEXT -->
-              </div>
-              <!-- /TOTALS LINE INFO -->
-
-              <!-- PRICE TITLE -->
-              <p class="price-title"><span class="currency">$</span> 26.00 x 1</p>
-              <!-- /PRICE TITLE -->
-            </div>
-            <!-- /TOTALS LINE -->
           </div>
           <!-- /TOTALS LINE LIST -->
-
-          <!-- TOTALS LINE LIST -->
-          <div class="totals-line-list separator-bottom">
-            <!-- TOTALS LINE -->
-            <div class="totals-line">
-              <!-- TOTALS LINE TITLE -->
-              <p class="totals-line-title">Cart Total (3)</p>
-              <!-- /TOTALS LINE TITLE -->
-
-              <!-- PRICE TITLE -->
-              <p class="price-title"><span class="currency">$</span> 44.00</p>
-              <!-- /PRICE TITLE -->
-            </div>
-            <!-- /TOTALS LINE -->
-
-            <!-- TOTALS LINE -->
-            <div class="totals-line">
-              <!-- TOTALS LINE TITLE -->
-              <p class="totals-line-title">Code</p>
-              <!-- /TOTALS LINE TITLE -->
-
-              <!-- PRICE TITLE -->
-              <p class="price-title">-<span class="currency">$</span> 5.00</p>
-              <!-- /PRICE TITLE -->
-            </div>
-            <!-- /TOTALS LINE -->
-
-            <!-- TOTALS LINE -->
-            <div class="totals-line">
-              <!-- TOTALS LINE TITLE -->
-              <p class="totals-line-title">Total</p>
-              <!-- /TOTALS LINE TITLE -->
-
-              <!-- PRICE TITLE -->
-              <p class="price-title"><span class="currency">$</span> 39.00</p>
-              <!-- /PRICE TITLE -->
-            </div>
-            <!-- /TOTALS LINE -->
-          </div>
-          <!-- /TOTALS LINE LIST -->
-
+        @endforeach
           <!-- PRICE TITLE -->
-          <p class="price-title big separator-bottom"><span class="currency">$</span> 39.00</p>
+          <p class="price-title big separator-bottom"><span class="currency">Tsh</span> {{number_format($item_details->item_price)}}</p>
           <!-- /PRICE TITLE -->
         </div>
         <!-- /SIDEBAR BOX ITEMS -->
@@ -339,12 +192,12 @@
               <!-- CHECKBOX BOX -->
               <div class="checkbox-box round"></div>
               <!-- /CHECKBOX BOX -->
-              <label class="accordion-trigger-linked" for="payment-paypal">Paypal</label>
+              <label class="accordion-trigger-linked" for="payment-paypal">Mobile Money</label>
 
               <!-- CHECKBOX INFO -->
               <div class="checkbox-info accordion-content-linked accordion-open">
                 <!-- CHECKBOX INFO TEXT -->
-                <p class="checkbox-info-text">Pay with your Paypal balance or connected bank account! It's quick and really secure.</p>
+                <p class="checkbox-info-text">Lipia kwa mitandao ya simu kama vile M-Pesa, Tigo-Pesa, Airtel-Money, Halo-Pesa na T-pesa, Ni raisi na salama zaidi.</p>
                 <!-- /CHECKBOX INFO TEXT -->
               </div>
               <!-- /CHECKBOX INFO -->
@@ -362,7 +215,7 @@
               <!-- CHECKBOX INFO -->
               <div class="checkbox-info accordion-content-linked">
                 <!-- CHECKBOX INFO TEXT -->
-                <p class="checkbox-info-text">Pay with your credit or debit card!.</p>
+                <p class="checkbox-info-text">Lipia kwa kadi ya Benki !.</p>
                 <!-- /CHECKBOX INFO TEXT -->
               </div>
               <!-- /CHECKBOX INFO -->
@@ -382,5 +235,7 @@
     <!-- /GRID COLUMN -->
   </div>
   <!-- /GRID -->
+
+
 </div>
 <!-- /CONTENT GRID -->

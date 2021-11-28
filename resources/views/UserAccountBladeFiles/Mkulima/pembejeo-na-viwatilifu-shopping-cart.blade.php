@@ -1879,7 +1879,7 @@
           <!-- /FORM -->
 
           <!-- BUTTON -->
-          <a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Buy-item/{{$bidhaa->id}}" class="button primary">Nunua!</a>
+          <a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Buy-item/{{$bidhaa->id}}-{{$bidhaa->item_name}}" class="button primary">Nunua!</a>
           <!-- /BUTTON -->
 
           <!-- USER STATS -->

@@ -22,6 +22,7 @@
         </div>
         <!-- /SECTION HEADER INFO -->
 
+      @if(Auth::user()->id == $user->id)
         <!-- SECTION HEADER ACTIONS -->
         <div class="section-header-actions">
           <!-- SECTION HEADER ACTION -->
@@ -29,6 +30,8 @@
           <!-- /SECTION HEADER ACTION -->
         </div>
         <!-- /SECTION HEADER ACTIONS -->
+
+     @endif
       </div>
       <!-- /SECTION HEADER -->
 
