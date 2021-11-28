@@ -1272,4 +1272,8 @@ class PlaceTableSeeder extends Seeder
 
 
 
+
+        }
+
+
 }
