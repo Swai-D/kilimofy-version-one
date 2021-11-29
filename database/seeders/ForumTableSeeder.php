@@ -27,7 +27,7 @@ class ForumTableSeeder extends Seeder
     //2
     \App\Models\Forum::create([
         'Category' => 'Usafirishaji',
-        'Category_Description' => 'Everything about the transportation of agriculture products',
+        'Category_Description' => 'Fahamu Garama na Njia bora za usafirishaji wa bidhaa zako toka shambani mpaka kwa mlaji  ',
         'Category_Image' => '1633814279.png',
         'Topics' => 2,
         'Posts' => 2,
@@ -38,7 +38,7 @@ class ForumTableSeeder extends Seeder
     //3
     \App\Models\Forum::create([
         'Category' => 'Ufugaji',
-        'Category_Description' => 'Jifunze aina mbalimbali za usafirishaji wa mazao yako toka shamba',
+        'Category_Description' => 'Jifunze aina mbalimbali za ufugaji wa wanyama mbalimbali wa kufugwa kama vile Ng\'ombe, mbuzi n.k',
         'Category_Image' => '1635001944.png',
         'Topics' => 0,
         'Posts' => 0,

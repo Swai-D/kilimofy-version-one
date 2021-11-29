@@ -60,7 +60,7 @@
             <!-- USER STATUS -->
             <div class="user-status">
               <!-- USER STATUS AVATAR -->
-              <a class="user-status-avatar" href="profile-timeline.html">
+              <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page/{{$author->id}}-about-Kilimofy-Tz">
                 <!-- USER AVATAR -->
                 <div class="user-avatar small no-outline">
                   <!-- USER AVATAR CONTENT -->

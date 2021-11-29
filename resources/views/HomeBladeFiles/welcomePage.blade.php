@@ -246,10 +246,11 @@
                 <select class="for" name="user_ocupation">
                   <option  selected disabled>Kazi ?</option>
                   <option value="Mkulima">Mkulima</option>
-                  <option value="Muuzaji_Wa_pembejeo_Na_Viwatilifu">Muuzaji wa pembejeo Na Viwatilifu</option>
+                  <option value="Muuza_Pembejeo">Muuzaji wa pembejeo Na Viwatilifu</option>
                   <option value="Bwana_Shamba">Bwana Shamba (Afisa Ugavi)</option>
-                  <option value="Fundi_Na_Mashine_Za_Kilimo">Fundi &amp; Mashine Za Kilimo</option>
-                  <option value="Msafirishaji">Usafirishaji Wa Bidhaa za Kilimo</option>
+                  <option value="Fundi">Fundi Wa Mashine Za Kilimo (Fundi)</option>
+                  <option value="Mashine_Za_Kilimo">Muuzaji Wa Mashine Za Kilimo</option>
+                  <option value="Dereva">Usafirishaji Wa Bidhaa Za Kilimo (Dereva)</option>
                 </select>
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('user_occupation')}}

@@ -38,12 +38,13 @@
         <div class="form-select">
           <label for="rating-reason">Akauti Mpya</label>
           <select class="for" name="user_ocupation">
-            <option value="" selected disabled>--chagua Kazi--</option>
+            <option  selected disabled>Kazi ?</option>
             <option value="Mkulima">Mkulima</option>
-            <option value="Muuzaji_Wa_pembejeo_Na_Viwatilifu">Muuzaji wa pembejeo Na Viwatilifu</option>
-            <option value="Bwana_Shamba">Bwana Shamba (Extension Officer)</option>
-            <option value="Muuzaji_wa_Mashine_Za_Kilimo">Muuzaji Wa Mashine Za Kilimo</option>
-            <option value="Watoaji_Huduma_Za_Usafiri">Wasafirishaji Wa Bidhaa za Kilimo</option>
+            <option value="Muuza_Pembejeo">Muuzaji wa pembejeo Na Viwatilifu</option>
+            <option value="Bwana_Shamba">Bwana Shamba (Afisa Ugavi)</option>
+            <option value="Fundi">Fundi Wa Mashine Za Kilimo (Fundi)</option>
+            <option value="Mashine_Za_Kilimo">Muuzaji Wa Mashine Za Kilimo</option>
+            <option value="Dereva">Usafirishaji Wa Bidhaa Za Kilimo (Dereva)</option>
           </select>
           <!-- FORM SELECT ICON -->
           <svg class="form-select-icon icon-small-arrow">

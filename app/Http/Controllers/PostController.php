@@ -55,8 +55,8 @@ class PostController extends Controller
 
           else if(strstr($mime, "image/")){
             $post_image = $request->file('File');
-            $filename = time().','.$post_image->getClientOriginalExtension();
-            Image::make($post_image)->resize(528, 280)->save(public_path('/Uploads/PostPhotos/'.$filename));
+            $filename = time().'.'.$post_image->getClientOriginalExtension();
+            Image::make($post_image)->resize(1920, 1280)->save(public_path('/Uploads/PostPhotos/'.$filename));
             $post->Photo = $filename;
           }
 

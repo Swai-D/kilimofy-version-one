@@ -151,3 +151,13 @@ Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupControlle
 
 
 //**************************end*************************************************
+
+
+//**************************DriverController*************************************************
+Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page', [App\Http\Controllers\DriverController::class, 'Driver_Index_Page']);
+Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupController::class, 'create_group']);
+
+
+
+
+//**************************end*************************************************
