@@ -31,7 +31,7 @@ Route::get('/kilimofy/home/redirect-after-verify-code', [App\Http\Controllers\Ho
 
 Route::post('/kilimofy/user/register_form', [App\Http\Controllers\AuthController::class, 'create'])->name('register');
 Route::post('/kilimofy/user/verify_form', [App\Http\Controllers\AuthController::class, 'verify'])->name('verify_user_phone_number');
-Route::post('/kilimofy/user/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');
+Route::any('/kilimofy/user/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');
 Route::post('/kilimofy/user/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
 
@@ -105,7 +105,7 @@ Route::get('/kilimofy/UserAccount/user_blog_page/{user_id}-{slug}', [App\Http\Co
 Route::get('/kilimofy/UserAccount/user_blog_post_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_blog_post_page']);
 Route::get('/kilimofy/UserAccount/user_forum_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_forum_page']);
 Route::get('/kilimofy/UserAccount/user_store_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_store_page']);
-Route::get('/kilimofy/UserAccount/user_setting_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_videos_page']);
+Route::get('/kilimofy/UserAccount/user_setting_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_setting_page']);
 
 //**************************end*************************************************
 
@@ -136,6 +136,7 @@ Route::get('/kilimofy/Bwana-Shamba/home-page', [App\Http\Controllers\BwanaShamba
 //**************************GroupController*************************************************
 Route::get('/kilimofy/Group/Group-Lists', [App\Http\Controllers\GroupController::class, 'group_list_page']);
 Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupController::class, 'create_group']);
+Route::get('/kilimofy/Group/Group-Timeline', [App\Http\Controllers\GroupController::class, 'group_timeline']);
 
 
 
@@ -155,6 +156,7 @@ Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupControlle
 
 //**************************DriverController*************************************************
 Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page', [App\Http\Controllers\DriverController::class, 'Driver_Index_Page']);
+Route::post('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Make-Trip', [App\Http\Controllers\DriverController::class, 'MakeTrip']);
 Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupController::class, 'create_group']);
 
 

@@ -118,9 +118,9 @@ class PembejeoNaViwatilifuController extends Controller
        // dd($weather);
 
       //Temp in Celsus
-      $fahrenheit = $current['forecast']['temp'] ?? 34;
-      $fahrenheit_min = $current['forecast']['temp_min']?? 34;
-      $fahrenheit_max = $current['forecast']['temp_max']?? 25;
+      $fahrenheit = $current['forecast']['temp'] ?? 84;
+      $fahrenheit_min = $current['forecast']['temp_min']?? 79;
+      $fahrenheit_max = $current['forecast']['temp_max']?? 84;
 
       //Converting
       $celsius=round(((5/9)*($fahrenheit-32)),0);
@@ -138,9 +138,9 @@ class PembejeoNaViwatilifuController extends Controller
       // dd($future_weather_forecast['forecast'][4]);
 
       //Temp in Celsus
-      $tomorrow_fahrenheit = $future_weather_forecast['forecast'][4]['forecast']['temp'] ?? 34;
-      $tomorrow_fahrenheit_min = $future_weather_forecast['forecast'][4]['forecast']['temp_min'] ?? 25;
-      $tomorrow_fahrenheit_max = $future_weather_forecast['forecast'][4]['forecast']['temp_max'] ?? 34;
+      $tomorrow_fahrenheit = $future_weather_forecast['forecast'][4]['forecast']['temp'] ?? 83;
+      $tomorrow_fahrenheit_min = $future_weather_forecast['forecast'][4]['forecast']['temp_min'] ?? 76;
+      $tomorrow_fahrenheit_max = $future_weather_forecast['forecast'][4]['forecast']['temp_max'] ?? 83;
 
       //Get icon pathinfo for tomorrow
       $tomorrow_icon_path = $future_weather_forecast['forecast'][4]['condition']['icon'] ?? "default.jpg";
@@ -163,15 +163,15 @@ class PembejeoNaViwatilifuController extends Controller
 
       //Get Topics
       $kilimo_topics_count_collection = Forum::where('Category', 'Kilimo')->count();
-      // dd($kilimo_topics_count_collection);
+       // dd($kilimo_topics_count_collection);
 
       //Get Topics
       $ufugaji_topics_count_collection = Forum::where('Category', 'Ufugaji')->count();
-      // dd($ufugaji_topics_count_collection);
+      // dd($kilimo_topics_count_collection);
 
       //Get Topics
       $usafirishaji_topics_count_collection = Forum::where('Category', 'Usafirisaji')->count();
-      // dd($usafirishaji_topics_count_collection);
+      // dd($kilimo_topics_count_collection);
 
 
       $users = User::paginate(5);

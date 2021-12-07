@@ -61,8 +61,14 @@ class GroupController extends Controller
 
         $new_group->save();
       }
-
       return redirect()->back();
 
+    }
+
+    public function group_timeline()
+    {
+      $users = User::all();
+      
+      return view('GroupBladeFiles.group-timeline', compact('users'));
     }
 }

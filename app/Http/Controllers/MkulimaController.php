@@ -48,15 +48,17 @@ class MkulimaController extends Controller
 
     public function pembejeo_na_viwatilifu(Request $request)
     {
+
       $user_location = Auth::user()->user_location;
       $user_id = Auth::user()->id;
+
       //Get all the sellers accross user location
-      $user_location_pembejeo_na_viwatilifu_list = User::where([['user_ocupation', 'Muuzaji_Wa_pembejeo_Na_Viwatilifu'],['user_location', $user_location], ['id', '!=', $user_id]])->get();
+      $user_location_pembejeo_na_viwatilifu_list = User::where([['user_location', $user_location],['user_ocupation', 'Muuza_Pembejeo'], ['id', '!=', $user_id]])->get();
        // dd($user_location_pembejeo_na_viwatilifu_list);
 
       //find the seller in item model
-      if ( !empty($user_location_pembejeo_na_viwatilifu_list)) {
-        // dd($user_location_pembejeo_na_viwatilifu_list);
+      if ( $user_location_pembejeo_na_viwatilifu_list->count() > 0 ) {
+         // dd($user_location_pembejeo_na_viwatilifu_list);
 
         foreach ($user_location_pembejeo_na_viwatilifu_list as $user_location_pembejeo_na_viwatilifu_seller) {
           //Get Item Details
@@ -76,9 +78,11 @@ class MkulimaController extends Controller
       else {
 
         $places =  Place::select('Region','District')->get();
+        $user_location_pembejeo_na_viwatilifu_sellers_count = 0;
+        $user_location_pembejeo_na_viwatilifu_sellers = [];
         $users = User::all();
 
-        return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu', compact('user_location', 'places', 'users'));
+        return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu', compact('user_location', 'places', 'users', 'user_location_pembejeo_na_viwatilifu_sellers_count', 'user_location_pembejeo_na_viwatilifu_sellers'));
       }
 
 
@@ -124,12 +128,18 @@ class MkulimaController extends Controller
 
     public function usafiri()
     {
-      $ip = request()->ip();
-      // dd($ip);
-      $user_location = Location::get($ip);
+      //Get User Location
+      $user_location = Auth::user()->user_location;
+
+      // get regionName
+       $user_location_array = explode(', ', $user_location);
+
+       $user_region = $user_location_array[0];
+       $user_district = $user_location_array[1];
+
       $users = User::all();
       $places =  Place::select('Region','District')->get();
-      return view('UserAccountBladeFiles.Mkulima.usafirishaji-home-page', compact('user_location', 'places', 'users'));
+      return view('UserAccountBladeFiles.Mkulima.usafirishaji-page', compact('user_district','user_region', 'places', 'users'));
     }
 
 

@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->unsignedInteger('User_id');
             $table->LongText('Caption');
             $table->string('name');
+            $table->string('username');
             $table->string('User_Image_Profile');
             $table->string('Photo')->nullable();
             $table->string('Video')->nullable();

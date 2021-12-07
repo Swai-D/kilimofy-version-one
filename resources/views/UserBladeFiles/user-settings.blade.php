@@ -1,25 +1,17 @@
 @extends('LayoutBladeFiles.app-layout')
-@section('title','Pembejeo')
-@section('discription-title','Pembejeo mbalimbali')
-@section('discription-details','Chagua pembejeo yako ndani ya kilimofy')
-@section('menu-status-overview','active')
-@section('content')
+@section('title','Usafirishaji wa Bidhaa')
+@section('menu-status-gardener','active')
+
+@section('discription-title')
+ Akaunti ya {{Auth::user()->name}}
+@endsection
+
+@section('discription-details','kilimofy')
+
 <!-- CONTENT GRID -->
 <div class="content-grid">
   <!-- SECTION BANNER -->
-  <div class="section-banner">
-    <!-- SECTION BANNER ICON -->
-    <img class="section-banner-icon" src="/assets/img/banner/accounthub-icon.png" alt="accounthub-icon">
-    <!-- /SECTION BANNER ICON -->
-
-    <!-- SECTION BANNER TITLE -->
-    <p class="section-banner-title">Account Hub</p>
-    <!-- /SECTION BANNER TITLE -->
-
-    <!-- SECTION BANNER TEXT -->
-    <p class="section-banner-text">Profile info, messages, settings and much more!</p>
-    <!-- /SECTION BANNER TEXT -->
-  </div>
+  @include('LayoutBladeFiles.title-layout')
   <!-- /SECTION BANNER -->
 
   <!-- GRID -->
@@ -320,7 +312,7 @@
                     <!-- USER AVATAR CONTENT -->
                     <div class="user-avatar-content">
                       <!-- HEXAGON -->
-                      <div class="hexagon-image-68-74" data-src="/assets/img/avatar/01.jpg"></div>
+                      <div class="hexagon-image-68-74" data-src="/Uploads/avatars/{{Auth::user()->avatar}}"></div>
                       <!-- /HEXAGON -->
                     </div>
                     <!-- /USER AVATAR CONTENT -->
@@ -341,29 +333,7 @@
                     </div>
                     <!-- /USER AVATAR PROGRESS BORDER -->
 
-                    <!-- USER AVATAR BADGE -->
-                    <div class="user-avatar-badge">
-                      <!-- USER AVATAR BADGE BORDER -->
-                      <div class="user-avatar-badge-border">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-28-32"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR BADGE BORDER -->
 
-                      <!-- USER AVATAR BADGE CONTENT -->
-                      <div class="user-avatar-badge-content">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-dark-22-24"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR BADGE CONTENT -->
-
-                      <!-- USER AVATAR BADGE TEXT -->
-                      <p class="user-avatar-badge-text">24</p>
-                      <!-- /USER AVATAR BADGE TEXT -->
-                    </div>
-                    <!-- /USER AVATAR BADGE -->
                   </div>
                   <!-- /USER SHORT DESCRIPTION AVATAR -->
                 </div>
@@ -374,7 +344,7 @@
             <!-- /USER PREVIEW -->
 
             <!-- UPLOAD BOX -->
-            <div class="upload-box">
+            <div class="upload-box popup-change-profile-trigger">
               <!-- UPLOAD BOX ICON -->
               <svg class="upload-box-icon icon-members">
                 <use xlink:href="#svg-members"></use>
@@ -382,11 +352,11 @@
               <!-- /UPLOAD BOX ICON -->
 
               <!-- UPLOAD BOX TITLE -->
-              <p class="upload-box-title">Change Avatar</p>
+              <p class="upload-box-title popup-change-profile-trigger">Change Avatar</p>
               <!-- /UPLOAD BOX TITLE -->
 
               <!-- UPLOAD BOX TEXT -->
-              <p class="upload-box-text">110x110px size minimum</p>
+              <p class="upload-box-text popup-change-profile-trigger">110x110px size minimum</p>
               <!-- /UPLOAD BOX TEXT -->
             </div>
             <!-- /UPLOAD BOX -->
@@ -400,7 +370,7 @@
               <!-- /UPLOAD BOX ICON -->
 
               <!-- UPLOAD BOX TITLE -->
-              <p class="upload-box-title">Change Cover</p>
+              <p class="upload-box-title ">Change Cover</p>
               <!-- /UPLOAD BOX TITLE -->
 
               <!-- UPLOAD BOX TEXT -->
@@ -485,10 +455,14 @@
                   <div class="form-item">
                     <!-- FORM SELECT -->
                     <div class="form-select">
-                      <label for="profile-country">Country</label>
-                      <select id="profile-country" name="profile_country">
-                        <option value="0">Select your Country</option>
-                        <option value="1" selected>United States</option>
+                      <label for="profile-country">Mkoa</label>
+                      <select class="for" name="user_location">
+                        <option value="" selected disabled>Mkoa &amp; Wilaya ? </option>
+
+                        @foreach($places as $place)
+                          <option value="{{$place->Region}}, {{$place->District}}">{{$place->Region}} ({{$place->District}}) </option>
+                        @endforeach
+
                       </select>
                       <!-- FORM SELECT ICON -->
                       <svg class="form-select-icon icon-small-arrow">
@@ -504,10 +478,14 @@
                   <div class="form-item">
                     <!-- FORM SELECT -->
                     <div class="form-select">
-                      <label for="profile-city">City</label>
+                      <label for="profile-city">Kazi</label>
                       <select id="profile-city" name="profile_city">
-                        <option value="0">Select your City</option>
-                        <option value="1" selected>New York</option>
+                        <option value="Mkulima">Mkulima</option>
+                        <option value="Muuza_Pembejeo">Muuzaji wa pembejeo Na Viwatilifu</option>
+                        <option value="Bwana_Shamba">Bwana Shamba (Afisa Ugavi)</option>
+                        <option value="Fundi">Fundi Wa Mashine Za Kilimo (Fundi)</option>
+                        <option value="Mashine_Za_Kilimo">Muuzaji Wa Mashine Za Kilimo</option>
+                        <option value="Dereva">Usafirishaji Wa Bidhaa Za Kilimo (Dereva)</option>
                       </select>
                       <!-- FORM SELECT ICON -->
                       <svg class="form-select-icon icon-small-arrow">
@@ -1067,4 +1045,7 @@
   <!-- /GRID -->
 </div>
 <!-- /CONTENT GRID -->
-@endsection
+
+<!-- POPUP BOX -->
+@include('LayoutBladeFiles.change-profile-form')
+<!-- /POPUP BOX -->

@@ -99,7 +99,7 @@
      <!-- /SECTION FILTERS BAR -->
 
      <!-- GRID -->
-     <div class="grid grid-3-3-3-3 centered">
+     <div class="grid grid-4-4-4 centered">
        @forelse($group_lists as $group)
        <!-- USER PREVIEW -->
        <div class="user-preview">
@@ -136,7 +136,7 @@
            <!-- USER SHORT DESCRIPTION -->
            <div class="user-short-description">
              <!-- USER SHORT DESCRIPTION AVATAR -->
-             <a class="user-short-description-avatar user-avatar medium no-stats" href="group-timeline.html">
+             <a class="user-short-description-avatar user-avatar medium no-stats" href="/kilimofy/Group/Group-Timeline">
                <!-- USER AVATAR BORDER -->
                <div class="user-avatar-border">
                  <!-- HEXAGON -->
@@ -156,7 +156,7 @@
              <!-- /USER SHORT DESCRIPTION AVATAR -->
 
              <!-- USER SHORT DESCRIPTION TITLE -->
-             <p class="user-short-description-title"><a href="group-timeline.html">{{$group->Tagline}}</a></p>
+             <p class="user-short-description-title"><a href="/kilimofy/Group/Group-Timeline">{{$group->Tagline}}</a></p>
              <!-- /USER SHORT DESCRIPTION TITLE -->
 
              <!-- USER SHORT DESCRIPTION TEXT -->
@@ -364,7 +364,7 @@
        </div>
        <!-- /USER PREVIEW -->
        @empty
-       <p class="progress-arc-summary-subtitle text-center text-danger"> Hakuna Group kwa sasa ! <a href="#">Tengeneza ?</a>  </p>
+       <p class="progress-arc-summary-subtitle text-center text-danger"> Hakuna Group kwa sasa ! <button class="widget-box-button button small secondary popup-manage-group-trigger">Tengeneza ?</button>  </p>
      @endforelse
      </div>
      <!-- /GRID -->
@@ -376,3 +376,7 @@
    <!-- /SECTION -->
 @endsection
 @endforeach
+
+<!-- POPUP BOX -->
+@include('LayoutBladeFiles.create-group')
+<!-- /POPUP BOX -->

@@ -122,7 +122,7 @@
   <!-- /SECTION FILTERS BAR -->
 
   <!-- GRID -->
-  <div class="grid grid-3-3-3-3 centered">
+  <div class="grid grid-4-4-4 centered">
 
     @foreach($group_lists as $group)
     <!-- USER PREVIEW -->

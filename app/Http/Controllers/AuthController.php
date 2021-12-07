@@ -27,6 +27,7 @@ class AuthController extends Controller
 
         $data = $request->validate([
           'name' => ['required', 'string', 'max:255'],
+          'username' => ['required', 'string', 'max:255'],
           'user_phone_number' => ['required', 'string', 'max:13','unique:users'],
           'user_ocupation' => ['string', 'max:255'],
           'user_location' => ['string', 'max:255'],
@@ -51,6 +52,7 @@ class AuthController extends Controller
 
           User::create([
             'name' => $data['name'],
+            'username' => $data['username'],
             'user_phone_number' => $std_user_phone_number,
             'user_ocupation' => $data['user_ocupation'],
             'user_location' => $data['user_location'],
@@ -107,12 +109,12 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string',
+            'username' => 'required|string',
             'password' => 'required',
             ]);
 
         if (Auth::attempt([
-            'name' => $request->name,
+            'username' => $request->username,
             'password' => $request->password,
             'isVerified'=> true,
           ])

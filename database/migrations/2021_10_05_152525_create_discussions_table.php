@@ -20,6 +20,7 @@ class CreateDiscussionsTable extends Migration
             $table->string('Discussion_Image')->nullable();
             $table->string('Discussion_Video')->nullable();
             $table->string('Author_Name');
+            $table->string('Author_Username');
             $table->string('Author_ID');
             $table->string('Author_Image_Name');
             $table->string('Topic');

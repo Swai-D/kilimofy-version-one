@@ -14,7 +14,9 @@ class UserTableSeeder extends Seeder
     public function run()
     {
       \App\Models\User::create([
-        'name' => 'Kilimofy Tz',
+        'name' => 'Kilimofy Tanzania',
+        'username' => 'Kilimofy Tz',
+        'description' => 'Hello, We are an agricultural platform that brings technology to the finger-tips of farmers, so that they can fight against Big Brothers in agriculture Business  ',
         'user_phone_number' => '+255767265780',
         'isVerified' => 1,
         'user_ocupation' => 'Mkulima',

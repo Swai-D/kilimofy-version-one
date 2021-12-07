@@ -44,7 +44,7 @@
             <option value="Bwana_Shamba">Bwana Shamba (Afisa Ugavi)</option>
             <option value="Fundi">Fundi Wa Mashine Za Kilimo (Fundi)</option>
             <option value="Mashine_Za_Kilimo">Muuzaji Wa Mashine Za Kilimo</option>
-            <option value="Dereva">Usafirishaji Wa Bidhaa Za Kilimo (Dereva)</option>
+            <option value="Dereva">Dereva</option>
           </select>
           <!-- FORM SELECT ICON -->
           <svg class="form-select-icon icon-small-arrow">

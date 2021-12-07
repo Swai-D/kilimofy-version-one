@@ -162,7 +162,7 @@
             <!-- FORUM CATEGORY INFO -->
             <div class="forum-category-info">
               <!-- FORUM CATEGORY TITLE -->
-              <p class="forum-category-title"><a href="forums-category.html">{{$forum->Category}}</a></p>
+              <p class="forum-category-title"><a href="#">{{$forum->Category}}</a></p>
               <!-- /FORUM CATEGORY TITLE -->
 
               <!-- FORUM CATEGORY TEXT -->
@@ -602,6 +602,7 @@
                     <!-- /FORM SELECT ICON -->
                     <input type="hidden" name="forum_id" value="{{$forum->id}}">
                     <input type="hidden" name="Author_Name" value="{{Auth::user()->name}}">
+                    <input type="hidden" name="Author_Username" value="{{Auth::user()->username}}">
                     <input type="hidden" name="Author_ID" value="{{Auth::user()->id}}">
                     <input type="hidden" name="Author_Image_Name" value="{{Auth::user()->avatar}}">
                   </div>

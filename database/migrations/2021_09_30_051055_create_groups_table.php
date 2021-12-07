@@ -21,7 +21,7 @@ class CreateGroupsTable extends Migration
             $table->string('Members')->default(0);
             $table->string('Post')->default(0);
             $table->string('Vistors')->default(0);
-            $table->string('Group_Image')->nullable();
+            $table->string('Group_Image')->default('group.jpg');
             $table->string('Status')->default('Public');
             $table->string('Creator_Name');
             $table->string('Creator_Id');

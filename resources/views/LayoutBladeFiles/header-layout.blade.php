@@ -15,6 +15,7 @@
   <!-- code editors -->
   <link rel="stylesheet" href="/admin-assets/plugins/summernote/summernote-bs4.min.css">
   <!-- favicon -->
+  @yield('summernote-header-script')
   <link rel="icon" href="/assets/img/favicon.ico">
   <title>Kilimofy | @yield('title')</title>
 

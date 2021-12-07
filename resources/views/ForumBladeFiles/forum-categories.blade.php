@@ -34,7 +34,7 @@
       <!-- SECTION FILTERS BAR INFO -->
       <div class="section-filters-bar-info">
         <!-- SECTION FILTERS BAR TITLE -->
-        <p class="section-filters-bar-title"><a href="forums.html">Forums</a></p>
+        <p class="section-filters-bar-title"><a href="#">Forums</a></p>
         <!-- /SECTION FILTERS BAR TITLE -->
 
         @foreach($forum_category_last_created as $forum_category_last_created)

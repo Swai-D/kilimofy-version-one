@@ -14,7 +14,7 @@
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
       <!-- SECTION PRETITLE -->
-      <p class="section-pretitle">{{$user->name}}'s</p>
+      <p class="section-pretitle">{{$user->username}}'s</p>
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
@@ -281,7 +281,7 @@
       </div>
       <!-- /TABLE ROW -->
       @empty
-      <p class="progress-arc-summary-subtitle text-center text-danger"> Huna Forum yoyote kwa sasa !</p>
+      <p class="progress-arc-summary-subtitle text-center text-danger"> <span class="text-center text-danger">Huna Mjadala wowote kwa sasa !</span>  <a href="/kilimofy/Forum/Forum-Category-List">Andaa Mjadala ?</a>  </p>
     @endforelse
     </div>
     <!-- /TABLE BODY -->

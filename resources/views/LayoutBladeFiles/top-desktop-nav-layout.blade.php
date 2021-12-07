@@ -14,7 +14,7 @@
         <!-- /LOGO -->
 
         <!-- HEADER BRAND TEXT -->
-        <h1 class="header-brand-text">Kilimofy</h1>
+        <h1 class="header-brand-text">Hellow</h1>
         <!-- /HEADER BRAND TEXT -->
       </div>
       <!-- /HEADER BRAND -->
@@ -245,7 +245,7 @@
           <!-- /DROPDOWN NAVIGATION CATEGORY -->
 
           <!-- DROPDOWN NAVIGATION LINK -->
-          <a class="dropdown-navigation-link " href="/kilimofy/UserAccount-Profile-Settings/{{Auth::user()->id}}">
+          <a class="dropdown-navigation-link " href="/kilimofy/UserAccount/user_setting_page/{{Auth::user()->id}}-settings-page">
            <img src="/assets/img/user_icon/settings.png" alt="" style="width:24px; height:24px;">&nbsp; General Settings
           </a>
           <!-- /DROPDOWN NAVIGATION LINK -->

@@ -1,3 +1,5 @@
+@include('LayoutBladeFiles.summernote')
+
 <div class="content-grid">
   <!-- SECTION BANNER -->
 @include('LayoutBladeFiles.title-layout')
@@ -464,6 +466,7 @@
                     <textarea id="quick-post-text" name="Caption" placeholder="Hi! Share your post here..."></textarea>
                     <input type="hidden" name="User_id" value="{{Auth::user()->id}}">
                     <input type="hidden" name="name" value="{{Auth::user()->name}}">
+                    <input type="hidden" name="username" value="{{Auth::user()->username}}">
                     <input type="hidden" name="User_Image_Profile" value="{{Auth::user()->avatar}}">
                     <!-- FORM TEXTAREA LIMIT TEXT -->
                     <p class="form-textarea-limit-text">998/1000</p>
@@ -634,7 +637,7 @@
                   <!-- /USER STATUS AVATAR -->
 
                   <!-- USER STATUS TITLE -->
-                  <p class="user-status-title medium"><a class="bold" href="/kilimofy/UserAccount/about_user_page/{{$post->User_id}}-about-{{$post->name}}-in-Kilimofy-Platform">{{$post->name}}</a> shared a <span class="bold">post</span></p>
+                  <p class="user-status-title medium"><a class="bold" href="/kilimofy/UserAccount/about_user_page/{{$post->User_id}}-about-{{$post->username}}-in-Kilimofy-Platform">{{$post->username}}</a> shared a <span class="bold">post</span></p>
                   <!-- /USER STATUS TITLE -->
 
                   <!-- USER STATUS TEXT -->
@@ -1409,8 +1412,9 @@
               @endforeach
             </div>
             <!-- /USER STATUS LIST -->
+
             <!-- WIDGET BOX BUTTON -->
-            <a class="widget-box-button button small " href="/kilimofy/Group/Group-Lists">Magrupu Zaidi!</a>
+            <a class="widget-box-button button small secondary " href="/kilimofy/Group/Group-Lists">Magrupu Zaidi!</a>
             <!-- /WIDGET BOX BUTTON -->
           </div>
           <!-- WIDGET BOX CONTENT -->

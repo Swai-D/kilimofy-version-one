@@ -112,7 +112,7 @@
       <!-- /USER SHORT DESCRIPTION TITLE -->
 
       <!-- USER SHORT DESCRIPTION TEXT -->
-      <p class="user-short-description-text"><a href="#">@kilimofy member</a></p>
+      <p class="user-short-description-text"><a href="#">{{$user->username}}</a></p>
       <!-- /USER SHORT DESCRIPTION TEXT -->
     </div>
     <!-- /USER SHORT DESCRIPTION -->

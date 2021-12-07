@@ -44,11 +44,11 @@
       <!-- TAB SWITCH -->
       <div class="tab-switch">
         <!-- TAB SWITCH BUTTON -->
-        <p class="tab-switch-button login-register-form-trigger">ingia</p>
+        <p class="tab-switch-button login-register-form-trigger">Login</p>
         <!-- /TAB SWITCH BUTTON -->
 
         <!-- TAB SWITCH BUTTON -->
-        <p class="tab-switch-button login-register-form-trigger">jiunge</p>
+        <p class="tab-switch-button login-register-form-trigger">Sign Up</p>
         <!-- /TAB SWITCH BUTTON -->
       </div>
       <!-- /TAB SWITCH -->
@@ -81,10 +81,10 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="login-username">Jina</label>
-                <input type="text" id="login-username" name="name" value="{{old('name')}}">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" name="username" value="{{old('username')}}">
                 <p class="lead" style="color: #f33155">
-                  {{$errors->first('name')}}
+                  {{$errors->first('username')}}
                 </p>
               </div>
               <!-- /FORM INPUT -->
@@ -211,7 +211,7 @@
       <div class="form-box login-register-form-element">
 
         <!-- FORM BOX TITLE -->
-        <h2 class="form-box-title">Create your Account!</h2>
+        <h2 class="form-box-title">Create  Account!</h2>
         <!-- /FORM BOX TITLE -->
 
         <!-- FORM -->
@@ -235,6 +235,24 @@
           </div>
           <!-- /FORM ROW -->
 
+          <!-- FORM ROW -->
+          <div class="form-row">
+            <!-- FORM ITEM -->
+            <div class="form-item">
+              <!-- FORM INPUT -->
+              <div class="form-input">
+                <label for="register-email">Username <span style="font-size:16px; color:red;">*</span> </label>
+                <input type="text" id="register-email" name="username" value="{{old('username')}}">
+                <p class="lead" style="color: #f33155">
+                  {{$errors->first('username')}}
+                </p>
+              </div>
+              <!-- /FORM INPUT -->
+            </div>
+            <!-- /FORM ITEM -->
+          </div>
+          <!-- /FORM ROW -->
+
 
           <!-- FORM ROW -->
           <div class="form-row">
@@ -250,7 +268,7 @@
                   <option value="Bwana_Shamba">Bwana Shamba (Afisa Ugavi)</option>
                   <option value="Fundi">Fundi Wa Mashine Za Kilimo (Fundi)</option>
                   <option value="Mashine_Za_Kilimo">Muuzaji Wa Mashine Za Kilimo</option>
-                  <option value="Dereva">Usafirishaji Wa Bidhaa Za Kilimo (Dereva)</option>
+                  <option value="Dereva">Dereva</option>
                 </select>
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('user_occupation')}}

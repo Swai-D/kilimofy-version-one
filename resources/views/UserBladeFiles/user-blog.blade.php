@@ -1,4 +1,5 @@
 @extends('LayoutBladeFiles.user-account-layout')
+@include('LayoutBladeFiles.summernote')
 
 @foreach($user as $user)
 

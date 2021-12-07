@@ -325,9 +325,9 @@
  <!-- /MENU ITEM -->
  <hr >
     <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-store')">
+    <li class="menu-item @yield('menu-status-driver')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/{{Auth::user()->id}}" data-title="Newsfeed">
+      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page" data-title="Newsfeed">
         <!-- MENU ITEM LINK ICON -->
       <img src="/assets/img/user_icon/seatbelt.png" alt="" style="width:34; height:34;">
         <!-- /MENU ITEM LINK ICON -->

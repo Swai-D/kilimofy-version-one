@@ -99,7 +99,7 @@
             <!-- FORUM POST META -->
             <div class="forum-post-meta">
               <!-- FORUM POST TIMESTAMP -->
-              <p class="forum-post-timestamp">{{$discussion->created_at->diffForHumans()}}</p>
+              <p class="forum-post-timestamp">{{$discussion->created_at->format('M d, Y')}}</p>
               <!-- /FORUM POST TIMESTAMP -->
 
               <!-- FORUM POST ACTIONS -->
@@ -207,7 +207,7 @@
                 <!-- /FORUM POST USER TITLE -->
 
                 <!-- FORUM POST USER TITLE -->
-                <p class="forum-post-user-text"><a href="profile-timeline.html">@ {{strtolower($discussion->Author_Name)}}</a></p>
+                <p class="forum-post-user-text"><a href="profile-timeline.html">@ {{strtolower($discussion->Author_Username)}}</a></p>
                 <!-- /FORUM POST USER TITLE -->
 
                 <!-- FORUM POST USER TAG -->
@@ -324,7 +324,7 @@
                   </div>
                   <!-- /USER AVATAR PROGRESS BORDER -->
 
-                  
+
                 </a>
                 <!-- /USER AVATAR -->
 

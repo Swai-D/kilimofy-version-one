@@ -38,6 +38,7 @@ class PostController extends Controller
          $post->Tag3 = $request->Tag3;
          $post->User_id = $request->User_id;
          $post->name = $request->name;
+         $post->username = $request->username;
          $post->User_Image_Profile = $request->User_Image_Profile;
 
          if (isset($request->File)) {

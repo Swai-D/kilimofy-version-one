@@ -17,7 +17,8 @@ class PostTableSeeder extends Seeder
      \App\Models\Post::create([
          'User_id' => 1,
          'Caption' => 'We believe people with passion can change the narrative of agriculture in Tanzania,That\'s what Kilimofy represent',
-         'name' => 'Kilimofy Tz',
+         'name' => 'Kilimofy Tanzania',
+         'username' => 'Kilimofy Tz',
          'User_Image_Profile' => '1638127216.jpg',
          'Photo' => '1638130100.jpg',
          'Video' => NULL,

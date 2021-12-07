@@ -40,18 +40,20 @@ class ForumController extends Controller
       $data = $request->validate([
         'Forum_Category_Name' => ['required', 'string'],
         'Author_Name' => ['required', 'string'],
+        'Author_Username' => ['required', 'string'],
         'Author_ID' => ['required', 'string'],
         'Author_Image_Name' => ['required', 'string'],
         'Topic' => ['required', 'string'],
         ]);
 
-      // dd("Hellow");
+     // dd("Hellow");
 
       if (isset($data)) {
         $new_discussion = new Discussion();
         $new_discussion->Forum_Category_Name = $request->Forum_Category_Name;
         $new_discussion->forum_id = $request->forum_id;
         $new_discussion->Author_Name = $request->Author_Name;
+        $new_discussion->Author_Username = $request->Author_Username;
         $new_discussion->Author_ID = $request->Author_ID;
         $new_discussion->Author_Image_Name = $request->Author_Image_Name;
         $new_discussion->Topic = $request->Topic;

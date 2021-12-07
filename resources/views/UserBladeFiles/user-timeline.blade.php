@@ -46,7 +46,7 @@
       <!-- WIDGET BOX CONTENT -->
       <div class="widget-box-content">
         <!-- PARAGRAPH -->
-        <p class="paragraph">Hi! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.</p>
+        <p class="paragraph">{{$user->description}}</p>
         <!-- /PARAGRAPH -->
 
         <!-- INFORMATION LINE LIST -->
@@ -58,7 +58,7 @@
             <!-- /INFORMATION LINE TITLE -->
 
             <!-- INFORMATION LINE TEXT -->
-            <p class="information-line-text">March 26th, 2017</p>
+            <p class="information-line-text">{{$user->created_at->format('M d, Y')}}</p>
             <!-- /INFORMATION LINE TEXT -->
           </div>
           <!-- /INFORMATION LINE -->
@@ -70,7 +70,7 @@
             <!-- /INFORMATION LINE TITLE -->
 
             <!-- INFORMATION LINE TEXT -->
-            <p class="information-line-text">Los Angeles, California</p>
+            <p class="information-line-text">{{$user->user_location}}</p>
             <!-- /INFORMATION LINE TEXT -->
           </div>
           <!-- /INFORMATION LINE -->
@@ -82,22 +82,11 @@
             <!-- /INFORMATION LINE TITLE -->
 
             <!-- INFORMATION LINE TEXT -->
-            <p class="information-line-text">United States</p>
+            <p class="information-line-text">Tanzania</p>
             <!-- /INFORMATION LINE TEXT -->
           </div>
           <!-- /INFORMATION LINE -->
 
-          <!-- INFORMATION LINE -->
-          <div class="information-line">
-            <!-- INFORMATION LINE TITLE -->
-            <p class="information-line-title">Age</p>
-            <!-- /INFORMATION LINE TITLE -->
-
-            <!-- INFORMATION LINE TEXT -->
-            <p class="information-line-text">32 Years</p>
-            <!-- /INFORMATION LINE TEXT -->
-          </div>
-          <!-- /INFORMATION LINE -->
 
           <!-- INFORMATION LINE -->
           <div class="information-line">
@@ -106,7 +95,7 @@
             <!-- /INFORMATION LINE TITLE -->
 
             <!-- INFORMATION LINE TEXT -->
-            <p class="information-line-text"><a href="#">www.gamehuntress.com</a></p>
+            <p class="information-line-text"><a href="https://kilimofy.herokuapp.com/">www.kilimofy.com</a></p>
             <!-- /INFORMATION LINE TEXT -->
           </div>
           <!-- /INFORMATION LINE -->
@@ -147,23 +136,24 @@
       <!-- /WIDGET BOX SETTINGS -->
 
       <!-- WIDGET BOX TITLE -->
-      <p class="widget-box-title">Friends <span class="highlighted">82</span></p>
+      <p class="widget-box-title">Friends <span class="highlighted">{{$users_count}}</span></p>
       <!-- /WIDGET BOX TITLE -->
 
       <!-- WIDGET BOX CONTENT -->
       <div class="widget-box-content">
         <!-- USER STATUS LIST -->
         <div class="user-status-list">
+          @forelse($users as $user)
           <!-- USER STATUS -->
           <div class="user-status request-small">
             <!-- USER STATUS AVATAR -->
-            <a class="user-status-avatar" href="profile-timeline.html">
+            <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-about-{{$user->name}}">
               <!-- USER AVATAR -->
               <div class="user-avatar small no-outline">
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
-                  <div class="hexagon-image-30-32" data-src="/assets/img/avatar/03.jpg"></div>
+                  <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$user->avatar}}"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->
@@ -184,36 +174,14 @@
                 </div>
                 <!-- /USER AVATAR PROGRESS BORDER -->
 
-                <!-- USER AVATAR BADGE -->
-                <div class="user-avatar-badge">
-                  <!-- USER AVATAR BADGE BORDER -->
-                  <div class="user-avatar-badge-border">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-22-24"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR BADGE BORDER -->
 
-                  <!-- USER AVATAR BADGE CONTENT -->
-                  <div class="user-avatar-badge-content">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-dark-16-18"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR BADGE CONTENT -->
-
-                  <!-- USER AVATAR BADGE TEXT -->
-                  <p class="user-avatar-badge-text">26</p>
-                  <!-- /USER AVATAR BADGE TEXT -->
-                </div>
-                <!-- /USER AVATAR BADGE -->
               </div>
               <!-- /USER AVATAR -->
             </a>
             <!-- /USER STATUS AVATAR -->
 
             <!-- USER STATUS TITLE -->
-            <p class="user-status-title"><a class="bold" href="profile-timeline.html">Sarah Diamond</a></p>
+            <p class="user-status-title"><a class="bold" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-about-{{$user->name}}">{{$user->name}}</a></p>
             <!-- /USER STATUS TITLE -->
 
             <!-- USER STATUS TEXT -->
@@ -235,15 +203,20 @@
             <!-- ACTION REQUEST LIST -->
           </div>
           <!-- /USER STATUS -->
+          @empty
+          <p class="progress-arc-summary-subtitle text-center text-danger">Hatuna Rafiki wakukupatia kwasasa !</p>
 
+          @endforelse
         </div>
         <!-- /USER STATUS LIST -->
       </div>
       <!-- WIDGET BOX CONTENT -->
 
-      <!-- WIDGET BOX BUTTON -->
-      <a class="widget-box-button button small secondary" href="profile-friends.html">See all Friends</a>
-      <!-- /WIDGET BOX BUTTON -->
+    @if($users_count > 0)
+    <!-- WIDGET BOX BUTTON -->
+    <a class="widget-box-button button small secondary" href="/kilimofy/UserAccount/user_friends_page">See all Friends</a>
+    <!-- /WIDGET BOX BUTTON -->
+    @endif
     </div>
     <!-- /WIDGET BOX -->
 
@@ -276,9 +249,10 @@
       <!-- /WIDGET BOX SETTINGS -->
 
       <!-- WIDGET BOX TITLE -->
-      <p class="widget-box-title">Videos <span class="highlighted">7</span></p>
+      <p class="widget-box-title">Videos <span class="highlighted">{{$user_latest_video_count}}</span></p>
       <!-- /WIDGET BOX TITLE -->
 
+      @forelse($user_latest_video as $video)
       <!-- WIDGET BOX CONTENT -->
       <div class="widget-box-content">
         <!-- VIDEO BOX LIST -->
@@ -323,6 +297,11 @@
         <!-- /VIDEO BOX LIST -->
       </div>
       <!-- WIDGET BOX CONTENT -->
+      @empty
+      <br>
+      <p class="progress-arc-summary-subtitle text-center text-danger">Huna Video kwasasa !</p>
+
+      @endforelse
     </div>
     <!-- /WIDGET BOX -->
 
@@ -392,557 +371,537 @@
 
   <!-- GRID COLUMN -->
   <div class="grid-column">
-    <!-- WIDGET BOX -->
-    <div class="widget-box no-padding">
-      <!-- WIDGET BOX SETTINGS -->
-      <div class="widget-box-settings">
-        <!-- POST SETTINGS WRAP -->
-        <div class="post-settings-wrap">
-          <!-- POST SETTINGS -->
-          <div class="post-settings widget-box-post-settings-dropdown-trigger">
-            <!-- POST SETTINGS ICON -->
-            <svg class="post-settings-icon icon-more-dots">
-              <use xlink:href="#svg-more-dots"></use>
+
+
+    @foreach($posts as $post)
+
+      <!-- WIDGET BOX -->
+      <div class="widget-box no-padding">
+        <!-- WIDGET BOX SETTINGS -->
+        <div class="widget-box-settings">
+          <!-- POST SETTINGS WRAP -->
+          <div class="post-settings-wrap">
+            <!-- POST SETTINGS -->
+            <div class="post-settings widget-box-post-settings-dropdown-trigger">
+              <!-- POST SETTINGS ICON -->
+              <svg class="post-settings-icon icon-more-dots">
+                <use xlink:href="#svg-more-dots"></use>
+              </svg>
+              <!-- /POST SETTINGS ICON -->
+            </div>
+            <!-- /POST SETTINGS -->
+
+            <!-- SIMPLE DROPDOWN -->
+            <div class="simple-dropdown widget-box-post-settings-dropdown">
+              <!-- SIMPLE DROPDOWN LINK -->
+              <p class="simple-dropdown-link">Edit Post</p>
+              <!-- /SIMPLE DROPDOWN LINK -->
+
+              <!-- SIMPLE DROPDOWN LINK -->
+              <p class="simple-dropdown-link">Delete Post</p>
+              <!-- /SIMPLE DROPDOWN LINK -->
+
+              <!-- SIMPLE DROPDOWN LINK -->
+              <p class="simple-dropdown-link">Make it Featured</p>
+              <!-- /SIMPLE DROPDOWN LINK -->
+
+              <!-- SIMPLE DROPDOWN LINK -->
+              <p class="simple-dropdown-link">Report Post</p>
+              <!-- /SIMPLE DROPDOWN LINK -->
+
+              <!-- SIMPLE DROPDOWN LINK -->
+              <p class="simple-dropdown-link">Report Author</p>
+              <!-- /SIMPLE DROPDOWN LINK -->
+            </div>
+            <!-- /SIMPLE DROPDOWN -->
+          </div>
+          <!-- /POST SETTINGS WRAP -->
+        </div>
+        <!-- /WIDGET BOX SETTINGS -->
+
+        <!-- WIDGET BOX STATUS -->
+        <div class="widget-box-status">
+          <!-- TAG STICKER -->
+          <div class="tag-sticker">
+            <!-- TAG STICKER ICON -->
+            <svg class="tag-sticker-icon primary icon-pinned">
+              <use xlink:href="#svg-pinned"></use>
             </svg>
-            <!-- /POST SETTINGS ICON -->
+            <!-- /TAG STICKER ICON -->
           </div>
-          <!-- /POST SETTINGS -->
-
-          <!-- SIMPLE DROPDOWN -->
-          <div class="simple-dropdown widget-box-post-settings-dropdown">
-            <!-- SIMPLE DROPDOWN LINK -->
-            <p class="simple-dropdown-link">Edit Post</p>
-            <!-- /SIMPLE DROPDOWN LINK -->
-
-            <!-- SIMPLE DROPDOWN LINK -->
-            <p class="simple-dropdown-link">Delete Post</p>
-            <!-- /SIMPLE DROPDOWN LINK -->
-
-            <!-- SIMPLE DROPDOWN LINK -->
-            <p class="simple-dropdown-link">Make it Featured</p>
-            <!-- /SIMPLE DROPDOWN LINK -->
-
-            <!-- SIMPLE DROPDOWN LINK -->
-            <p class="simple-dropdown-link">Report Post</p>
-            <!-- /SIMPLE DROPDOWN LINK -->
-
-            <!-- SIMPLE DROPDOWN LINK -->
-            <p class="simple-dropdown-link">Report Author</p>
-            <!-- /SIMPLE DROPDOWN LINK -->
-          </div>
-          <!-- /SIMPLE DROPDOWN -->
-        </div>
-        <!-- /POST SETTINGS WRAP -->
-      </div>
-      <!-- /WIDGET BOX SETTINGS -->
-
-      <!-- WIDGET BOX STATUS -->
-      <div class="widget-box-status">
-        <!-- TAG STICKER -->
-        <div class="tag-sticker">
-          <!-- TAG STICKER ICON -->
-          <svg class="tag-sticker-icon primary icon-pinned">
-            <use xlink:href="#svg-pinned"></use>
-          </svg>
-          <!-- /TAG STICKER ICON -->
-        </div>
-        <!-- /TAG STICKER -->
-
-        <!-- WIDGET BOX STATUS CONTENT -->
-        <div class="widget-box-status-content">
-          <!-- USER STATUS -->
-          <div class="user-status">
-            <!-- USER STATUS AVATAR -->
-            <a class="user-status-avatar" href="profile-timeline.html">
-              <!-- USER AVATAR -->
-              <div class="user-avatar small no-outline">
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-30-32" data-src="/assets/img/avatar/01.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-
-                <!-- USER AVATAR PROGRESS -->
-                <div class="user-avatar-progress">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-progress-40-44"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR PROGRESS -->
-
-                <!-- USER AVATAR PROGRESS BORDER -->
-                <div class="user-avatar-progress-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-border-40-44"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR PROGRESS BORDER -->
-
-                <!-- USER AVATAR BADGE -->
-                <div class="user-avatar-badge">
-                  <!-- USER AVATAR BADGE BORDER -->
-                  <div class="user-avatar-badge-border">
+          <!-- /TAG STICKER -->
+          <!-- WIDGET BOX STATUS CONTENT -->
+          <div class="widget-box-status-content">
+            <!-- USER STATUS -->
+            <div class="user-status">
+              <!-- USER STATUS AVATAR -->
+              <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page/{{$post->User_id}}-about-{{$post->name}}-in-Kilimofy-Platform">
+                <!-- USER AVATAR -->
+                <div class="user-avatar small no-border">
+                  <!-- USER AVATAR CONTENT -->
+                  <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-22-24"></div>
+                    <div class="hexagon-image-40-44" data-src="/Uploads/avatars/{{$post->User_Image_Profile}}"></div>
                     <!-- /HEXAGON -->
                   </div>
-                  <!-- /USER AVATAR BADGE BORDER -->
-
-                  <!-- USER AVATAR BADGE CONTENT -->
-                  <div class="user-avatar-badge-content">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-dark-16-18"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR BADGE CONTENT -->
-
-                  <!-- USER AVATAR BADGE TEXT -->
-                  <p class="user-avatar-badge-text">24</p>
-                  <!-- /USER AVATAR BADGE TEXT -->
+                  <!-- /USER AVATAR CONTENT -->
                 </div>
-                <!-- /USER AVATAR BADGE -->
+                <!-- /USER AVATAR -->
+              </a>
+              <!-- /USER STATUS AVATAR -->
+
+              <!-- USER STATUS TITLE -->
+              <p class="user-status-title medium"><a class="bold" href="/kilimofy/UserAccount/about_user_page/{{$post->User_id}}-about-{{$post->username}}-in-Kilimofy-Platform">{{$post->username}}</a> shared a <span class="bold">post</span></p>
+              <!-- /USER STATUS TITLE -->
+
+              <!-- USER STATUS TEXT -->
+              <p class="user-status-text small">{{$post->created_at->diffForHumans()}}</p>
+              <!-- /USER STATUS TEXT -->
+            </div>
+            <!-- /USER STATUS -->
+
+            @if($post->Photo == NULL && $post->Video == NULL)
+            <!-- QUOTE BOX -->
+            <blockquote class="quote-box">
+              <!-- QUOTE BOX ICON -->
+              <svg class="quote-box-icon icon-quote">
+                <use xlink:href="#svg-quote"></use>
+              </svg>
+              <!-- /QUOTE BOX ICON -->
+
+              <!-- QUOTE BOX TEXT -->
+              <p class="quote-box-text">{{$post->Caption}}</p>
+              <!-- /QUOTE BOX TEXT -->
+            </blockquote>
+            <!-- /QUOTE BOX -->
+
+
+             @elseif($post->Photo != NULL && $post->Video == NULL)
+             <!-- VIDEO STATUS -->
+             <a class="video-status" href="/kilimofy/Post/read_comments/{{$post->id}}-about-{{$post->name}}'s-post" >
+               <!-- VIDEO STATUS IMAGE -->
+               <img class="video-status-image" src="/Uploads/PostPhotos/{{$post->Photo}}" alt="cover-51">
+               <!-- /VIDEO STATUS IMAGE -->
+             </a>
+             <!-- /VIDEO STATUS -->
+             <br>
+             <!-- WIDGET BOX STATUS TEXT -->
+             <p class="widget-box-status-text">{{$post->Caption}}</p>
+             <!-- /WIDGET BOX STATUS TEXT -->
+             @elseif($post->Video != Null && $post->Photo == Null)
+             <!-- VIDEO BOX -->
+             <br>
+             <div class="video-box ">
+               <!-- VIDEO BOX COVER -->
+               <div class="video-box">
+                 <!-- VIDEO BOX COVER IMAGE -->
+                <a href="/kilimofy/Post/read_comments/{{$post->id}}-about-{{$post->name}}'s-post">
+                  <video  style="width:100%;"  autoplay muted loop controls>
+                        <source src="/Uploads/PostVideos/{{$post->Video}}" type="video/mp4" >
+                 </video>
+                </a>
+                 <!-- /VIDEO BOX COVER IMAGE -->
+
+
+                 <!-- VIDEO BOX INFO -->
+                 <div class="video-box-info">
+                   <!-- WIDGET BOX STATUS TEXT -->
+                   <p class="widget-box-status-text">{{$post->Caption}}</p>
+                   <!-- /WIDGET BOX STATUS TEXT -->
+
+                   <!-- VIDEO BOX TEXT -->
+                   <p class="video-box-text">{{$post->created_at->diffForHumans()}}</p>
+                   <!-- /VIDEO BOX TEXT -->
+                  </div>
+                 <!-- /VIDEO BOX INFO -->
+
+               </div>
+               <!-- /VIDEO BOX COVER -->
+
+             </div>
+             <!-- /VIDEO BOX -->
+
+             <br>
+
+
+             @endif
+            <!-- CONTENT ACTIONS -->
+            <div class="content-actions">
+              <!-- CONTENT ACTION -->
+              <div class="content-action">
+                <!-- META LINE -->
+                <div class="meta-line">
+                  <!-- META LINE LIST -->
+                  <div class="meta-line-list reaction-item-list">
+                    <!-- REACTION ITEM -->
+                    <div class="reaction-item">
+                      <!-- REACTION IMAGE -->
+                      <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/love.png" alt="reaction-love">
+                      <!-- /REACTION IMAGE -->
+
+                      <!-- SIMPLE DROPDOWN -->
+                      <div class="simple-dropdown padded reaction-item-dropdown">
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/love.png" alt="reaction-love"> <span class="bold">Love</span></p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text">Matt Parker</p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text">Destroy Dex</p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text">The Green Goo</p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+                      </div>
+                      <!-- /SIMPLE DROPDOWN -->
+                    </div>
+                    <!-- /REACTION ITEM -->
+
+                    <!-- REACTION ITEM -->
+                    <div class="reaction-item">
+                      <!-- REACTION IMAGE -->
+                      <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/happy.png" alt="reaction-happy">
+                      <!-- /REACTION IMAGE -->
+
+                      <!-- SIMPLE DROPDOWN -->
+                      <div class="simple-dropdown padded reaction-item-dropdown">
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/happy.png" alt="reaction-happy"> <span class="bold">Happy</span></p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text">Sandra Strange</p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+                      </div>
+                      <!-- /SIMPLE DROPDOWN -->
+                    </div>
+                    <!-- /REACTION ITEM -->
+
+                    <!-- REACTION ITEM -->
+                    <div class="reaction-item">
+                      <!-- REACTION IMAGE -->
+                      <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/like.png" alt="reaction-like">
+                      <!-- /REACTION IMAGE -->
+
+                      <!-- SIMPLE DROPDOWN -->
+                      <div class="simple-dropdown padded reaction-item-dropdown">
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text">Neko Bebop</p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text">Nick Grissom</p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text">Sarah Diamond</p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text">Jett Spiegel</p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text">Marcus Jhonson</p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text">Jane Rodgers</p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        <!-- SIMPLE DROPDOWN TEXT -->
+                        <p class="simple-dropdown-text"><span class="bold">and 6 more...</span></p>
+                        <!-- /SIMPLE DROPDOWN TEXT -->
+                      </div>
+                      <!-- /SIMPLE DROPDOWN -->
+                    </div>
+                    <!-- /REACTION ITEM -->
+                  </div>
+                  <!-- /META LINE LIST -->
+
+                  <!-- META LINE TEXT -->
+                  {{-- <p class="meta-line-text">{{$post->Likes}}</p> --}}
+                  <p class="meta-line-text">332</p>
+                  <!-- /META LINE TEXT -->
+                </div>
+                <!-- /META LINE -->
+
+                <!-- META LINE -->
+                <div class="meta-line">
+                  <!-- META LINE LIST -->
+                  <div class="meta-line-list user-avatar-list">
+                    <!-- USER AVATAR -->
+                    <div class="user-avatar micro no-stats">
+                      <!-- USER AVATAR BORDER -->
+                      <div class="user-avatar-border">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-22-24"></div>
+                        <!-- /HEXAGON -->
+                      </div>
+                      <!-- /USER AVATAR BORDER -->
+
+                      <!-- USER AVATAR CONTENT -->
+                      <div class="user-avatar-content">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/07.jpg"></div>
+                        <!-- /HEXAGON -->
+                      </div>
+                      <!-- /USER AVATAR CONTENT -->
+                    </div>
+                    <!-- /USER AVATAR -->
+
+                    <!-- USER AVATAR -->
+                    <div class="user-avatar micro no-stats">
+                      <!-- USER AVATAR BORDER -->
+                      <div class="user-avatar-border">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-22-24"></div>
+                        <!-- /HEXAGON -->
+                      </div>
+                      <!-- /USER AVATAR BORDER -->
+
+                      <!-- USER AVATAR CONTENT -->
+                      <div class="user-avatar-content">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/13.jpg"></div>
+                        <!-- /HEXAGON -->
+                      </div>
+                      <!-- /USER AVATAR CONTENT -->
+                    </div>
+                    <!-- /USER AVATAR -->
+
+                    <!-- USER AVATAR -->
+                    <div class="user-avatar micro no-stats">
+                      <!-- USER AVATAR BORDER -->
+                      <div class="user-avatar-border">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-22-24"></div>
+                        <!-- /HEXAGON -->
+                      </div>
+                      <!-- /USER AVATAR BORDER -->
+
+                      <!-- USER AVATAR CONTENT -->
+                    @foreach($post->comments as $post_comment)
+                    <div class="user-avatar-content">
+                      <!-- HEXAGON -->
+                      <div class="hexagon-image-18-20" data-src="/Uploads/avatars/{{$post_comment->user_avatar}}"></div>
+                      <!-- /HEXAGON -->
+                    </div>
+                    @endforeach
+                      <!-- /USER AVATAR CONTENT -->
+                    </div>
+                    <!-- /USER AVATAR -->
+
+                    <!-- USER AVATAR -->
+                    <div class="user-avatar micro no-stats">
+                      <!-- USER AVATAR BORDER -->
+                      <div class="user-avatar-border">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-22-24"></div>
+                        <!-- /HEXAGON -->
+                      </div>
+                      <!-- /USER AVATAR BORDER -->
+
+                      <!-- USER AVATAR CONTENT -->
+                      <div class="user-avatar-content">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/10.jpg"></div>
+                        <!-- /HEXAGON -->
+                      </div>
+                      <!-- /USER AVATAR CONTENT -->
+                    </div>
+                    <!-- /USER AVATAR -->
+
+                    <!-- USER AVATAR -->
+                    <div class="user-avatar micro no-stats">
+                      <!-- USER AVATAR BORDER -->
+                      <div class="user-avatar-border">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-22-24"></div>
+                        <!-- /HEXAGON -->
+                      </div>
+                      <!-- /USER AVATAR BORDER -->
+
+                      <!-- USER AVATAR CONTENT -->
+                      <div class="user-avatar-content">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/08.jpg"></div>
+                        <!-- /HEXAGON -->
+                      </div>
+                      <!-- /USER AVATAR CONTENT -->
+                    </div>
+                    <!-- /USER AVATAR -->
+                  </div>
+                  <!-- /META LINE LIST -->
+
+                  <!-- META LINE TEXT -->
+
+                  <p class="meta-line-text">{{$post->comments->count()  }} Participants</p>
+                  <!-- /META LINE TEXT -->
+
+                </div>
+                <!-- /META LINE -->
               </div>
-              <!-- /USER AVATAR -->
+              <!-- /CONTENT ACTION -->
+
+              <!-- CONTENT ACTION -->
+            <a href="/kilimofy/Post/read_comments/{{$post->id}}-about-{{$post->name}}'s-post">
+
+              <div class="content-action">
+                <!-- META LINE -->
+                <div class="meta-line">
+                  <!-- META LINE LINK -->
+                  <p class="meta-line-link">{{$post->comments->count()}} Comments</p>
+                  <!-- /META LINE LINK -->
+                </div>
+                <!-- /META LINE -->
+
+                </div>
+
             </a>
-            <!-- /USER STATUS AVATAR -->
-
-            <!-- USER STATUS TITLE -->
-            <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Marina Valentine</a></p>
-            <!-- /USER STATUS TITLE -->
-
-            <!-- USER STATUS TEXT -->
-            <p class="user-status-text small">5 hours ago</p>
-            <!-- /USER STATUS TEXT -->
-          </div>
-          <!-- /USER STATUS -->
-
-          <!-- WIDGET BOX STATUS TEXT -->
-          <p class="widget-box-status-text">Hi to all! Remember that today I'll be livestreaming along with <a href="profile-timeline.html">@NekoBebop</a> the new character of the brand new Xenowatch patch "Anya Darkness". See you there!</p>
-          <!-- /WIDGET BOX STATUS TEXT -->
-
-          <!-- VIDEO STATUS -->
-          <a class="video-status small" href="https://www.twitch.tv/" target="_blank">
-            <!-- VIDEO STATUS IMAGE -->
-            <img class="video-status-image mobile" src="/assets/img/cover/06.jpg" alt="cover-06">
-            <!-- /VIDEO STATUS IMAGE -->
-
-            <!-- VIDEO STATUS IMAGE -->
-            <figure class="video-status-image liquid">
-              <img src="/assets/img/cover/06.jpg" alt="cover-06">
-            </figure>
-            <!-- /VIDEO STATUS IMAGE -->
-
-            <!-- VIDEO STATUS INFO -->
-            <div class="video-status-info">
-              <!-- VIDEO STATUS TITLE -->
-              <p class="video-status-title"><span class="bold">GameHuntress</span> on <span class="highlighted">Twitch</span></p>
-              <!-- /VIDEO STATUS TITLE -->
-
-              <!-- VIDEO STATUS TEXT -->
-              <p class="video-status-text">Watch the GameHuntress play all the greatest games for both new and old consoles!. Join her in this epic quest!</p>
-              <!-- /VIDEO STATUS TEXT -->
-
-              <!-- VIDEO STATUS META -->
-              <p class="video-status-meta">twitch.tv</p>
-              <!-- /VIDEO STATUS META -->
+              <!-- /CONTENT ACTION -->
             </div>
-            <!-- /VIDEO STATUS INFO -->
-          </a>
-          <!-- /VIDEO STATUS -->
-
-          <!-- TAG LIST -->
-          <div class="tag-list">
-            <!-- TAG ITEM -->
-            <a class="tag-item secondary" href="newsfeed.html">Stream</a>
-            <!-- /TAG ITEM -->
-
-            <!-- TAG ITEM -->
-            <a class="tag-item secondary" href="newsfeed.html">Xenowatch</a>
-            <!-- /TAG ITEM -->
-
-            <!-- TAG ITEM -->
-            <a class="tag-item secondary" href="newsfeed.html">Gaming</a>
-            <!-- /TAG ITEM -->
-
-            <!-- TAG ITEM -->
-            <a class="tag-item secondary" href="newsfeed.html">Twitch</a>
-            <!-- /TAG ITEM -->
+            <!-- /CONTENT ACTIONS -->
           </div>
-          <!-- /TAG LIST -->
-
-          <!-- CONTENT ACTIONS -->
-          <div class="content-actions">
-            <!-- CONTENT ACTION -->
-            <div class="content-action">
-              <!-- META LINE -->
-              <div class="meta-line">
-                <!-- META LINE LIST -->
-                <div class="meta-line-list reaction-item-list">
-                  <!-- REACTION ITEM -->
-                  <div class="reaction-item">
-                    <!-- REACTION IMAGE -->
-                    <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/happy.png" alt="reaction-happy">
-                    <!-- /REACTION IMAGE -->
-
-                    <!-- SIMPLE DROPDOWN -->
-                    <div class="simple-dropdown padded reaction-item-dropdown">
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/happy.png" alt="reaction-happy"> <span class="bold">Happy</span></p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text">Matt Parker</p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text">Destroy Dex</p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text">The Green Goo</p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-                    </div>
-                    <!-- /SIMPLE DROPDOWN -->
-                  </div>
-                  <!-- /REACTION ITEM -->
-
-                  <!-- REACTION ITEM -->
-                  <div class="reaction-item">
-                    <!-- REACTION IMAGE -->
-                    <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/love.png" alt="reaction-love">
-                    <!-- /REACTION IMAGE -->
-
-                    <!-- SIMPLE DROPDOWN -->
-                    <div class="simple-dropdown padded reaction-item-dropdown">
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/love.png" alt="reaction-love"> <span class="bold">Love</span></p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text">Sandra Strange</p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-                    </div>
-                    <!-- /SIMPLE DROPDOWN -->
-                  </div>
-                  <!-- /REACTION ITEM -->
-
-                  <!-- REACTION ITEM -->
-                  <div class="reaction-item">
-                    <!-- REACTION IMAGE -->
-                    <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/like.png" alt="reaction-like">
-                    <!-- /REACTION IMAGE -->
-
-                    <!-- SIMPLE DROPDOWN -->
-                    <div class="simple-dropdown padded reaction-item-dropdown">
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text">Neko Bebop</p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text">Nick Grissom</p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text">Sarah Diamond</p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text">Jett Spiegel</p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text">Marcus Jhonson</p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text">Jane Rodgers</p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-
-                      <!-- SIMPLE DROPDOWN TEXT -->
-                      <p class="simple-dropdown-text"><span class="bold">and 2 more...</span></p>
-                      <!-- /SIMPLE DROPDOWN TEXT -->
-                    </div>
-                    <!-- /SIMPLE DROPDOWN -->
-                  </div>
-                  <!-- /REACTION ITEM -->
-                </div>
-                <!-- /META LINE LIST -->
-
-                <!-- META LINE TEXT -->
-                <p class="meta-line-text">12</p>
-                <!-- /META LINE TEXT -->
-              </div>
-              <!-- /META LINE -->
-
-              <!-- META LINE -->
-              <div class="meta-line">
-                <!-- META LINE LIST -->
-                <div class="meta-line-list user-avatar-list">
-                  <!-- USER AVATAR -->
-                  <div class="user-avatar micro no-stats">
-                    <!-- USER AVATAR BORDER -->
-                    <div class="user-avatar-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-22-24"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BORDER -->
-
-                    <!-- USER AVATAR CONTENT -->
-                    <div class="user-avatar-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-image-18-20" data-src="/assets/img/avatar/09.jpg"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR CONTENT -->
-                  </div>
-                  <!-- /USER AVATAR -->
-
-                  <!-- USER AVATAR -->
-                  <div class="user-avatar micro no-stats">
-                    <!-- USER AVATAR BORDER -->
-                    <div class="user-avatar-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-22-24"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BORDER -->
-
-                    <!-- USER AVATAR CONTENT -->
-                    <div class="user-avatar-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-image-18-20" data-src="/assets/img/avatar/08.jpg"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR CONTENT -->
-                  </div>
-                  <!-- /USER AVATAR -->
-
-                  <!-- USER AVATAR -->
-                  <div class="user-avatar micro no-stats">
-                    <!-- USER AVATAR BORDER -->
-                    <div class="user-avatar-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-22-24"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BORDER -->
-
-                    <!-- USER AVATAR CONTENT -->
-                    <div class="user-avatar-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-image-18-20" data-src="/assets/img/avatar/12.jpg"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR CONTENT -->
-                  </div>
-                  <!-- /USER AVATAR -->
-
-                  <!-- USER AVATAR -->
-                  <div class="user-avatar micro no-stats">
-                    <!-- USER AVATAR BORDER -->
-                    <div class="user-avatar-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-22-24"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BORDER -->
-
-                    <!-- USER AVATAR CONTENT -->
-                    <div class="user-avatar-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-image-18-20" data-src="/assets/img/avatar/16.jpg"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR CONTENT -->
-                  </div>
-                  <!-- /USER AVATAR -->
-
-                  <!-- USER AVATAR -->
-                  <div class="user-avatar micro no-stats">
-                    <!-- USER AVATAR BORDER -->
-                    <div class="user-avatar-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-22-24"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BORDER -->
-
-                    <!-- USER AVATAR CONTENT -->
-                    <div class="user-avatar-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-image-18-20" data-src="/assets/img/avatar/06.jpg"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR CONTENT -->
-                  </div>
-                  <!-- /USER AVATAR -->
-                </div>
-                <!-- /META LINE LIST -->
-
-                <!-- META LINE TEXT -->
-                <p class="meta-line-text">14 Participants</p>
-                <!-- /META LINE TEXT -->
-              </div>
-              <!-- /META LINE -->
-            </div>
-            <!-- /CONTENT ACTION -->
-
-            <!-- CONTENT ACTION -->
-            <div class="content-action">
-              <!-- META LINE -->
-              <div class="meta-line">
-                <!-- META LINE LINK -->
-                <p class="meta-line-link">3 Comments</p>
-                <!-- /META LINE LINK -->
-              </div>
-              <!-- /META LINE -->
-
-              <!-- META LINE -->
-              <div class="meta-line">
-                <!-- META LINE TEXT -->
-                <p class="meta-line-text">0 Shares</p>
-                <!-- /META LINE TEXT -->
-              </div>
-              <!-- /META LINE -->
-            </div>
-            <!-- /CONTENT ACTION -->
-          </div>
-          <!-- /CONTENT ACTIONS -->
+          <!-- /WIDGET BOX STATUS CONTENT -->
         </div>
-        <!-- /WIDGET BOX STATUS CONTENT -->
-      </div>
-      <!-- /WIDGET BOX STATUS -->
+        <!-- /WIDGET BOX STATUS -->
 
-      <!-- POST OPTIONS -->
-      <div class="post-options">
-        <!-- POST OPTION WRAP -->
-        <div class="post-option-wrap">
+        <!-- POST OPTIONS -->
+        <div class="post-options">
+          <!-- POST OPTION WRAP -->
+          <div class="post-option-wrap">
+            <!-- POST OPTION -->
+            <div class="post-option reaction-options-dropdown-trigger">
+              <!-- POST OPTION ICON -->
+              <svg class="post-option-icon icon-thumbs-up">
+                <use xlink:href="#svg-thumbs-up"></use>
+              </svg>
+              <!-- /POST OPTION ICON -->
+
+              <!-- POST OPTION TEXT -->
+              <p class="post-option-text">React!</p>
+              <!-- /POST OPTION TEXT -->
+            </div>
+            <!-- /POST OPTION -->
+
+            <!-- REACTION OPTIONS -->
+            <div class="reaction-options reaction-options-dropdown">
+              <!-- REACTION OPTION -->
+              <div class="reaction-option text-tooltip-tft" data-title="Like">
+                <!-- REACTION OPTION IMAGE -->
+                <img class="reaction-option-image" src="/assets/img/reaction/like.png" alt="reaction-like">
+                <!-- /REACTION OPTION IMAGE -->
+              </div>
+              <!-- /REACTION OPTION -->
+
+              <!-- REACTION OPTION -->
+              <div class="reaction-option text-tooltip-tft" data-title="Love">
+                <!-- REACTION OPTION IMAGE -->
+                <img class="reaction-option-image" src="/assets/img/reaction/love.png" alt="reaction-love">
+                <!-- /REACTION OPTION IMAGE -->
+              </div>
+              <!-- /REACTION OPTION -->
+
+              <!-- REACTION OPTION -->
+              <div class="reaction-option text-tooltip-tft" data-title="Dislike">
+                <!-- REACTION OPTION IMAGE -->
+                <img class="reaction-option-image" src="/assets/img/reaction/dislike.png" alt="reaction-dislike">
+                <!-- /REACTION OPTION IMAGE -->
+              </div>
+              <!-- /REACTION OPTION -->
+
+              <!-- REACTION OPTION -->
+              <div class="reaction-option text-tooltip-tft" data-title="Happy">
+                <!-- REACTION OPTION IMAGE -->
+                <img class="reaction-option-image" src="/assets/img/reaction/happy.png" alt="reaction-happy">
+                <!-- /REACTION OPTION IMAGE -->
+              </div>
+              <!-- /REACTION OPTION -->
+
+              <!-- REACTION OPTION -->
+              <div class="reaction-option text-tooltip-tft" data-title="Funny">
+                <!-- REACTION OPTION IMAGE -->
+                <img class="reaction-option-image" src="/assets/img/reaction/funny.png" alt="reaction-funny">
+                <!-- /REACTION OPTION IMAGE -->
+              </div>
+              <!-- /REACTION OPTION -->
+
+              <!-- REACTION OPTION -->
+              <div class="reaction-option text-tooltip-tft" data-title="Wow">
+                <!-- REACTION OPTION IMAGE -->
+                <img class="reaction-option-image" src="/assets/img/reaction/wow.png" alt="reaction-wow">
+                <!-- /REACTION OPTION IMAGE -->
+              </div>
+              <!-- /REACTION OPTION -->
+
+              <!-- REACTION OPTION -->
+              <div class="reaction-option text-tooltip-tft" data-title="Angry">
+                <!-- REACTION OPTION IMAGE -->
+                <img class="reaction-option-image" src="/assets/img/reaction/angry.png" alt="reaction-angry">
+                <!-- /REACTION OPTION IMAGE -->
+              </div>
+              <!-- /REACTION OPTION -->
+
+              <!-- REACTION OPTION -->
+              <div class="reaction-option text-tooltip-tft" data-title="Sad">
+                <!-- REACTION OPTION IMAGE -->
+                <img class="reaction-option-image" src="/assets/img/reaction/sad.png" alt="reaction-sad">
+                <!-- /REACTION OPTION IMAGE -->
+              </div>
+              <!-- /REACTION OPTION -->
+            </div>
+            <!-- /REACTION OPTIONS -->
+          </div>
+          <!-- /POST OPTION WRAP -->
+
           <!-- POST OPTION -->
-          <div class="post-option reaction-options-dropdown-trigger">
+
+        <a href="/kilimofy/Post/read_comments/{{$post->id}}-about-{{$post->Caption}}">
+          <div class="post-option">
             <!-- POST OPTION ICON -->
-            <svg class="post-option-icon icon-thumbs-up">
-              <use xlink:href="#svg-thumbs-up"></use>
+            <svg class="post-option-icon icon-comment">
+              <use xlink:href="#svg-comment"></use>
             </svg>
             <!-- /POST OPTION ICON -->
 
             <!-- POST OPTION TEXT -->
-            <p class="post-option-text">React!</p>
+            <p class="post-option-text">Comment</p>
+            <!-- /POST OPTION TEXT -->
+          </div>
+        </a>
+          <!-- /POST OPTION -->
+
+          <!-- POST OPTION -->
+          <div class="post-option">
+            <!-- POST OPTION ICON -->
+            <svg class="post-option-icon icon-share">
+              <use xlink:href="#svg-share"></use>
+            </svg>
+            <!-- /POST OPTION ICON -->
+
+            <!-- POST OPTION TEXT -->
+            <p class="post-option-text">Share</p>
             <!-- /POST OPTION TEXT -->
           </div>
           <!-- /POST OPTION -->
-
-          <!-- REACTION OPTIONS -->
-          <div class="reaction-options reaction-options-dropdown">
-            <!-- REACTION OPTION -->
-            <div class="reaction-option text-tooltip-tft" data-title="Like">
-              <!-- REACTION OPTION IMAGE -->
-              <img class="reaction-option-image" src="/assets/img/reaction/like.png" alt="reaction-like">
-              <!-- /REACTION OPTION IMAGE -->
-            </div>
-            <!-- /REACTION OPTION -->
-
-            <!-- REACTION OPTION -->
-            <div class="reaction-option text-tooltip-tft" data-title="Love">
-              <!-- REACTION OPTION IMAGE -->
-              <img class="reaction-option-image" src="/assets/img/reaction/love.png" alt="reaction-love">
-              <!-- /REACTION OPTION IMAGE -->
-            </div>
-            <!-- /REACTION OPTION -->
-
-            <!-- REACTION OPTION -->
-            <div class="reaction-option text-tooltip-tft" data-title="Dislike">
-              <!-- REACTION OPTION IMAGE -->
-              <img class="reaction-option-image" src="/assets/img/reaction/dislike.png" alt="reaction-dislike">
-              <!-- /REACTION OPTION IMAGE -->
-            </div>
-            <!-- /REACTION OPTION -->
-
-            <!-- REACTION OPTION -->
-            <div class="reaction-option text-tooltip-tft" data-title="Happy">
-              <!-- REACTION OPTION IMAGE -->
-              <img class="reaction-option-image" src="/assets/img/reaction/happy.png" alt="reaction-happy">
-              <!-- /REACTION OPTION IMAGE -->
-            </div>
-            <!-- /REACTION OPTION -->
-
-            <!-- REACTION OPTION -->
-            <div class="reaction-option text-tooltip-tft" data-title="Funny">
-              <!-- REACTION OPTION IMAGE -->
-              <img class="reaction-option-image" src="/assets/img/reaction/funny.png" alt="reaction-funny">
-              <!-- /REACTION OPTION IMAGE -->
-            </div>
-            <!-- /REACTION OPTION -->
-
-            <!-- REACTION OPTION -->
-            <div class="reaction-option text-tooltip-tft" data-title="Wow">
-              <!-- REACTION OPTION IMAGE -->
-              <img class="reaction-option-image" src="/assets/img/reaction/wow.png" alt="reaction-wow">
-              <!-- /REACTION OPTION IMAGE -->
-            </div>
-            <!-- /REACTION OPTION -->
-
-            <!-- REACTION OPTION -->
-            <div class="reaction-option text-tooltip-tft" data-title="Angry">
-              <!-- REACTION OPTION IMAGE -->
-              <img class="reaction-option-image" src="/assets/img/reaction/angry.png" alt="reaction-angry">
-              <!-- /REACTION OPTION IMAGE -->
-            </div>
-            <!-- /REACTION OPTION -->
-
-            <!-- REACTION OPTION -->
-            <div class="reaction-option text-tooltip-tft" data-title="Sad">
-              <!-- REACTION OPTION IMAGE -->
-              <img class="reaction-option-image" src="/assets/img/reaction/sad.png" alt="reaction-sad">
-              <!-- /REACTION OPTION IMAGE -->
-            </div>
-            <!-- /REACTION OPTION -->
-          </div>
-          <!-- /REACTION OPTIONS -->
         </div>
-        <!-- /POST OPTION WRAP -->
-
-        <!-- POST OPTION -->
-        <div class="post-option">
-          <!-- POST OPTION ICON -->
-          <svg class="post-option-icon icon-comment">
-            <use xlink:href="#svg-comment"></use>
-          </svg>
-          <!-- /POST OPTION ICON -->
-
-          <!-- POST OPTION TEXT -->
-          <p class="post-option-text">Comment</p>
-          <!-- /POST OPTION TEXT -->
-        </div>
-        <!-- /POST OPTION -->
-
-        <!-- POST OPTION -->
-        <div class="post-option">
-          <!-- POST OPTION ICON -->
-          <svg class="post-option-icon icon-share">
-            <use xlink:href="#svg-share"></use>
-          </svg>
-          <!-- /POST OPTION ICON -->
-
-          <!-- POST OPTION TEXT -->
-          <p class="post-option-text">Share</p>
-          <!-- /POST OPTION TEXT -->
-        </div>
-        <!-- /POST OPTION -->
+        <!-- /POST OPTIONS -->
       </div>
-      <!-- /POST OPTIONS -->
-    </div>
-    <!-- /WIDGET BOX -->
+      <!-- /WIDGET BOX -->
+    @endforeach
 
 
 
-    <!-- LOADER BARS -->
+  <!-- LOADER BARS -->
     <div class="loader-bars">
       <div class="loader-bar"></div>
       <div class="loader-bar"></div>
@@ -956,6 +915,7 @@
     <!-- /LOADER BARS -->
   </div>
   <!-- /GRID COLUMN -->
+
 
   <!-- GRID COLUMN -->
   <div class="grid-column">
@@ -988,7 +948,7 @@
       <!-- /WIDGET BOX SETTINGS -->
 
       <!-- WIDGET BOX TITLE -->
-      <p class="widget-box-title">Stream Box</p>
+      <p class="widget-box-title">YouTube Channel</p>
       <!-- /WIDGET BOX TITLE -->
 
       <!-- WIDGET BOX CONTENT -->
@@ -1004,7 +964,7 @@
           <!-- STREAM BOX IMAGE -->
           <div class="stream-box-image">
             <figure class="picture tiny circle liquid">
-              <img src="/assets/img/avatar/01-social.png" alt="avatar-01-social">
+              <img src="/Uploads/avatars/{{$user->avatar}}" alt="avatar-01-social">
             </figure>
           </div>
           <!-- /STREAM BOX IMAGE -->
@@ -1016,7 +976,7 @@
             <!-- /STREAM BOX TITLE -->
 
             <!-- STREAM BOX TEXT -->
-            <p class="stream-box-text"><a href="https://www.twitch.tv/" target="_blank">@GameHuntress</a></p>
+            <p class="stream-box-text"><a href="https://www.twitch.tv/" target="_blank">{{$user->username}}</a></p>
             <!-- /STREAM BOX TEXT -->
           </div>
           <!-- /STREAM BOX INFO -->
@@ -1056,52 +1016,45 @@
       <!-- /WIDGET BOX SETTINGS -->
 
       <!-- WIDGET BOX TITLE -->
-      <p class="widget-box-title">Photos <span class="highlighted">74</span></p>
+      <p class="widget-box-title">Photos <span class="highlighted">{{$user_photo_gallery_count}}</span></p>
       <!-- /WIDGET BOX TITLE -->
 
       <!-- WIDGET BOX CONTENT -->
       <div class="widget-box-content">
         <!-- PICTURE ITEM LIST -->
         <div class="picture-item-list small">
+          @foreach($user_photo_gallery as $photo)
           <!-- PICTURE ITEM -->
           <div class="picture-item">
             <!-- PICTURE -->
             <figure class="picture round liquid">
-              <img src="/assets/img/avatar/01.jpg" alt="avatar-01">
+              <img src="/Uploads/PostPhotos/{{$photo->Photo}}" alt="avatar-01">
             </figure>
             <!-- /PICTURE -->
           </div>
           <!-- /PICTURE ITEM -->
+          @endforeach
 
-          <!-- PICTURE ITEM -->
-          <div class="picture-item">
-            <!-- PICTURE -->
-            <figure class="picture round liquid">
-              <img src="/assets/img/cover/10.jpg" alt="avatar-10">
-            </figure>
-            <!-- /PICTURE -->
-          </div>
-          <!-- /PICTURE ITEM -->
+         @if($user_photo_gallery_count > 11)
+         <!-- PICTURE ITEM -->
+         <a class="picture-item" href="/kilimofy/UserAccount/user_photos_page/{{$user->id}}-{{$user->name}}'s-Photos-in-Kilimofy-Platform">
+           <!-- PICTURE -->
+           <figure class="picture round liquid">
+             <img src="/assets/img/cover/17.jpg" alt="avatar-17">
+           </figure>
+           <!-- /PICTURE -->
 
+           <!-- PICTURE ITEM OVERLAY -->
+           <div class="picture-item-overlay round">
+             <!-- PICTURE ITEM OVERLAY TEXT -->
+             <p class="picture-item-overlay-text">+{{$user_photo_gallery_count - 11}}</p>
+             <!-- /PICTURE ITEM OVERLAY TEXT -->
+           </div>
+           <!-- /PICTURE ITEM OVERLAY -->
+         </a>
+         <!-- /PICTURE ITEM -->
+         @endif
 
-
-          <!-- PICTURE ITEM -->
-          <a class="picture-item" href="profile-photos.html">
-            <!-- PICTURE -->
-            <figure class="picture round liquid">
-              <img src="/assets/img/cover/17.jpg" alt="avatar-17">
-            </figure>
-            <!-- /PICTURE -->
-
-            <!-- PICTURE ITEM OVERLAY -->
-            <div class="picture-item-overlay round">
-              <!-- PICTURE ITEM OVERLAY TEXT -->
-              <p class="picture-item-overlay-text">+61</p>
-              <!-- /PICTURE ITEM OVERLAY TEXT -->
-            </div>
-            <!-- /PICTURE ITEM OVERLAY -->
-          </a>
-          <!-- /PICTURE ITEM -->
         </div>
         <!-- /PICTURE ITEM LIST -->
       </div>
@@ -1109,47 +1062,7 @@
     </div>
     <!-- /WIDGET BOX -->
 
-    <!-- WIDGET BOX -->
-    <div class="widget-box">
-      <!-- WIDGET BOX SETTINGS -->
-      <div class="widget-box-settings">
-        <!-- POST SETTINGS WRAP -->
-        <div class="post-settings-wrap">
-          <!-- POST SETTINGS -->
-          <div class="post-settings widget-box-post-settings-dropdown-trigger">
-            <!-- POST SETTINGS ICON -->
-            <svg class="post-settings-icon icon-more-dots">
-              <use xlink:href="#svg-more-dots"></use>
-            </svg>
-            <!-- /POST SETTINGS ICON -->
-          </div>
-          <!-- /POST SETTINGS -->
 
-          <!-- SIMPLE DROPDOWN -->
-          <div class="simple-dropdown widget-box-post-settings-dropdown">
-            <!-- SIMPLE DROPDOWN LINK -->
-            <p class="simple-dropdown-link">Widget Settings</p>
-            <!-- /SIMPLE DROPDOWN LINK -->
-          </div>
-          <!-- /SIMPLE DROPDOWN -->
-        </div>
-        <!-- /POST SETTINGS WRAP -->
-      </div>
-      <!-- /WIDGET BOX SETTINGS -->
-
-      <!-- WIDGET BOX TITLE -->
-      <p class="widget-box-title">Twitter Feed</p>
-      <!-- /WIDGET BOX TITLE -->
-
-      <!-- WIDGET BOX CONTENT -->
-      <div class="widget-box-content">
-        <!-- TWEET FEED -->
-        <div class="tweet-feed"></div>
-        <!-- /TWEET FEED -->
-      </div>
-      <!-- /WIDGET BOX CONTENT -->
-    </div>
-    <!-- /WIDGET BOX -->
 
     <!-- WIDGET BOX -->
     <div class="widget-box">
@@ -1203,50 +1116,56 @@
 
         <!-- USER STATUS LIST -->
         <div class="user-status-list">
-          <!-- USER STATUS -->
-          <div class="user-status request-small">
-            <!-- USER STATUS AVATAR -->
-            <a class="user-status-avatar" href="group-timeline.html">
-              <!-- USER AVATAR -->
-              <div class="user-avatar small no-border">
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-40-44" data-src="/assets/img/avatar/29.jpg"></div>
-                  <!-- /HEXAGON -->
+
+          @foreach($group_lists as $group)
+            <!-- USER STATUS -->
+            <div class="user-status request-small">
+              <!-- USER STATUS AVATAR -->
+              <a class="user-status-avatar" href="group-timeline.html">
+                <!-- USER AVATAR -->
+                <div class="user-avatar small no-border">
+                  <!-- USER AVATAR CONTENT -->
+                  <div class="user-avatar-content">
+                    <!-- HEXAGON -->
+                    <div class="hexagon-image-40-44" data-src="/Uploads/GroupProfile/{{$group->Group_Image}}"></div>
+                    <!-- /HEXAGON -->
+                  </div>
+                  <!-- /USER AVATAR CONTENT -->
                 </div>
-                <!-- /USER AVATAR CONTENT -->
+                <!-- /USER AVATAR -->
+              </a>
+              <!-- /USER STATUS AVATAR -->
+
+              <!-- USER STATUS TITLE -->
+              <p class="user-status-title"><a class="bold" href="group-timeline.html">{{$group->Group_Name}}</a></p>
+              <!-- /USER STATUS TITLE -->
+
+              <!-- USER STATUS TEXT -->
+              <p class="user-status-text small">{{$group->Members}} members</p>
+              <!-- /USER STATUS TEXT -->
+
+              <!-- ACTION REQUEST LIST -->
+              <div class="action-request-list">
+                <!-- ACTION REQUEST -->
+                <div class="action-request accept">
+                  <!-- ACTION REQUEST ICON -->
+                  <svg class="action-request-icon icon-join-group">
+                    <use xlink:href="#svg-join-group"></use>
+                  </svg>
+                  <!-- /ACTION REQUEST ICON -->
+                </div>
+                <!-- /ACTION REQUEST -->
               </div>
-              <!-- /USER AVATAR -->
-            </a>
-            <!-- /USER STATUS AVATAR -->
-
-            <!-- USER STATUS TITLE -->
-            <p class="user-status-title"><a class="bold" href="group-timeline.html">Twitch Streamers</a></p>
-            <!-- /USER STATUS TITLE -->
-
-            <!-- USER STATUS TEXT -->
-            <p class="user-status-text small">265 members</p>
-            <!-- /USER STATUS TEXT -->
-
-            <!-- ACTION REQUEST LIST -->
-            <div class="action-request-list">
-              <!-- ACTION REQUEST -->
-              <div class="action-request accept">
-                <!-- ACTION REQUEST ICON -->
-                <svg class="action-request-icon icon-join-group">
-                  <use xlink:href="#svg-join-group"></use>
-                </svg>
-                <!-- /ACTION REQUEST ICON -->
-              </div>
-              <!-- /ACTION REQUEST -->
+              <!-- ACTION REQUEST LIST -->
             </div>
-            <!-- ACTION REQUEST LIST -->
-          </div>
-          <!-- /USER STATUS -->
-
+            <!-- /USER STATUS -->
+          @endforeach
         </div>
         <!-- /USER STATUS LIST -->
+
+        <!-- WIDGET BOX BUTTON -->
+        <a class="widget-box-button button small secondary " href="/kilimofy/Group/Group-Lists">Magrupu Zaidi!</a>
+        <!-- /WIDGET BOX BUTTON -->
       </div>
       <!-- WIDGET BOX CONTENT -->
     </div>
