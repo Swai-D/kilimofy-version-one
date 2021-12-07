@@ -163,3 +163,22 @@ Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupControlle
 
 
 //**************************end*************************************************
+
+
+//**************************MashineController*************************************************
+Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page', [App\Http\Controllers\MashineController::class, 'MashineHomePage']);
+
+
+
+
+//**************************end*************************************************
+
+
+
+//**************************RepairController*************************************************
+Route::get('/kilimofy/Fundi-Wa-Mashine-Za-Kilimo/home-page', [App\Http\Controllers\RepairController::class, 'RepairMashineHomePage']);
+
+
+
+
+//**************************end*************************************************

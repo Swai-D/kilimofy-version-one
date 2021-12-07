@@ -14,7 +14,7 @@
     <!-- NAVIGATION WIDGET INFO -->
     <div class="navigation-widget-info">
       <!-- USER AVATAR -->
-      <a class="user-avatar small no-outline" href="/kilimofy/UserAccount/about_user_page">
+      <a class="user-avatar small no-outline" href="/kilimofy/UserAccount/about_user_page/{{Auth::user()->id}}-about-{{Auth::user()->user_name}}-in-Kilimofy-Platform">
         <!-- USER AVATAR CONTENT -->
         <div class="user-avatar-content">
           <!-- HEXAGON -->
@@ -44,7 +44,7 @@
       <!-- /USER AVATAR -->
 
       <!-- NAVIGATION WIDGET INFO TITLE -->
-      <p class="navigation-widget-info-title"><a href="/kilimofy/UserAccount/about_user_page">{{Auth::user()->name}}</a></p>
+      <p class="navigation-widget-info-title"><a href="/kilimofy/UserAccount/about_user_page/{{Auth::user()->id}}-about-{{Auth::user()->user_name}}-in-Kilimofy-Platform">{{Auth::user()->name}}</a></p>
       <!-- /NAVIGATION WIDGET INFO TITLE -->
 
       <!-- NAVIGATION WIDGET INFO TEXT -->
@@ -180,22 +180,124 @@
     </li>
     <!-- /MENU ITEM -->
   </ul>
-  @elseif(Auth::user()->user_ocupation == 'Muuzaji_Wa_pembejeo_Na_Viwatilifu')
+  @elseif(Auth::user()->user_ocupation == 'Afisa_Ugavi')
   <ul class="menu">
-    <!-- <br> -->
     <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-store')">
+    <li class="menu-item @yield('menu-status-newsfeed')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page">
+      <a class="menu-item-link" href="/kilimofy/Mkulima/home-page">
         <!-- MENU ITEM LINK ICON -->
-        <img src="/assets/img/user_icon/store.png" alt="pembejeo" style="width:44; height:44;">
+        <img src="/assets/img/user_icon/news.png" alt="Habari" style="width:44; height:44;">
         <!-- /MENU ITEM LINK ICON -->
-        Dukani
+        Habari
       </a>
       <!-- /MENU ITEM LINK -->
     </li>
     <!-- /MENU ITEM -->
     <br>
+
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-chat')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Forum/Forum-Category-List">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/chat.png" alt="pembejeo" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Chat
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-store')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/{{Auth::user()->id}}">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/shopkeeper.png" alt="Dereva" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Muuza Pembejeo
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
+    <br>
+    <p class="navigation-widget-section-title">logout</p>
+    <hr>
+
+    <!-- MENU ITEM -->
+
+    <li class="menu-item">
+      <div class="row">
+        <div class="col-9">
+          <!-- MENU ITEM LINK -->
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+              <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:44; height:44;">
+            </a>
+
+
+          <!-- /MENU ITEM LINK -->
+        </div>
+
+        <div class="col-3">
+          <a class="popup-review-trigger">
+           <img src="/assets/img/user_icon/exchange.png" alt="" style="width:44; height:44;">
+          </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        </div>
+      </div>
+    </li>
+    <!-- /MENU ITEM -->
+  </ul>
+  @elseif(Auth::user()->user_ocupation == 'Muuza_Pembejeo')
+  <ul class="menu">
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-newsfeed')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Mkulima/home-page">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/news.png" alt="Habari" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Habari
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+    <br>
+
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-chat')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Forum/Forum-Category-List">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/chat.png" alt="pembejeo" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Chat
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-store')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/{{Auth::user()->id}}">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/shopkeeper.png" alt="Dereva" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Muuza Pembejeo
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
     <br>
     <p class="navigation-widget-section-title">logout</p>
     <hr>
@@ -227,22 +329,202 @@
     <!-- /MENU ITEM -->
   </ul>
 
-  @elseif(Auth::user()->user_ocupation == 'Bwana_Shamba')
+
+  @elseif(Auth::user()->user_ocupation == 'Dereva')
   <ul class="menu">
-    <!-- <br> -->
     <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-gardener')">
+    <li class="menu-item @yield('menu-status-newsfeed')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page">
+      <a class="menu-item-link" href="/kilimofy/Mkulima/home-page">
         <!-- MENU ITEM LINK ICON -->
-        <img src="/assets/img/user_icon/gardener.png" alt="pembejeo" style="width:44; height:44;">
+        <img src="/assets/img/user_icon/news.png" alt="Habari" style="width:44; height:44;">
         <!-- /MENU ITEM LINK ICON -->
-        Bwana Shamba
+        Habari
       </a>
       <!-- /MENU ITEM LINK -->
     </li>
     <!-- /MENU ITEM -->
     <br>
+
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-chat')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Forum/Forum-Category-List">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/chat.png" alt="pembejeo" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Chat
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-driver')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/seatbelt.png" alt="Dereva" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Dereva
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
+    <br>
+    <p class="navigation-widget-section-title">logout</p>
+    <hr>
+
+    <!-- MENU ITEM -->
+
+    <li class="menu-item">
+      <div class="row">
+        <div class="col-9">
+          <!-- MENU ITEM LINK -->
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+              <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:44; height:44;">
+            </a>
+
+
+          <!-- /MENU ITEM LINK -->
+        </div>
+
+        <div class="col-3">
+          <a class="popup-review-trigger">
+           <img src="/assets/img/user_icon/exchange.png" alt="" style="width:44; height:44;">
+          </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        </div>
+      </div>
+    </li>
+    <!-- /MENU ITEM -->
+  </ul>
+
+
+  @elseif(Auth::user()->user_ocupation == 'Mashine_Za_Kilimo')
+  <ul class="menu">
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-newsfeed')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Mkulima/home-page">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/news.png" alt="Habari" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Habari
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+    <br>
+
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-chat')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Forum/Forum-Category-List">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/chat.png" alt="pembejeo" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Chat
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-driver')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/tractors.png" alt="pembejeo" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Mashine
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
+    <br>
+    <p class="navigation-widget-section-title">logout</p>
+    <hr>
+
+    <!-- MENU ITEM -->
+
+    <li class="menu-item">
+      <div class="row">
+        <div class="col-9">
+          <!-- MENU ITEM LINK -->
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+              <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:44; height:44;">
+            </a>
+
+
+          <!-- /MENU ITEM LINK -->
+        </div>
+
+        <div class="col-3">
+          <a class="popup-review-trigger">
+           <img src="/assets/img/user_icon/exchange.png" alt="" style="width:44; height:44;">
+          </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        </div>
+      </div>
+    </li>
+    <!-- /MENU ITEM -->
+  </ul>
+
+  @elseif(Auth::user()->user_ocupation == 'Fundi')
+  <ul class="menu">
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-newsfeed')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Mkulima/home-page">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/news.png" alt="Habari" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Habari
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+    <br>
+
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-chat')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Forum/Forum-Category-List">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/chat.png" alt="pembejeo" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Chat
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-driver')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Fundi-Wa-Mashine-Za-Kilimo/home-page">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/tool-box.png" alt="Fundi" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Fundi
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
     <br>
     <p class="navigation-widget-section-title">logout</p>
     <hr>
@@ -276,109 +558,7 @@
   @endif
   <!-- /MENU -->
 
-  <!-- NAVIGATION WIDGET SECTION TITLE -->
-  <!-- <p class="navigation-widget-section-title">My Profile</p> -->
-  <!-- /NAVIGATION WIDGET SECTION TITLE -->
 
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-profile-info.html">Profile Info</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-profile-social.html">Social &amp; Stream</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-profile-notifications.html">Notifications</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-profile-messages.html">Messages</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-profile-requests.html">Friend Requests</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION TITLE -->
-  <!-- <p class="navigation-widget-section-title">Account</p> -->
-  <!-- /NAVIGATION WIDGET SECTION TITLE -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-account-info.html">Account Info</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-account-password.html">Change Password</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-account-settings.html">General Settings</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION TITLE -->
-  <!-- <p class="navigation-widget-section-title">Groups</p> -->
-  <!-- /NAVIGATION WIDGET SECTION TITLE -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-group-management.html">Manage Groups</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-group-invitations.html">Invitations</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION TITLE -->
-  <!-- <p class="navigation-widget-section-title">My Store</p> -->
-  <!-- /NAVIGATION WIDGET SECTION TITLE -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-store-account.html">My Account <span class="highlighted">$250,32</span></a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-store-statement.html">Sales Statement</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-store-items.html">Manage Items</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="hub-store-downloads.html">Downloads</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION TITLE -->
-  <!-- <p class="navigation-widget-section-title">Main Links</p> -->
-  <!-- /NAVIGATION WIDGET SECTION TITLE -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="#">Home</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="#">Careers</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="#">Faqs</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="#">About Us</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="#">Our Blog</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="#">Contact Us</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
-
-  <!-- NAVIGATION WIDGET SECTION LINK -->
-  <!-- <a class="navigation-widget-section-link" href="#">Privacy Policy</a> -->
-  <!-- /NAVIGATION WIDGET SECTION LINK -->
 </nav>
 
 <!-- POPUP BOX -->

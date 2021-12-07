@@ -14,15 +14,15 @@
   <!-- /NAVIGATION WIDGET -->
 
   <!-- CHAT WIDGET -->
-@include('ChatsBladeFiles.aside-chat-layout')
+<!-- include('ChatsBladeFiles.aside-chat-layout') -->
   <!-- /CHAT WIDGET -->
 
   <!-- CHAT WIDGET -->
-@include('ChatsBladeFiles.text-content-layout')
+<!-- include('ChatsBladeFiles.text-content-layout') -->
   <!-- /CHAT WIDGET -->
 
   <!-- HEADER -->
-@include('LayoutBladeFiles.top-desktop-nav-layout')
+@include('LayoutBladeFiles.top-desktop-navbar-layout')
   <!-- /HEADER -->
 
   <!-- FLOATY BAR -->

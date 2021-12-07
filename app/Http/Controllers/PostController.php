@@ -46,7 +46,7 @@ class PostController extends Controller
          $mime = $request->file('File')->getMimeType();
 
           if(strstr($mime, "video/")){
-            $post_video = Input::file('File');
+            $post_video = $request->file('File');
             $post_video_name = time().'.'.$post_video->getClientOriginalExtension();
             $path = public_path().'/Uploads/PostVideos/';
             $post_video->move($path, $post_video_name);
