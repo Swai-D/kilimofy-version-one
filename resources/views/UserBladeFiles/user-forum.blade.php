@@ -6,6 +6,10 @@
 @endsection
 @section('forum-menu-active', 'active')
 
+@section('mini-user-profile-active')
+ style="fill:yellow "
+@endsection
+
 @section('user-data')
 <!-- SECTION -->
 <section class="section">

@@ -122,7 +122,7 @@
     <!-- /MENU ITEM -->
   <br>
     <!-- MENU ITEM -->
-    <li class="menu-item">
+    <li class="menu-item @yield('menu-status-shipment')">
       <!-- MENU ITEM LINK -->
       <a class="menu-item-link" href="/kilimofy/Usafirisaji/Usafiri">
         <!-- MENU ITEM LINK ICON -->
@@ -180,7 +180,7 @@
     </li>
     <!-- /MENU ITEM -->
   </ul>
-  @elseif(Auth::user()->user_ocupation == 'Afisa_Ugavi')
+  @elseif(Auth::user()->user_ocupation == 'Bwana_Shamba')
   <ul class="menu">
     <!-- MENU ITEM -->
     <li class="menu-item @yield('menu-status-newsfeed')">

@@ -2,6 +2,10 @@
 @section('title','Usafirishaji wa Bidhaa')
 @section('menu-status-driver','active')
 
+@section('mini-user-fundi-active')
+style="fill:yellow "
+@endsection
+
 @section('discription-title')
  Akaunti ya {{Auth::user()->name}}
 @endsection

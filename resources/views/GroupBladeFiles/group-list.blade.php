@@ -1,6 +1,10 @@
 @extends('LayoutBladeFiles.app-layout')
 @section('title','Group List')
-@section('mini-user-chat-menu','unread')
+
+@section('mini-user-chat-menu')
+style="fill:yellow "
+@endsection
+
 @section('menu-status-chat','active')
 @section('discription-title','Magrupu')
 @section('discription-details','kilimofy')

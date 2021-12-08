@@ -7,6 +7,10 @@
 
 @section('timeline-menu-active', 'active')
 
+@section('mini-user-profile-active')
+ style="fill:yellow "
+@endsection
+
 @section('user-data')
 <div class="grid grid-3-6-3 mobile-prefer-content">
   <!-- GRID COLUMN -->

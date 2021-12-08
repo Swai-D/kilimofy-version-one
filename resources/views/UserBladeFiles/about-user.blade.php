@@ -5,7 +5,11 @@
 @section('title')
 About {{$user->name}}
 @endsection
-@section('mini-user-profile-active', 'unread')
+
+@section('mini-user-profile-active')
+ style="fill:yellow "
+@endsection
+
 @section('about-menu-active', 'active')
 @section('user-data')
 <div class="grid grid-3-6-3">

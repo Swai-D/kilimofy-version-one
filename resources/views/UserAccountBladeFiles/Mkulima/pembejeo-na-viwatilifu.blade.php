@@ -1,6 +1,10 @@
 @extends('LayoutBladeFiles.app-layout')
 @section('title','Pembejeo Na Viwatilifu')
-@section('mini-user-shop-active','unread')
+
+@section('mini-user-pembejeo-active')
+style="fill:yellow "
+@endsection
+
 @section('menu-status-growth','active')
 @section('discription-title','Pata Pembejeo Hapo Hapo Ulipo')
 @section('discription-details','kilimofy')
