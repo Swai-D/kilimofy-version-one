@@ -52,17 +52,17 @@ Route::get('/kilimofy/Usafirisaji/Usafiri', [App\Http\Controllers\MkulimaControl
 //**************************end*************************************************
 
 //**************************AdminController*********************************
-Route::get('/kilimofy/Admin/admin_index_page', [App\Http\Controllers\AdminController::class, 'admin_index_page'])->middleware(['auth','admin']);
-Route::get('/kilimofy/Admin/register-new-staff', [App\Http\Controllers\AdminController::class, 'admin_register_new_staff'])->middleware(['auth','admin']);
-Route::post('/kilimofy/Admin/register-new-staff-store', [App\Http\Controllers\AdminController::class, 'admin_register_new_staff_store'])->middleware(['auth','admin']);
-Route::get('/kilimofy/Admin/users-list', [App\Http\Controllers\AdminController::class, 'users_list'])->middleware(['auth','admin']);
-Route::get('/kilimofy/Admin/users-action-list', [App\Http\Controllers\AdminController::class, 'users_action_list'])->middleware(['auth','admin']);
-Route::get('/kilimofy/Admin/Headline-action-list', [App\Http\Controllers\AdminController::class, 'headline_action_list'])->middleware(['auth','admin']);
-Route::get('/kilimofy/Admin/New-Forum-Category-Form', [App\Http\Controllers\AdminController::class, 'forum_category_form'])->middleware(['auth','admin']);
-Route::get('/kilimofy/Admin/Crops-Price-Update-Form', [App\Http\Controllers\AdminController::class, 'crops_price_form'])->middleware(['auth','admin']);
-Route::get('/kilimofy/Admin/Headlines-Updates-Form', [App\Http\Controllers\AdminController::class, 'headline_updates'])->middleware(['auth','admin']);
-Route::post('/kilimofy/Admin/Headlines-Updates-Form-store', [App\Http\Controllers\AdminController::class, 'headline_updates_store'])->middleware(['auth','admin']);
-Route::post('/kilimofy/Admin/New-Forum-Category-Form-Store', [App\Http\Controllers\AdminController::class, 'create_forum_category'])->middleware(['auth','admin']);
+Route::get('/kilimofy/Admin/admin_index_page', [App\Http\Controllers\AdminController::class, 'admin_index_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/register-new-staff', [App\Http\Controllers\AdminController::class, 'admin_register_new_staff'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Admin/register-new-staff-store', [App\Http\Controllers\AdminController::class, 'admin_register_new_staff_store'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/users-list', [App\Http\Controllers\AdminController::class, 'users_list'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/users-action-list', [App\Http\Controllers\AdminController::class, 'users_action_list'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/Headline-action-list', [App\Http\Controllers\AdminController::class, 'headline_action_list'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/New-Forum-Category-Form', [App\Http\Controllers\AdminController::class, 'forum_category_form'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/Crops-Price-Update-Form', [App\Http\Controllers\AdminController::class, 'crops_price_form'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/Headlines-Updates-Form', [App\Http\Controllers\AdminController::class, 'headline_updates'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Admin/Headlines-Updates-Form-store', [App\Http\Controllers\AdminController::class, 'headline_updates_store'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Admin/New-Forum-Category-Form-Store', [App\Http\Controllers\AdminController::class, 'create_forum_category'])->middleware(['auth','supper_admin']);
 
 
 Route::get('/kilimofy/Admin/items-waiting-list', [App\Http\Controllers\AdminController::class, 'items_waiting_list']);

@@ -46,7 +46,17 @@
     <!-- /ACTION LIST ITEM -->
 
     <!-- ACTION LIST ITEM -->
-    <a class="action-list-item " href="/kilimofy/Forum/Forum-Category-List">
+    <a class="action-list-item " href="/kilimofy/Group/Group-Lists">
+      <!-- ACTION LIST ITEM ICON -->
+      <svg class="action-list-item-icon icon-magnifying-glass" @yield('mini-user-chat-menu')>
+        <use xlink:href="#svg-magnifying-glass"></use>
+      </svg>
+      <!-- /ACTION LIST ITEM ICON -->
+    </a>
+    <!-- /ACTION LIST ITEM -->
+
+    <!-- ACTION LIST ITEM -->
+    <a class="action-list-item " href="/chatify">
       <!-- ACTION LIST ITEM ICON -->
       <svg class="action-list-item-icon icon-messages" @yield('mini-user-forum-active')>
         <use xlink:href="#svg-messages"></use>
@@ -98,7 +108,18 @@
     <!-- /ACTION LIST ITEM -->
 
     <!-- ACTION LIST ITEM -->
-    <a class="action-list-item " href="/kilimofy/Forum/Forum-Category-List">
+    <a class="action-list-item " href="/kilimofy/Group/Group-Lists">
+      <!-- ACTION LIST ITEM ICON -->
+      <svg class="action-list-item-icon icon-magnifying-glass" @yield('mini-user-chat-menu')>
+        <use xlink:href="#svg-magnifying-glass"></use>
+      </svg>
+      <!-- /ACTION LIST ITEM ICON -->
+    </a>
+    <!-- /ACTION LIST ITEM -->
+
+
+    <!-- ACTION LIST ITEM -->
+    <a class="action-list-item " href="/chatify">
       <!-- ACTION LIST ITEM ICON -->
       <svg class="action-list-item-icon icon-messages" @yield('mini-user-forum-active')>
         <use xlink:href="#svg-messages"></use>
@@ -150,7 +171,18 @@
     <!-- /ACTION LIST ITEM -->
 
     <!-- ACTION LIST ITEM -->
-    <a class="action-list-item " href="/kilimofy/Forum/Forum-Category-List">
+    <a class="action-list-item " href="/kilimofy/Group/Group-Lists">
+      <!-- ACTION LIST ITEM ICON -->
+      <svg class="action-list-item-icon icon-magnifying-glass" @yield('mini-user-chat-menu')>
+        <use xlink:href="#svg-magnifying-glass"></use>
+      </svg>
+      <!-- /ACTION LIST ITEM ICON -->
+    </a>
+    <!-- /ACTION LIST ITEM -->
+
+
+    <!-- ACTION LIST ITEM -->
+    <a class="action-list-item " href="/chatify">
       <!-- ACTION LIST ITEM ICON -->
       <svg class="action-list-item-icon icon-messages" @yield('mini-user-forum-active')>
         <use xlink:href="#svg-messages"></use>
@@ -202,7 +234,18 @@
     <!-- /ACTION LIST ITEM -->
 
     <!-- ACTION LIST ITEM -->
-    <a class="action-list-item " href="/kilimofy/Forum/Forum-Category-List">
+    <a class="action-list-item " href="/kilimofy/Group/Group-Lists">
+      <!-- ACTION LIST ITEM ICON -->
+      <svg class="action-list-item-icon icon-magnifying-glass" @yield('mini-user-chat-menu')>
+        <use xlink:href="#svg-magnifying-glass"></use>
+      </svg>
+      <!-- /ACTION LIST ITEM ICON -->
+    </a>
+    <!-- /ACTION LIST ITEM -->
+
+
+    <!-- ACTION LIST ITEM -->
+    <a class="action-list-item " href="/chatify">
       <!-- ACTION LIST ITEM ICON -->
       <svg class="action-list-item-icon icon-messages" @yield('mini-user-forum-active')>
         <use xlink:href="#svg-messages"></use>
@@ -254,7 +297,18 @@
     <!-- /ACTION LIST ITEM -->
 
     <!-- ACTION LIST ITEM -->
-    <a class="action-list-item " href="/kilimofy/Forum/Forum-Category-List">
+    <a class="action-list-item " href="/kilimofy/Group/Group-Lists">
+      <!-- ACTION LIST ITEM ICON -->
+      <svg class="action-list-item-icon icon-magnifying-glass" @yield('mini-user-chat-menu')>
+        <use xlink:href="#svg-magnifying-glass"></use>
+      </svg>
+      <!-- /ACTION LIST ITEM ICON -->
+    </a>
+    <!-- /ACTION LIST ITEM -->
+
+
+    <!-- ACTION LIST ITEM -->
+    <a class="action-list-item " href="/chatify">
       <!-- ACTION LIST ITEM ICON -->
       <svg class="action-list-item-icon icon-messages" @yield('mini-user-forum-active')>
         <use xlink:href="#svg-messages"></use>
