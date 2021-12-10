@@ -75,11 +75,13 @@ body {
   overflow: hidden;
   width: 100%;
 }
+
 .messenger-messagingView .m-body {
   padding-top: 15px;
   height: calc(100% - 90px);
   overflow-x: hidden;
   overflow-y: auto;
+  background-image: url('../../assets/img/landing/kilimofy-messenger-bg.jpg')
 }
 .m-header {
   padding: 10px 15px;

@@ -15,7 +15,7 @@ return [
     |-------------------------------------
     */
     'routes' => [
-        'prefix' => env('CHATIFY_ROUTES_PREFIX', 'chatify'),
+        'prefix' => env('CHATIFY_ROUTES_PREFIX', '/kilimofy/kilimofy-messanger'),
         'middleware' => env('CHATIFY_ROUTES_MIDDLEWARE', ['web','auth']),
         'namespace' => env('CHATIFY_ROUTES_NAMESPACE', 'Chatify\Http\Controllers'),
     ],
@@ -42,7 +42,7 @@ return [
     */
     'user_avatar' => [
         'folder' => 'users-avatar',
-        'default' => 'avatar.png',
+        'default' => 'default.jpg',
     ],
 
     /*
