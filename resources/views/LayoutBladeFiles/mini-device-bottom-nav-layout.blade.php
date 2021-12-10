@@ -56,7 +56,7 @@
     <!-- /ACTION LIST ITEM -->
 
     <!-- ACTION LIST ITEM -->
-    <a class="action-list-item " href="/kilimofy/kilimofy-messanger">
+    <a class="action-list-item " href="/Kilimofy-Messenger">
       <!-- ACTION LIST ITEM ICON -->
       <svg class="action-list-item-icon icon-messages" @yield('mini-user-forum-active')>
         <use xlink:href="#svg-messages"></use>
@@ -119,7 +119,7 @@
 
 
     <!-- ACTION LIST ITEM -->
-    <a class="action-list-item " href="/kilimofy/kilimofy-messanger">
+    <a class="action-list-item " href="/Kilimofy-Messenger">
       <!-- ACTION LIST ITEM ICON -->
       <svg class="action-list-item-icon icon-messages" @yield('mini-user-forum-active')>
         <use xlink:href="#svg-messages"></use>
@@ -182,7 +182,7 @@
 
 
     <!-- ACTION LIST ITEM -->
-    <a class="action-list-item " href="/kilimofy/kilimofy-messanger">
+    <a class="action-list-item " href="/Kilimofy-Messenger">
       <!-- ACTION LIST ITEM ICON -->
       <svg class="action-list-item-icon icon-messages" @yield('mini-user-forum-active')>
         <use xlink:href="#svg-messages"></use>
@@ -245,7 +245,7 @@
 
 
     <!-- ACTION LIST ITEM -->
-    <a class="action-list-item " href="/kilimofy/kilimofy-messanger">
+    <a class="action-list-item " href="/Kilimofy-Messenger">
       <!-- ACTION LIST ITEM ICON -->
       <svg class="action-list-item-icon icon-messages" @yield('mini-user-forum-active')>
         <use xlink:href="#svg-messages"></use>
@@ -308,7 +308,7 @@
 
 
     <!-- ACTION LIST ITEM -->
-    <a class="action-list-item " href="/kilimofy/kilimofy-messanger">
+    <a class="action-list-item " href="/Kilimofy-Messenger">
       <!-- ACTION LIST ITEM ICON -->
       <svg class="action-list-item-icon icon-messages" @yield('mini-user-forum-active')>
         <use xlink:href="#svg-messages"></use>
