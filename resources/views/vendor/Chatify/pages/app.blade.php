@@ -88,7 +88,7 @@
             <span class="ic-noInternet">No internet access</span>
         </div>
         {{-- Messaging area --}}
-        <div class="m-body messages-container app-scroll">
+        <div class="m-body messages-container app-scroll chat-widget-conversation">
             <div class="messages">
                 <p class="message-hint center-el"><span>Please select a chat to start messaging</span></p>
             </div>
