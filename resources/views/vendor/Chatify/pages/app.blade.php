@@ -51,7 +51,7 @@
              </div>
 
              {{-- ---------------- [ Search Tab ] ---------------- --}}
-           <div class="messenger-tab search-tab app-scroll" data-view="search">
+           <div class="messenger-tab search-tab app-scroll"app-scroll" data-view="search">
                 {{-- items --}}
                 <p class="messenger-title">Search</p>
                 <div class="search-records">
@@ -88,7 +88,7 @@
             <span class="ic-noInternet">No internet access</span>
         </div>
         {{-- Messaging area --}}
-        <div class="m-body messages-container app-scroll chat-widget-conversation">
+        <div class="m-body messages-container app-scroll">
             <div class="messages">
                 <p class="message-hint center-el"><span>Please select a chat to start messaging</span></p>
             </div>

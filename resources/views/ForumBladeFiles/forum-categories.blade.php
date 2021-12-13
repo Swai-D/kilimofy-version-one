@@ -1,9 +1,7 @@
 @extends('LayoutBladeFiles.app-layout')
 @section('title','Jukwaani')
 
-@section('mini-user-forum-active')
-style="fill:yellow "
-@endsection
+
 
 @section('menu-status-chat','active')
 @section('discription-title','Jukwaa la Mada')

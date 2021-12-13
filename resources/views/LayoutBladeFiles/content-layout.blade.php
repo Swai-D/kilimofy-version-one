@@ -1,5 +1,6 @@
 @include('LayoutBladeFiles.summernote')
 
+
 <div class="content-grid">
   <!-- SECTION BANNER -->
 @include('LayoutBladeFiles.title-layout')
@@ -588,13 +589,6 @@
 
                 <!-- SIMPLE DROPDOWN -->
                 <div class="simple-dropdown widget-box-post-settings-dropdown">
-                  <!-- SIMPLE DROPDOWN LINK -->
-                  <p class="simple-dropdown-link">Edit Post</p>
-                  <!-- /SIMPLE DROPDOWN LINK -->
-
-                  <!-- SIMPLE DROPDOWN LINK -->
-                  <p class="simple-dropdown-link">Delete Post</p>
-                  <!-- /SIMPLE DROPDOWN LINK -->
 
                   <!-- SIMPLE DROPDOWN LINK -->
                   <p class="simple-dropdown-link">Make it Featured</p>
@@ -731,17 +725,6 @@
                             <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/love.png" alt="reaction-love"> <span class="bold">Love</span></p>
                             <!-- /SIMPLE DROPDOWN TEXT -->
 
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text">Matt Parker</p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
-
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text">Destroy Dex</p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
-
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text">The Green Goo</p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
                           </div>
                           <!-- /SIMPLE DROPDOWN -->
                         </div>
@@ -759,9 +742,7 @@
                             <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/happy.png" alt="reaction-happy"> <span class="bold">Happy</span></p>
                             <!-- /SIMPLE DROPDOWN TEXT -->
 
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text">Sandra Strange</p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
+
                           </div>
                           <!-- /SIMPLE DROPDOWN -->
                         </div>
@@ -779,34 +760,8 @@
                             <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
                             <!-- /SIMPLE DROPDOWN TEXT -->
 
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text">Neko Bebop</p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
-
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text">Nick Grissom</p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
-
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text">Sarah Diamond</p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
-
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text">Jett Spiegel</p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
-
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text">Marcus Jhonson</p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
-
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text">Jane Rodgers</p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
-
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text"><span class="bold">and 6 more...</span></p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
                           </div>
+
                           <!-- /SIMPLE DROPDOWN -->
                         </div>
                         <!-- /REACTION ITEM -->

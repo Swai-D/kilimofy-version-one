@@ -226,7 +226,7 @@ class MkulimaController extends Controller
       // dd($kilimo_topics_count_collection);
 
 
-      $users = User::paginate(5);
+      $users = User::where('username', '!=', 'kilimofy_supper_admin')->get();
       $users_count = User::count();
       $headlines = Headline::all();
       $headlines_count = Headline::count();
