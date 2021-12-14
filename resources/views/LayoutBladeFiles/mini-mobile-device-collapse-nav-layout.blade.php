@@ -149,6 +149,22 @@
       <!-- /MENU ITEM LINK -->
     </li>
     <!-- /MENU ITEM -->
+
+    <br>
+     <!-- MENU ITEM -->
+     <li class="menu-item @yield('menu-status-mashine')">
+       <!-- MENU ITEM LINK -->
+       <a class="menu-item-link" href="/kilimofy/Mkulima/Mashine-za-kilimo">
+         <!-- MENU ITEM LINK ICON -->
+         <img src="/assets/img/user_icon/market.png" alt="" style="width:44; height:44;">
+
+         <!-- /MENU ITEM LINK ICON -->
+         <!-- Quests -->
+         Masoko
+       </a>
+       <!-- /MENU ITEM LINK -->
+     </li>
+     <!-- /MENU ITEM -->
     <br>
     <br>
     <p class="navigation-widget-section-title">logout</p>

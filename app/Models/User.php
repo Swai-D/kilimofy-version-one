@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+
+use App\Domains\Blog\Models\PostLike;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -40,5 +43,10 @@ class User extends Authenticatable
     public function chmessages()
     {
       return $this->hasMany(ChMessage::class);
+    }
+
+    public function likes(): HasMany
+    {
+        return $this->hasMany(PostLike::class);
     }
 }

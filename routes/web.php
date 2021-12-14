@@ -109,14 +109,16 @@ Route::get('/kilimofy/UserAccount/user_setting_page/{user_id}-{slug}', [App\Http
 
 
 //**************************PostController*********************************
-Route::post('/kilimofy/User/status-post', [App\Http\Controllers\PostController::class, 'create_status']);
+Route::post('/kilimofy/User/status-post', [App\Http\Controllers\PostController::class, 'create_status'])->middleware('auth');
+Route::post('/kilimofy/Post/likePost/{id}', [App\Http\Controllers\PostController::class, 'likePost'])->middleware('auth')->name('like.post');
+Route::post('/kilimofy/Post/dislikePost/{id}', [App\Http\Controllers\PostController::class, 'unlikePost'])->middleware('auth');
 Route::post('/kilimofy/Blog/poll_option', [App\Http\Controllers\PostController::class, 'poll_option'])->middleware('auth');
-Route::post('/kilimofy/Blog/user_quick_post', [App\Http\Controllers\PostController::class, 'user_quick_post']);
-Route::get('/kilimofy/Post/read_comments/{post_id}-{slug}', [App\Http\Controllers\PostController::class, 'read_comments']);
-Route::post('/kilimofy/Blog/send_comments', [App\Http\Controllers\PostController::class, 'send_comments']);
-Route::get('/kilimofy/Blog/reply_comment/{comment_id}', [App\Http\Controllers\PostController::class, 'reply_comment']);
-Route::post('/kilimofy/Blog/reply_comment_form', [App\Http\Controllers\PostController::class, 'reply_comment_create']);
-Route::post('/kilimofy/Admin/admin-all-forms-post', [App\Http\Controllers\PostController::class, 'create']);
+Route::post('/kilimofy/Blog/user_quick_post', [App\Http\Controllers\PostController::class, 'user_quick_post'])->middleware('auth');
+Route::get('/kilimofy/Post/read_comments/{post_id}-{slug}', [App\Http\Controllers\PostController::class, 'read_comments'])->middleware('auth');
+Route::post('/kilimofy/Blog/send_comments', [App\Http\Controllers\PostController::class, 'send_comments'])->middleware('auth');
+Route::get('/kilimofy/Blog/reply_comment/{comment_id}', [App\Http\Controllers\PostController::class, 'reply_comment'])->middleware('auth');
+Route::post('/kilimofy/Blog/reply_comment_form', [App\Http\Controllers\PostController::class, 'reply_comment_create'])->middleware('auth');
+Route::post('/kilimofy/Admin/admin-all-forms-post', [App\Http\Controllers\PostController::class, 'create'])->middleware('auth');
 
 
 //**************************end*************************************************

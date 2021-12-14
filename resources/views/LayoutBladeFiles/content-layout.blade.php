@@ -711,66 +711,70 @@
                   <div class="content-action">
                     <!-- META LINE -->
                     <div class="meta-line">
-                      <!-- META LINE LIST -->
-                      <div class="meta-line-list reaction-item-list">
-                        <!-- REACTION ITEM -->
-                        <div class="reaction-item">
-                          <!-- REACTION IMAGE -->
-                          <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/love.png" alt="reaction-love">
-                          <!-- /REACTION IMAGE -->
+                      <form class="" action="{{ route('like.post', $post->id) }}" method="post">
+                        @csrf
+                        <!-- META LINE LIST -->
+                        <div class="meta-line-list reaction-item-list">
+                          <!-- REACTION ITEM -->
+                          <div class="reaction-item">
+                            <!-- REACTION IMAGE -->
+                            <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/love.png" alt="reaction-love">
+                            <!-- /REACTION IMAGE -->
 
-                          <!-- SIMPLE DROPDOWN -->
-                          <div class="simple-dropdown padded reaction-item-dropdown">
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/love.png" alt="reaction-love"> <span class="bold">Love</span></p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
+                            <!-- SIMPLE DROPDOWN -->
+                            <div class="simple-dropdown padded reaction-item-dropdown">
+                              <!-- SIMPLE DROPDOWN TEXT -->
+                              <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/love.png" alt="reaction-love"> <span class="bold">Love</span></p>
+                              <!-- /SIMPLE DROPDOWN TEXT -->
 
+                            </div>
+                            <!-- /SIMPLE DROPDOWN -->
                           </div>
-                          <!-- /SIMPLE DROPDOWN -->
-                        </div>
-                        <!-- /REACTION ITEM -->
+                          <!-- /REACTION ITEM -->
 
-                        <!-- REACTION ITEM -->
-                        <div class="reaction-item">
-                          <!-- REACTION IMAGE -->
-                          <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/happy.png" alt="reaction-happy">
-                          <!-- /REACTION IMAGE -->
+                          <!-- REACTION ITEM -->
+                          <div class="reaction-item">
+                            <!-- REACTION IMAGE -->
+                            <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/happy.png" alt="reaction-happy">
+                            <!-- /REACTION IMAGE -->
 
-                          <!-- SIMPLE DROPDOWN -->
-                          <div class="simple-dropdown padded reaction-item-dropdown">
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/happy.png" alt="reaction-happy"> <span class="bold">Happy</span></p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
+                            <!-- SIMPLE DROPDOWN -->
+                            <div class="simple-dropdown padded reaction-item-dropdown">
+                              <!-- SIMPLE DROPDOWN TEXT -->
+                              <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/happy.png" alt="reaction-happy"> <span class="bold">Happy</span></p>
+                              <!-- /SIMPLE DROPDOWN TEXT -->
 
 
+                            </div>
+                            <!-- /SIMPLE DROPDOWN -->
                           </div>
-                          <!-- /SIMPLE DROPDOWN -->
-                        </div>
-                        <!-- /REACTION ITEM -->
+                          <!-- /REACTION ITEM -->
 
-                        <!-- REACTION ITEM -->
-                        <div class="reaction-item">
-                          <!-- REACTION IMAGE -->
-                          <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/like.png" alt="reaction-like">
-                          <!-- /REACTION IMAGE -->
+                          <!-- REACTION ITEM -->
+                          <div class="reaction-item">
+                            <!-- REACTION IMAGE -->
+                            <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/like.png" alt="reaction-like">
+                            <!-- /REACTION IMAGE -->
 
-                          <!-- SIMPLE DROPDOWN -->
-                          <div class="simple-dropdown padded reaction-item-dropdown">
-                            <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
-                            <!-- /SIMPLE DROPDOWN TEXT -->
+                            <!-- SIMPLE DROPDOWN -->
+                            <div class="simple-dropdown padded reaction-item-dropdown">
+                              <!-- SIMPLE DROPDOWN TEXT -->
+                              <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
+                              <!-- /SIMPLE DROPDOWN TEXT -->
 
+                            </div>
+
+                            <!-- /SIMPLE DROPDOWN -->
                           </div>
-
-                          <!-- /SIMPLE DROPDOWN -->
+                          <!-- /REACTION ITEM -->
                         </div>
-                        <!-- /REACTION ITEM -->
-                      </div>
-                      <!-- /META LINE LIST -->
+                        <!-- /META LINE LIST -->
+
+                      </form>
 
                       <!-- META LINE TEXT -->
-                      {{-- <p class="meta-line-text">{{$post->Likes}}</p> --}}
-                      <p class="meta-line-text">332</p>
+                      <p class="meta-line-text"> {{ $post->likeCount }}</p>
+
                       <!-- /META LINE TEXT -->
                     </div>
                     <!-- /META LINE -->
@@ -919,91 +923,29 @@
             <!-- POST OPTIONS -->
             <div class="post-options">
               <!-- POST OPTION WRAP -->
-              <div class="post-option-wrap">
-                <!-- POST OPTION -->
-                <div class="post-option reaction-options-dropdown-trigger">
-                  <!-- POST OPTION ICON -->
-                  <svg class="post-option-icon icon-thumbs-up">
-                    <use xlink:href="#svg-thumbs-up"></use>
-                  </svg>
-                  <!-- /POST OPTION ICON -->
+              <form class="" action="{{ route('like.post', $post->id) }}" method="post">
+                  @csrf
+                  <button class="{{ $post->liked() }} " style="background-color:white;">
+                <div class="post-option-wrap">
+                  <!-- POST OPTION -->
+                  <div class="post-option reaction-options-dropdown-trigger">
 
-                  <!-- POST OPTION TEXT -->
-                  <p class="post-option-text">React!</p>
-                  <!-- /POST OPTION TEXT -->
+                      <!-- POST OPTION ICON -->
+                      <svg class="post-option-icon icon-thumbs-up">
+                        <use xlink:href="#svg-thumbs-up"></use>
+                      </svg>
+                      <!-- /POST OPTION ICON -->
+
+
+                    <!-- POST OPTION TEXT -->
+                    <p class="post-option-text">React!</p>
+                    <!-- /POST OPTION TEXT -->
+                  </div>
+                  <!-- /POST OPTION -->
                 </div>
-                <!-- /POST OPTION -->
-
-                <!-- REACTION OPTIONS -->
-                <div class="reaction-options reaction-options-dropdown">
-                  <!-- REACTION OPTION -->
-                  <div class="reaction-option text-tooltip-tft" data-title="Like">
-                    <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/img/reaction/like.png" alt="reaction-like">
-                    <!-- /REACTION OPTION IMAGE -->
-                  </div>
-                  <!-- /REACTION OPTION -->
-
-                  <!-- REACTION OPTION -->
-                  <div class="reaction-option text-tooltip-tft" data-title="Love">
-                    <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/img/reaction/love.png" alt="reaction-love">
-                    <!-- /REACTION OPTION IMAGE -->
-                  </div>
-                  <!-- /REACTION OPTION -->
-
-                  <!-- REACTION OPTION -->
-                  <div class="reaction-option text-tooltip-tft" data-title="Dislike">
-                    <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/img/reaction/dislike.png" alt="reaction-dislike">
-                    <!-- /REACTION OPTION IMAGE -->
-                  </div>
-                  <!-- /REACTION OPTION -->
-
-                  <!-- REACTION OPTION -->
-                  <div class="reaction-option text-tooltip-tft" data-title="Happy">
-                    <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/img/reaction/happy.png" alt="reaction-happy">
-                    <!-- /REACTION OPTION IMAGE -->
-                  </div>
-                  <!-- /REACTION OPTION -->
-
-                  <!-- REACTION OPTION -->
-                  <div class="reaction-option text-tooltip-tft" data-title="Funny">
-                    <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/img/reaction/funny.png" alt="reaction-funny">
-                    <!-- /REACTION OPTION IMAGE -->
-                  </div>
-                  <!-- /REACTION OPTION -->
-
-                  <!-- REACTION OPTION -->
-                  <div class="reaction-option text-tooltip-tft" data-title="Wow">
-                    <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/img/reaction/wow.png" alt="reaction-wow">
-                    <!-- /REACTION OPTION IMAGE -->
-                  </div>
-                  <!-- /REACTION OPTION -->
-
-                  <!-- REACTION OPTION -->
-                  <div class="reaction-option text-tooltip-tft" data-title="Angry">
-                    <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/img/reaction/angry.png" alt="reaction-angry">
-                    <!-- /REACTION OPTION IMAGE -->
-                  </div>
-                  <!-- /REACTION OPTION -->
-
-                  <!-- REACTION OPTION -->
-                  <div class="reaction-option text-tooltip-tft" data-title="Sad">
-                    <!-- REACTION OPTION IMAGE -->
-                    <img class="reaction-option-image" src="/assets/img/reaction/sad.png" alt="reaction-sad">
-                    <!-- /REACTION OPTION IMAGE -->
-                  </div>
-                  <!-- /REACTION OPTION -->
-                </div>
-                <!-- /REACTION OPTIONS -->
-              </div>
-              <!-- /POST OPTION WRAP -->
-
+                <!-- /POST OPTION WRAP -->
+                </button>
+              </form>
               <!-- POST OPTION -->
 
             <a href="/kilimofy/Post/read_comments/{{$post->id}}-about-{{$post->Caption}}">

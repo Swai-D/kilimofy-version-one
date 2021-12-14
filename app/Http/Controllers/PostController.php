@@ -163,6 +163,26 @@ class PostController extends Controller
     }
 
 
+    public function likePost($id)
+    {
+        $post = Post::find($id);
+        $post->like();
+        $post->save();
+
+        return redirect()->back();
+    }
+
+
+    public function unlikePost($id)
+    {
+        $post = Post::find($id);
+        $post->unlike();
+        $post->save();
+
+        return redirect()->back();
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

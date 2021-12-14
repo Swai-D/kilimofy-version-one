@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
+use Conner\Likeable\Likeable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, Likeable;
     protected $guarded = [];
+
 
     public function comments()
     {
@@ -16,14 +19,14 @@ class Post extends Model
 
     }
 
-    public function likes()
-    {
-        return $this->hasMany(Like::class);
 
-    }
 
     public function user()
     {
         return $this->belongTo(User::class);
     }
+
+
+
+
 }
