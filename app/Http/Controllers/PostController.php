@@ -38,7 +38,7 @@ class PostController extends Controller
          $post->Tag3 = $request->Tag3;
          $post->User_id = $request->User_id;
          $post->name = $request->name;
-         $post->username = $request->username;
+         $post->name = $request->name;
          $post->User_Image_Profile = $request->User_Image_Profile;
 
          if (isset($request->File)) {
@@ -80,11 +80,11 @@ class PostController extends Controller
 
     public function poll_option(Request $request)
         {
-            if (Auth::check()) {
-              $poll_option = $request->Caption;
-               dd($poll_option);
-            }
-            dd('Hellow');
+            // if (Auth::check()) {
+            //   $poll_option = $request->Caption;
+            //    dd($poll_option);
+            // }
+            // dd('Hellow');
 
         return view('PostBladeFiles.blog-post');
     }
@@ -150,7 +150,8 @@ class PostController extends Controller
       $reply = new Reply();
       $reply->comment_id = $request->reply_comment_id;
       $comment_id = $request->reply_comment_id;
-      $reply->user_name = $request->user_name;
+      $reply->name = $request->name;
+      $reply->user_id = $request->user_id;
       $reply->user_avatar = $request->user_avatar;
       $reply->reply = $request->reply_comment;
       $reply->save();
@@ -159,7 +160,7 @@ class PostController extends Controller
 
 
 
-      return redirect('/kilimofy/Post/read_comments/'.$redirect_id);
+      return redirect('/kilimofy/Post/read_comments/'.$redirect_id.'-'.'about'.'-'.$request->name.'s'.'post');
     }
 
 

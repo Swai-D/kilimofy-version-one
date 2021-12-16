@@ -93,7 +93,7 @@
 
               <!-- USER STATUS TITLE -->
 
-              <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">{{$author->user_name}}</a></p>
+              <p class="user-status-title medium"><a class="bold" href="#">{{$author->name}}</a></p>
               @endforeach
               <!-- /USER STATUS TITLE -->
 
@@ -394,90 +394,30 @@
         <!-- POST OPTIONS -->
         <div class="post-options">
           <!-- POST OPTION WRAP -->
-          <div class="post-option-wrap">
-            <!-- POST OPTION -->
-            <div class="post-option reaction-options-dropdown-trigger">
-              <!-- POST OPTION ICON -->
-              <svg class="post-option-icon icon-thumbs-up">
-                <use xlink:href="#svg-thumbs-up"></use>
-              </svg>
-              <!-- /POST OPTION ICON -->
+          <form class="" action="{{ route('like.post', $post_detail->id) }}" method="post">
+              @csrf
+              <button class="{{ $post_detail->liked() }} " style="background-color:white;">
+            <div class="post-option-wrap">
+              <!-- POST OPTION -->
+              <div class="post-option reaction-options-dropdown-trigger">
 
-              <!-- POST OPTION TEXT -->
-              <p class="post-option-text">React!</p>
-              <!-- /POST OPTION TEXT -->
+                  <!-- POST OPTION ICON -->
+                  <svg class="post-option-icon icon-thumbs-up">
+                    <use xlink:href="#svg-thumbs-up"></use>
+                  </svg>
+                  <!-- /POST OPTION ICON -->
+
+
+                <!-- POST OPTION TEXT -->
+                <p class="post-option-text">React!</p>
+                <!-- /POST OPTION TEXT -->
+              </div>
+              <!-- /POST OPTION -->
             </div>
-            <!-- /POST OPTION -->
-
-            <!-- REACTION OPTIONS -->
-            <div class="reaction-options reaction-options-dropdown">
-              <!-- REACTION OPTION -->
-              <div class="reaction-option text-tooltip-tft" data-title="Like">
-                <!-- REACTION OPTION IMAGE -->
-                <img class="reaction-option-image" src="/assets/img/reaction/like.png" alt="reaction-like">
-                <!-- /REACTION OPTION IMAGE -->
-              </div>
-              <!-- /REACTION OPTION -->
-
-              <!-- REACTION OPTION -->
-              <div class="reaction-option text-tooltip-tft" data-title="Love">
-                <!-- REACTION OPTION IMAGE -->
-                <img class="reaction-option-image" src="/assets/img/reaction/love.png" alt="reaction-love">
-                <!-- /REACTION OPTION IMAGE -->
-              </div>
-              <!-- /REACTION OPTION -->
-
-              <!-- REACTION OPTION -->
-              <div class="reaction-option text-tooltip-tft" data-title="Dislike">
-                <!-- REACTION OPTION IMAGE -->
-                <img class="reaction-option-image" src="/assets/img/reaction/dislike.png" alt="reaction-dislike">
-                <!-- /REACTION OPTION IMAGE -->
-              </div>
-              <!-- /REACTION OPTION -->
-
-              <!-- REACTION OPTION -->
-              <div class="reaction-option text-tooltip-tft" data-title="Happy">
-                <!-- REACTION OPTION IMAGE -->
-                <img class="reaction-option-image" src="/assets/img/reaction/happy.png" alt="reaction-happy">
-                <!-- /REACTION OPTION IMAGE -->
-              </div>
-              <!-- /REACTION OPTION -->
-
-              <!-- REACTION OPTION -->
-              <div class="reaction-option text-tooltip-tft" data-title="Funny">
-                <!-- REACTION OPTION IMAGE -->
-                <img class="reaction-option-image" src="/assets/img/reaction/funny.png" alt="reaction-funny">
-                <!-- /REACTION OPTION IMAGE -->
-              </div>
-              <!-- /REACTION OPTION -->
-
-              <!-- REACTION OPTION -->
-              <div class="reaction-option text-tooltip-tft" data-title="Wow">
-                <!-- REACTION OPTION IMAGE -->
-                <img class="reaction-option-image" src="/assets/img/reaction/wow.png" alt="reaction-wow">
-                <!-- /REACTION OPTION IMAGE -->
-              </div>
-              <!-- /REACTION OPTION -->
-
-              <!-- REACTION OPTION -->
-              <div class="reaction-option text-tooltip-tft" data-title="Angry">
-                <!-- REACTION OPTION IMAGE -->
-                <img class="reaction-option-image" src="/assets/img/reaction/angry.png" alt="reaction-angry">
-                <!-- /REACTION OPTION IMAGE -->
-              </div>
-              <!-- /REACTION OPTION -->
-
-              <!-- REACTION OPTION -->
-              <div class="reaction-option text-tooltip-tft" data-title="Sad">
-                <!-- REACTION OPTION IMAGE -->
-                <img class="reaction-option-image" src="/assets/img/reaction/sad.png" alt="reaction-sad">
-                <!-- /REACTION OPTION IMAGE -->
-              </div>
-              <!-- /REACTION OPTION -->
-            </div>
-            <!-- /REACTION OPTIONS -->
-          </div>
-          <!-- /POST OPTION WRAP -->
+            <!-- /POST OPTION WRAP -->
+            </button>
+          </form>
+          <!-- POST OPTION -->
 
           <!-- POST OPTION -->
           <div class="post-option active">
@@ -548,7 +488,7 @@
                 <!-- /USER AVATAR -->
 
                 <!-- POST COMMENT TEXT -->
-                <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">{{$post_comment->user_name}}</a>{{$post_comment->comment}}</p>
+                <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">{{$post_comment->name}}</a>{{$post_comment->comment}}</p>
                 <!-- /POST COMMENT TEXT -->
 
                 <!-- CONTENT ACTIONS -->
@@ -778,7 +718,7 @@
                 <!-- /USER AVATAR -->
 
                 <!-- POST COMMENT TEXT -->
-                <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">{{$comment_replies->user_name}}</a>{{$comment_replies-> reply}}</p>
+                <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">{{$comment_replies->name}}</a>{{$comment_replies-> reply}}</p>
                 <!-- /POST COMMENT TEXT -->
 
                 <!-- CONTENT ACTIONS -->

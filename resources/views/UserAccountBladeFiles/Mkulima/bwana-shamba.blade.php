@@ -254,7 +254,7 @@
           <!-- BUTTON -->
           <p class="button void void-primary">
             <!-- BUTTON ICON -->
-          <a href="/chatify">
+          <a href="/Kilimofy-Messenger">
             <svg class="button-icon icon-comment">
               <use xlink:href="#svg-comment"></use>
             </svg>

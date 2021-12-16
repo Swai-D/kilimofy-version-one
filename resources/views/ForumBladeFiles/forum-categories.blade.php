@@ -172,9 +172,11 @@
           <!-- TABLE COLUMN -->
           <div class="table-column padded-big-left">
             @foreach($category->discussions as $recent_discussions)
-            <!-- TABLE LINK -->
-            <a class="table-link" href="/kilimofy/Forum/Forum-Discussion/{{$recent_discussions->id}}">{{$recent_discussions->Topic}}</a>
-            <!-- /TABLE LINK -->
+             @if($loop->index < 3)
+             <!-- TABLE LINK -->
+             <a class="table-link" href="/kilimofy/Forum/Forum-Discussion/{{$recent_discussions->id}}">{{$recent_discussions->Topic}}</a>
+             <!-- /TABLE LINK -->
+             @endif
             @endforeach
           </div>
           <!-- /TABLE COLUMN -->

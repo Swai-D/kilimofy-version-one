@@ -318,65 +318,67 @@
             <!-- USER STATUS LIST -->
             <div class="user-status-list">
               @foreach($users as $user)
-              <!-- USER STATUS -->
-              <div class="user-status request-small">
-                <!-- USER STATUS AVATAR -->
-                <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-about-{{$user->name}}">
-                  <!-- USER AVATAR -->
-                  <div class="user-avatar small no-outline">
-                    <!-- USER AVATAR CONTENT -->
-                    <div class="user-avatar-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$user->avatar}}"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR CONTENT -->
+               @if($loop->index < 5)
+               <!-- USER STATUS -->
+               <div class="user-status request-small">
+                 <!-- USER STATUS AVATAR -->
+                 <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-about-{{$user->name}}">
+                   <!-- USER AVATAR -->
+                   <div class="user-avatar small no-outline">
+                     <!-- USER AVATAR CONTENT -->
+                     <div class="user-avatar-content">
+                       <!-- HEXAGON -->
+                       <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$user->avatar}}"></div>
+                       <!-- /HEXAGON -->
+                     </div>
+                     <!-- /USER AVATAR CONTENT -->
 
-                    <!-- USER AVATAR PROGRESS -->
-                    <div class="user-avatar-progress">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-progress-40-44"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR PROGRESS -->
+                     <!-- USER AVATAR PROGRESS -->
+                     <div class="user-avatar-progress">
+                       <!-- HEXAGON -->
+                       <div class="hexagon-progress-40-44"></div>
+                       <!-- /HEXAGON -->
+                     </div>
+                     <!-- /USER AVATAR PROGRESS -->
 
-                    <!-- USER AVATAR PROGRESS BORDER -->
-                    <div class="user-avatar-progress-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-border-40-44"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR PROGRESS BORDER -->
+                     <!-- USER AVATAR PROGRESS BORDER -->
+                     <div class="user-avatar-progress-border">
+                       <!-- HEXAGON -->
+                       <div class="hexagon-border-40-44"></div>
+                       <!-- /HEXAGON -->
+                     </div>
+                     <!-- /USER AVATAR PROGRESS BORDER -->
 
 
-                  </div>
-                  <!-- /USER AVATAR -->
-                </a>
-                <!-- /USER STATUS AVATAR -->
+                   </div>
+                   <!-- /USER AVATAR -->
+                 </a>
+                 <!-- /USER STATUS AVATAR -->
 
-                <!-- USER STATUS TITLE -->
-                <p class="user-status-title"><a class="bold" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-about-{{$user->name}}">{{$user->name}}</a></p>
-                <!-- /USER STATUS TITLE -->
+                 <!-- USER STATUS TITLE -->
+                 <p class="user-status-title"><a class="bold" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-about-{{$user->name}}">{{$user->name}}</a></p>
+                 <!-- /USER STATUS TITLE -->
 
-                <!-- USER STATUS TEXT -->
-                <p class="user-status-text small">2 friends in common</p>
-                <!-- /USER STATUS TEXT -->
+                 <!-- USER STATUS TEXT -->
+                 <p class="user-status-text small">2 friends in common</p>
+                 <!-- /USER STATUS TEXT -->
 
-                <!-- ACTION REQUEST LIST -->
-                <div class="action-request-list">
-                  <!-- ACTION REQUEST -->
-                  <div class="action-request accept">
-                    <!-- ACTION REQUEST ICON -->
-                    <svg class="action-request-icon icon-add-friend">
-                      <use xlink:href="#svg-add-friend"></use>
-                    </svg>
-                    <!-- /ACTION REQUEST ICON -->
-                  </div>
-                  <!-- /ACTION REQUEST -->
-                </div>
-                <!-- ACTION REQUEST LIST -->
-              </div>
-              <!-- /USER STATUS -->
+                 <!-- ACTION REQUEST LIST -->
+                 <div class="action-request-list">
+                   <!-- ACTION REQUEST -->
+                   <div class="action-request accept">
+                     <!-- ACTION REQUEST ICON -->
+                     <svg class="action-request-icon icon-add-friend">
+                       <use xlink:href="#svg-add-friend"></use>
+                     </svg>
+                     <!-- /ACTION REQUEST ICON -->
+                   </div>
+                   <!-- /ACTION REQUEST -->
+                 </div>
+                 <!-- ACTION REQUEST LIST -->
+               </div>
+               <!-- /USER STATUS -->
+               @endif
               @endforeach
             </div>
             <!-- /USER STATUS LIST -->
@@ -384,7 +386,7 @@
           <!-- WIDGET BOX CONTENT -->
 
           <!-- WIDGET BOX BUTTON -->
-          <a class="widget-box-button button small secondary" href="/kilimofy/UserAccount/user_friends_page">See all Friends</a>
+          <a class="widget-box-button button small secondary" href="/kilimofy/UserAccount/user_friends_page/{{Auth::user()->id}}-friend's-list">See all Friends</a>
           <!-- /WIDGET BOX BUTTON -->
         </div>
         <!-- /WIDGET BOX -->
@@ -1034,7 +1036,7 @@
           <!-- /WIDGET BOX CONTROLS -->
 
           <!-- WIDGET BOX TITLE -->
-          <p class="widget-box-title">Bei za Mazao </p>
+          <p class="widget-box-title">Bei Ya Zao </p>
 
           <!-- /WIDGET BOX TITLE -->
 
@@ -1049,30 +1051,33 @@
                   <!-- REACTION STAT -->
                   <div class="reaction-stat">
                     <!-- REACTION STAT IMAGE -->
-                    <img class="reaction-stat-image circle-img" src="/assets/img/crops/ngano.png" alt="reaction-like" >
+                    <img class="reaction-stat-image circle-img" src="/assets/img/crops/bery.jpeg" alt="reaction-like" >
                     <!-- /REACTION STAT IMAGE -->
 
                     <!-- REACTION STAT TITLE -->
-                    <p class="reaction-stat-title">Ngano</p>
+                    <p class="reaction-stat-title">Strwaberry</p>
                     <!-- /REACTION STAT TITLE -->
 
                     <!-- REACTION STAT TEXT -->
-                    <p class="reaction-stat-text">Tsh 20,000/=</Sokonip>
+                    <p class="reaction-stat-text">Tsh 10,000/=</Sokonip>
+                    <p class="reaction-stat-text">Kg</Sokonip>
                     <!-- /REACTION STAT TEXT -->
                   </div>
                   <!-- /REACTION STAT -->
                   <!-- REACTION STAT -->
                   <div class="reaction-stat">
                     <!-- REACTION STAT IMAGE -->
-                    <img class="reaction-stat-image" src="/assets/img/crops/maize.png" alt="maize-png">
+                    <img class="reaction-stat-image" src="/assets/img/crops/mush.jpeg" alt="maize-png">
                     <!-- /REACTION STAT IMAGE -->
 
                     <!-- REACTION STAT TITLE -->
-                    <p class="reaction-stat-title">Mahindi</p>
+                    <p class="reaction-stat-title">Uyoga</p>
                     <!-- /REACTION STAT TITLE -->
 
                     <!-- REACTION STAT TEXT -->
-                    <p class="reaction-stat-text">Tsh 70,000 /=</p>
+                    <p class="reaction-stat-text">Tsh 10,000 /=</p>
+                    <p class="reaction-stat-text">Kg</Sokonip>
+
                     <!-- /REACTION STAT TEXT -->
                   </div>
                   <!-- /REACTION STAT -->
@@ -1085,15 +1090,17 @@
                   <!-- REACTION STAT -->
                   <div class="reaction-stat">
                     <!-- REACTION STAT IMAGE -->
-                    <img class="reaction-stat-image" src="/assets/img/crops/beans.jpeg" alt="reaction-dislike">
+                    <img class="reaction-stat-image" src="/assets/img/crops/green-beans.webp" alt="reaction-dislike">
                     <!-- /REACTION STAT IMAGE -->
 
                     <!-- REACTION STAT TITLE -->
-                    <p class="reaction-stat-title">Maharage</p>
+                    <p class="reaction-stat-title">Beans</p>
                     <!-- /REACTION STAT TITLE -->
 
                     <!-- REACTION STAT TEXT -->
-                    <p class="reaction-stat-text">Tsh 30,000/=</p>
+                    <p class="reaction-stat-text">Tsh 16,000/=</p>
+                    <p class="reaction-stat-text">Kg</Sokonip>
+
                     <!-- /REACTION STAT TEXT -->
                   </div>
                   <!-- /REACTION STAT -->
@@ -1111,6 +1118,8 @@
 
                     <!-- REACTION STAT TEXT -->
                     <p class="reaction-stat-text">Tsh 18,000 /=</p>
+                    <p class="reaction-stat-text">Gunia</Sokonip>
+
                     <!-- /REACTION STAT TEXT -->
                   </div>
                   <!-- /REACTION STAT -->
@@ -1134,7 +1143,9 @@
                     <!-- /REACTION STAT TITLE -->
 
                     <!-- REACTION STAT TEXT -->
-                    <p class="reaction-stat-text">Tsh 40,000 /=</p>
+                    <p class="reaction-stat-text">Tsh 10,000 /=</p>
+                    <p class="reaction-stat-text">Kg</Sokonip>
+
                     <!-- /REACTION STAT TEXT -->
                   </div>
                   <!-- /REACTION STAT -->
@@ -1142,15 +1153,17 @@
                   <!-- REACTION STAT -->
                   <div class="reaction-stat">
                     <!-- REACTION STAT IMAGE -->
-                    <img class="reaction-stat-image" src="/assets/img/reaction/wow.png" alt="reaction-wow">
+                    <img class="reaction-stat-image" src="/assets/img/crops/tomato.png" alt="reaction-wow">
                     <!-- /REACTION STAT IMAGE -->
 
                     <!-- REACTION STAT TITLE -->
-                    <p class="reaction-stat-title">5.944</p>
+                    <p class="reaction-stat-title">Nyanya</p>
                     <!-- /REACTION STAT TITLE -->
 
                     <!-- REACTION STAT TEXT -->
-                    <p class="reaction-stat-text">Wow!</p>
+                    <p class="reaction-stat-text">17,000</p>
+                    <p class="reaction-stat-text">Kreti</Sokonip>
+
                     <!-- /REACTION STAT TEXT -->
                   </div>
                   <!-- /REACTION STAT -->
@@ -1162,15 +1175,17 @@
                   <!-- REACTION STAT -->
                   <div class="reaction-stat">
                     <!-- REACTION STAT IMAGE -->
-                    <img class="reaction-stat-image" src="/assets/img/reaction/angry.png" alt="reaction-angry">
+                    <img class="reaction-stat-image" src="/assets/img/crops/beans.jpeg" alt="reaction-angry">
                     <!-- /REACTION STAT IMAGE -->
 
                     <!-- REACTION STAT TITLE -->
-                    <p class="reaction-stat-title">1.706</p>
+                    <p class="reaction-stat-title">Marage</p>
                     <!-- /REACTION STAT TITLE -->
 
                     <!-- REACTION STAT TEXT -->
-                    <p class="reaction-stat-text">Angry</p>
+                    <p class="reaction-stat-text">20,000</p>
+                    <p class="reaction-stat-text">Gunia</Sokonip>
+
                     <!-- /REACTION STAT TEXT -->
                   </div>
                   <!-- /REACTION STAT -->
@@ -1178,15 +1193,17 @@
                   <!-- REACTION STAT -->
                   <div class="reaction-stat">
                     <!-- REACTION STAT IMAGE -->
-                    <img class="reaction-stat-image" src="/assets/img/reaction/sad.png" alt="reaction-sad">
+                    <img class="reaction-stat-image" src="/assets/img/crops/maize.png" alt="reaction-sad">
                     <!-- /REACTION STAT IMAGE -->
 
                     <!-- REACTION STAT TITLE -->
-                    <p class="reaction-stat-title">801</p>
+                    <p class="reaction-stat-title">Mahindi</p>
                     <!-- /REACTION STAT TITLE -->
 
                     <!-- REACTION STAT TEXT -->
-                    <p class="reaction-stat-text">Sad</p>
+                    <p class="reaction-stat-text">70,000</p>
+                    <p class="reaction-stat-text">Gunia</Sokonip>
+
                     <!-- /REACTION STAT TEXT -->
                   </div>
                   <!-- /REACTION STAT -->

@@ -120,7 +120,6 @@ Route::get('/kilimofy/Blog/reply_comment/{comment_id}', [App\Http\Controllers\Po
 Route::post('/kilimofy/Blog/reply_comment_form', [App\Http\Controllers\PostController::class, 'reply_comment_create'])->middleware('auth');
 Route::post('/kilimofy/Admin/admin-all-forms-post', [App\Http\Controllers\PostController::class, 'create'])->middleware('auth');
 
-
 //**************************end*************************************************
 
 //**************************ChatController*************************************************
@@ -129,7 +128,7 @@ Route::get('/kilimofy/test-send-message', [App\Http\Controllers\MessageControlle
 //**************************end*************************************************
 
 //******************************Bwana Shamba************************************************
-Route::get('/kilimofy/Bwana-Shamba/home-page', [App\Http\Controllers\BwanaShambaController::class, 'Bwana_Shamba_Index_Page']);
+Route::get('/kilimofy/Afisa-Ugavi/home-page', [App\Http\Controllers\BwanaShambaController::class, 'Bwana_Shamba_Index_Page']);
 //**************************end*************************************************
 
 
@@ -138,18 +137,12 @@ Route::get('/kilimofy/Group/Group-Lists', [App\Http\Controllers\GroupController:
 Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupController::class, 'create_group']);
 Route::get('/kilimofy/Group/Group-Timeline', [App\Http\Controllers\GroupController::class, 'group_timeline']);
 
-
-
-
 //**************************end*************************************************
 
 
 //**************************BlogController*************************************************
 Route::post('/kilimofy/Blog/User-Create-Blog-Post', [App\Http\Controllers\BlogController::class, 'createBlog']);
 Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupController::class, 'create_group']);
-
-
-
 
 //**************************end*************************************************
 
@@ -159,17 +152,11 @@ Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page', [App\Http\C
 Route::post('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Make-Trip', [App\Http\Controllers\DriverController::class, 'MakeTrip']);
 Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupController::class, 'create_group']);
 
-
-
-
 //**************************end*************************************************
 
 
 //**************************MashineController*************************************************
 Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page', [App\Http\Controllers\MashineController::class, 'MashineHomePage']);
-
-
-
 
 //**************************end*************************************************
 
@@ -178,7 +165,25 @@ Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page', [App\Http\Control
 //**************************RepairController*************************************************
 Route::get('/kilimofy/Fundi-Wa-Mashine-Za-Kilimo/home-page', [App\Http\Controllers\RepairController::class, 'RepairMashineHomePage']);
 
+//**************************end*************************************************
 
 
+//**************************MtaalamWaKilimoController*************************************************
+Route::get('/kilimofy/Mtaalam-Wa-Kilimo/home-page', [App\Http\Controllers\MtaalamController::class, 'Mtaalam_Index_Page']);
+
+//**************************end*************************************************
+
+//**************************SettingsController*************************************************
+Route::get('/kilimofy/UserAccount-General-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'General_Settings']);
+Route::get('/kilimofy/UserAccount-Profile-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'My_Profile']);
+Route::get('/kilimofy/UserAccount-Social-Account-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'Social_Account']);
+
+//**************************end*************************************************
+
+
+//**************************MarketPlaceController*************************************************
+Route::get('/kilimofy/Market-place-index-page', [App\Http\Controllers\MarketPlaceController::class, 'index']);
+Route::get('/kilimofy/Market-place-buy-item/{bidhaa_info_id}', [App\Http\Controllers\MarketPlaceController::class, 'item_shopping_cart']);
+Route::get('/kilimofy/UserAccount-Social-Account-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'Social_Account']);
 
 //**************************end*************************************************

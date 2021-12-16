@@ -12,7 +12,7 @@
           @foreach($reply->replies as $replies)
             <div class="post-comment unread reply-2">
               <!-- USER AVATAR -->
-              <a class="user-avatar small no-outline" href="profile-timeline.html">
+              <a class="user-avatar small no-outline" href="#">
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
@@ -41,7 +41,7 @@
               <!-- /USER AVATAR -->
 
               <!-- POST COMMENT TEXT -->
-              <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">{{$replies->user_name}}</a>{{$replies->reply}}</p>
+              <p class="post-comment-text"><a class="post-comment-text-author" href="#">{{$replies->name}}</a>{{$replies->reply}}</p>
               <!-- /POST COMMENT TEXT -->
 
               <!-- CONTENT ACTIONS -->
@@ -251,7 +251,8 @@
                 <div class="interactive-input small">
                   <input type="text" id="chat-widget-message-text-2" name="reply_comment" placeholder="Write a message...">
                   <input type="hidden" id="chat-widget-message-text-2" name="reply_comment_id" value="{{$reply->id}}">
-                  <input type="hidden" id="chat-widget-message-text-2" name="user_name" value="{{Auth::user()->user_name}}">
+                  <input type="hidden" id="chat-widget-message-text-2" name="name" value="{{Auth::user()->name}}">
+                  <input type="hidden" id="chat-widget-message-text-2" name="user_id" value="{{Auth::user()->id}}">
                   <input type="hidden" id="chat-widget-message-text-2" name="user_avatar" value="{{Auth::user()->avatar}}">
                   <!-- INTERACTIVE INPUT ICON WRAP -->
                   <div class="interactive-input-icon-wrap actionable">

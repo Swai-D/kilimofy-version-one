@@ -195,9 +195,11 @@
         <!-- TABLE COLUMN -->
         <div class="table-column padded-big-left">
           @foreach($forum->discussions as $recent_discussions)
-          <!-- TABLE LINK -->
-          <a class="table-link" href="/kilimofy/Forum/Forum-Discussion/{{$recent_discussions->id}}">{{$recent_discussions->Topic}}</a>
-          <!-- /TABLE LINK -->
+           @if($loop->index < 3)
+           <!-- TABLE LINK -->
+           <a class="table-link" href="/kilimofy/Forum/Forum-Discussion/{{$recent_discussions->id}}">{{$recent_discussions->Topic}}</a>
+           <!-- /TABLE LINK -->
+           @endif
           @endforeach
         </div>
         <!-- /TABLE COLUMN -->
@@ -266,7 +268,7 @@
               <!-- /DISCUSSION PREVIEW META TEXT -->
 
               <!-- USER AVATAR -->
-              <a class="user-avatar micro no-border" href="profile-timeline.html">
+              <a class="user-avatar micro no-border" href="/kilimofy/UserAccount/about_user_page/{{$discussions->Author_ID}}-about-{{$discussions->Author_Name}}-in-Kilimofy-Platform">
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
@@ -278,7 +280,7 @@
               <!-- /USER AVATAR -->
 
               <!-- DISCUSSION PREVIEW META TEXT -->
-              <p class="discussion-preview-meta-text"><a href="profile-timeline.html">{{$discussions->Author_Name}}</a> {{$discussions->created_at->diffForHumans()}}</p>
+              <p class="discussion-preview-meta-text"><a href="/kilimofy/UserAccount/about_user_page/{{$discussions->Author_ID}}-about-{{$discussions->Author_Name}}-in-Kilimofy-Platform">{{$discussions->Author_Name}}</a> {{$discussions->created_at->diffForHumans()}}</p>
               <!-- /DISCUSSION PREVIEW META TEXT -->
             </div>
             <!-- /DISCUSSION PREVIEW META -->

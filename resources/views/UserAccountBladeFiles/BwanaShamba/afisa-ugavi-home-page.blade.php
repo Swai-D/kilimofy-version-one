@@ -89,110 +89,6 @@
             <!-- SIDEBAR MENU HEADER -->
             <div class="sidebar-menu-header accordion-trigger-linked">
               <!-- SIDEBAR MENU HEADER ICON -->
-              <svg class="sidebar-menu-header-icon icon-settings">
-                <use xlink:href="#svg-settings"></use>
-              </svg>
-              <!-- /SIDEBAR MENU HEADER ICON -->
-
-              <!-- SIDEBAR MENU HEADER CONTROL ICON -->
-              <div class="sidebar-menu-header-control-icon">
-                <!-- SIDEBAR MENU HEADER CONTROL ICON OPEN -->
-                <svg class="sidebar-menu-header-control-icon-open icon-minus-small">
-                  <use xlink:href="#svg-minus-small"></use>
-                </svg>
-                <!-- /SIDEBAR MENU HEADER CONTROL ICON OPEN -->
-
-                <!-- SIDEBAR MENU HEADER CONTROL ICON CLOSED -->
-                <svg class="sidebar-menu-header-control-icon-closed icon-plus-small">
-                  <use xlink:href="#svg-plus-small"></use>
-                </svg>
-                <!-- /SIDEBAR MENU HEADER CONTROL ICON CLOSED -->
-              </div>
-              <!-- /SIDEBAR MENU HEADER CONTROL ICON -->
-
-              <!-- SIDEBAR MENU HEADER TITLE -->
-              <p class="sidebar-menu-header-title">Account</p>
-              <!-- /SIDEBAR MENU HEADER TITLE -->
-
-              <!-- SIDEBAR MENU HEADER TEXT -->
-              <p class="sidebar-menu-header-text">Change settings, configure notifications, and review your privacy</p>
-              <!-- /SIDEBAR MENU HEADER TEXT -->
-            </div>
-            <!-- /SIDEBAR MENU HEADER -->
-
-            <!-- SIDEBAR MENU BODY -->
-            <div class="sidebar-menu-body accordion-content-linked">
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-account-info.html">Account Info</a>
-              <!-- /SIDEBAR MENU LINK -->
-
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-account-password.html">Change Password</a>
-              <!-- /SIDEBAR MENU LINK -->
-
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-account-settings.html">General Settings</a>
-              <!-- /SIDEBAR MENU LINK -->
-            </div>
-            <!-- /SIDEBAR MENU BODY -->
-          </div>
-          <!-- /SIDEBAR MENU ITEM -->
-
-          <!-- SIDEBAR MENU ITEM -->
-          <div class="sidebar-menu-item">
-            <!-- SIDEBAR MENU HEADER -->
-            <div class="sidebar-menu-header accordion-trigger-linked">
-              <!-- SIDEBAR MENU HEADER ICON -->
-              <svg class="sidebar-menu-header-icon icon-group">
-                <use xlink:href="#svg-group"></use>
-              </svg>
-              <!-- /SIDEBAR MENU HEADER ICON -->
-
-              <!-- SIDEBAR MENU HEADER CONTROL ICON -->
-              <div class="sidebar-menu-header-control-icon">
-                <!-- SIDEBAR MENU HEADER CONTROL ICON OPEN -->
-                <svg class="sidebar-menu-header-control-icon-open icon-minus-small">
-                  <use xlink:href="#svg-minus-small"></use>
-                </svg>
-                <!-- /SIDEBAR MENU HEADER CONTROL ICON OPEN -->
-
-                <!-- SIDEBAR MENU HEADER CONTROL ICON CLOSED -->
-                <svg class="sidebar-menu-header-control-icon-closed icon-plus-small">
-                  <use xlink:href="#svg-plus-small"></use>
-                </svg>
-                <!-- /SIDEBAR MENU HEADER CONTROL ICON CLOSED -->
-              </div>
-              <!-- /SIDEBAR MENU HEADER CONTROL ICON -->
-
-              <!-- SIDEBAR MENU HEADER TITLE -->
-              <p class="sidebar-menu-header-title">Groups</p>
-              <!-- /SIDEBAR MENU HEADER TITLE -->
-
-              <!-- SIDEBAR MENU HEADER TEXT -->
-              <p class="sidebar-menu-header-text">Create new groups, manage the ones you created or accept invites!</p>
-              <!-- /SIDEBAR MENU HEADER TEXT -->
-            </div>
-            <!-- /SIDEBAR MENU HEADER -->
-
-            <!-- SIDEBAR MENU BODY -->
-            <div class="sidebar-menu-body accordion-content-linked accordion-open">
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link active" href="hub-group-management.html">Manage Groups</a>
-              <!-- /SIDEBAR MENU LINK -->
-
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-group-invitations.html">Invitations</a>
-              <!-- /SIDEBAR MENU LINK -->
-            </div>
-            <!-- /SIDEBAR MENU BODY -->
-          </div>
-          <!-- /SIDEBAR MENU ITEM -->
-
-          <!-- SIDEBAR MENU ITEM -->
-          <div class="sidebar-menu-item">
-            <!-- SIDEBAR MENU HEADER -->
-            <div class="sidebar-menu-header accordion-trigger-linked">
-              <!-- SIDEBAR MENU HEADER ICON -->
               <svg class="sidebar-menu-header-icon icon-store">
                 <use xlink:href="#svg-store"></use>
               </svg>
@@ -215,7 +111,7 @@
               <!-- /SIDEBAR MENU HEADER CONTROL ICON -->
 
               <!-- SIDEBAR MENU HEADER TITLE -->
-              <p class="sidebar-menu-header-title">My Store</p>
+              <p class="sidebar-menu-header-title">My Trips Store</p>
               <!-- /SIDEBAR MENU HEADER TITLE -->
 
               <!-- SIDEBAR MENU HEADER TEXT -->
@@ -259,11 +155,11 @@
         <!-- SECTION HEADER INFO -->
         <div class="section-header-info">
           <!-- SECTION PRETITLE -->
-          <p class="section-pretitle">Groups</p>
+          <p class="section-pretitle">Safari</p>
           <!-- /SECTION PRETITLE -->
 
           <!-- SECTION TITLE -->
-          <h2 class="section-title">Manage Groups</h2>
+          <h2 class="section-title">Andaa Safari</h2>
           <!-- /SECTION TITLE -->
         </div>
         <!-- /SECTION HEADER INFO -->
@@ -291,15 +187,15 @@
           <!-- CREATE ENTITY BOX INFO -->
           <div class="create-entity-box-info">
             <!-- CREATE ENTITY BOX TITLE -->
-            <p class="create-entity-box-title">Create New Group</p>
+            <p class="create-entity-box-title">Andaa Safari</p>
             <!-- /CREATE ENTITY BOX TITLE -->
 
             <!-- CREATE ENTITY BOX TEXT -->
-            <p class="create-entity-box-text">Share your passion with others!</p>
+            <p class="create-entity-box-text">Share your trip with others!</p>
             <!-- /CREATE ENTITY BOX TEXT -->
 
             <!-- BUTTON -->
-            <p class="button secondary full popup-manage-group-trigger">Start Creating!</p>
+            <p class="button secondary full popup-make-trip-trigger">Andaa Safari</p>
             <!-- /BUTTON -->
           </div>
           <!-- /CREATE ENTITY BOX INFO -->
@@ -343,13 +239,13 @@
               <!-- /USER SHORT DESCRIPTION TITLE -->
 
               <!-- USER SHORT DESCRIPTION TEXT -->
-              <p class="user-short-description-text regular">Group Organizer</p>
+              <p class="user-short-description-text regular">Trip Organizer</p>
               <!-- /USER SHORT DESCRIPTION TEXT -->
             </div>
             <!-- /USER SHORT DESCRIPTION -->
 
             <!-- BUTTON -->
-            <p class="button white full popup-manage-group-trigger">Manage Group</p>
+            <p class="button white full popup-make-trip-trigger">Manage Trip</p>
             <!-- /BUTTON -->
           </div>
           <!-- /USER PREVIEW INFO -->
@@ -365,9 +261,9 @@
 <!-- /CONTENT GRID -->
 
 <!-- POPUP BOX -->
-<div class="popup-box mid popup-manage-group">
+<div class="popup-box mid popup-make-trip">
   <!-- POPUP CLOSE BUTTON -->
-  <div class="popup-close-button popup-manage-group-trigger">
+  <div class="popup-close-button popup-make-trip-trigger">
     <!-- POPUP CLOSE BUTTON ICON -->
     <svg class="popup-close-button-icon icon-cross">
       <use xlink:href="#svg-cross"></use>
@@ -462,11 +358,11 @@
       <!-- POPUP BOX SIDEBAR FOOTER -->
       <div class="popup-box-sidebar-footer">
         <!-- BUTTON -->
-        <button type="submit" class="button secondary full popup-manage-group-trigger">Save!</>
+        <button type="submit" class="button secondary full popup-make-trip-trigger">Save!</>
         <!-- /BUTTON -->
 
         <!-- BUTTON -->
-        <button type="reset" class="button white full popup-manage-group-trigger" style="background-color:red;">Delete</button>
+        <button type="reset" class="button white full popup-make-trip-trigger" style="background-color:red;">Delete</button>
         <!-- /BUTTON -->
       </div>
       <!-- /POPUP BOX SIDEBAR FOOTER -->

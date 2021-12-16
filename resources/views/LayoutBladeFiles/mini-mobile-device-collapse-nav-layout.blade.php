@@ -152,9 +152,9 @@
 
     <br>
      <!-- MENU ITEM -->
-     <li class="menu-item @yield('menu-status-mashine')">
+     <li class="menu-item @yield('menu-status-marketplace')">
        <!-- MENU ITEM LINK -->
-       <a class="menu-item-link" href="/kilimofy/Mkulima/Mashine-za-kilimo">
+       <a class="menu-item-link" href="/kilimofy/Market-place-index-page">
          <!-- MENU ITEM LINK ICON -->
          <img src="/assets/img/user_icon/market.png" alt="" style="width:44; height:44;">
 
@@ -227,13 +227,13 @@
    <br>
     <!-- MENU ITEM -->
     <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-store')">
+    <li class="menu-item @yield('menu-status-gardener')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/{{Auth::user()->id}}">
+      <a class="menu-item-link" href="/kilimofy/Afisa-Ugavi/home-page">
         <!-- MENU ITEM LINK ICON -->
-        <img src="/assets/img/user_icon/shopkeeper.png" alt="Dereva" style="width:44; height:44;">
+        <img src="/assets/img/user_icon/gardener.png" alt="Dereva" style="width:44; height:44;">
         <!-- /MENU ITEM LINK ICON -->
-        Muuza Pembejeo
+        Bwana Shamba
       </a>
       <!-- /MENU ITEM LINK -->
     </li>

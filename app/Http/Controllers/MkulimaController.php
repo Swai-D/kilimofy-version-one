@@ -155,6 +155,7 @@ class MkulimaController extends Controller
     {
       //Get User Location
       $user_location = Auth::user()->user_location;
+      dd($user_location);
 
       // get regionName
        $user_location_array = explode(', ', $user_location);
@@ -162,12 +163,12 @@ class MkulimaController extends Controller
        $user_region = $user_location_array[0];
        $user_district = $user_location_array[1];
 
-       // dd($user_district);
+        // dd($user_region);
 
       //Weather API call for current forecast
       $weather = new OpenWeather();
       $current = $weather->getCurrentWeatherByCityName($user_region);
-       // dd($weather);
+       dd($current);
 
       //Temp in Celsus
       $fahrenheit = $current['forecast']['temp'] ?? 84;

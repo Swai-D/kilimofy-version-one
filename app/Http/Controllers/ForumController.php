@@ -81,14 +81,19 @@ class ForumController extends Controller
         }
 
       $new_discussion->save();
+      // dd($request->Forum_Category_Name);
 
-      $topic_count = Forum::where('id', '=', $request->forum_id)->get('Topics');
+      // $topic_count = Forum::where('Category', '=', $request->Forum_Category_Name)->fun(){
+      //                Discussion::where('Forum_Category_Name', '=', $request->Forum_Category_Name)
+      // };
       // dd($topic_count);
 
-      //Get topic count out of an array
-      foreach ($topic_count as $topic_count) {
-        $topic_count = $topic_count['Topics'];
-      }
+      // //Get topic count out of an array
+      // foreach ($topic_count as $topic_count) {
+      //   $topic_count = $topic_count['Topics'];
+      // }
+
+      $topic_count = 0;
 
       //Update Topic count from the table
       $topic_count = $topic_count + 1;

@@ -138,7 +138,7 @@ class AuthController extends Controller
 
             elseif (Auth::user()->user_ocupation == 'Bwana_Shamba') {
               Session::put('user_id',$user_id);
-              return redirect('/kilimofy/Bwana-Shamba/home-page');
+              return redirect('/kilimofy/Afisa-Ugavi/home-page');
             }
 
 
@@ -152,6 +152,10 @@ class AuthController extends Controller
 
             elseif (Auth::user()->user_ocupation == 'Fundi') {
               return redirect('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page');
+            }
+
+            elseif (Auth::user()->user_ocupation == 'Mtaalam') {
+              return redirect('/kilimofy/Mtaalam-Wa-Kilimo/home-page');
             }
 
         }

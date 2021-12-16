@@ -84,7 +84,7 @@ class HomeBladeController extends Controller
              $user_image = request()->file('avatar');
              $filename = time().'.'.$user_image->getClientOriginalExtension();
              Image::make($user_image)->resize(300, 300)->save(public_path('/Uploads/avatars/'.$filename));
-             
+
              $user = Auth::user();
              $user->avatar = $filename;
              $user ->save();
@@ -98,6 +98,7 @@ class HomeBladeController extends Controller
              Group::where('Creator_Id', '=', $user_id->id)->update(['Creator_Image_Path' => $filename]);
              Comment::where('user_id', '=', $user_id->id)->update(['user_avatar' => $filename]);
              Reply::where('user_id', '=', $user_id->id)->update(['user_avatar' => $filename]);
+             Item::where('seller_id', '=', $user_id->id)->update(['seller_image_location' => $filename]);
 
              //Delete the Old IMAGE from Public Folder (Save Space)
              File::delete([public_path('/Uploads/avatars/'.$user_id->avatar),]);

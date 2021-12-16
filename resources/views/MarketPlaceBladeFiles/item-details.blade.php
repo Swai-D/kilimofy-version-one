@@ -1,38 +1,27 @@
 @extends('LayoutBladeFiles.app-layout')
-@section('title','MarketPlace')
-@section('discription-title','Sokoni')
-@section('discription-details','chagua bidhaa uipendayo')
+@section('title','Nunua Bidhaa Sokoni')
 @section('menu-status-marketplace','active')
-@section('content')
-!-- CONTENT GRID -->
-@foreach($item_details as $item_detail)
-  <div class="content-grid">
+@section('discription-title','Bidhaa Sokoni')
+@section('discription-details','kilimofy')
+
+<!-- CONTENT GRID -->
+<div class="content-grid">
+
   <!-- SECTION BANNER -->
-  <div class="section-banner">
-    <!-- SECTION BANNER ICON -->
-    <img class="section-banner-icon" src="/assets/img/banner/marketplace-icon.png" alt="marketplace-icon">
-    <!-- /SECTION BANNER ICON -->
-
-    <!-- SECTION BANNER TITLE -->
-    <p class="section-banner-title">Sokoni</p>
-    <!-- /SECTION BANNER TITLE -->
-
-    <!-- SECTION BANNER TEXT -->
-    <p class="section-banner-text">Mahali sahihi kwa jamii kuuza na kununua bidhaa za kilimo</p>
-    <!-- /SECTION BANNER TEXT -->
-  </div>
+  @include('LayoutBladeFiles.title-layout')
   <!-- /SECTION BANNER -->
 
+@foreach($bidhaa_info as $bidhaa)
   <!-- SECTION HEADER -->
   <div class="section-header">
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
       <!-- SECTION PRETITLE -->
-      <p class="section-pretitle">{{$item_detail->item_category}}</p>
+      <p class="section-pretitle">{{$bidhaa->item_category}}</p>
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
-      <h2 class="section-title">{{$item_detail->item_name}}</h2>
+      <h2 class="section-title">{{$bidhaa->item_name}}</h2>
       <!-- /SECTION TITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
@@ -40,15 +29,15 @@
     <!-- SECTION HEADER ACTIONS -->
     <div class="section-header-actions">
       <!-- SECTION HEADER SUBSECTION -->
-      <a class="section-header-subsection" href="marketplace.html">sokoni</a>
+      <a class="section-header-subsection" href="#">Sokoni</a>
       <!-- /SECTION HEADER SUBSECTION -->
 
       <!-- SECTION HEADER SUBSECTION -->
-      <a class="section-header-subsection" href="marketplace-category.html">{{$item_detail->item_category}}</a>
+      <a class="section-header-subsection" href="#">Bidhaa Mtandaoni</a>
       <!-- /SECTION HEADER SUBSECTION -->
 
       <!-- SECTION HEADER SUBSECTION -->
-      <p class="section-header-subsection">{{$item_detail->item_name}}</p>
+      <p class="section-header-subsection">{{$bidhaa->item_name}}</p>
       <!-- /SECTION HEADER SUBSECTION -->
     </div>
     <!-- /SECTION HEADER ACTIONS -->
@@ -67,71 +56,12 @@
           <div class="slider-panel-slide">
             <!-- SLIDER PANEL SLIDE IMAGE -->
             <figure class="slider-panel-slide-image liquid">
-              <img src="/assets/img/marketplace/items/10.jpg" alt="item-10">
+              <img src="/Uploads/ItemImages/{{$bidhaa->item_image}}" alt="item-10">
             </figure>
             <!-- /SLIDER PANEL SLIDE IMAGE -->
           </div>
           <!-- /SLIDER PANEL SLIDE -->
 
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="/assets/img/marketplace/items/15.jpg" alt="item-15">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="/assets/img/marketplace/items/16.jpg" alt="item-16">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="/assets/img/marketplace/items/17.jpg" alt="item-17">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="/assets/img/marketplace/items/18.jpg" alt="item-18">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="/assets/img/marketplace/items/19.jpg" alt="item-19">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="/assets/img/marketplace/items/20.jpg" alt="item-20">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
         </div>
         <!-- /SLIDER PANEL SLIDES -->
 
@@ -162,7 +92,7 @@
           <!-- /SLIDER CONTROLS -->
 
           <!-- BUTTON -->
-          <a class="button secondary" href="https://themeforest.net/item/pixel-diamond-html-esports-gaming-magazine-community/23798711" target="_blank">Live Preview</a>
+          <a class="button secondary" href="" target="_blank">Live Preview</a>
           <!-- /BUTTON -->
 
           <!-- ROSTER PICTURES -->
@@ -171,7 +101,7 @@
             <div class="roster-picture">
               <!-- ROSTER PICTURE IMAGE -->
               <figure class="roster-picture-image liquid">
-                <img src="/assets/img/marketplace/items/10.jpg" alt="item-10">
+                <img src="img/marketplace/items/10.jpg" alt="item-10">
               </figure>
               <!-- /ROSTER PICTURE IMAGE -->
             </div>
@@ -181,7 +111,7 @@
             <div class="roster-picture">
               <!-- ROSTER PICTURE IMAGE -->
               <figure class="roster-picture-image liquid">
-                <img src="/assets/img/marketplace/items/15.jpg" alt="item-15">
+                <img src="img/marketplace/items/15.jpg" alt="item-15">
               </figure>
               <!-- /ROSTER PICTURE IMAGE -->
             </div>
@@ -191,7 +121,7 @@
             <div class="roster-picture">
               <!-- ROSTER PICTURE IMAGE -->
               <figure class="roster-picture-image liquid">
-                <img src="/assets/img/marketplace/items/16.jpg" alt="item-16">
+                <img src="img/marketplace/items/16.jpg" alt="item-16">
               </figure>
               <!-- /ROSTER PICTURE IMAGE -->
             </div>
@@ -201,7 +131,7 @@
             <div class="roster-picture">
               <!-- ROSTER PICTURE IMAGE -->
               <figure class="roster-picture-image liquid">
-                <img src="/assets/img/marketplace/items/17.jpg" alt="item-17">
+                <img src="img/marketplace/items/17.jpg" alt="item-17">
               </figure>
               <!-- /ROSTER PICTURE IMAGE -->
             </div>
@@ -211,7 +141,7 @@
             <div class="roster-picture">
               <!-- ROSTER PICTURE IMAGE -->
               <figure class="roster-picture-image liquid">
-                <img src="/assets/img/marketplace/items/18.jpg" alt="item-18">
+                <img src="img/marketplace/items/18.jpg" alt="item-18">
               </figure>
               <!-- /ROSTER PICTURE IMAGE -->
             </div>
@@ -221,7 +151,7 @@
             <div class="roster-picture">
               <!-- ROSTER PICTURE IMAGE -->
               <figure class="roster-picture-image liquid">
-                <img src="/assets/img/marketplace/items/19.jpg" alt="item-19">
+                <img src="img/marketplace/items/19.jpg" alt="item-19">
               </figure>
               <!-- /ROSTER PICTURE IMAGE -->
             </div>
@@ -231,7 +161,7 @@
             <div class="roster-picture">
               <!-- ROSTER PICTURE IMAGE -->
               <figure class="roster-picture-image liquid">
-                <img src="/assets/img/marketplace/items/20.jpg" alt="item-20">
+                <img src="img/marketplace/items/20.jpg" alt="item-20">
               </figure>
               <!-- /ROSTER PICTURE IMAGE -->
             </div>
@@ -250,7 +180,7 @@
           <!-- TAB BOX OPTION -->
           <div class="tab-box-option">
             <!-- TAB BOX OPTION TITLE -->
-            <p class="tab-box-option-title">Maelezo</p>
+            <p class="tab-box-option-title">Description</p>
             <!-- /TAB BOX OPTION TITLE -->
           </div>
           <!-- /TAB BOX OPTION -->
@@ -258,7 +188,7 @@
           <!-- TAB BOX OPTION -->
           <div class="tab-box-option">
             <!-- TAB BOX OPTION TITLE -->
-            <p class="tab-box-option-title">Maoni <span class="highlighted">4</span></p>
+            <p class="tab-box-option-title">Comments <span class="highlighted">4</span></p>
             <!-- /TAB BOX OPTION TITLE -->
           </div>
           <!-- /TAB BOX OPTION -->
@@ -266,7 +196,7 @@
           <!-- TAB BOX OPTION -->
           <div class="tab-box-option">
             <!-- TAB BOX OPTION TITLE -->
-            <p class="tab-box-option-title">Mapitio <span class="highlighted">3</span></p>
+            <p class="tab-box-option-title">Reviews <span class="highlighted">3</span></p>
             <!-- /TAB BOX OPTION TITLE -->
           </div>
           <!-- /TAB BOX OPTION -->
@@ -280,27 +210,15 @@
             <!-- TAB BOX ITEM CONTENT -->
             <div class="tab-box-item-content">
               <!-- TAB BOX ITEM TITLE -->
-              <p class="tab-box-item-title">The Best eSports and Gaming Magazine Template!</p>
+              <p class="tab-box-item-title">{{$bidhaa->item_name}}</p>
               <!-- /TAB BOX ITEM TITLE -->
 
               <!-- TAB BOX ITEM PARAGRAPH -->
-              <p class="tab-box-item-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in henderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
-              <!-- /TAB BOX ITEM PARAGRAPH -->
-
-              <!-- TAB BOX ITEM PARAGRAPH -->
-              <p class="tab-box-item-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="tab-box-item-paragraph">{{$bidhaa->item_description}}</p>
               <!-- /TAB BOX ITEM PARAGRAPH -->
 
               <!-- TAB BOX ITEM TITLE -->
-              <p class="tab-box-item-title">356+ HTML Elements Library included</p>
-              <!-- /TAB BOX ITEM TITLE -->
-
-              <!-- TAB BOX ITEM PARAGRAPH -->
-              <p class="tab-box-item-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in henderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <!-- /TAB BOX ITEM PARAGRAPH -->
-
-              <!-- TAB BOX ITEM TITLE -->
-              <p class="tab-box-item-title">Included in the Pack:</p>
+              <p class="tab-box-item-title">Garama ya {{$bidhaa->item_name}} Inahusisha:</p>
               <!-- /TAB BOX ITEM TITLE -->
 
               <!-- BULLET ITEM LIST -->
@@ -314,7 +232,7 @@
                   <!-- /BULLET ITEM ICON -->
 
                   <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">64 HTML Files</p>
+                  <p class="bullet-item-text">Usafirishaji wa Bidhaa</p>
                   <!-- /BULLET ITEM TEXT -->
                 </li>
                 <!-- /BULLET ITEM -->
@@ -328,7 +246,7 @@
                   <!-- /BULLET ITEM ICON -->
 
                   <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">CSS and JS Elements Library with 365+ Items!</p>
+                  <p class="bullet-item-text">Maelezo ya Kitaalamu Kuhusu Bidhaa</p>
                   <!-- /BULLET ITEM TEXT -->
                 </li>
                 <!-- /BULLET ITEM -->
@@ -342,94 +260,11 @@
                   <!-- /BULLET ITEM ICON -->
 
                   <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">63 PSD Files Included SAVE $12</p>
+                  <p class="bullet-item-text">Bwana Shamba</p>
                   <!-- /BULLET ITEM TEXT -->
                 </li>
                 <!-- /BULLET ITEM -->
 
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Easy template customization using npm & grunt (optional)</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Vector Illustrations Included</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">84+ eSports Widgets</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Custom Plugins</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Fully Responsive</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Google Fonts</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
               </ul>
               <!-- /BULLET ITEM LIST -->
             </div>
@@ -514,13 +349,13 @@
                         <!-- REACTION ITEM -->
                         <div class="reaction-item">
                           <!-- REACTION IMAGE -->
-                          <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/happy.png" alt="reaction-happy">
+                          <img class="reaction-image reaction-item-dropdown-trigger" src="img/reaction/happy.png" alt="reaction-happy">
                           <!-- /REACTION IMAGE -->
 
                           <!-- SIMPLE DROPDOWN -->
                           <div class="simple-dropdown padded reaction-item-dropdown">
                             <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/happy.png" alt="reaction-happy"> <span class="bold">Happy</span></p>
+                            <p class="simple-dropdown-text"><img class="reaction" src="img/reaction/happy.png" alt="reaction-happy"> <span class="bold">Happy</span></p>
                             <!-- /SIMPLE DROPDOWN TEXT -->
 
                             <!-- SIMPLE DROPDOWN TEXT -->
@@ -534,13 +369,13 @@
                         <!-- REACTION ITEM -->
                         <div class="reaction-item">
                           <!-- REACTION IMAGE -->
-                          <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/like.png" alt="reaction-like">
+                          <img class="reaction-image reaction-item-dropdown-trigger" src="img/reaction/like.png" alt="reaction-like">
                           <!-- /REACTION IMAGE -->
 
                           <!-- SIMPLE DROPDOWN -->
                           <div class="simple-dropdown padded reaction-item-dropdown">
                             <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
+                            <p class="simple-dropdown-text"><img class="reaction" src="img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
                             <!-- /SIMPLE DROPDOWN TEXT -->
 
                             <!-- SIMPLE DROPDOWN TEXT -->
@@ -578,7 +413,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Like">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/like.png" alt="reaction-like">
+                          <img class="reaction-option-image" src="img/reaction/like.png" alt="reaction-like">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -586,7 +421,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Love">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/love.png" alt="reaction-love">
+                          <img class="reaction-option-image" src="img/reaction/love.png" alt="reaction-love">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -594,7 +429,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/dislike.png" alt="reaction-dislike">
+                          <img class="reaction-option-image" src="img/reaction/dislike.png" alt="reaction-dislike">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -602,7 +437,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Happy">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/happy.png" alt="reaction-happy">
+                          <img class="reaction-option-image" src="img/reaction/happy.png" alt="reaction-happy">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -610,7 +445,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Funny">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/funny.png" alt="reaction-funny">
+                          <img class="reaction-option-image" src="img/reaction/funny.png" alt="reaction-funny">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -618,7 +453,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Wow">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/wow.png" alt="reaction-wow">
+                          <img class="reaction-option-image" src="img/reaction/wow.png" alt="reaction-wow">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -626,7 +461,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Angry">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/angry.png" alt="reaction-angry">
+                          <img class="reaction-option-image" src="img/reaction/angry.png" alt="reaction-angry">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -634,7 +469,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Sad">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/sad.png" alt="reaction-sad">
+                          <img class="reaction-option-image" src="img/reaction/sad.png" alt="reaction-sad">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -698,7 +533,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/assets/img/avatar/01.jpg"></div>
+                    <div class="hexagon-image-30-32" data-src="img/avatar/01.jpg"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -764,13 +599,13 @@
                         <!-- REACTION ITEM -->
                         <div class="reaction-item">
                           <!-- REACTION IMAGE -->
-                          <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/like.png" alt="reaction-like">
+                          <img class="reaction-image reaction-item-dropdown-trigger" src="img/reaction/like.png" alt="reaction-like">
                           <!-- /REACTION IMAGE -->
 
                           <!-- SIMPLE DROPDOWN -->
                           <div class="simple-dropdown padded reaction-item-dropdown">
                             <!-- SIMPLE DROPDOWN TEXT -->
-                            <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
+                            <p class="simple-dropdown-text"><img class="reaction" src="img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
                             <!-- /SIMPLE DROPDOWN TEXT -->
 
                             <!-- SIMPLE DROPDOWN TEXT -->
@@ -800,7 +635,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Like">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/like.png" alt="reaction-like">
+                          <img class="reaction-option-image" src="img/reaction/like.png" alt="reaction-like">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -808,7 +643,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Love">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/love.png" alt="reaction-love">
+                          <img class="reaction-option-image" src="img/reaction/love.png" alt="reaction-love">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -816,7 +651,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/dislike.png" alt="reaction-dislike">
+                          <img class="reaction-option-image" src="img/reaction/dislike.png" alt="reaction-dislike">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -824,7 +659,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Happy">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/happy.png" alt="reaction-happy">
+                          <img class="reaction-option-image" src="img/reaction/happy.png" alt="reaction-happy">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -832,7 +667,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Funny">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/funny.png" alt="reaction-funny">
+                          <img class="reaction-option-image" src="img/reaction/funny.png" alt="reaction-funny">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -840,7 +675,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Wow">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/wow.png" alt="reaction-wow">
+                          <img class="reaction-option-image" src="img/reaction/wow.png" alt="reaction-wow">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -848,7 +683,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Angry">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/angry.png" alt="reaction-angry">
+                          <img class="reaction-option-image" src="img/reaction/angry.png" alt="reaction-angry">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -856,7 +691,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Sad">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/sad.png" alt="reaction-sad">
+                          <img class="reaction-option-image" src="img/reaction/sad.png" alt="reaction-sad">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -920,7 +755,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/assets/img/avatar/03.jpg"></div>
+                    <div class="hexagon-image-30-32" data-src="img/avatar/03.jpg"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -990,7 +825,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Like">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/like.png" alt="reaction-like">
+                          <img class="reaction-option-image" src="img/reaction/like.png" alt="reaction-like">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -998,7 +833,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Love">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/love.png" alt="reaction-love">
+                          <img class="reaction-option-image" src="img/reaction/love.png" alt="reaction-love">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1006,7 +841,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/dislike.png" alt="reaction-dislike">
+                          <img class="reaction-option-image" src="img/reaction/dislike.png" alt="reaction-dislike">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1014,7 +849,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Happy">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/happy.png" alt="reaction-happy">
+                          <img class="reaction-option-image" src="img/reaction/happy.png" alt="reaction-happy">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1022,7 +857,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Funny">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/funny.png" alt="reaction-funny">
+                          <img class="reaction-option-image" src="img/reaction/funny.png" alt="reaction-funny">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1030,7 +865,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Wow">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/wow.png" alt="reaction-wow">
+                          <img class="reaction-option-image" src="img/reaction/wow.png" alt="reaction-wow">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1038,7 +873,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Angry">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/angry.png" alt="reaction-angry">
+                          <img class="reaction-option-image" src="img/reaction/angry.png" alt="reaction-angry">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1046,7 +881,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Sad">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/sad.png" alt="reaction-sad">
+                          <img class="reaction-option-image" src="img/reaction/sad.png" alt="reaction-sad">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1108,7 +943,7 @@
                     <!-- USER AVATAR CONTENT -->
                     <div class="user-avatar-content">
                       <!-- HEXAGON -->
-                      <div class="hexagon-image-30-32" data-src="/assets/img/avatar/01.jpg"></div>
+                      <div class="hexagon-image-30-32" data-src="img/avatar/01.jpg"></div>
                       <!-- /HEXAGON -->
                     </div>
                     <!-- /USER AVATAR CONTENT -->
@@ -1185,7 +1020,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/assets/img/avatar/05.jpg"></div>
+                    <div class="hexagon-image-30-32" data-src="img/avatar/05.jpg"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -1255,7 +1090,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Like">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/like.png" alt="reaction-like">
+                          <img class="reaction-option-image" src="img/reaction/like.png" alt="reaction-like">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1263,7 +1098,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Love">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/love.png" alt="reaction-love">
+                          <img class="reaction-option-image" src="img/reaction/love.png" alt="reaction-love">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1271,7 +1106,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/dislike.png" alt="reaction-dislike">
+                          <img class="reaction-option-image" src="img/reaction/dislike.png" alt="reaction-dislike">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1279,7 +1114,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Happy">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/happy.png" alt="reaction-happy">
+                          <img class="reaction-option-image" src="img/reaction/happy.png" alt="reaction-happy">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1287,7 +1122,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Funny">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/funny.png" alt="reaction-funny">
+                          <img class="reaction-option-image" src="img/reaction/funny.png" alt="reaction-funny">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1295,7 +1130,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Wow">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/wow.png" alt="reaction-wow">
+                          <img class="reaction-option-image" src="img/reaction/wow.png" alt="reaction-wow">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1303,7 +1138,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Angry">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/angry.png" alt="reaction-angry">
+                          <img class="reaction-option-image" src="img/reaction/angry.png" alt="reaction-angry">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1311,7 +1146,7 @@
                         <!-- REACTION OPTION -->
                         <div class="reaction-option text-tooltip-tft" data-title="Sad">
                           <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="/assets/img/reaction/sad.png" alt="reaction-sad">
+                          <img class="reaction-option-image" src="img/reaction/sad.png" alt="reaction-sad">
                           <!-- /REACTION OPTION IMAGE -->
                         </div>
                         <!-- /REACTION OPTION -->
@@ -1379,7 +1214,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/assets/img/avatar/01.jpg"></div>
+                    <div class="hexagon-image-30-32" data-src="img/avatar/01.jpg"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -1462,7 +1297,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/assets/img/avatar/03.jpg"></div>
+                    <div class="hexagon-image-30-32" data-src="img/avatar/03.jpg"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -1634,7 +1469,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/assets/img/avatar/04.jpg"></div>
+                    <div class="hexagon-image-30-32" data-src="img/avatar/04.jpg"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -1806,7 +1641,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/assets/img/avatar/07.jpg"></div>
+                    <div class="hexagon-image-30-32" data-src="img/avatar/07.jpg"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -1988,7 +1823,7 @@
         <!-- SIDEBAR BOX ITEMS -->
         <div class="sidebar-box-items">
           <!-- PRICE TITLE -->
-          <p class="price-title big"><span class="currency">Tsh</span> {{$item_detail->item_price}}</p>
+          <p class="price-title big"><span class="currency">Tsh</span> {{number_format($bidhaa->item_price)}} /=</p>
           <!-- /PRICE TITLE -->
 
           <!-- FORM -->
@@ -2044,7 +1879,7 @@
           <!-- /FORM -->
 
           <!-- BUTTON -->
-          <p class="button primary">Nunua</p>
+          <a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Buy-item/{{$bidhaa->id}}-{{$bidhaa->item_name}}" class="button primary">Nunua!</a>
           <!-- /BUTTON -->
 
           <!-- USER STATS -->
@@ -2056,7 +1891,7 @@
               <!-- /USER STAT TITLE -->
 
               <!-- USER STAT TEXT -->
-              <p class="user-stat-text">Mauzo</p>
+              <p class="user-stat-text">sales</p>
               <!-- /USER STAT TEXT -->
             </div>
             <!-- /USER STAT -->
@@ -2132,18 +1967,17 @@
         <!-- /SIDEBAR BOX TITLE -->
 
         <!-- SIDEBAR BOX ITEMS -->
-        @foreach($seller as $seller)
         <div class="sidebar-box-items">
           <!-- USER STATUS -->
           <div class="user-status">
             <!-- USER STATUS AVATAR -->
-            <a class="user-status-avatar" href="profile-timeline.html">
+            <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page/{{$bidhaa->seller_id}}-About-{{$bidhaa->seller_name}}-in-Kilimofy-Platform">
               <!-- USER AVATAR -->
               <div class="user-avatar small no-outline">
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
-                  <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$seller->avatar}}"></div>
+                  <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$bidhaa->seller_image_location}}"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->
@@ -2183,7 +2017,7 @@
                   <!-- /USER AVATAR BADGE CONTENT -->
 
                   <!-- USER AVATAR BADGE TEXT -->
-                  <p class="user-avatar-badge-text">{{$item_count_for_seller}}</p>
+                  <p class="user-avatar-badge-text">{{$total_user_item_list}}</p>
                   <!-- /USER AVATAR BADGE TEXT -->
                 </div>
                 <!-- /USER AVATAR BADGE -->
@@ -2193,61 +2027,40 @@
             <!-- /USER STATUS AVATAR -->
 
             <!-- USER STATUS TITLE -->
-            <p class="user-status-title"><a class="bold" href="profile-timeline.html">{{$seller->user_name}}</a></p>
+            <p class="user-status-title"><a class="bold" href="profile-timeline.html">{{$bidhaa->seller_name}}</a></p>
             <!-- /USER STATUS TITLE -->
 
             <!-- USER STATUS TEXT -->
-            <p class="user-status-text small">Bidhaa {{$item_count_for_seller}} sokoni</p>
+            <p class="user-status-text small">Bidhaa {{$total_user_item_list}} Sokoni</p>
             <!-- /USER STATUS TEXT -->
           </div>
           <!-- /USER STATUS -->
 
           <!-- BADGE LIST -->
           <div class="badge-list small align-left">
-            <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="Gold User">
-              <img src="/assets/img/badge/gold-s.png" alt="badge-gold-s">
-            </div>
-            <!-- /BADGE ITEM -->
 
+            @foreach($user_item_list as $item)
             <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="Profile Age">
-              <img src="/assets/img/badge/age-s.png" alt="badge-age-s">
-            </div>
-            <!-- /BADGE ITEM -->
-
-            <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="Caffeinated">
-              <img src="/assets/img/badge/caffeinated-s.png" alt="badge-caffeinated-s">
-            </div>
-            <!-- /BADGE ITEM -->
-
-            <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="The Warrior">
-              <img src="/assets/img/badge/warrior-s.png" alt="badge-warrior-s">
-            </div>
-            <!-- /BADGE ITEM -->
-
-            <!-- BADGE ITEM -->
-            <a class="badge-item" href="profile-badges.html">
-              <img src="/assets/img/badge/blank-s.png" alt="badge-blank-s">
-              <!-- BADGE ITEM TEXT -->
-              <p class="badge-item-text">+9</p>
-              <!-- /BADGE ITEM TEXT -->
+            <a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart/{{$item->id}}">
+              <div class="badge-item text-tooltip-tft" data-title="{{$item->item_name}}">
+                <img src="/Uploads/ItemImages/{{$item->item_image}}" alt="{{$item->item_name}}" style="width:120%; height:120%; border-radius:70%;">
+              </div>
             </a>
+
             <!-- /BADGE ITEM -->
+            @endforeach
+
           </div>
           <!-- /BADGE LIST -->
 
           <!-- BUTTON -->
-          <a class="button small white" href="profile-store.html">View Author's Store</a>
+          <a class="button small white" href="profile-store.html">Tazama Bidhaa</a>
           <!-- /BUTTON -->
         </div>
-      @endforeach
         <!-- /SIDEBAR BOX ITEMS -->
 
         <!-- SIDEBAR BOX TITLE -->
-        <p class="sidebar-box-title medium-space">Maelezo ya Bidhaa</p>
+        <p class="sidebar-box-title medium-space">Taarifa ya Bidhaa</p>
         <!-- /SIDEBAR BOX TITLE -->
 
         <!-- SIDEBAR BOX ITEMS -->
@@ -2261,7 +2074,7 @@
               <!-- /INFORMATION LINE TITLE -->
 
               <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold"></span>{{$item_detail->item_name}}</p>
+              <p class="information-line-text"><span class="bold">{{$bidhaa->item_name}}</span></p>
               <!-- /INFORMATION LINE TEXT -->
             </div>
             <!-- /INFORMATION LINE -->
@@ -2269,11 +2082,11 @@
             <!-- INFORMATION LINE -->
             <div class="information-line">
               <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Kundi</p>
+              <p class="information-line-title">Aina</p>
               <!-- /INFORMATION LINE TITLE -->
 
               <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">{{$item_detail->item_category}}</span></p>
+              <p class="information-line-text"><span class="bold">{{$bidhaa->item_category}}</span></p>
               <!-- /INFORMATION LINE TEXT -->
             </div>
             <!-- /INFORMATION LINE -->
@@ -2285,53 +2098,19 @@
               <!-- /INFORMATION LINE TITLE -->
 
               <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">{{$item_detail->item_price}}</span></p>
+              <p class="information-line-text"><a href="">Tsh {{number_format($bidhaa->item_price)}} /=</a></p>
               <!-- /INFORMATION LINE TEXT -->
             </div>
             <!-- /INFORMATION LINE -->
 
-            <!-- INFORMATION LINE -->
-            <div class="information-line">
-              <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Mahali</p>
-              <!-- /INFORMATION LINE TITLE -->
 
-              <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">{{$item_detail->item_location}}</span></p>
-              <!-- /INFORMATION LINE TEXT -->
-            </div>
-            <!-- /INFORMATION LINE -->
-
-            <!-- INFORMATION LINE -->
-            <div class="information-line">
-              <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Usafiri</p>
-              <!-- /INFORMATION LINE TITLE -->
-
-              <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">{{$item_detail->item_trasport_cost}}</span></p>
-              <!-- /INFORMATION LINE TEXT -->
-            </div>
-            <!-- /INFORMATION LINE -->
-
-            <!-- INFORMATION LINE -->
-            <div class="information-line">
-              <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Maelezo<br>Mafupi</p>
-              <!-- /INFORMATION LINE TITLE -->
-
-              <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">{{$item_detail->item_description}}</span></p>
-              <!-- /INFORMATION LINE TEXT -->
-            </div>
-            <!-- /INFORMATION LINE -->
           </div>
           <!-- /INFORMATION LINE LIST -->
         </div>
         <!-- /SIDEBAR BOX ITEMS -->
 
         <!-- SIDEBAR BOX TITLE -->
-        <p class="sidebar-box-title medium-space">Share Bidhaa</p>
+        <p class="sidebar-box-title medium-space">Item Share</p>
         <!-- /SIDEBAR BOX TITLE -->
 
         <!-- SIDEBAR BOX ITEMS -->
@@ -2357,16 +2136,6 @@
               <!-- /SOCIAL LINK ICON -->
             </a>
             <!-- /SOCIAL LINK -->
-
-            <!-- SOCIAL LINK -->
-            <a class="social-link small instagram" href="#">
-              <!-- SOCIAL LINK ICON -->
-              <svg class="social-link-icon icon-instagram">
-                <use xlink:href="#svg-instagram"></use>
-              </svg>
-              <!-- /SOCIAL LINK ICON -->
-            </a>
-            <!-- /SOCIAL LINK -->
           </div>
           <!-- /SOCIAL LINKS -->
         </div>
@@ -2377,7 +2146,6 @@
     <!-- /MARKETPLACE SIDEBAR -->
   </div>
   <!-- /GRID -->
+  @endforeach
 </div>
-@endforeach
 <!-- /CONTENT GRID -->
-@endsection

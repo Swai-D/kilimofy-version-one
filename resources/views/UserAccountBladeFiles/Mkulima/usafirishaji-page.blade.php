@@ -15,11 +15,11 @@
         <!-- SECTION HEADER INFO -->
         <div class="section-header-info">
           <!-- SECTION PRETITLE -->
-          <p class="section-pretitle">Gain EXP and level up!</p>
+          <p class="section-pretitle">Safari</p>
           <!-- /SECTION PRETITLE -->
 
           <!-- SECTION TITLE -->
-          <h2 class="section-title">Browse All Quests</h2>
+          <h2 class="section-title">Angalia Safari Zote</h2>
           <!-- /SECTION TITLE -->
         </div>
         <!-- /SECTION HEADER INFO -->
