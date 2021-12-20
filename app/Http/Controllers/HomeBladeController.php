@@ -9,6 +9,7 @@ use App\Models\Paticipant;
 use App\Models\Discussion;
 use App\Models\Comment;
 use App\Models\Reply;
+use App\Models\Item;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Place;

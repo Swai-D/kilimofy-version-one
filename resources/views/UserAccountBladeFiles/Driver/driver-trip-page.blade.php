@@ -148,6 +148,17 @@
     </div>
     <!-- /GRID COLUMN -->
 
+    @if($errors->any())
+    <h4 class="text-danger">{{$errors->first()}}</h4>
+    @endif
+
+    @if(session()->has('Message'))
+      <div class="alert alert" role = "alert">
+        <p class="lead" style="color: #f33155">
+          {{session()->get('message')}}
+        </p>
+      </div>
+    @endif
     <!-- GRID COLUMN -->
     <div class="account-hub-content">
       <!-- SECTION HEADER -->
@@ -309,11 +320,11 @@
             <!-- /USER SHORT DESCRIPTION AVATAR -->
 
             <!-- USER SHORT DESCRIPTION TITLE -->
-            <p class="user-short-description-title small"><a href="group-timeline.html">{{Auth::user()->user_name}}</a></p>
+            <p class="user-short-description-title small"><a href="group-timeline.html">{{Auth::user()->username}}</a></p>
             <!-- /USER SHORT DESCRIPTION TITLE -->
 
             <!-- USER SHORT DESCRIPTION TEXT -->
-            <p class="user-short-description-text regular">Group Organizer</p>
+            <p class="user-short-description-text regular">Safari</p>
             <!-- /USER SHORT DESCRIPTION TEXT -->
           </div>
           <!-- /USER SHORT DESCRIPTION -->
@@ -327,7 +338,7 @@
         <!-- SIDEBAR MENU BODY -->
         <div class="sidebar-menu-body secondary">
           <!-- SIDEBAR MENU LINK -->
-          <p class="sidebar-menu-link active">Group Info</p>
+          <p class="sidebar-menu-link active">Safari Info</p>
           <!-- /SIDEBAR MENU LINK -->
 
           <!-- SIDEBAR MENU LINK -->
@@ -353,7 +364,7 @@
         <!-- /SIDEBAR MENU BODY -->
       </div>
       <!-- /SIDEBAR MENU ITEM -->
-     <form class="form" action="/kilimofy/Group/Create-Group" method="post" enctype="multipart/form-data">
+     <form class="form" action="/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Make-Trip" method="post" enctype="multipart/form-data">
        @csrf
       <!-- POPUP BOX SIDEBAR FOOTER -->
       <div class="popup-box-sidebar-footer">
@@ -385,47 +396,29 @@
             <div class="form-row">
               <!-- FORM ITEM -->
               <div class="form-item">
-                <!-- FORM INPUT -->
-                <div class="form-input small active">
-                  <label for="group-name">Jina la Grupu</label>
-                  <input type="text" id="group-name" name="Group_Name" >
+                <!-- FORM SELECT -->
+                <div class="form-select">
+                  <label for="rating-reason">Kutokea ?</label>
+                  <select class="for" name="From">
+                    <option value="" selected disabled>Mkoa &amp; Wilaya ? </option>
+
+                    @foreach($places as $place)
+                      <option value="{{$place->Region}}, {{$place->District}}">{{$place->Region}} ({{$place->District}}) </option>
+                    @endforeach
+
+                  </select>
+                  <!-- FORM SELECT ICON -->
+                  <svg class="form-select-icon icon-small-arrow">
+                    <use xlink:href="#svg-small-arrow"></use>
+                  </svg>
+                  <!-- /FORM SELECT ICON -->
+                    {{$errors->first('Form')}}
                 </div>
-                <!-- /FORM INPUT -->
+                <!-- /FORM SELECT -->
               </div>
               <!-- /FORM ITEM -->
             </div>
             <!-- /FORM ROW -->
-
-            <!-- FORM ROW -->
-            <div class="form-row">
-              <!-- FORM ITEM -->
-              <div class="form-item">
-                <!-- FORM INPUT -->
-                <div class="form-input small active">
-                  <label for="group-tagline">Ujumbe wa Grupu</label>
-                  <input type="text" id="group-tagline" name="Tagline" >
-                </div>
-                <!-- /FORM INPUT -->
-              </div>
-              <!-- /FORM ITEM -->
-            </div>
-            <!-- /FORM ROW -->
-
-            <!-- FORM ROW -->
-            <div class="form-row">
-              <!-- FORM ITEM -->
-              <div class="form-item">
-                <!-- FORM INPUT -->
-                <div class="form-input small mid-textarea">
-                  <textarea id="group-description" name="Description" placeholder="Andika maelezo mafupi kuhusu grupu..."></textarea>
-                </div>
-                <!-- /FORM INPUT -->
-              </div>
-              <!-- /FORM ITEM -->
-            </div>
-            <!-- /FORM ROW -->
-
-
 
             <!-- FORM ROW -->
             <div class="form-row">
@@ -433,11 +426,127 @@
               <div class="form-item">
                 <!-- FORM SELECT -->
                 <div class="form-select">
-                  <label for="item-category">Status ya Grupu</label>
-                  <select id="item-category" name="Status">
+                  <label for="rating-reason">Kwenda ?</label>
+                  <select class="for" name="To">
+                    <option value="" selected disabled>Mkoa &amp; Wilaya ? </option>
+
+                    @foreach($places as $place)
+                      <option value="{{$place->Region}}, {{$place->District}}">{{$place->Region}} ({{$place->District}}) </option>
+                    @endforeach
+
+                  </select>
+                  <!-- FORM SELECT ICON -->
+                  <svg class="form-select-icon icon-small-arrow">
+                    <use xlink:href="#svg-small-arrow"></use>
+                  </svg>
+                  <!-- /FORM SELECT ICON -->
+                    {{$errors->first('To')}}
+                </div>
+                <!-- /FORM SELECT -->
+              </div>
+              <!-- /FORM ITEM -->
+            </div>
+            <!-- /FORM ROW -->
+
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM INPUT -->
+                <div class="form-input small active">
+                  <label for="group-tagline">Tarehe</label>
+                  <input type="date" id="group-tagline" name="Date" >
+                </div>
+                <!-- /FORM INPUT -->
+              </div>
+              <!-- /FORM ITEM -->
+                {{$errors->first('Date')}}
+            </div>
+            <!-- /FORM ROW -->
+
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM INPUT -->
+                <div class="form-input small active">
+                  <label for="group-tagline">Tarehe</label>
+                  <input type="time" id="group-tagline" name="Time" >
+                </div>
+                <!-- /FORM INPUT -->
+              </div>
+              <!-- /FORM ITEM -->
+                {{$errors->first('Time')}}
+            </div>
+            <!-- /FORM ROW -->
+
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <!-- FORM SELECT -->
+              <div class="form-select">
+                <label for="rating-reason">Usafir Gani ?</label>
+                <select class="for" name="CarType">
+                  <option value="" selected disabled>--Chagua Gari --</option>
+                  <option value="Kirikuu">Kirikuu</option>
+                  <option value="Kenta">Kenta</option>
+                  <option value="Fuso">Fuso</option>
+                </select>
+                <!-- FORM SELECT ICON -->
+                <svg class="form-select-icon icon-small-arrow">
+                  <use xlink:href="#svg-small-arrow"></use>
+                </svg>
+                <!-- /FORM SELECT ICON -->
+                </div>
+              <!-- /FORM SELECT -->
+                {{$errors->first('CarType')}}
+            </div>
+            <!-- /FORM ROW -->
+
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM INPUT -->
+                <div class="form-input small active">
+                  <label for="group-tagline">Numba ya Gari</label>
+                  <input type="text" id="group-tagline" name="CarAdress" style="text-transform: uppercase;">
+                </div>
+                <!-- /FORM INPUT -->
+              </div>
+              <!-- /FORM ITEM -->
+                {{$errors->first('CarAdress')}}
+            </div>
+            <!-- /FORM ROW -->
+
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM INPUT -->
+                <div class="form-input small active">
+                  <label for="group-tagline">Numba ya Dereva</label>
+                  <input type="number"  name="DriverPhoneNumber" min="0" >
+                  </div>
+                <!-- /FORM INPUT -->
+
+              </div>
+              <!-- /FORM ITEM -->
+                {{$errors->first('DriverPhoneNumber')}}
+            </div>
+            <!-- /FORM ROW -->
+
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM SELECT -->
+                <div class="form-select">
+                  <label for="item-category">Aina ya Sarafi</label>
+                  <select id="item-category" name="TripType">
                     <option selected disabled>--Chagua--</option>
-                    <option value="Public">Public</option>
-                    <option value="Private">Private</option>
+                    <option value="Kwenda Tu">Kwenda tu</option>
+                    <option value="Kwena na Kurudi">Kwenda na Kurudi</option>
 
                   </select>
                   <!-- FORM SELECT ICON -->
@@ -449,27 +558,13 @@
                 <!-- /FORM SELECT -->
               </div>
               <!-- /FORM ITEM -->
-            <div class="text-danger">{{$errors->first('item_category')}}</div>
+              <input type="hidden" name="DriverImageName" value="{{Auth::user()->avatar}}">
+              <input type="hidden" name="DriverName" value="{{Auth::user()->username}}">
+                {{$errors->first('TripType')}}
             </div>
             <!-- /FORM ROW -->
 
-            <!-- FORM ROW -->
-            <div class="form-row">
-              <!-- FORM ITEM -->
-              <div class="form-item">
-                <!-- FORM INPUT -->
-                <div class="form-input small active">
-                  <label for="group-tagline">Profile ya Grupu</label>
-                  <input type="file" id="group-tagline" name="Group_Image" >
-                  <input type="hidden"  name="Creator_Name" value="{{Auth::user()->name}}" >
-                  <input type="hidden"  name="Creator_Id" value="{{Auth::user()->id}}" >
-                  <input type="hidden"  name="Creator_Image_Path" value="{{Auth::user()->avatar}}" >
-                </div>
-                <!-- /FORM INPUT -->
-              </div>
-              <!-- /FORM ITEM -->
-            </div>
-            <!-- /FORM ROW -->
+
           </form>
           <!-- /FORM -->
         </div>

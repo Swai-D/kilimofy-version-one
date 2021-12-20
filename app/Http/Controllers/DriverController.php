@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Driver;
 use App\Models\Place;
 use App\Models\User;
 use Auth;
@@ -23,20 +24,23 @@ class DriverController extends Controller
 
     public function MakeTrip(Request $request)
     {
-      dd($request);
-      $data = $request->validate([
-        'From' => ['require', 'string'],
-        'To' => ['require', 'string'],
-        'Date' => ['require'],
-        'Time' => ['require'],
-        'CarType' => ['require', 'string'],
-        'CarAdress' => ['require', 'string'],
-        'DriverPhoneNumber' => ['require', 'string'],
-        'TripType' => ['require', 'string'],
+      // dd($request);
+      $data = request()->validate([
+        'From' => ['required', 'string'],
+        'To' => ['required', 'string'],
+        'Date' => ['required'],
+        'Time' => ['required'],
+        'CarType' => ['required', 'string'],
+        'CarAdress' => ['required', 'string'],
+        'DriverPhoneNumber' => ['required', 'string', 'max:13'],
+        'DriverImageName' => ['required'],
+        'DriverName' => ['required'],
+        'TripType' => ['required', 'string'],
       ]);
 
       if (isset($data)) {
-        dd('Hellow Davyswai');
+        Driver::create($data);
+        return redirect()->back()->with('Message', 'Safari imeandaliwa ! Asante,');
       }
     }
 }

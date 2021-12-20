@@ -20,6 +20,7 @@
   </div>
   <!-- /BAR ACTIONS -->
 
+
 @if(Auth::user()->user_ocupation == 'Mkulima')
 <!-- BAR ACTIONS -->
 <div class="bar-actions">

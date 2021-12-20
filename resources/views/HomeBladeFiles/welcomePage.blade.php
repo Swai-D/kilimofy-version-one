@@ -38,7 +38,7 @@
       <!-- /LANDING INFO TITLE -->
 
       <!-- LANDING INFO TEXT -->
-      <p class="landing-info-text">Ulimwengu wa kidijitale</p>
+      <p class="landing-info-text">Ulimwengu wa kidigitali</p>
       <!-- /LANDING INFO TEXT -->
 
       <!-- TAB SWITCH -->

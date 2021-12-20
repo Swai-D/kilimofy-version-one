@@ -10,8 +10,249 @@ style="fill:yellow "
 @section('discription-details','kilimofy')
 <div class="content-grid">
 @include('LayoutBladeFiles.title-layout')
-<!-- SECTION -->
-<section class="section">
+
+  <!-- SECTION HEADER -->
+  <div class="section-header">
+    <!-- SECTION HEADER INFO -->
+    <div class="section-header-info">
+      <!-- SECTION PRETITLE -->
+      <p class="section-pretitle">Get a quick look!</p>
+      <!-- /SECTION PRETITLE -->
+
+      <!-- SECTION TITLE -->
+      <h2 class="section-title">Muongozo Wa Kilimo</h2>
+      <!-- /SECTION TITLE -->
+    </div>
+    <!-- /SECTION HEADER INFO -->
+  </div>
+  <!-- /SECTION HEADER -->
+
+  <!-- SECTION FILTERS BAR -->
+  <div class="section-filters-bar v6">
+    <!-- SECTION FILTERS BAR ACTIONS -->
+    <div class="section-filters-bar-actions">
+      <!-- FORM -->
+      <form class="form">
+        <!-- FORM ITEM -->
+        <div class="form-item split">
+          <!-- FORM INPUT -->
+          <div class="form-input small">
+            <label for="events-search">Tafuta Mkoa</label>
+            <input type="text" id="events-search" name="events_search">
+          </div>
+          <!-- /FORM INPUT -->
+
+          <!-- BUTTON -->
+          <button class="button primary">
+            <!-- ICON MAGNIFYING GLASS -->
+            <svg class="icon-magnifying-glass">
+              <use xlink:href="#svg-magnifying-glass"></use>
+            </svg>
+            <!-- /ICON MAGNIFYING GLASS -->
+          </button>
+          <!-- /BUTTON -->
+        </div>
+        <!-- /FORM ITEM -->
+      </form>
+      <!-- /FORM -->
+    </div>
+    <!-- /SECTION FILTERS BAR ACTIONS -->
+
+    <!-- SECTION FILTERS BAR ACTIONS -->
+    <div class="section-filters-bar-actions">
+      <!-- BUTTON -->
+      <p class="button secondary popup-event-creation-trigger">+ Add New Event</p>
+      <!-- /BUTTON -->
+    </div>
+    <!-- /SECTION FILTERS BAR ACTIONS -->
+  </div>
+  <!-- /SECTION FILTERS BAR -->
+
+<br>
+  <!-- TABLE WRAP -->
+  <div class="table-wrap" data-simplebar>
+    <!-- TABLE -->
+    <div class="table table-sales">
+      <!-- TABLE HEADER -->
+      <div class="table-header">
+        <!-- TABLE HEADER COLUMN -->
+        <div class="table-header-column">
+          <!-- TABLE HEADER TITLE -->
+          <p class="table-header-title">SN</p>
+          <!-- /TABLE HEADER TITLE -->
+        </div>
+        <!-- /TABLE HEADER COLUMN -->
+
+        <!-- TABLE HEADER COLUMN -->
+        <div class="table-header-column padded-left">
+          <!-- TABLE HEADER TITLE -->
+          <p class="table-header-title">Mkoa</p>
+          <!-- /TABLE HEADER TITLE -->
+        </div>
+        <!-- /TABLE HEADER COLUMN -->
+
+        <!-- TABLE HEADER COLUMN -->
+        <div class="table-header-column centered padded">
+          <!-- TABLE HEADER TITLE -->
+          <p class="table-header-title">Wilaya</p>
+          <!-- /TABLE HEADER TITLE -->
+        </div>
+        <!-- /TABLE HEADER COLUMN -->
+
+        <!-- TABLE HEADER COLUMN -->
+        <div class="table-header-column centered padded">
+          <!-- TABLE HEADER TITLE -->
+          <p class="table-header-title">Zao la Chakula</p>
+          <!-- /TABLE HEADER TITLE -->
+        </div>
+        <!-- /TABLE HEADER COLUMN -->
+
+        <!-- TABLE HEADER COLUMN -->
+        <div class="table-header-column centered padded">
+          <!-- TABLE HEADER TITLE -->
+          <p class="table-header-title">Zao la Biashara</p>
+          <!-- /TABLE HEADER TITLE -->
+        </div>
+        <!-- /TABLE HEADER COLUMN -->
+
+        <!-- TABLE HEADER COLUMN -->
+        <div class="table-header-column centered padded">
+          <!-- TABLE HEADER TITLE -->
+          <p class="table-header-title">Udongo Ph</p>
+          <!-- /TABLE HEADER TITLE -->
+        </div>
+        <!-- /TABLE HEADER COLUMN -->
+
+        <!-- TABLE HEADER COLUMN -->
+        <div class="table-header-column centered padded">
+          <!-- TABLE HEADER TITLE -->
+          <p class="table-header-title">Aina ya Udongo</p>
+          <!-- /TABLE HEADER TITLE -->
+        </div>
+        <!-- /TABLE HEADER COLUMN -->
+
+        <!-- TABLE HEADER COLUMN -->
+        <div class="table-header-column padded-left"></div>
+        <!-- /TABLE HEADER COLUMN -->
+      </div>
+      <!-- /TABLE HEADER -->
+
+      <!-- TABLE BODY -->
+      <div class="table-body same-color-rows">
+       @foreach($places as $place)
+       <!-- TABLE ROW -->
+       <div class="table-row micro">
+         <!-- TABLE COLUMN -->
+         <div class="table-column">
+           <!-- TABLE TEXT -->
+           <p class="table-text"><span class="light">{{$loop->iteration}}</span></p>
+           <!-- /TABLE TEXT -->
+         </div>
+         <!-- /TABLE COLUMN -->
+
+         <!-- TABLE COLUMN -->
+         <div class="table-column padded-left">
+           <!-- TABLE LINK -->
+           <a class="table-link" href="#"><span class="highlighted">{{$place->Region}}</span></a>
+           <!-- /TABLE LINK -->
+         </div>
+         <!-- /TABLE COLUMN -->
+
+         <!-- TABLE COLUMN -->
+         <div class="table-column centered padded">
+           <!-- TABLE TITLE -->
+           <p class="table-title">{{$place->District}}</p>
+           <!-- /TABLE TITLE -->
+         </div>
+         <!-- /TABLE COLUMN -->
+
+         <!-- TABLE COLUMN -->
+         <div class="table-column centered padded">
+          @if( $place->PriorityFoodCrops_1 != '')
+           <!-- TABLE TEXT -->
+           <p class="table-text"><span class="light">{{$place->PriorityFoodCrops_1}}</span></p>
+           <!-- /TABLE TEXT -->
+           @endif
+
+           @if( $place->PriorityFoodCrops_2 != '')
+            <!-- TABLE TEXT -->
+            <p class="table-text"><span class="light">{{$place->PriorityFoodCrops_2}}</span></p>
+            <!-- /TABLE TEXT -->
+            @endif
+
+            @if( $place->PriorityFoodCrops_3 != '')
+             <!-- TABLE TEXT -->
+             <p class="table-text"><span class="light">{{$place->PriorityFoodCrops_3}}</span></p>
+             <!-- /TABLE TEXT -->
+             @endif
+         </div>
+         <!-- /TABLE COLUMN -->
+
+         <!-- TABLE COLUMN -->
+         <div class="table-column centered padded">
+         @if( $place->PriorityCashCrops_1 != '')
+           <!-- TABLE TITLE -->
+           <p class="table-title">{{$place->PriorityCashCrops_1}}</p>
+           <!-- /TABLE TITLE -->
+         @endif
+
+         @if( $place->PriorityCashCrops_2 != '')
+           <!-- TABLE TITLE -->
+           <p class="table-title">{{$place->PriorityCashCrops_2}}</p>
+           <!-- /TABLE TITLE -->
+         @endif
+
+         @if( $place->PriorityCashCrops_3 != '')
+           <!-- TABLE TITLE -->
+           <p class="table-title">{{$place->PriorityCashCrops_3}}</p>
+           <!-- /TABLE TITLE -->
+         @endif
+         </div>
+         <!-- /TABLE COLUMN -->
+
+         <!-- TABLE COLUMN -->
+         <div class="table-column centered padded">
+           <!-- TABLE TEXT -->
+           <p class="table-text"><span class="light">{{$place->SoilPh}}</span></p>
+           <!-- /TABLE TEXT -->
+         </div>
+         <!-- /TABLE COLUMN -->
+
+         <!-- TABLE COLUMN -->
+         <div class="table-column centered padded">
+           <!-- TABLE TITLE -->
+           <p class="table-title">{{$place->SoilType}}</p>
+           <!-- /TABLE TITLE -->
+         </div>
+         <!-- /TABLE COLUMN -->
+
+         <!-- TABLE COLUMN -->
+         <div class="table-column padded-left">
+           <!-- PERCENTAGE DIFF ICON WRAP -->
+           <div class="percentage-diff-icon-wrap positive">
+             <!-- PERCENTAGE DIFF ICON -->
+             <svg class="percentage-diff-icon icon-plus-small">
+               <use xlink:href="#svg-plus-small"></use>
+             </svg>
+             <!-- /PERCENTAGE DIFF ICON -->
+           </div>
+           <!-- /PERCENTAGE DIFF ICON WRAP -->
+         </div>
+         <!-- /TABLE COLUMN -->
+
+       </div>
+       <!-- /TABLE ROW -->
+       <br>
+       @endforeach
+      </div>
+      <!-- /TABLE BODY -->
+    </div>
+    <!-- /TABLE -->
+  </div>
+  <!-- /TABLE WRAP -->
+
+    {{ $places->links('vendor.pagination.custom') }}
+  <br><br><br>
   <!-- SECTION HEADER -->
   <div class="section-header">
     <!-- SECTION HEADER INFO -->
@@ -37,75 +278,6 @@ style="fill:yellow "
     <!-- /SECTION HEADER INFO -->
   </div>
   <!-- /SECTION HEADER -->
-
-
-  <!-- SECTION FILTERS BAR -->
-  <div class="section-filters-bar v1">
-    <!-- SECTION FILTERS BAR ACTIONS -->
-    <div class="section-filters-bar-actions">
-      <!-- FORM ROW -->
-      <div class="form-row">
-        <!-- FORM ITEM -->
-        <div class="form-item">
-          <!-- FORM SELECT -->
-          <div class="form-select">
-            <label for="rating-reason">Tafuta ?</label>
-            <select class="for" name="user_location">
-              <option value="" selected disabled>Mkoa &amp; Wilaya Nyingine? </option>
-
-              @foreach($places as $place)
-                <option value="{{$place->Region}}, {{$place->District}}">{{$place->Region}} ({{$place->District}}) </option>
-              @endforeach
-
-            </select>
-            <!-- FORM SELECT ICON -->
-            <svg class="form-select-icon icon-small-arrow">
-              <use xlink:href="#svg-small-arrow"></use>
-            </svg>
-            <!-- /FORM SELECT ICON -->
-
-          </div>
-          <!-- /FORM SELECT -->
-        </div>
-        <!-- /FORM ITEM -->
-      </div>
-      <!-- /FORM ROW -->
-
-      <!-- FILTER TABS -->
-      <div class="filter-tabs">
-        <!-- FILTER TAB -->
-        <div class="filter-tab active">
-          <!-- FILTER TAB TEXT -->
-          <p class="filter-tab-text">Recently Active</p>
-          <!-- /FILTER TAB TEXT -->
-        </div>
-        <!-- /FILTER TAB -->
-
-        <!-- FILTER TAB -->
-        <div class="filter-tab">
-          <!-- FILTER TAB TEXT -->
-          <p class="filter-tab-text">Newest Seller</p>
-          <!-- /FILTER TAB TEXT -->
-        </div>
-        <!-- /FILTER TAB -->
-
-        <!-- FILTER TAB -->
-        <div class="filter-tab">
-          <!-- FILTER TAB TEXT -->
-          <p class="filter-tab-text">Alphabetical</p>
-          <!-- /FILTER TAB TEXT -->
-        </div>
-        <!-- /FILTER TAB -->
-      </div>
-      <!-- /FILTER TABS -->
-    </div>
-    <!-- /SECTION FILTERS BAR ACTIONS -->
-
-    <!-- SECTION FILTERS BAR ACTIONS -->
-
-    <!-- /SECTION FILTERS BAR ACTIONS -->
-  </div>
-  <!-- /SECTION FILTERS BAR -->
 
   <!-- GRID -->
   <div class="grid grid-3-3-3-3 centered">
@@ -312,7 +484,5 @@ style="fill:yellow "
   <!-- /SECTION PAGER BAR -->
   @endif
 
-</section>
-<!-- /SECTION -->
 
 </div>

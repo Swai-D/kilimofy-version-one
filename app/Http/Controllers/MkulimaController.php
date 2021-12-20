@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Stevebauman\Location\Facades\Location;
 
 use App\Models\Headline;
+use App\Models\Driver;
 use App\Models\Place;
 use App\Models\Post;
 use App\Models\Forum;
@@ -68,21 +69,21 @@ class MkulimaController extends Controller
           $user_location_pembejeo_na_viwatilifu_sellers_count = Item::where('seller_id', '=', $user_location_pembejeo_na_viwatilifu_seller['id'])->count();
         }
 
-        $places =  Place::select('Region','District')->get();
+        $places =  Place::paginate(5);
         $users = User::all();
 
-        return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu', compact('user_location',  'user_location_pembejeo_na_viwatilifu_sellers','user_location_pembejeo_na_viwatilifu_sellers_count', 'places', 'users'));
+        return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu-home-page', compact('user_location',  'user_location_pembejeo_na_viwatilifu_sellers','user_location_pembejeo_na_viwatilifu_sellers_count', 'places', 'users'));
 
       }
 
       else {
 
-        $places =  Place::select('Region','District')->get();
+        $places =  Place::paginate(5);
         $user_location_pembejeo_na_viwatilifu_sellers_count = 0;
         $user_location_pembejeo_na_viwatilifu_sellers = [];
         $users = User::all();
 
-        return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu', compact('user_location', 'places', 'users', 'user_location_pembejeo_na_viwatilifu_sellers_count', 'user_location_pembejeo_na_viwatilifu_sellers'));
+        return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu-home-page', compact('user_location', 'places', 'users', 'user_location_pembejeo_na_viwatilifu_sellers_count', 'user_location_pembejeo_na_viwatilifu_sellers'));
       }
 
 
@@ -138,8 +139,33 @@ class MkulimaController extends Controller
        $user_district = $user_location_array[1];
 
       $users = User::all();
-      $places =  Place::select('Region','District')->get();
-      return view('UserAccountBladeFiles.Mkulima.usafirishaji-page', compact('user_district','user_region', 'places', 'users'));
+      $places =  Place::all();
+      $usafiri = Driver::all();
+      $trip = [];
+      return view('UserAccountBladeFiles.Mkulima.usafirishaji-home-page', compact('trip','usafiri','user_district','user_region', 'places', 'users'));
+    }
+
+
+    public function tafuta_usafiri(Request $request)
+    {
+      $data = $request->validate([
+        'kutoka' => ['required'],
+        'kwenda' => ['required'],
+      ]);
+
+      if (isset($data)) {
+        $trip = Driver::where('From', 'LIKE', '%' .$data['kutoka']. '%')->orWhere('From', 'LIKE', '%' .$data['kwenda']. '%')->get();
+
+        }
+        if (count($trip) > 0 ) {
+          $places =  Place::all();
+          return view ('UserAccountBladeFiles.Mkulima.usafirishaji-home-page', compact('trip', 'places'));
+        }
+        else {
+
+          return "Result Not Found";
+        }
+
     }
 
 

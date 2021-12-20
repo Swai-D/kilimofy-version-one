@@ -48,6 +48,7 @@ Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart/{bidhaa_info_
 Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Buy-item/{item_id}-{slug}', [App\Http\Controllers\MkulimaController::class, 'pembejeo_na_viwatilifu_buy_item'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Checkout-item/{item_id}-{slug}', [App\Http\Controllers\MkulimaController::class, 'pembejeo_na_viwatilifu_check_out_item'])->middleware('auth');
 Route::get('/kilimofy/Usafirisaji/Usafiri', [App\Http\Controllers\MkulimaController::class, 'usafiri'])->middleware('auth');
+Route::post('/kilimofy/Usafirisaji/Tafuta-Usafiri', [App\Http\Controllers\MkulimaController::class, 'tafuta_usafiri'])->middleware('auth');
 
 //**************************end*************************************************
 

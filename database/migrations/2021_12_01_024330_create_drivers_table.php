@@ -22,6 +22,8 @@ class CreateDriversTable extends Migration
             $table->string('CarType');
             $table->string('CarAdress');
             $table->string('DriverPhoneNumber');
+            $table->string('DriverImageName');
+            $table->string('DriverName');
             $table->string('TripType');
             $table->timestamps();
         });
