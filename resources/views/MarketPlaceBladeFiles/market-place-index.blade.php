@@ -15,120 +15,7 @@
   <!-- /SECTION BANNER -->
 
 
-    <!-- SECTION HEADER -->
-    <div class="section-header">
-      <!-- SECTION HEADER INFO -->
-      <div class="section-header-info">
-        <!-- SECTION PRETITLE -->
-        <p class="section-pretitle">Search what you want!</p>
-        <!-- /SECTION PRETITLE -->
-
-        <!-- SECTION TITLE -->
-        <h2 class="section-title">Sokoni</h2>
-        <!-- /SECTION TITLE -->
-      </div>
-      <!-- /SECTION HEADER INFO -->
-    </div>
-    <!-- /SECTION HEADER -->
-
-    <!-- GRID -->
-
-    <div class="grid grid-3-3-3-3 centered">
-      <!-- PRODUCT CATEGORY BOX -->
-      <a class="product-category-box category-all" href="marketplace-category.html" >
-        <!-- PRODUCT CATEGORY BOX TITLE -->
-        <p class="product-category-box-title">Matunda</p>
-        <!-- /PRODUCT CATEGORY BOX TITLE -->
-
-        <!-- PRODUCT CATEGORY BOX TEXT -->
-        <p class="product-category-box-text">Check out all items</p>
-        <!-- /PRODUCT CATEGORY BOX TEXT -->
-
-        <!-- PRODUCT CATEGORY BOX TAG -->
-        <p class="product-category-box-tag">1360 items</p>
-        <!-- /PRODUCT CATEGORY BOX TAG -->
-      </a>
-      <!-- /PRODUCT CATEGORY BOX -->
-
-      <!-- PRODUCT CATEGORY BOX -->
-      <a class="product-category-box category-featured" href="marketplace-category.html" >
-        <!-- PRODUCT CATEGORY BOX TITLE -->
-        <p class="product-category-box-title">Mboga Mboga</p>
-        <!-- /PRODUCT CATEGORY BOX TITLE -->
-
-        <!-- PRODUCT CATEGORY BOX TEXT -->
-        <p class="product-category-box-text">Handpicked by us</p>
-        <!-- /PRODUCT CATEGORY BOX TEXT -->
-
-        <!-- PRODUCT CATEGORY BOX TAG -->
-        <p class="product-category-box-tag">254 items</p>
-        <!-- /PRODUCT CATEGORY BOX TAG -->
-      </a>
-      <!-- /PRODUCT CATEGORY BOX -->
-
-      <!-- PRODUCT CATEGORY BOX -->
-      <a class="product-category-box category-digital" href="marketplace-category.html" >
-        <!-- PRODUCT CATEGORY BOX TITLE -->
-        <p class="product-category-box-title">Nafaka</p>
-        <!-- /PRODUCT CATEGORY BOX TITLE -->
-
-        <!-- PRODUCT CATEGORY BOX TEXT -->
-        <p class="product-category-box-text">Logos, banners...</p>
-        <!-- /PRODUCT CATEGORY BOX TEXT -->
-
-        <!-- PRODUCT CATEGORY BOX TAG -->
-        <p class="product-category-box-tag">1207 items</p>
-        <!-- /PRODUCT CATEGORY BOX TAG -->
-      </a>
-      <!-- /PRODUCT CATEGORY BOX -->
-
-      <!-- PRODUCT CATEGORY BOX -->
-      <a class="product-category-box category-physical" href="marketplace-category.html" >
-        <!-- PRODUCT CATEGORY BOX TITLE -->
-        <p class="product-category-box-title">Bidhaa zitokanazo na Wanyama</p>
-        <!-- /PRODUCT CATEGORY BOX TITLE -->
-
-        <!-- PRODUCT CATEGORY BOX TEXT -->
-        <p class="product-category-box-text">Prints, joysticks...</p>
-        <!-- /PRODUCT CATEGORY BOX TEXT -->
-
-        <!-- PRODUCT CATEGORY BOX TAG -->
-        <p class="product-category-box-tag">153 items</p>
-        <!-- /PRODUCT CATEGORY BOX TAG -->
-      </a>
-      <!-- /PRODUCT CATEGORY BOX -->
-      <!-- PRODUCT CATEGORY BOX -->
-      <a class="product-category-box category-physical" href="marketplace-category.html">
-        <!-- PRODUCT CATEGORY BOX TITLE -->
-        <p class="product-category-box-title">Asali</p>
-        <!-- /PRODUCT CATEGORY BOX TITLE -->
-
-        <!-- PRODUCT CATEGORY BOX TEXT -->
-        <p class="product-category-box-text">Prints, joysticks...</p>
-        <!-- /PRODUCT CATEGORY BOX TEXT -->
-
-        <!-- PRODUCT CATEGORY BOX TAG -->
-        <p class="product-category-box-tag">153 items</p>
-        <!-- /PRODUCT CATEGORY BOX TAG -->
-      </a>
-      <!-- /PRODUCT CATEGORY BOX -->
-      <!-- PRODUCT CATEGORY BOX -->
-      <a class="product-category-box category-physical" href="marketplace-category.html">
-        <!-- PRODUCT CATEGORY BOX TITLE -->
-        <p class="product-category-box-title">Bidhaa zitokanazo na Wanyama</p>
-        <!-- /PRODUCT CATEGORY BOX TITLE -->
-
-        <!-- PRODUCT CATEGORY BOX TEXT -->
-        <p class="product-category-box-text">Prints, joysticks...</p>
-        <!-- /PRODUCT CATEGORY BOX TEXT -->
-
-        <!-- PRODUCT CATEGORY BOX TAG -->
-        <p class="product-category-box-tag">153 items</p>
-        <!-- /PRODUCT CATEGORY BOX TAG -->
-      </a>
-      <!-- /PRODUCT CATEGORY BOX -->
-    </div>
-    <!-- /GRID -->
+   <!-- unkownuser-bizaa-za-kilim0 -->
 
     <!-- SECTION HEADER -->
     <div class="section-header">
@@ -209,6 +96,121 @@
 
             <!-- PRODUCT PREVIEW AUTHOR TEXT -->
             <p class="product-preview-author-text"><a href="profile-timeline.html">{{$market_item->seller_name}}</a></p>
+            <!-- /PRODUCT PREVIEW AUTHOR TEXT -->
+          </div>
+          <!-- /PRODUCT PREVIEW AUTHOR -->
+
+          <!-- RATING LIST -->
+          <div class="rating-list">
+            <!-- RATING -->
+            <div class="rating filled">
+              <!-- RATING ICON -->
+              <svg class="rating-icon icon-star">
+                <use xlink:href="#svg-star"></use>
+              </svg>
+              <!-- /RATING ICON -->
+            </div>
+            <!-- /RATING -->
+
+            <!-- RATING -->
+            <div class="rating filled">
+              <!-- RATING ICON -->
+              <svg class="rating-icon icon-star">
+                <use xlink:href="#svg-star"></use>
+              </svg>
+              <!-- /RATING ICON -->
+            </div>
+            <!-- /RATING -->
+
+            <!-- RATING -->
+            <div class="rating filled">
+              <!-- RATING ICON -->
+              <svg class="rating-icon icon-star">
+                <use xlink:href="#svg-star"></use>
+              </svg>
+              <!-- /RATING ICON -->
+            </div>
+            <!-- /RATING -->
+
+            <!-- RATING -->
+            <div class="rating filled">
+              <!-- RATING ICON -->
+              <svg class="rating-icon icon-star">
+                <use xlink:href="#svg-star"></use>
+              </svg>
+              <!-- /RATING ICON -->
+            </div>
+            <!-- /RATING -->
+
+            <!-- RATING -->
+            <div class="rating">
+              <!-- RATING ICON -->
+              <svg class="rating-icon icon-star">
+                <use xlink:href="#svg-star"></use>
+              </svg>
+              <!-- /RATING ICON -->
+            </div>
+            <!-- /RATING -->
+          </div>
+          <!-- /RATING LIST -->
+        </div>
+        <!-- /PRODUCT PREVIEW META -->
+      </div>
+      <!-- /PRODUCT PREVIEW -->
+    @endforeach
+
+    @foreach($mashine_za_kilimo_list as $mashine_za_kilimo)
+      <div class="product-preview">
+        <!-- PRODUCT PREVIEW IMAGE -->
+        <a href="/kilimofy/Mkulima/mashime_za_kilimo_cart/shopping-cart/{{$mashine_za_kilimo->id}}">
+          <figure class="product-preview-image liquid">
+            <img src="/Uploads/MashineImage/{{$mashine_za_kilimo->Mashine_Image}}" alt="item-09">
+          </figure>
+        </a>
+        <!-- /PRODUCT PREVIEW IMAGE -->
+
+        <!-- PRODUCT PREVIEW INFO -->
+        <div class="product-preview-info">
+          <!-- TEXT STICKER -->
+          <p class="text-sticker"><span class="highlighted">Tsh</span> {{number_format($mashine_za_kilimo->Mashine_Price)}} /=</p>
+          <!-- /TEXT STICKER -->
+
+          <!-- PRODUCT PREVIEW TITLE -->
+          <p class="product-preview-title"><a href="marketplace-product.html">{{$mashine_za_kilimo->Mashine_Name}}</a></p>
+          <!-- /PRODUCT PREVIEW TITLE -->
+
+          <!-- PRODUCT PREVIEW CATEGORY -->
+          <p class="product-preview-category digital"><a href="marketplace-category.html">Mashine Ya Kilimo</a></p>
+          <!-- /PRODUCT PREVIEW CATEGORY -->
+
+          <!-- PRODUCT PREVIEW TEXT -->
+          <p class="product-preview-text">{{$mashine_za_kilimo->Mashine_Description}}</p>
+          <!-- /PRODUCT PREVIEW TEXT -->
+        </div>
+        <!-- /PRODUCT PREVIEW INFO -->
+
+        <!-- PRODUCT PREVIEW META -->
+        <div class="product-preview-meta">
+          <!-- PRODUCT PREVIEW AUTHOR -->
+          <div class="product-preview-author">
+            <!-- PRODUCT PREVIEW AUTHOR IMAGE -->
+            <a class="product-preview-author-image user-avatar micro no-border" href="profile-timeline.html">
+              <!-- USER AVATAR CONTENT -->
+              <div class="user-avatar-content">
+                <!-- HEXAGON -->
+                <div class="hexagon-image-18-20" data-src="/Uploads/avatars/{{$mashine_za_kilimo->Seller_Image_Path}}"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR CONTENT -->
+            </a>
+            <!-- /PRODUCT PREVIEW AUTHOR IMAGE -->
+
+            <!-- PRODUCT PREVIEW AUTHOR TITLE -->
+            <p class="product-preview-author-title">Posted By</p>
+            <!-- /PRODUCT PREVIEW AUTHOR TITLE -->
+
+            <!-- PRODUCT PREVIEW AUTHOR TEXT -->
+            <p class="product-preview-author-text"><a href="profile-timeline.html">{{$mashine_za_kilimo->Seller_Name}}</a></p>
             <!-- /PRODUCT PREVIEW AUTHOR TEXT -->
           </div>
           <!-- /PRODUCT PREVIEW AUTHOR -->

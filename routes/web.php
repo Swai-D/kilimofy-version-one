@@ -43,8 +43,13 @@ Route::get('/kilimofy/Mkulima/home-page', [App\Http\Controllers\MkulimaControlle
 Route::get('/kilimofy/Mkulima/Mashine-za-kilimo', [App\Http\Controllers\MkulimaController::class, 'mashine_za_kilimo'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Mashine-za-kilimo/shopping-cart', [App\Http\Controllers\MkulimaController::class, 'mashine_za_kilimo_shopping_cart'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Bwana-Shamba', [App\Http\Controllers\MkulimaController::class, 'mabwana_shamba'])->middleware('auth');
+Route::get('/kilimofy/Mkulima/Fundi-Wa-Mashine-Shamba', [App\Http\Controllers\MkulimaController::class, 'fundi_wa_mashine'])->middleware('auth');
+Route::get('/kilimofy/Mkulima/Mtaalam-Wa-Kilimo', [App\Http\Controllers\MkulimaController::class, 'mtaalam_wa_kilimo'])->middleware('auth');
+Route::get('/kilimofy/Mkulima/Vibarua', [App\Http\Controllers\MkulimaController::class, 'vibarua'])->middleware('auth');
+Route::get('/kilimofy/Mkulima/Mtaalam-Wa-Kilimo/blog-page', [App\Http\Controllers\MkulimaController::class, 'mtaalam_wa_kilimo_blog_page'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu', [App\Http\Controllers\MkulimaController::class, 'pembejeo_na_viwatilifu'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart/{bidhaa_info_id}', [App\Http\Controllers\MkulimaController::class, 'pembejeo_na_viwatilifu_shopping_cart'])->middleware('auth');
+Route::get('/kilimofy/Mkulima/mashime_za_kilimo_cart/shopping-cart/{bidhaa_info_id}', [App\Http\Controllers\MkulimaController::class, 'mashine_za_kilimo_cart'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Buy-item/{item_id}-{slug}', [App\Http\Controllers\MkulimaController::class, 'pembejeo_na_viwatilifu_buy_item'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Checkout-item/{item_id}-{slug}', [App\Http\Controllers\MkulimaController::class, 'pembejeo_na_viwatilifu_check_out_item'])->middleware('auth');
 Route::get('/kilimofy/Usafirisaji/Usafiri', [App\Http\Controllers\MkulimaController::class, 'usafiri'])->middleware('auth');
@@ -62,6 +67,7 @@ Route::get('/kilimofy/Admin/Headline-action-list', [App\Http\Controllers\AdminCo
 Route::get('/kilimofy/Admin/New-Forum-Category-Form', [App\Http\Controllers\AdminController::class, 'forum_category_form'])->middleware(['auth','supper_admin']);
 Route::get('/kilimofy/Admin/Crops-Price-Update-Form', [App\Http\Controllers\AdminController::class, 'crops_price_form'])->middleware(['auth','supper_admin']);
 Route::get('/kilimofy/Admin/Headlines-Updates-Form', [App\Http\Controllers\AdminController::class, 'headline_updates'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/Market-Product-List-Form', [App\Http\Controllers\AdminController::class, 'market_products'])->middleware(['auth','supper_admin']);
 Route::post('/kilimofy/Admin/Headlines-Updates-Form-store', [App\Http\Controllers\AdminController::class, 'headline_updates_store'])->middleware(['auth','supper_admin']);
 Route::post('/kilimofy/Admin/New-Forum-Category-Form-Store', [App\Http\Controllers\AdminController::class, 'create_forum_category'])->middleware(['auth','supper_admin']);
 
@@ -78,7 +84,10 @@ Route::get('/kilimofy/Admin/accept_item_to_market/{item_id}', [App\Http\Controll
 
 //**************************MuuzaWaPembejeoController*********************************
 Route::get('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/home-page', [App\Http\Controllers\PembejeoNaViwatilifuController::class, 'muuzaji_Wa_pembejeo_na_viwatilifu_index_page'])->middleware('auth');
-Route::get('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/{user_id}',[App\Http\Controllers\PembejeoNaViwatilifuController::class, 'muuzaji_Wa_pembejeo_na_viwatilifu_account_page'])->middleware('auth');
+Route::get('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page',[App\Http\Controllers\PembejeoNaViwatilifuController::class, 'muuzaji_Wa_pembejeo_na_viwatilifu_account_page'])->middleware('auth');
+Route::get('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/Edit-Item/{item}',[App\Http\Controllers\PembejeoNaViwatilifuController::class, 'muuzaji_Wa_pembejeo_na_viwatilifu_account_page_edit_item'])->middleware('auth');
+Route::post('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/Edit-Item-store/{item}',[App\Http\Controllers\PembejeoNaViwatilifuController::class, 'edit_item_store'])->middleware('auth');
+Route::get('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/Delete-Item/{item}',[App\Http\Controllers\PembejeoNaViwatilifuController::class, 'delete_item'])->middleware('auth');
 Route::post('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/post-item-page/{user_id}', [App\Http\Controllers\PembejeoNaViwatilifuController::class, 'post_item_store_method'])->middleware('auth');
 //**************************end*************************************************
 
@@ -129,21 +138,23 @@ Route::get('/kilimofy/test-send-message', [App\Http\Controllers\MessageControlle
 //**************************end*************************************************
 
 //******************************Bwana Shamba************************************************
-Route::get('/kilimofy/Afisa-Ugavi/home-page', [App\Http\Controllers\BwanaShambaController::class, 'Bwana_Shamba_Index_Page']);
+Route::get('/kilimofy/Afisa-Ugavi/home-page', [App\Http\Controllers\BwanaShambaController::class, 'Bwana_Shamba_Home_Page']);
 //**************************end*************************************************
 
 
 //**************************GroupController*************************************************
 Route::get('/kilimofy/Group/Group-Lists', [App\Http\Controllers\GroupController::class, 'group_list_page']);
 Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupController::class, 'create_group']);
-Route::get('/kilimofy/Group/Group-Timeline', [App\Http\Controllers\GroupController::class, 'group_timeline']);
+Route::get('/kilimofy/Group/Edit-Group/{group}', [App\Http\Controllers\GroupController::class, 'edit_group']);
+Route::post('/kilimofy/Group/Edit-Group-Store/{group}', [App\Http\Controllers\GroupController::class, 'edit_group_store']);
+Route::get('/kilimofy/Group/Delete-Group/{group}', [App\Http\Controllers\GroupController::class, 'delete_group']);
+Route::get('/kilimofy/Group/Group-Timeline/{group}', [App\Http\Controllers\GroupController::class, 'group_timeline']);
 
 //**************************end*************************************************
 
 
 //**************************BlogController*************************************************
 Route::post('/kilimofy/Blog/User-Create-Blog-Post', [App\Http\Controllers\BlogController::class, 'createBlog']);
-Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupController::class, 'create_group']);
 
 //**************************end*************************************************
 
@@ -151,13 +162,19 @@ Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupControlle
 //**************************DriverController*************************************************
 Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page', [App\Http\Controllers\DriverController::class, 'Driver_Index_Page']);
 Route::post('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Make-Trip', [App\Http\Controllers\DriverController::class, 'MakeTrip']);
-Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupController::class, 'create_group']);
+Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Edit-Trip/{trip_id}', [App\Http\Controllers\DriverController::class, 'EditTrip']);
+Route::post('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Edit-Trip/{trip_id}', [App\Http\Controllers\DriverController::class, 'UpdateTrip']);
+Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Delete-Trip/{trip_id}', [App\Http\Controllers\DriverController::class, 'DeleteTrip']);
 
 //**************************end*************************************************
 
 
 //**************************MashineController*************************************************
 Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page', [App\Http\Controllers\MashineController::class, 'MashineHomePage']);
+Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/Edit-Mashine-page/{mashine}', [App\Http\Controllers\MashineController::class, 'EditMashine']);
+Route::post('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/Edit-Mashine-Store/{mashine}', [App\Http\Controllers\MashineController::class, 'EditMashineStore']);
+Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/Delete-Mashine/{mashine}', [App\Http\Controllers\MashineController::class, 'DeleteMashine']);
+Route::post('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/uza-mashine-za-kilimo', [App\Http\Controllers\MashineController::class, 'SellMashine']);
 
 //**************************end*************************************************
 

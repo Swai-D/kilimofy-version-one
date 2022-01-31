@@ -76,8 +76,9 @@
                 <!-- PRODUCT PREVIEW -->
                 <div class="product-preview tiny">
                   <!-- PRODUCT PREVIEW IMAGE -->
-                  <a href="marketplace-product.html">
+                  <a href="">
                     <figure class="product-preview-image liquid">
+
                       <img src="/Uploads/ItemImages/{{$item_info->item_image}}" alt="item-01">
                     </figure>
                   </a>
@@ -86,15 +87,15 @@
                   <!-- PRODUCT PREVIEW INFO -->
                   <div class="product-preview-info">
                     <!-- PRODUCT PREVIEW TITLE -->
-                    <p class="product-preview-title"><a href="marketplace-product.html">{{$item_info->item_name}}</a></p>
+                    <p class="product-preview-title"><a href="">{{$item_info->item_name}}</a></p>
                     <!-- /PRODUCT PREVIEW TITLE -->
 
                     <!-- PRODUCT PREVIEW CATEGORY -->
-                    <p class="product-preview-category digital"><a href="marketplace-category.html">{{$item_info->item_category}}</a></p>
+                    <p class="product-preview-category digital"><a href="">{{$item_info->item_category}}</a></p>
                     <!-- /PRODUCT PREVIEW CATEGORY -->
 
                     <!-- PRODUCT PREVIEW CREATOR -->
-                    <p class="product-preview-creator"><a href="profile-timeline.html">{{$item_info->seller_name}}</a></p>
+                    <p class="product-preview-creator"><a href="/kilimofy/UserAccount/about_user_page/{{$item_info->seller_id}}-about-{{$item_info->seller_name}}-in-Kilimofy-Platform">{{$item_info->seller_name}}</a></p>
                     <!-- /PRODUCT PREVIEW CREATOR -->
                   </div>
                   <!-- /PRODUCT PREVIEW INFO -->
@@ -187,7 +188,7 @@
         <!-- SIDEBAR BOX ITEMS -->
         <div class="sidebar-box-items">
           <!-- PRICE TITLE -->
-          <p class="price-title big"><span class="currency">Tsh</span> {{number_format($item_info->item_price)}} /=</p>
+          <p class="price-title small"><span class="currency">Tsh</span> <span style="color:red">{{number_format($item_info->item_price)}}</span> /=</p>
           <!-- /PRICE TITLE -->
 
           <!-- TOTALS LINE LIST -->

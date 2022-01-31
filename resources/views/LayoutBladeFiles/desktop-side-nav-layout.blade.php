@@ -54,10 +54,22 @@
     <!-- MENU ITEM -->
     <li class="menu-item @yield('menu-status-shipment')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Usafirisaji/Usafiri" data-title="Usafirisaji">
+      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Usafirisaji/Usafiri" data-title="Usafirishaji">
         <!-- MENU ITEM LINK ICON -->
       <img src="/assets/img/user_icon/shipment.png" alt="" style="width:34; height:34;">
         <!-- /MENU ITEM LINK ICON -->
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+
+    <hr>
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-marketplace')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Market-place-index-page" data-title="Masoko">
+        <!-- MENU ITEM LINK ICON -->
+      <img src="/assets/img/user_icon/market.png" alt="" style="width:34; height:34;">
       </a>
       <!-- /MENU ITEM LINK -->
     </li>
@@ -77,15 +89,47 @@
 
     <hr>
     <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-marketplace')">
+    <li class="menu-item @yield('menu-status-tool-box')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Market-place-index-page" data-title="Mashine za kilimo">
+      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Mkulima/Fundi-Wa-Mashine-Shamba" data-title="Fundi">
         <!-- MENU ITEM LINK ICON -->
-      <img src="/assets/img/user_icon/market.png" alt="" style="width:34; height:34;">
+      <img src="/assets/img/user_icon/tool-box.png" alt="" style="width:34; height:34;">
       </a>
       <!-- /MENU ITEM LINK -->
     </li>
     <!-- /MENU ITEM -->
+    <!-- MENU ITEM -->
+
+    <hr>
+
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-education')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Mkulima/Mtaalam-Wa-Kilimo" data-title="Mtaalam wa kilimo">
+        <!-- MENU ITEM LINK ICON -->
+      <img src="/assets/img/user_icon/education.png" alt="" style="width:34; height:34;">
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+    <!-- MENU ITEM -->
+
+
+    <hr>
+
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-workers')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Mkulima/Vibarua" data-title="Vibarua">
+        <!-- MENU ITEM LINK ICON -->
+      <img src="/assets/img/user_icon/workers.png" alt="" style="width:34; height:34;">
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+    <!-- MENU ITEM -->
+
+
     <hr><br>
     <!-- MENU ITEM -->
     <li class="menu-item">
@@ -165,7 +209,7 @@
     <!-- MENU ITEM -->
     <li class="menu-item @yield('menu-status-store')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/{{Auth::user()->id}}" data-title="Newsfeed">
+      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page" data-title="Newsfeed">
         <!-- MENU ITEM LINK ICON -->
       <img src="/assets/img/user_icon/shopkeeper.png" alt="" style="width:34; height:34;">
         <!-- /MENU ITEM LINK ICON -->
@@ -430,7 +474,7 @@
  <!-- /MENU ITEM -->
  <hr >
     <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-driver')">
+    <li class="menu-item @yield('menu-status-mashine')">
       <!-- MENU ITEM LINK -->
       <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Fundi-Wa-Mashine-Za-Kilimo/home-page" data-title="Newsfeed">
         <!-- MENU ITEM LINK ICON -->
@@ -605,9 +649,9 @@
  <!-- /MENU ITEM -->
  <hr >
     <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-mashine')">
+    <li class="menu-item @yield('menu-status-education')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page" data-title="Mtaalam wa Kilimo">
+      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Mtaalam-Wa-Kilimo/home-page" data-title="Mtaalam wa Kilimo">
         <!-- MENU ITEM LINK ICON -->
       <img src="/assets/img/user_icon/education.png" alt="" style="width:34; height:34;">
         <!-- /MENU ITEM LINK ICON -->

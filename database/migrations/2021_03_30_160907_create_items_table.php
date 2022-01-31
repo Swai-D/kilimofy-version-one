@@ -21,7 +21,7 @@ class CreateItemsTable extends Migration
             $table->string('item_price');
             $table->string('item_description');
             $table->string('feedback')->nullable();
-            $table->string('status')->default('Not-Accepted');
+            $table->string('status')->default('Accepted');
             $table->string('seller_id');
             $table->string('seller_name');
             $table->string('seller_image_location');

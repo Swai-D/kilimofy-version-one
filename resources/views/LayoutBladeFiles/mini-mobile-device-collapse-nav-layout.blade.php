@@ -100,7 +100,7 @@
         <!-- MENU ITEM LINK ICON -->
         <img src="/assets/img/user_icon/growth.png" alt="pembejeo" style="width:44; height:44;">
         <!-- /MENU ITEM LINK ICON -->
-        Pembejeo & Viwatilifu
+        Pembejeo
       </a>
       <!-- /MENU ITEM LINK -->
     </li>
@@ -129,7 +129,7 @@
         <img src="/assets/img/user_icon/shipment.png" alt="" style="width:44; height:44;">
         <!-- /MENU ITEM LINK ICON -->
         <!-- Badges -->
-        Usafirisaji
+        Usafirishaji
       </a>
       <!-- /MENU ITEM LINK -->
     </li>
@@ -165,6 +165,54 @@
        <!-- /MENU ITEM LINK -->
      </li>
      <!-- /MENU ITEM -->
+
+     <br>
+      <!-- MENU ITEM -->
+      <li class="menu-item @yield('menu-status-tool-box')">
+        <!-- MENU ITEM LINK -->
+        <a class="menu-item-link" href="/kilimofy/Mkulima/Fundi-Wa-Mashine-Shamba">
+          <!-- MENU ITEM LINK ICON -->
+          <img src="/assets/img/user_icon/tool-box.png" alt="" style="width:44; height:44;">
+
+          <!-- /MENU ITEM LINK ICON -->
+          <!-- Quests -->
+          Fundi
+        </a>
+        <!-- /MENU ITEM LINK -->
+      </li>
+      <!-- /MENU ITEM -->
+
+      <br>
+       <!-- MENU ITEM -->
+       <li class="menu-item @yield('menu-status-education')">
+         <!-- MENU ITEM LINK -->
+         <a class="menu-item-link" href="/kilimofy/Mkulima/Mtaalam-Wa-Kilimo">
+           <!-- MENU ITEM LINK ICON -->
+           <img src="/assets/img/user_icon/education.png" alt="" style="width:44; height:44;">
+
+           <!-- /MENU ITEM LINK ICON -->
+           <!-- Quests -->
+           Mtaalam wa Kilimo
+         </a>
+         <!-- /MENU ITEM LINK -->
+       </li>
+       <!-- /MENU ITEM -->
+
+       <br>
+        <!-- MENU ITEM -->
+        <li class="menu-item @yield('menu-status-workers')">
+          <!-- MENU ITEM LINK -->
+          <a class="menu-item-link" href="/kilimofy/Mkulima/Vibarua">
+            <!-- MENU ITEM LINK ICON -->
+            <img src="/assets/img/user_icon/workers.png" alt="" style="width:44; height:44;">
+
+            <!-- /MENU ITEM LINK ICON -->
+            <!-- Quests -->
+            Vibarua
+          </a>
+          <!-- /MENU ITEM LINK -->
+        </li>
+        <!-- /MENU ITEM -->
     <br>
     <br>
     <p class="navigation-widget-section-title">logout</p>
@@ -303,7 +351,7 @@
     <!-- MENU ITEM -->
     <li class="menu-item @yield('menu-status-store')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/{{Auth::user()->id}}">
+      <a class="menu-item-link" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page">
         <!-- MENU ITEM LINK ICON -->
         <img src="/assets/img/user_icon/shopkeeper.png" alt="Dereva" style="width:44; height:44;">
         <!-- /MENU ITEM LINK ICON -->
@@ -528,13 +576,88 @@
    <br>
     <!-- MENU ITEM -->
     <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-driver')">
+    <li class="menu-item @yield('menu-status-mashine')">
       <!-- MENU ITEM LINK -->
       <a class="menu-item-link" href="/kilimofy/Fundi-Wa-Mashine-Za-Kilimo/home-page">
         <!-- MENU ITEM LINK ICON -->
         <img src="/assets/img/user_icon/tool-box.png" alt="Fundi" style="width:44; height:44;">
         <!-- /MENU ITEM LINK ICON -->
         Fundi
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
+    <br>
+    <p class="navigation-widget-section-title">logout</p>
+    <hr>
+
+    <!-- MENU ITEM -->
+
+    <li class="menu-item">
+      <div class="row">
+        <div class="col-9">
+          <!-- MENU ITEM LINK -->
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+              <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:44; height:44;">
+            </a>
+
+
+          <!-- /MENU ITEM LINK -->
+        </div>
+
+        <div class="col-3">
+          <a class="popup-review-trigger">
+           <img src="/assets/img/user_icon/exchange.png" alt="" style="width:44; height:44;">
+          </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        </div>
+      </div>
+    </li>
+    <!-- /MENU ITEM -->
+  </ul>
+
+  @elseif(Auth::user()->user_ocupation == 'Mtaalam')
+  <ul class="menu">
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-newsfeed')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Mkulima/home-page">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/news.png" alt="Habari" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Habari
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+    <br>
+
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-chat')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Forum/Forum-Category-List">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/chat.png" alt="pembejeo" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Chat
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
+    <!-- MENU ITEM -->
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-education')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Mtaalam-Wa-Kilimo/home-page">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/education.png" alt="Fundi" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Mtaalam wa Kilimo
       </a>
       <!-- /MENU ITEM LINK -->
     </li>

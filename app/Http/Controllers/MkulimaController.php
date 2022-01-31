@@ -7,6 +7,7 @@ use Stevebauman\Location\Facades\Location;
 
 use App\Models\Headline;
 use App\Models\Driver;
+use App\Models\Mashine;
 use App\Models\Place;
 use App\Models\Post;
 use App\Models\Forum;
@@ -31,8 +32,9 @@ class MkulimaController extends Controller
     public function mashine_za_kilimo(Request $request)
     {
       $user_location = Auth::user()->user_location;
+      $mashines = Mashine::paginate(5);
       $users = User::all();
-      return view('UserAccountBladeFiles.Mkulima.mashine-za-kilimo', compact('user_location', 'users'));
+      return view('UserAccountBladeFiles.Mkulima.mashine-za-kilimo', compact('user_location', 'users', 'mashines'));
     }
 
 
@@ -98,7 +100,8 @@ class MkulimaController extends Controller
       $total_user_item_list = Item::where('seller_id', '=', $bidhaa_info_id->seller_id)->count();
       $places =  Place::select('Region','District')->get();
       $users = User::all();
-      return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu-shopping-cart', compact('bidhaa_info', 'user_item_list', 'total_user_item_list', 'places', 'users'));
+      $mashine_set = 0;
+      return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu-shopping-cart', compact('bidhaa_info', 'user_item_list', 'total_user_item_list', 'places', 'users', 'mashine_set'));
     }
 
 
@@ -141,6 +144,7 @@ class MkulimaController extends Controller
       $users = User::all();
       $places =  Place::all();
       $usafiri = Driver::all();
+
       $trip = [];
       return view('UserAccountBladeFiles.Mkulima.usafirishaji-home-page', compact('trip','usafiri','user_district','user_region', 'places', 'users'));
     }
@@ -169,11 +173,65 @@ class MkulimaController extends Controller
     }
 
 
-    public function mashine_za_kilimo_shopping_cart()
+
+
+    public function mashine_za_kilimo_cart(Mashine $bidhaa_info_id)
+    {
+      // dd($bidhaa_info_id);
+      $bidhaa_info = Mashine::where('id', '=', $bidhaa_info_id->id)->get();
+      $user_item_list = Mashine::where('Seller_Id', '=', $bidhaa_info_id->Seller_Id)->get();
+      $total_user_item_list = Mashine::where('Seller_Id', '=', $bidhaa_info_id->Seller_Id)->count();
+      $user_location = Auth::user()->user_location;
+      $places =  Place::select('Region','District')->get();
+      $users = User::all();
+      $mashine_set = 1;
+      return view('UserAccountBladeFiles.Mkulima.mashine-za-kilimo-shopping-cart', compact('bidhaa_info', 'user_item_list', 'total_user_item_list', 'places', 'users', 'mashine_set', 'user_location'));
+    }
+
+
+
+    public function fundi_wa_mashine()
     {
       $users = User::all();
-      return view('UserAccountBladeFiles.Mkulima.mashine-za-kilimo-shopping-cart', compact('users'));
+      $user_location = Auth::user()->user_location;
+      $user_id = Auth::user()->id;
+      $fundi_list = User::where([['user_ocupation', '=', 'Fundi'],['user_location', '=', $user_location], ['id', '!=', $user_id]])->get();
+      // dd($bwana_shamba_list);
+      $total_fundi_list = User::where([['user_ocupation', '=', 'Fundi'],['user_location', '=', $user_location]])->count();
+      return view('UserAccountBladeFiles.Mkulima.fundi-wa-mashine-za-kilimo', compact('fundi_list', 'total_fundi_list', 'user_location', 'users'));
     }
+
+
+    public function mtaalam_wa_kilimo_blog_page()
+    {
+      return view('UserBladeFiles.user-blog-post');
+    }
+
+
+
+    public function mtaalam_wa_kilimo()
+    {
+      $users = User::all();
+      $user_location = Auth::user()->user_location;
+      $user_id = Auth::user()->id;
+      $mtaalam_list = User::where([['user_ocupation', '=', 'Mtaalam'],['id', '!=', $user_id]])->get();
+      // dd($bwana_shamba_list);
+      $total_mtaalam_list = User::where([['user_ocupation', '=', 'Mtaalam'],['id', '!=', $user_id]])->count();
+      return view('UserAccountBladeFiles.Mkulima.mtaalam-wa-kilimo', compact('mtaalam_list', 'total_mtaalam_list', 'user_location', 'users'));
+    }
+
+
+    public function vibarua()
+    {
+      $users = User::all();
+      $user_location = Auth::user()->user_location;
+      $user_id = Auth::user()->id;
+      $vibarua_list = User::where([['user_ocupation', '=', 'Kibarua'],['id', '!=', $user_id]])->get();
+      // dd($bwana_shamba_list);
+      $total_vibarua_list = User::where([['user_ocupation', '=', 'Kibarua'],['id', '!=', $user_id]])->count();
+      return view('UserAccountBladeFiles.Mkulima.vibarua', compact('vibarua_list', 'total_vibarua_list', 'user_location', 'users'))->with('Message', 'Vibarua wote wamehakikiwa na Kiaminika na Kilimofy');
+    }
+
 
 
 

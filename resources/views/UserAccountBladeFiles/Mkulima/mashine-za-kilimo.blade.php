@@ -50,114 +50,39 @@
 
   <!-- GRID -->
   <div class="grid grid-3-3-3-3 centered">
+
+    @foreach($mashines as $mashine)
     <!-- ALBUM PREVIEW -->
-    <a class="album-preview" href="/kilimofy/Mkulima/Mashine-za-kilimo/shopping-cart">
+    <a class="album-preview" href="/kilimofy/Mkulima/mashime_za_kilimo_cart/shopping-cart/{{$mashine->id}}">
       <!-- ALBUM PREVIEW IMAGE -->
       <figure class="album-preview-image liquid">
-        <img src="/assets/img/cover/01.jpg" alt="album-image-01">
+        <img src="/Uploads/MashineImage/{{$mashine->Mashine_Image}}" alt="album-image-01">
       </figure>
       <!-- /ALBUM PREVIEW IMAGE -->
 
       <!-- TEXT STICKER -->
-      <p class="text-sticker small negative">7,000,000</p>
+      <p class="text-sticker small negative">{{number_format($mashine->Mashine_Price)}}</p>
       <!-- /TEXT STICKER -->
 
       <!-- ALBUM PREVIEW INFO -->
       <div class="album-preview-info">
         <!-- ALBUM PREVIEW TITLE -->
-        <p class="album-preview-title">Jonh Deer</p>
+        <p class="album-preview-title">{{$mashine->Mashine_Name}}</p>
         <!-- /ALBUM PREVIEW TITLE -->
 
         <!-- ALBUM PREVIEW TEXT -->
-        <p class="album-preview-text">Updated 12 days ago</p>
+        <p class="album-preview-text">{{$mashine->created_at->diffForHumans()}}</p>
         <!-- /ALBUM PREVIEW TEXT -->
       </div>
       <!-- /ALBUM PREVIEW INFO -->
     </a>
+    @endforeach
 
 
   </div>
   <!-- /GRID -->
 
-  <!-- SECTION PAGER BAR -->
-  <div class="section-pager-bar">
-    <!-- SECTION PAGER -->
-    <div class="section-pager">
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item active">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">01</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
-
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">02</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
-
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">03</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
-
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">04</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
-
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">05</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
-
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">06</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
-    </div>
-    <!-- /SECTION PAGER -->
-
-    <!-- SECTION PAGER CONTROLS -->
-    <div class="section-pager-controls">
-      <!-- SLIDER CONTROL -->
-      <div class="slider-control left disabled">
-        <!-- SLIDER CONTROL ICON -->
-        <svg class="slider-control-icon icon-small-arrow">
-          <use xlink:href="#svg-small-arrow"></use>
-        </svg>
-        <!-- /SLIDER CONTROL ICON -->
-      </div>
-      <!-- /SLIDER CONTROL -->
-
-      <!-- SLIDER CONTROL -->
-      <div class="slider-control right">
-        <!-- SLIDER CONTROL ICON -->
-        <svg class="slider-control-icon icon-small-arrow">
-          <use xlink:href="#svg-small-arrow"></use>
-        </svg>
-        <!-- /SLIDER CONTROL ICON -->
-      </div>
-      <!-- /SLIDER CONTROL -->
-    </div>
-    <!-- /SECTION PAGER CONTROLS -->
-  </div>
-  <!-- /SECTION PAGER BAR -->
+   {{ $mashines->links('vendor.pagination.custom') }}
 </section>
 
 </div>

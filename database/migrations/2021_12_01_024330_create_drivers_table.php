@@ -24,6 +24,7 @@ class CreateDriversTable extends Migration
             $table->string('DriverPhoneNumber');
             $table->string('DriverImageName');
             $table->string('DriverName');
+            $table->string('Driver_ID');
             $table->string('TripType');
             $table->timestamps();
         });

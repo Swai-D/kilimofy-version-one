@@ -12,7 +12,7 @@
 
 :after,
 :before {
-  
+
     display: block
 }
 
@@ -10418,9 +10418,10 @@ figure>img {
     box-shadow: 0 0 40px 0 rgba(94, 92, 154, .06)
 }
 
-.product-category-box.category-all {
-    background: url(../img/marketplace/category/01.png) no-repeat 100% 0, linear-gradient(90deg, #009a4e, #8d7aff)
+.product-category-box.category-mbegu {
+
 }
+
 
 .product-category-box.category-all .product-category-box-tag {
     color: #009a4e
@@ -11732,8 +11733,8 @@ figure>img {
 .badge-item-preview {
     display: -ms-flexbox;
     display: flex;
-    height: 154px;
-    padding: 32px 28px 0;
+    height: 234px;
+    padding: 32px 28px 10;
     border-radius: 12px;
     background-color: #fff;
     box-shadow: 0 0 40px 0 rgba(94, 92, 154, .06)

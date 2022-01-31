@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Mashine;
 use App\Models\Place;
 use App\Models\Item;
 use App\Models\User;
@@ -16,10 +17,17 @@ class MarketPlaceController extends Controller
      */
     public function index()
     {
-        $market_items = Item::where('status', 'Not-Accepted')->get();
+        $market_items = Item::all();
+        $mashine_za_kilimo_list = Mashine::all();
+        $pembejeo = Item::where('item_category', 'Pembejeo')->get();
+        $pembejeo_count = Item::where('item_category', 'Pembejeo')->count();
+
+        $mashine_za_kilimo = Mashine::all();
+        $mashine_za_kilimo_count = Mashine::count();
+
         $fruits = Item::where('item_category', 'Matunda na Mboga Mboga')->count();
         // dd($fruits);
-        return view('MarketPlaceBladeFiles.market-place-index', compact('market_items'));
+        return view('MarketPlaceBladeFiles.market-place-index', compact('market_items', 'pembejeo', 'pembejeo_count', 'mashine_za_kilimo', 'mashine_za_kilimo_count', 'mashine_za_kilimo_list'));
 
     }
 

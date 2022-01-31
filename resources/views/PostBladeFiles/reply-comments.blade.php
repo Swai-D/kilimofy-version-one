@@ -41,7 +41,7 @@
               <!-- /USER AVATAR -->
 
               <!-- POST COMMENT TEXT -->
-              <p class="post-comment-text"><a class="post-comment-text-author" href="#">{{$replies->name}}</a>{{$replies->reply}}</p>
+              <p class="post-comment-text"><a class="post-comment-text-author" href="">{{$replies->name}}</a>{{$replies->reply}}</p>
               <!-- /POST COMMENT TEXT -->
 
               <!-- CONTENT ACTIONS -->

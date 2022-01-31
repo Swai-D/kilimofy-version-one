@@ -15,6 +15,14 @@ class CreateMashinesTable extends Migration
     {
         Schema::create('mashines', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('Mashine_Name');
+            $table->string('Mashine_Work');
+            $table->string('Mashine_Image');
+            $table->string('Mashine_Price');
+            $table->string('Mashine_Description');
+            $table->string('Seller_Name');
+            $table->string('Seller_Id');
+            $table->string('Seller_Image_Path');
             $table->timestamps();
         });
     }

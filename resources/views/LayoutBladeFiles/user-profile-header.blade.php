@@ -206,7 +206,7 @@
       <!-- USER STAT -->
       <div class="user-stat big">
         <!-- USER STAT TITLE -->
-        <p class="user-stat-title">930</p>
+        <p class="user-stat-title">{{$user_posts}}</p>
         <!-- /USER STAT TITLE -->
 
         <!-- USER STAT TEXT -->

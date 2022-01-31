@@ -577,7 +577,7 @@
       <!-- ACTION LIST ITEM WRAP -->
       <div class="action-list-item-wrap">
         <!-- ACTION LIST ITEM -->
-        <div class="action-list-item unread header-dropdown-trigger">
+        <div class="action-list-item  header-dropdown-trigger">
           <!-- ACTION LIST ITEM ICON -->
           <svg class="action-list-item-icon icon-notification">
             <use xlink:href="#svg-notification"></use>
@@ -702,6 +702,51 @@
         <!-- /DROPDOWN BOX -->
       </div>
       <!-- /ACTION LIST ITEM WRAP -->
+
+     @if(Auth::user()->user_ocupation == 'Mkulima')
+     <!-- ACTION LIST ITEM WRAP -->
+     <div class="action-list-item-wrap">
+        <!-- ACTION LIST ITEM -->
+        <div class="action-list-item ">
+          <!-- USER AVATAR -->
+          <div class="user-avatar small no-border">
+            <!-- USER AVATAR -->
+            <a class="user-avatar small no-outline online" href="/kilimofy/UserAccount/about_user_page/{{Auth::user()->id}}-About-{{Auth::user()->name}}-in-Kilimofy-Platform">
+              <!-- USER AVATAR CONTENT -->
+              <div class="user-avatar-content">
+                <!-- HEXAGON -->
+                <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{Auth::user()->avatar}}"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR CONTENT -->
+
+              <!-- USER AVATAR PROGRESS -->
+              <div class="user-avatar-progress">
+                <!-- HEXAGON -->
+                <div class="hexagon-progress-40-44"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR PROGRESS -->
+
+              <!-- USER AVATAR PROGRESS BORDER -->
+              <div class="user-avatar-progress-border">
+                <!-- HEXAGON -->
+                <div class="hexagon-border-40-44"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR PROGRESS BORDER -->
+            </a>
+            <!-- /USER AVATAR -->
+
+            <!-- /USER AVATAR CONTENT -->
+          </div>
+          <!-- /USER AVATAR -->
+        </div>
+        <!-- /ACTION LIST ITEM -->
+
+     </div>
+     <!-- /ACTION LIST ITEM WRAP -->
+     @endif
     </div>
     <!-- /ACTION LIST -->
 

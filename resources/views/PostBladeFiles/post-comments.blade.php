@@ -1,5 +1,5 @@
 @extends('LayoutBladeFiles.app-layout')
-
+@section('title', 'Post')
 
 <div class="content-grid">
 
@@ -459,7 +459,7 @@
               <div class="post-comment">
 
                 <!-- USER AVATAR -->
-                <a class="user-avatar small no-outline" href="profile-timeline.html">
+                <a class="user-avatar small no-outline" href="#">
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
@@ -488,7 +488,7 @@
                 <!-- /USER AVATAR -->
 
                 <!-- POST COMMENT TEXT -->
-                <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">{{$post_comment->name}}</a>{{$post_comment->comment}}</p>
+                <p class="post-comment-text"><a class="post-comment-text-author" href="">{{$post_comment->name}}</a>{{$post_comment->comment}}</p>
                 <!-- /POST COMMENT TEXT -->
 
                 <!-- CONTENT ACTIONS -->
@@ -689,7 +689,7 @@
 
               <div class="post-comment unread reply-2">
                 <!-- USER AVATAR -->
-                <a class="user-avatar small no-outline" href="profile-timeline.html">
+                <a class="user-avatar small no-outline" href="">
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
@@ -718,7 +718,7 @@
                 <!-- /USER AVATAR -->
 
                 <!-- POST COMMENT TEXT -->
-                <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">{{$comment_replies->name}}</a>{{$comment_replies-> reply}}</p>
+                <p class="post-comment-text"><a class="post-comment-text-author" href="">{{$comment_replies->name}}</a>{{$comment_replies-> reply}}</p>
                 <!-- /POST COMMENT TEXT -->
 
                 <!-- CONTENT ACTIONS -->

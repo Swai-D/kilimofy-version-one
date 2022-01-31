@@ -6,6 +6,7 @@
 <div class="content-grid">
 @include('LayoutBladeFiles.title-layout')
 <!-- SECTION -->
+
 <section class="section">
   <!-- SECTION HEADER -->
   <div class="section-header">
@@ -238,13 +239,13 @@
         <!-- USER PREVIEW FOOTER ACTION -->
         <div class="user-preview-footer-action">
           <!-- BUTTON -->
-          <p class="button void void-secondary">
+          <a href="/kilimofy/UserAccount/about_user_page/{{$bwana_shamba->id}}-About-{{$bwana_shamba->name}}-in-Kilimofy-Platform" class="button void void-secondary">
             <!-- BUTTON ICON -->
             <svg class="button-icon icon-add-friend">
               <use xlink:href="#svg-add-friend"></use>
             </svg>
             <!-- /BUTTON ICON -->
-          </p>
+          </a>
           <!-- /BUTTON -->
         </div>
         <!-- /USER PREVIEW FOOTER ACTION -->
@@ -270,12 +271,209 @@
     <!-- /USER PREVIEW -->
     @empty
     <p class="progress-arc-summary-subtitle text-center text-danger"> Hatuna Bwana Shamba kutoka {{$user_location}} kwa sasa !</p>
-  @endforelse
-    </div>
+    @endforelse
+  </div>
   <!-- /GRID -->
 
 @if($total_bwana_shamba_list != 0)
   <!-- SECTION PAGER BAR -->
+  <!-- SECTION HEADER -->
+  <div class="section-header">
+    <!-- SECTION HEADER INFO -->
+    <div class="section-header-info">
+      <!-- SECTION PRETITLE -->
+      <p class="section-pretitle">See what's next!</p>
+      <!-- /SECTION PRETITLE -->
+
+      <!-- SECTION TITLE -->
+      <h2 class="section-title">Upcoming Event(s)</h2>
+      <!-- /SECTION TITLE -->
+    </div>
+    <!-- /SECTION HEADER INFO -->
+  </div>
+  <!-- /SECTION HEADER -->
+
+  <!-- GRID -->
+  <div class="grid grid-3-3-3-3 centered">
+
+    <!-- EVENT PREVIEW -->
+    <div class="event-preview">
+      <!-- EVENT PREVIEW COVER -->
+      <figure class="event-preview-cover liquid">
+        <img src="/assets/img/cover/40.jpg" alt="cover-40">
+      </figure>
+      <!-- /EVENT PREVIEW COVER -->
+
+      <!-- EVENT PREVIEW INFO -->
+      <div class="event-preview-info">
+        <!-- EVENT PREVIEW INFO TOP -->
+        <div class="event-preview-info-top">
+          <!-- DATE STICKER -->
+          <div class="date-sticker">
+            <!-- DATE STICKER DAY -->
+            <p class="date-sticker-day">9</p>
+            <!-- /DATE STICKER DAY -->
+
+            <!-- DATE STICKER MONTH -->
+            <p class="date-sticker-month">Sep</p>
+            <!-- /DATE STICKER MONTH -->
+          </div>
+          <!-- /DATE STICKER -->
+
+          <!-- EVENT PREVIEW TITLE -->
+          <p class="event-preview-title popup-event-information-trigger">Artistic Painting Course</p>
+          <!-- /EVENT PREVIEW TITLE -->
+
+          <!-- EVENT PREVIEW TIMESTAMP -->
+          <p class="event-preview-timestamp"><span class="bold">6:00</span> PM</p>
+          <!-- /EVENT PREVIEW TIMESTAMP -->
+
+          <!-- EVENT PREVIEW TEXT -->
+          <p class="event-preview-text">Come to have a great time with us at our artistic painting course! Begginers and experts welcome!</p>
+          <!-- /EVENT PREVIEW TEXT -->
+        </div>
+        <!-- /EVENT PREVIEW INFO TOP -->
+
+        <!-- EVENT PREVIEW INFO BOTTOM -->
+        <div class="event-preview-info-bottom">
+          <!-- DECORATED TEXT -->
+          <div class="decorated-text">
+            <!-- DECORATED TEXT ICON -->
+            <svg class="decorated-text-icon icon-pin">
+              <use xlink:href="#svg-pin"></use>
+            </svg>
+            <!-- /DECORATED TEXT ICON -->
+
+            <!-- DECORATED TEXT CONTENT -->
+            <p class="decorated-text-content">Xavier's Art Center</p>
+            <!-- /DECORATED TEXT CONTENT -->
+          </div>
+          <!-- /DECORATED TEXT -->
+
+          <!-- META LINE -->
+          <div class="meta-line">
+            <!-- META LINE LIST -->
+            <div class="meta-line-list user-avatar-list">
+              <!-- USER AVATAR -->
+              <div class="user-avatar micro no-stats">
+                <!-- USER AVATAR BORDER -->
+                <div class="user-avatar-border">
+                  <!-- HEXAGON -->
+                  <div class="hexagon-22-24"></div>
+                  <!-- /HEXAGON -->
+                </div>
+                <!-- /USER AVATAR BORDER -->
+
+                <!-- USER AVATAR CONTENT -->
+                <div class="user-avatar-content">
+                  <!-- HEXAGON -->
+                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/13.jpg"></div>
+                  <!-- /HEXAGON -->
+                </div>
+                <!-- /USER AVATAR CONTENT -->
+              </div>
+              <!-- /USER AVATAR -->
+
+              <!-- USER AVATAR -->
+              <div class="user-avatar micro no-stats">
+                <!-- USER AVATAR BORDER -->
+                <div class="user-avatar-border">
+                  <!-- HEXAGON -->
+                  <div class="hexagon-22-24"></div>
+                  <!-- /HEXAGON -->
+                </div>
+                <!-- /USER AVATAR BORDER -->
+
+                <!-- USER AVATAR CONTENT -->
+                <div class="user-avatar-content">
+                  <!-- HEXAGON -->
+                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/12.jpg"></div>
+                  <!-- /HEXAGON -->
+                </div>
+                <!-- /USER AVATAR CONTENT -->
+              </div>
+              <!-- /USER AVATAR -->
+
+              <!-- USER AVATAR -->
+              <div class="user-avatar micro no-stats">
+                <!-- USER AVATAR BORDER -->
+                <div class="user-avatar-border">
+                  <!-- HEXAGON -->
+                  <div class="hexagon-22-24"></div>
+                  <!-- /HEXAGON -->
+                </div>
+                <!-- /USER AVATAR BORDER -->
+
+                <!-- USER AVATAR CONTENT -->
+                <div class="user-avatar-content">
+                  <!-- HEXAGON -->
+                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/11.jpg"></div>
+                  <!-- /HEXAGON -->
+                </div>
+                <!-- /USER AVATAR CONTENT -->
+              </div>
+              <!-- /USER AVATAR -->
+
+              <!-- USER AVATAR -->
+              <div class="user-avatar micro no-stats">
+                <!-- USER AVATAR BORDER -->
+                <div class="user-avatar-border">
+                  <!-- HEXAGON -->
+                  <div class="hexagon-22-24"></div>
+                  <!-- /HEXAGON -->
+                </div>
+                <!-- /USER AVATAR BORDER -->
+
+                <!-- USER AVATAR CONTENT -->
+                <div class="user-avatar-content">
+                  <!-- HEXAGON -->
+                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/03.jpg"></div>
+                  <!-- /HEXAGON -->
+                </div>
+                <!-- /USER AVATAR CONTENT -->
+              </div>
+              <!-- /USER AVATAR -->
+
+              <!-- USER AVATAR -->
+              <div class="user-avatar micro no-stats">
+                <!-- USER AVATAR BORDER -->
+                <div class="user-avatar-border">
+                  <!-- HEXAGON -->
+                  <div class="hexagon-22-24"></div>
+                  <!-- /HEXAGON -->
+                </div>
+                <!-- /USER AVATAR BORDER -->
+
+                <!-- USER AVATAR CONTENT -->
+                <div class="user-avatar-content">
+                  <!-- HEXAGON -->
+                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/04.jpg"></div>
+                  <!-- /HEXAGON -->
+                </div>
+                <!-- /USER AVATAR CONTENT -->
+              </div>
+              <!-- /USER AVATAR -->
+            </div>
+            <!-- /META LINE LIST -->
+
+            <!-- META LINE TEXT -->
+            <p class="meta-line-text">+17 will assist</p>
+            <!-- /META LINE TEXT -->
+          </div>
+          <!-- /META LINE -->
+
+          <!-- BUTTON -->
+          <p class="button secondary white-tertiary">Join Event</p>
+          <!-- /BUTTON -->
+        </div>
+        <!-- /EVENT PREVIEW INFO BOTTOM -->
+      </div>
+      <!-- /EVENT PREVIEW INFO -->
+    </div>
+    <!-- /EVENT PREVIEW -->
+  </div>
+  <!-- /GRID -->
+
   <div class="section-pager-bar">
     <!-- SECTION PAGER -->
     <div class="section-pager">

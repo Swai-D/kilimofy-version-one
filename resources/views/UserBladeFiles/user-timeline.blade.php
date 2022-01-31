@@ -961,14 +961,14 @@
         <div class="stream-box no-video-radius">
           <!-- STREAM BOX VIDEO -->
           <div class="stream-box-video">
-            <iframe src="https://player.twitch.tv/?channel=cohhcarnage&parent=odindesignthemes.com" allowfullscreen></iframe>
+            <iframe src="https://youtube.com/channel/UCoRFQXKUUMNYhX64tj97k0Q" allowfullscreen></iframe>
           </div>
           <!-- /STREAM BOX VIDEO -->
 
           <!-- STREAM BOX IMAGE -->
           <div class="stream-box-image">
             <figure class="picture tiny circle liquid">
-              <img src="/Uploads/avatars/{{$user->avatar}}" alt="avatar-01-social">
+              <img src="/assets/img/social-media-avatars/youtube-avatar.jpg" alt="avatar-01-social">
             </figure>
           </div>
           <!-- /STREAM BOX IMAGE -->
@@ -976,11 +976,11 @@
           <!-- STREAM BOX INFO -->
           <div class="stream-box-info">
             <!-- STREAM BOX TITLE -->
-            <p class="stream-box-title"><a href="profile-stream.html">I'm Playing Athena’s Goddess Story...</a></p>
+            <p class="stream-box-title"><a href="https://youtube.com/channel/UCoRFQXKUUMNYhX64tj97k0Q">kilimofy YouTube Channel...</a></p>
             <!-- /STREAM BOX TITLE -->
 
             <!-- STREAM BOX TEXT -->
-            <p class="stream-box-text"><a href="https://www.twitch.tv/" target="_blank">{{$user->username}}</a></p>
+            <p class="stream-box-text"><a href="https://kilimofy.herokuapp.com/" target="_blank">kilimofy</a></p>
             <!-- /STREAM BOX TEXT -->
           </div>
           <!-- /STREAM BOX INFO -->
@@ -1029,6 +1029,7 @@
         <div class="picture-item-list small">
           @foreach($user_photo_gallery as $photo)
           <!-- PICTURE ITEM -->
+        <a href="/kilimofy/Post/read_comments/{{$photo->id}}-about-{{$user->name}}'s-post">
           <div class="picture-item">
             <!-- PICTURE -->
             <figure class="picture round liquid">
@@ -1036,6 +1037,7 @@
             </figure>
             <!-- /PICTURE -->
           </div>
+        </a>
           <!-- /PICTURE ITEM -->
           @endforeach
 

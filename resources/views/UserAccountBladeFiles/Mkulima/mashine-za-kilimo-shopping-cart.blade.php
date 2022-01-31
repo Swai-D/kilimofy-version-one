@@ -11,16 +11,17 @@
   @include('LayoutBladeFiles.title-layout')
   <!-- /SECTION BANNER -->
 
+@foreach($bidhaa_info as $bidhaa)
   <!-- SECTION HEADER -->
   <div class="section-header">
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
       <!-- SECTION PRETITLE -->
-      <p class="section-pretitle">HTML Templates</p>
+      <p class="section-pretitle">Mashine Ya Kilimo</p>
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
-      <h2 class="section-title">Pixel Diamond Gaming Magazine</h2>
+      <h2 class="section-title">{{$bidhaa->Mashine_Name}}</h2>
       <!-- /SECTION TITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
@@ -28,15 +29,15 @@
     <!-- SECTION HEADER ACTIONS -->
     <div class="section-header-actions">
       <!-- SECTION HEADER SUBSECTION -->
-      <a class="section-header-subsection" href="marketplace.html">Marketplace</a>
+      <a class="section-header-subsection" href="#">Sokoni</a>
       <!-- /SECTION HEADER SUBSECTION -->
 
       <!-- SECTION HEADER SUBSECTION -->
-      <a class="section-header-subsection" href="marketplace-category.html">Digital Items</a>
+      <a class="section-header-subsection" href="#">Bidhaa Mtandaoni</a>
       <!-- /SECTION HEADER SUBSECTION -->
 
       <!-- SECTION HEADER SUBSECTION -->
-      <p class="section-header-subsection">Pixel Diamond Gaming Magazine</p>
+      <p class="section-header-subsection">{{$bidhaa->Mashine_Name}}</p>
       <!-- /SECTION HEADER SUBSECTION -->
     </div>
     <!-- /SECTION HEADER ACTIONS -->
@@ -55,71 +56,12 @@
           <div class="slider-panel-slide">
             <!-- SLIDER PANEL SLIDE IMAGE -->
             <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/10.jpg" alt="item-10">
+              <img src="/Uploads/MashineImage/{{$bidhaa->Mashine_Image}}" alt="item-10">
             </figure>
             <!-- /SLIDER PANEL SLIDE IMAGE -->
           </div>
           <!-- /SLIDER PANEL SLIDE -->
 
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/15.jpg" alt="item-15">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/16.jpg" alt="item-16">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/17.jpg" alt="item-17">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/18.jpg" alt="item-18">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/19.jpg" alt="item-19">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/20.jpg" alt="item-20">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
         </div>
         <!-- /SLIDER PANEL SLIDES -->
 
@@ -150,7 +92,7 @@
           <!-- /SLIDER CONTROLS -->
 
           <!-- BUTTON -->
-          <a class="button secondary" href="https://themeforest.net/item/pixel-diamond-html-esports-gaming-magazine-community/23798711" target="_blank">Live Preview</a>
+          <a class="button secondary" href="" target="_blank">Live Preview</a>
           <!-- /BUTTON -->
 
           <!-- ROSTER PICTURES -->
@@ -268,29 +210,18 @@
             <!-- TAB BOX ITEM CONTENT -->
             <div class="tab-box-item-content">
               <!-- TAB BOX ITEM TITLE -->
-              <p class="tab-box-item-title">The Best eSports and Gaming Magazine Template!</p>
+              <p class="tab-box-item-title">{{$bidhaa->Mashine_Name}}</p>
               <!-- /TAB BOX ITEM TITLE -->
 
               <!-- TAB BOX ITEM PARAGRAPH -->
-              <p class="tab-box-item-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in henderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
-              <!-- /TAB BOX ITEM PARAGRAPH -->
-
-              <!-- TAB BOX ITEM PARAGRAPH -->
-              <p class="tab-box-item-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="tab-box-item-paragraph">{{$bidhaa->Mashine_Description}}</p>
               <!-- /TAB BOX ITEM PARAGRAPH -->
 
               <!-- TAB BOX ITEM TITLE -->
-              <p class="tab-box-item-title">356+ HTML Elements Library included</p>
+              <p class="tab-box-item-title">Garama ya {{$bidhaa->Mashine_Name}} ni {{number_format($bidhaa->Mashine_Price)}}</p>
+              <br><br>
               <!-- /TAB BOX ITEM TITLE -->
-
-              <!-- TAB BOX ITEM PARAGRAPH -->
-              <p class="tab-box-item-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in henderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <!-- /TAB BOX ITEM PARAGRAPH -->
-
-              <!-- TAB BOX ITEM TITLE -->
-              <p class="tab-box-item-title">Included in the Pack:</p>
-              <!-- /TAB BOX ITEM TITLE -->
-
+              <p class="tab-box-item-title" style="color:red"> Tunashauri Yafuatayo:</p>
               <!-- BULLET ITEM LIST -->
               <ul class="bullet-item-list">
                 <!-- BULLET ITEM -->
@@ -302,11 +233,11 @@
                   <!-- /BULLET ITEM ICON -->
 
                   <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">64 HTML Files</p>
+                  <p class="bullet-item-text">Jirizishe kwanza kuiona bidhaa na kuihakiki kisha ndo ufanye malipo (Malipo yawe ni Cash)</p>
                   <!-- /BULLET ITEM TEXT -->
                 </li>
                 <!-- /BULLET ITEM -->
-
+                 <br>
                 <!-- BULLET ITEM -->
                 <li class="bullet-item">
                   <!-- BULLET ITEM ICON -->
@@ -316,11 +247,11 @@
                   <!-- /BULLET ITEM ICON -->
 
                   <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">CSS and JS Elements Library with 365+ Items!</p>
+                  <p class="bullet-item-text">Kilimofy Haipokei Pesa Kutoka kwamtaja, bali Inarahisisha Mawasiliano kati ya Muuzaji na Mnunuli </p>
                   <!-- /BULLET ITEM TEXT -->
                 </li>
                 <!-- /BULLET ITEM -->
-
+                 <br>
                 <!-- BULLET ITEM -->
                 <li class="bullet-item">
                   <!-- BULLET ITEM ICON -->
@@ -330,94 +261,11 @@
                   <!-- /BULLET ITEM ICON -->
 
                   <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">63 PSD Files Included SAVE $12</p>
+                  <p class="bullet-item-text">Tuna thamini Usalama wa Mteja</p>
                   <!-- /BULLET ITEM TEXT -->
                 </li>
                 <!-- /BULLET ITEM -->
 
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Easy template customization using npm & grunt (optional)</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Vector Illustrations Included</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">84+ eSports Widgets</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Custom Plugins</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Fully Responsive</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Google Fonts</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
               </ul>
               <!-- /BULLET ITEM LIST -->
             </div>
@@ -436,7 +284,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="img/avatar/04.jpg"></div>
+                    <div class="hexagon-image-30-32" data-src="/assets/img/avatar/04.jpg"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -901,539 +749,6 @@
               </div>
               <!-- /POST COMMENT -->
 
-              <!-- POST COMMENT -->
-              <div class="post-comment">
-                <!-- USER AVATAR -->
-                <a class="user-avatar small no-outline" href="profile-timeline.html">
-                  <!-- USER AVATAR CONTENT -->
-                  <div class="user-avatar-content">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="img/avatar/03.jpg"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR CONTENT -->
-
-                  <!-- USER AVATAR PROGRESS -->
-                  <div class="user-avatar-progress">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-progress-40-44"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR PROGRESS -->
-
-                  <!-- USER AVATAR PROGRESS BORDER -->
-                  <div class="user-avatar-progress-border">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-border-40-44"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR PROGRESS BORDER -->
-
-                  <!-- USER AVATAR BADGE -->
-                  <div class="user-avatar-badge">
-                    <!-- USER AVATAR BADGE BORDER -->
-                    <div class="user-avatar-badge-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-22-24"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE BORDER -->
-
-                    <!-- USER AVATAR BADGE CONTENT -->
-                    <div class="user-avatar-badge-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-dark-16-18"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE CONTENT -->
-
-                    <!-- USER AVATAR BADGE TEXT -->
-                    <p class="user-avatar-badge-text">16</p>
-                    <!-- /USER AVATAR BADGE TEXT -->
-                  </div>
-                  <!-- /USER AVATAR BADGE -->
-                </a>
-                <!-- /USER AVATAR -->
-
-                <!-- POST COMMENT TEXT -->
-                <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">Nick Grissom</a></p>
-                <!-- /POST COMMENT TEXT -->
-
-                <!-- POST COMMENT TEXT -->
-                <p class="post-comment-text">Hi Marina! I'm really liking what you did here! I've checked all the pages and the design is really great, plus it has lots of statistics and match overview options! Amazing job, and good luck!</p>
-                <!-- /POST COMMENT TEXT -->
-
-                <!-- CONTENT ACTIONS -->
-                <div class="content-actions">
-                  <!-- CONTENT ACTION -->
-                  <div class="content-action">
-                    <!-- META LINE -->
-                    <div class="meta-line">
-                      <!-- META LINE LINK -->
-                      <p class="meta-line-link light reaction-options-small-dropdown-trigger">React!</p>
-                      <!-- /META LINE LINK -->
-
-                      <!-- REACTION OPTIONS -->
-                      <div class="reaction-options small reaction-options-small-dropdown">
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Like">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/like.png" alt="reaction-like">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Love">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/love.png" alt="reaction-love">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Dislike">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/dislike.png" alt="reaction-dislike">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Happy">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/happy.png" alt="reaction-happy">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Funny">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/funny.png" alt="reaction-funny">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Wow">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/wow.png" alt="reaction-wow">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Angry">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/angry.png" alt="reaction-angry">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Sad">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/sad.png" alt="reaction-sad">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-                      </div>
-                      <!-- /REACTION OPTIONS -->
-                    </div>
-                    <!-- /META LINE -->
-
-                    <!-- META LINE -->
-                    <div class="meta-line">
-                      <!-- META LINE LINK -->
-                      <p class="meta-line-link light">Reply</p>
-                      <!-- /META LINE LINK -->
-                    </div>
-                    <!-- /META LINE -->
-
-                    <!-- META LINE -->
-                    <div class="meta-line">
-                      <!-- META LINE TIMESTAMP -->
-                      <p class="meta-line-timestamp">15 minutes ago</p>
-                      <!-- /META LINE TIMESTAMP -->
-                    </div>
-                    <!-- /META LINE -->
-
-                    <!-- META LINE -->
-                    <div class="meta-line settings">
-                      <!-- POST SETTINGS WRAP -->
-                      <div class="post-settings-wrap">
-                        <!-- POST SETTINGS -->
-                        <div class="post-settings post-settings-dropdown-trigger">
-                          <!-- POST SETTINGS ICON -->
-                          <svg class="post-settings-icon icon-more-dots">
-                            <use xlink:href="#svg-more-dots"></use>
-                          </svg>
-                          <!-- /POST SETTINGS ICON -->
-                        </div>
-                        <!-- /POST SETTINGS -->
-
-                        <!-- SIMPLE DROPDOWN -->
-                        <div class="simple-dropdown post-settings-dropdown">
-                          <!-- SIMPLE DROPDOWN LINK -->
-                          <p class="simple-dropdown-link">Report Post</p>
-                          <!-- /SIMPLE DROPDOWN LINK -->
-                        </div>
-                        <!-- /SIMPLE DROPDOWN -->
-                      </div>
-                      <!-- /POST SETTINGS WRAP -->
-                    </div>
-                    <!-- /META LINE -->
-                  </div>
-                  <!-- /CONTENT ACTION -->
-                </div>
-                <!-- /CONTENT ACTIONS -->
-
-                <!-- POST COMMENT FORM -->
-                <div class="post-comment-form">
-                  <!-- USER AVATAR -->
-                  <div class="user-avatar small no-outline">
-                    <!-- USER AVATAR CONTENT -->
-                    <div class="user-avatar-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-image-30-32" data-src="img/avatar/01.jpg"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR CONTENT -->
-
-                    <!-- USER AVATAR PROGRESS -->
-                    <div class="user-avatar-progress">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-progress-40-44"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR PROGRESS -->
-
-                    <!-- USER AVATAR PROGRESS BORDER -->
-                    <div class="user-avatar-progress-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-border-40-44"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR PROGRESS BORDER -->
-
-                    <!-- USER AVATAR BADGE -->
-                    <div class="user-avatar-badge">
-                      <!-- USER AVATAR BADGE BORDER -->
-                      <div class="user-avatar-badge-border">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-22-24"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR BADGE BORDER -->
-
-                      <!-- USER AVATAR BADGE CONTENT -->
-                      <div class="user-avatar-badge-content">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-dark-16-18"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR BADGE CONTENT -->
-
-                      <!-- USER AVATAR BADGE TEXT -->
-                      <p class="user-avatar-badge-text">24</p>
-                      <!-- /USER AVATAR BADGE TEXT -->
-                    </div>
-                    <!-- /USER AVATAR BADGE -->
-                  </div>
-                  <!-- /USER AVATAR -->
-
-                  <!-- FORM -->
-                  <form class="form">
-                    <!-- FORM ROW -->
-                    <div class="form-row">
-                      <!-- FORM ITEM -->
-                      <div class="form-item">
-                        <!-- FORM INPUT -->
-                        <div class="form-input small">
-                          <label for="post-reply-1">Your Reply</label>
-                          <input type="text" id="post-reply-1" name="post_reply_1">
-                        </div>
-                        <!-- /FORM INPUT -->
-                      </div>
-                      <!-- /FORM ITEM -->
-                    </div>
-                    <!-- /FORM ROW -->
-                  </form>
-                  <!-- /FORM -->
-                </div>
-                <!-- /POST COMMENT FORM -->
-              </div>
-              <!-- /POST COMMENT -->
-
-              <!-- POST COMMENT -->
-              <div class="post-comment">
-                <!-- USER AVATAR -->
-                <a class="user-avatar small no-outline" href="profile-timeline.html">
-                  <!-- USER AVATAR CONTENT -->
-                  <div class="user-avatar-content">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="img/avatar/05.jpg"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR CONTENT -->
-
-                  <!-- USER AVATAR PROGRESS -->
-                  <div class="user-avatar-progress">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-progress-40-44"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR PROGRESS -->
-
-                  <!-- USER AVATAR PROGRESS BORDER -->
-                  <div class="user-avatar-progress-border">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-border-40-44"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR PROGRESS BORDER -->
-
-                  <!-- USER AVATAR BADGE -->
-                  <div class="user-avatar-badge">
-                    <!-- USER AVATAR BADGE BORDER -->
-                    <div class="user-avatar-badge-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-22-24"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE BORDER -->
-
-                    <!-- USER AVATAR BADGE CONTENT -->
-                    <div class="user-avatar-badge-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-dark-16-18"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE CONTENT -->
-
-                    <!-- USER AVATAR BADGE TEXT -->
-                    <p class="user-avatar-badge-text">12</p>
-                    <!-- /USER AVATAR BADGE TEXT -->
-                  </div>
-                  <!-- /USER AVATAR BADGE -->
-                </a>
-                <!-- /USER AVATAR -->
-
-                <!-- POST COMMENT TEXT -->
-                <p class="post-comment-text user-tag purchased"><a class="post-comment-text-author" href="profile-timeline.html">Neko Bebop</a></p>
-                <!-- /POST COMMENT TEXT -->
-
-                <!-- POST COMMENT TEXT -->
-                <p class="post-comment-text">Thanks for this great template! I’m already using it and it’s really awesome ;)</p>
-                <!-- /POST COMMENT TEXT -->
-
-                <!-- CONTENT ACTIONS -->
-                <div class="content-actions">
-                  <!-- CONTENT ACTION -->
-                  <div class="content-action">
-                    <!-- META LINE -->
-                    <div class="meta-line">
-                      <!-- META LINE LINK -->
-                      <p class="meta-line-link light reaction-options-small-dropdown-trigger">React!</p>
-                      <!-- /META LINE LINK -->
-
-                      <!-- REACTION OPTIONS -->
-                      <div class="reaction-options small reaction-options-small-dropdown">
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Like">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/like.png" alt="reaction-like">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Love">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/love.png" alt="reaction-love">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Dislike">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/dislike.png" alt="reaction-dislike">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Happy">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/happy.png" alt="reaction-happy">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Funny">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/funny.png" alt="reaction-funny">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Wow">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/wow.png" alt="reaction-wow">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Angry">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/angry.png" alt="reaction-angry">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-
-                        <!-- REACTION OPTION -->
-                        <div class="reaction-option text-tooltip-tft" data-title="Sad">
-                          <!-- REACTION OPTION IMAGE -->
-                          <img class="reaction-option-image" src="img/reaction/sad.png" alt="reaction-sad">
-                          <!-- /REACTION OPTION IMAGE -->
-                        </div>
-                        <!-- /REACTION OPTION -->
-                      </div>
-                      <!-- /REACTION OPTIONS -->
-                    </div>
-                    <!-- /META LINE -->
-
-                    <!-- META LINE -->
-                    <div class="meta-line">
-                      <!-- META LINE LINK -->
-                      <p class="meta-line-link light">Reply</p>
-                      <!-- /META LINE LINK -->
-                    </div>
-                    <!-- /META LINE -->
-
-                    <!-- META LINE -->
-                    <div class="meta-line">
-                      <!-- META LINE TIMESTAMP -->
-                      <p class="meta-line-timestamp">15 minutes ago</p>
-                      <!-- /META LINE TIMESTAMP -->
-                    </div>
-                    <!-- /META LINE -->
-
-                    <!-- META LINE -->
-                    <div class="meta-line settings">
-                      <!-- POST SETTINGS WRAP -->
-                      <div class="post-settings-wrap">
-                        <!-- POST SETTINGS -->
-                        <div class="post-settings post-settings-dropdown-trigger">
-                          <!-- POST SETTINGS ICON -->
-                          <svg class="post-settings-icon icon-more-dots">
-                            <use xlink:href="#svg-more-dots"></use>
-                          </svg>
-                          <!-- /POST SETTINGS ICON -->
-                        </div>
-                        <!-- /POST SETTINGS -->
-
-                        <!-- SIMPLE DROPDOWN -->
-                        <div class="simple-dropdown post-settings-dropdown">
-                          <!-- SIMPLE DROPDOWN LINK -->
-                          <p class="simple-dropdown-link">Report Post</p>
-                          <!-- /SIMPLE DROPDOWN LINK -->
-                        </div>
-                        <!-- /SIMPLE DROPDOWN -->
-                      </div>
-                      <!-- /POST SETTINGS WRAP -->
-                    </div>
-                    <!-- /META LINE -->
-                  </div>
-                  <!-- /CONTENT ACTION -->
-                </div>
-                <!-- /CONTENT ACTIONS -->
-              </div>
-              <!-- /POST COMMENT -->
-
-              <!-- POST COMMENT FORM -->
-              <div class="post-comment-form with-title">
-                <!-- POST COMMENT FORM TITLE -->
-                <p class="post-comment-form-title">Leave a Comment</p>
-                <!-- /POST COMMENT FORM TITLE -->
-
-                <!-- USER AVATAR -->
-                <div class="user-avatar small no-outline">
-                  <!-- USER AVATAR CONTENT -->
-                  <div class="user-avatar-content">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="img/avatar/01.jpg"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR CONTENT -->
-
-                  <!-- USER AVATAR PROGRESS -->
-                  <div class="user-avatar-progress">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-progress-40-44"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR PROGRESS -->
-
-                  <!-- USER AVATAR PROGRESS BORDER -->
-                  <div class="user-avatar-progress-border">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-border-40-44"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR PROGRESS BORDER -->
-
-                  <!-- USER AVATAR BADGE -->
-                  <div class="user-avatar-badge">
-                    <!-- USER AVATAR BADGE BORDER -->
-                    <div class="user-avatar-badge-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-22-24"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE BORDER -->
-
-                    <!-- USER AVATAR BADGE CONTENT -->
-                    <div class="user-avatar-badge-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-dark-16-18"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE CONTENT -->
-
-                    <!-- USER AVATAR BADGE TEXT -->
-                    <p class="user-avatar-badge-text">24</p>
-                    <!-- /USER AVATAR BADGE TEXT -->
-                  </div>
-                  <!-- /USER AVATAR BADGE -->
-                </div>
-                <!-- /USER AVATAR -->
-
-                <!-- FORM -->
-                <form class="form">
-                  <!-- FORM ROW -->
-                  <div class="form-row">
-                    <!-- FORM ITEM -->
-                    <div class="form-item">
-                      <!-- FORM INPUT -->
-                      <div class="form-input small">
-                        <label for="post-reply-2">Your Reply</label>
-                        <textarea id="post-reply-2" name="post_reply_2"></textarea>
-                      </div>
-                      <!-- /FORM INPUT -->
-                    </div>
-                    <!-- /FORM ITEM -->
-                  </div>
-                  <!-- /FORM ROW -->
-                </form>
-                <!-- /FORM -->
-              </div>
-              <!-- /POST COMMENT FORM -->
             </div>
             <!-- /POST COMMENT LIST -->
           </div>
@@ -1615,349 +930,6 @@
               </div>
               <!-- /POST COMMENT -->
 
-              <!-- POST COMMENT -->
-              <div class="post-comment">
-                <!-- USER AVATAR -->
-                <a class="user-avatar small no-outline" href="profile-timeline.html">
-                  <!-- USER AVATAR CONTENT -->
-                  <div class="user-avatar-content">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="img/avatar/04.jpg"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR CONTENT -->
-
-                  <!-- USER AVATAR PROGRESS -->
-                  <div class="user-avatar-progress">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-progress-40-44"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR PROGRESS -->
-
-                  <!-- USER AVATAR PROGRESS BORDER -->
-                  <div class="user-avatar-progress-border">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-border-40-44"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR PROGRESS BORDER -->
-
-                  <!-- USER AVATAR BADGE -->
-                  <div class="user-avatar-badge">
-                    <!-- USER AVATAR BADGE BORDER -->
-                    <div class="user-avatar-badge-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-22-24"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE BORDER -->
-
-                    <!-- USER AVATAR BADGE CONTENT -->
-                    <div class="user-avatar-badge-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-dark-16-18"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE CONTENT -->
-
-                    <!-- USER AVATAR BADGE TEXT -->
-                    <p class="user-avatar-badge-text">6</p>
-                    <!-- /USER AVATAR BADGE TEXT -->
-                  </div>
-                  <!-- /USER AVATAR BADGE -->
-                </a>
-                <!-- /USER AVATAR -->
-
-                <!-- POST COMMENT TEXT WRAP -->
-                <div class="post-comment-text-wrap">
-                  <!-- RATING LIST -->
-                  <div class="rating-list medium">
-                    <!-- RATING -->
-                    <div class="rating medium filled">
-                      <!-- RATING ICON -->
-                      <svg class="rating-icon medium icon-star">
-                        <use xlink:href="#svg-star"></use>
-                      </svg>
-                      <!-- /RATING ICON -->
-                    </div>
-                    <!-- /RATING -->
-
-                    <!-- RATING -->
-                    <div class="rating medium filled">
-                      <!-- RATING ICON -->
-                      <svg class="rating-icon medium icon-star">
-                        <use xlink:href="#svg-star"></use>
-                      </svg>
-                      <!-- /RATING ICON -->
-                    </div>
-                    <!-- /RATING -->
-
-                    <!-- RATING -->
-                    <div class="rating medium filled">
-                      <!-- RATING ICON -->
-                      <svg class="rating-icon medium icon-star">
-                        <use xlink:href="#svg-star"></use>
-                      </svg>
-                      <!-- /RATING ICON -->
-                    </div>
-                    <!-- /RATING -->
-
-                    <!-- RATING -->
-                    <div class="rating medium filled">
-                      <!-- RATING ICON -->
-                      <svg class="rating-icon medium icon-star">
-                        <use xlink:href="#svg-star"></use>
-                      </svg>
-                      <!-- /RATING ICON -->
-                    </div>
-                    <!-- /RATING -->
-
-                    <!-- RATING -->
-                    <div class="rating medium">
-                      <!-- RATING ICON -->
-                      <svg class="rating-icon medium icon-star">
-                        <use xlink:href="#svg-star"></use>
-                      </svg>
-                      <!-- /RATING ICON -->
-                    </div>
-                    <!-- /RATING -->
-                  </div>
-                  <!-- /RATING LIST -->
-
-                  <!-- POST COMMENT TEXT -->
-                  <p class="post-comment-text"><span class="bold">Reason:</span> <span class="highlighted">Documentation</span></p>
-                  <!-- /POST COMMENT TEXT -->
-                </div>
-                <!-- /POST COMMENT TEXT WRAP -->
-
-                <!-- POST COMMENT TEXT -->
-                <p class="post-comment-text">Best template I have ever had. Good documentation and code practices.</p>
-                <!-- /POST COMMENT TEXT -->
-
-                <!-- CONTENT ACTIONS -->
-                <div class="content-actions">
-                  <!-- CONTENT ACTION -->
-                  <div class="content-action">
-                    <!-- META LINE -->
-                    <div class="meta-line">
-                      <!-- META LINE TEXT -->
-                      <p class="meta-line-text"><a href="profile-timeline.html">Bearded Wonder</a></p>
-                      <!-- /META LINE TEXT -->
-                    </div>
-                    <!-- /META LINE -->
-
-                    <!-- META LINE -->
-                    <div class="meta-line">
-                      <!-- META LINE TIMESTAMP -->
-                      <p class="meta-line-timestamp">2 days ago</p>
-                      <!-- /META LINE TIMESTAMP -->
-                    </div>
-                    <!-- /META LINE -->
-
-                    <!-- META LINE -->
-                    <div class="meta-line settings">
-                      <!-- POST SETTINGS WRAP -->
-                      <div class="post-settings-wrap">
-                        <!-- POST SETTINGS -->
-                        <div class="post-settings post-settings-dropdown-trigger">
-                          <!-- POST SETTINGS ICON -->
-                          <svg class="post-settings-icon icon-more-dots">
-                            <use xlink:href="#svg-more-dots"></use>
-                          </svg>
-                          <!-- /POST SETTINGS ICON -->
-                        </div>
-                        <!-- /POST SETTINGS -->
-
-                        <!-- SIMPLE DROPDOWN -->
-                        <div class="simple-dropdown post-settings-dropdown">
-                          <!-- SIMPLE DROPDOWN LINK -->
-                          <p class="simple-dropdown-link">Report Review</p>
-                          <!-- /SIMPLE DROPDOWN LINK -->
-                        </div>
-                        <!-- /SIMPLE DROPDOWN -->
-                      </div>
-                      <!-- /POST SETTINGS WRAP -->
-                    </div>
-                    <!-- /META LINE -->
-                  </div>
-                  <!-- /CONTENT ACTION -->
-                </div>
-                <!-- /CONTENT ACTIONS -->
-              </div>
-              <!-- /POST COMMENT -->
-
-              <!-- POST COMMENT -->
-              <div class="post-comment">
-                <!-- USER AVATAR -->
-                <a class="user-avatar small no-outline" href="profile-timeline.html">
-                  <!-- USER AVATAR CONTENT -->
-                  <div class="user-avatar-content">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="img/avatar/07.jpg"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR CONTENT -->
-
-                  <!-- USER AVATAR PROGRESS -->
-                  <div class="user-avatar-progress">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-progress-40-44"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR PROGRESS -->
-
-                  <!-- USER AVATAR PROGRESS BORDER -->
-                  <div class="user-avatar-progress-border">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-border-40-44"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR PROGRESS BORDER -->
-
-                  <!-- USER AVATAR BADGE -->
-                  <div class="user-avatar-badge">
-                    <!-- USER AVATAR BADGE BORDER -->
-                    <div class="user-avatar-badge-border">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-22-24"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE BORDER -->
-
-                    <!-- USER AVATAR BADGE CONTENT -->
-                    <div class="user-avatar-badge-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-dark-16-18"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    <!-- /USER AVATAR BADGE CONTENT -->
-
-                    <!-- USER AVATAR BADGE TEXT -->
-                    <p class="user-avatar-badge-text">26</p>
-                    <!-- /USER AVATAR BADGE TEXT -->
-                  </div>
-                  <!-- /USER AVATAR BADGE -->
-                </a>
-                <!-- /USER AVATAR -->
-
-                <!-- POST COMMENT TEXT WRAP -->
-                <div class="post-comment-text-wrap">
-                  <!-- RATING LIST -->
-                  <div class="rating-list medium">
-                    <!-- RATING -->
-                    <div class="rating medium filled">
-                      <!-- RATING ICON -->
-                      <svg class="rating-icon medium icon-star">
-                        <use xlink:href="#svg-star"></use>
-                      </svg>
-                      <!-- /RATING ICON -->
-                    </div>
-                    <!-- /RATING -->
-
-                    <!-- RATING -->
-                    <div class="rating medium filled">
-                      <!-- RATING ICON -->
-                      <svg class="rating-icon medium icon-star">
-                        <use xlink:href="#svg-star"></use>
-                      </svg>
-                      <!-- /RATING ICON -->
-                    </div>
-                    <!-- /RATING -->
-
-                    <!-- RATING -->
-                    <div class="rating medium filled">
-                      <!-- RATING ICON -->
-                      <svg class="rating-icon medium icon-star">
-                        <use xlink:href="#svg-star"></use>
-                      </svg>
-                      <!-- /RATING ICON -->
-                    </div>
-                    <!-- /RATING -->
-
-                    <!-- RATING -->
-                    <div class="rating medium filled">
-                      <!-- RATING ICON -->
-                      <svg class="rating-icon medium icon-star">
-                        <use xlink:href="#svg-star"></use>
-                      </svg>
-                      <!-- /RATING ICON -->
-                    </div>
-                    <!-- /RATING -->
-
-                    <!-- RATING -->
-                    <div class="rating medium filled">
-                      <!-- RATING ICON -->
-                      <svg class="rating-icon medium icon-star">
-                        <use xlink:href="#svg-star"></use>
-                      </svg>
-                      <!-- /RATING ICON -->
-                    </div>
-                    <!-- /RATING -->
-                  </div>
-                  <!-- /RATING LIST -->
-
-                  <!-- POST COMMENT TEXT -->
-                  <p class="post-comment-text"><span class="bold">Reason:</span> <span class="highlighted">Item Quality</span></p>
-                  <!-- /POST COMMENT TEXT -->
-                </div>
-                <!-- /POST COMMENT TEXT WRAP -->
-
-                <!-- POST COMMENT TEXT -->
-                <p class="post-comment-text">5 stars for exceptional Customer Support (quick, precise, detailed responses to questions), but 5 stars also for Design Quality and Customization. It is a beautiful clean design that can easily be customized to your needs. I had really specific questions and I received detailed solutions very promptly. Thank you!</p>
-                <!-- /POST COMMENT TEXT -->
-
-                <!-- CONTENT ACTIONS -->
-                <div class="content-actions">
-                  <!-- CONTENT ACTION -->
-                  <div class="content-action">
-                    <!-- META LINE -->
-                    <div class="meta-line">
-                      <!-- META LINE TEXT -->
-                      <p class="meta-line-text"><a href="profile-timeline.html">Sarah Diamond</a></p>
-                      <!-- /META LINE TEXT -->
-                    </div>
-                    <!-- /META LINE -->
-
-                    <!-- META LINE -->
-                    <div class="meta-line">
-                      <!-- META LINE TIMESTAMP -->
-                      <p class="meta-line-timestamp">4 weeks ago</p>
-                      <!-- /META LINE TIMESTAMP -->
-                    </div>
-                    <!-- /META LINE -->
-
-                    <!-- META LINE -->
-                    <div class="meta-line settings">
-                      <!-- POST SETTINGS WRAP -->
-                      <div class="post-settings-wrap">
-                        <!-- POST SETTINGS -->
-                        <div class="post-settings post-settings-dropdown-trigger">
-                          <!-- POST SETTINGS ICON -->
-                          <svg class="post-settings-icon icon-more-dots">
-                            <use xlink:href="#svg-more-dots"></use>
-                          </svg>
-                          <!-- /POST SETTINGS ICON -->
-                        </div>
-                        <!-- /POST SETTINGS -->
-
-                        <!-- SIMPLE DROPDOWN -->
-                        <div class="simple-dropdown post-settings-dropdown">
-                          <!-- SIMPLE DROPDOWN LINK -->
-                          <p class="simple-dropdown-link">Report Review</p>
-                          <!-- /SIMPLE DROPDOWN LINK -->
-                        </div>
-                        <!-- /SIMPLE DROPDOWN -->
-                      </div>
-                      <!-- /POST SETTINGS WRAP -->
-                    </div>
-                    <!-- /META LINE -->
-                  </div>
-                  <!-- /CONTENT ACTION -->
-                </div>
-                <!-- /CONTENT ACTIONS -->
-              </div>
-              <!-- /POST COMMENT -->
             </div>
             <!-- /POST COMMENT LIST -->
           </div>
@@ -1976,63 +948,14 @@
         <!-- SIDEBAR BOX ITEMS -->
         <div class="sidebar-box-items">
           <!-- PRICE TITLE -->
-          <p class="price-title big"><span class="currency">$</span> 26.00</p>
+          <br>
+          <p class="price-title small"><span class="currency">Tsh</span> <span style="color:red">{{number_format($bidhaa->Mashine_Price)}}</span> /=</p>
           <!-- /PRICE TITLE -->
 
-          <!-- FORM -->
-          <form class="form">
-            <!-- CHECKBOX WRAP -->
-            <div class="checkbox-wrap">
-              <input type="radio" id="license-regular" name="license_type" value="license-regular" checked>
-              <!-- CHECKBOX BOX -->
-              <div class="checkbox-box">
-                <!-- ICON CROSS -->
-                <svg class="icon-cross">
-                  <use xlink:href="#svg-cross"></use>
-                </svg>
-                <!-- /ICON CROSS -->
-              </div>
-              <!-- /CHECKBOX BOX -->
-              <label class="accordion-trigger-linked" for="license-regular">Regular License</label>
 
-              <!-- CHECKBOX INFO -->
-              <div class="checkbox-info accordion-content-linked accordion-open">
-                <!-- CHECKBOX INFO TEXT -->
-                <p class="checkbox-info-text">For use, by you or one client, in a single end product which end users are not charged for. <a href="#">View Details</a></p>
-                <!-- /CHECKBOX INFO TEXT -->
-              </div>
-              <!-- /CHECKBOX INFO -->
-            </div>
-            <!-- /CHECKBOX WRAP -->
-
-            <!-- CHECKBOX WRAP -->
-            <div class="checkbox-wrap">
-              <input type="radio" id="license-extended" name="license_type" value="license-extended">
-              <!-- CHECKBOX BOX -->
-              <div class="checkbox-box">
-                <!-- ICON CROSS -->
-                <svg class="icon-cross">
-                  <use xlink:href="#svg-cross"></use>
-                </svg>
-                <!-- /ICON CROSS -->
-              </div>
-              <!-- /CHECKBOX BOX -->
-              <label class="accordion-trigger-linked" for="license-extended">Extended License</label>
-
-              <!-- CHECKBOX INFO -->
-              <div class="checkbox-info accordion-content-linked">
-                <!-- CHECKBOX INFO TEXT -->
-                <p class="checkbox-info-text">For use, by you or one client, in a single end product which end users can be charged for. <a href="#">View Details</a></p>
-                <!-- /CHECKBOX INFO TEXT -->
-              </div>
-              <!-- /CHECKBOX INFO -->
-            </div>
-            <!-- /CHECKBOX WRAP -->
-          </form>
-          <!-- /FORM -->
 
           <!-- BUTTON -->
-          <p class="button primary">Add to Your Cart!</p>
+          <a href="#" class="button primary">Nunua!</a>
           <!-- /BUTTON -->
 
           <!-- USER STATS -->
@@ -2114,9 +1037,9 @@
           <!-- /USER STATS -->
         </div>
         <!-- /SIDEBAR BOX ITEMS -->
-
+         <hr>
         <!-- SIDEBAR BOX TITLE -->
-        <p class="sidebar-box-title medium-space">Item Author</p>
+        <p class="sidebar-box-title medium-space">Muuzaji</p>
         <!-- /SIDEBAR BOX TITLE -->
 
         <!-- SIDEBAR BOX ITEMS -->
@@ -2124,13 +1047,13 @@
           <!-- USER STATUS -->
           <div class="user-status">
             <!-- USER STATUS AVATAR -->
-            <a class="user-status-avatar" href="profile-timeline.html">
+            <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page/{{$bidhaa->Seller_Id}}-About-{{$bidhaa->Seller_Name}}-in-Kilimofy-Platform">
               <!-- USER AVATAR -->
               <div class="user-avatar small no-outline">
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
-                  <div class="hexagon-image-30-32" data-src="img/avatar/01.jpg"></div>
+                  <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$bidhaa->Seller_Image_Path}}"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->
@@ -2170,7 +1093,7 @@
                   <!-- /USER AVATAR BADGE CONTENT -->
 
                   <!-- USER AVATAR BADGE TEXT -->
-                  <p class="user-avatar-badge-text">24</p>
+                  <p class="user-avatar-badge-text">{{$total_user_item_list}}</p>
                   <!-- /USER AVATAR BADGE TEXT -->
                 </div>
                 <!-- /USER AVATAR BADGE -->
@@ -2180,60 +1103,38 @@
             <!-- /USER STATUS AVATAR -->
 
             <!-- USER STATUS TITLE -->
-            <p class="user-status-title"><a class="bold" href="profile-timeline.html">Marina Valentine</a></p>
+            <p class="user-status-title"><a class="bold" href="/kilimofy/UserAccount/about_user_page/{{$bidhaa->Seller_Id}}-About-{{$bidhaa->Seller_Name}}-in-Kilimofy-Platform">{{$bidhaa->Seller_Name}}</a></p>
             <!-- /USER STATUS TITLE -->
 
             <!-- USER STATUS TEXT -->
-            <p class="user-status-text small">5 items published</p>
+            <p class="user-status-text small">Bidhaa {{$total_user_item_list}} Sokoni</p>
             <!-- /USER STATUS TEXT -->
           </div>
           <!-- /USER STATUS -->
 
           <!-- BADGE LIST -->
           <div class="badge-list small align-left">
-            <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="Gold User">
-              <img src="img/badge/gold-s.png" alt="badge-gold-s">
-            </div>
-            <!-- /BADGE ITEM -->
 
+            @foreach($user_item_list as $item)
             <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="Profile Age">
-              <img src="img/badge/age-s.png" alt="badge-age-s">
-            </div>
-            <!-- /BADGE ITEM -->
-
-            <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="Caffeinated">
-              <img src="img/badge/caffeinated-s.png" alt="badge-caffeinated-s">
-            </div>
-            <!-- /BADGE ITEM -->
-
-            <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="The Warrior">
-              <img src="img/badge/warrior-s.png" alt="badge-warrior-s">
-            </div>
-            <!-- /BADGE ITEM -->
-
-            <!-- BADGE ITEM -->
-            <a class="badge-item" href="profile-badges.html">
-              <img src="img/badge/blank-s.png" alt="badge-blank-s">
-              <!-- BADGE ITEM TEXT -->
-              <p class="badge-item-text">+9</p>
-              <!-- /BADGE ITEM TEXT -->
+            <a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart/{{$item->id}}">
+              <div class="badge-item text-tooltip-tft" data-title="{{$item->item_name}}">
+                <img src="/Uploads/MashineImage/{{$item->Mashine_Image}}" alt="{{$item->Mashine_Name}}" style="width:120%; height:120%; border-radius:70%;">
+              </div>
             </a>
+
             <!-- /BADGE ITEM -->
+            @endforeach
+
           </div>
           <!-- /BADGE LIST -->
 
-          <!-- BUTTON -->
-          <a class="button small white" href="profile-store.html">View Author's Store</a>
-          <!-- /BUTTON -->
+        <hr>
         </div>
         <!-- /SIDEBAR BOX ITEMS -->
 
         <!-- SIDEBAR BOX TITLE -->
-        <p class="sidebar-box-title medium-space">Item Details</p>
+        <p class="sidebar-box-title medium-space">Taarifa ya Bidhaa</p>
         <!-- /SIDEBAR BOX TITLE -->
 
         <!-- SIDEBAR BOX ITEMS -->
@@ -2243,11 +1144,11 @@
             <!-- INFORMATION LINE -->
             <div class="information-line">
               <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Updated</p>
+              <p class="information-line-title">Jina</p>
               <!-- /INFORMATION LINE TITLE -->
 
               <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">October 13rd, 2019</span></p>
+              <p class="information-line-text"><span class="bold">{{$bidhaa->Mashine_Name}}</span></p>
               <!-- /INFORMATION LINE TEXT -->
             </div>
             <!-- /INFORMATION LINE -->
@@ -2255,11 +1156,11 @@
             <!-- INFORMATION LINE -->
             <div class="information-line">
               <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Created</p>
+              <p class="information-line-title">Aina</p>
               <!-- /INFORMATION LINE TITLE -->
 
               <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">August 17th, 2019</span></p>
+              <p class="information-line-text"><span class="bold">Mashine Ya Kilimo</span></p>
               <!-- /INFORMATION LINE TEXT -->
             </div>
             <!-- /INFORMATION LINE -->
@@ -2267,11 +1168,11 @@
             <!-- INFORMATION LINE -->
             <div class="information-line">
               <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Category</p>
+              <p class="information-line-title">Garama</p>
               <!-- /INFORMATION LINE TITLE -->
 
               <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><a href="marketplace-category.html">HTML Templates</a></p>
+              <p class="information-line-text"><a href="">Tsh {{number_format($bidhaa->Mashine_Price)}} /=</a></p>
               <!-- /INFORMATION LINE TEXT -->
             </div>
             <!-- /INFORMATION LINE -->
@@ -2279,11 +1180,11 @@
             <!-- INFORMATION LINE -->
             <div class="information-line">
               <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Files<br>Included</p>
+              <p class="information-line-title">Mahali</p>
               <!-- /INFORMATION LINE TITLE -->
 
               <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">HTML Files, CSS Files, JS Files, Layered PSD</span></p>
+              <p class="information-line-text"><span class="bold">Arusha, Arusha Mjini</span></p>
               <!-- /INFORMATION LINE TEXT -->
             </div>
             <!-- /INFORMATION LINE -->
@@ -2291,67 +1192,31 @@
             <!-- INFORMATION LINE -->
             <div class="information-line">
               <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Layout</p>
+              <p class="information-line-title">Nambari ya Simu</p>
               <!-- /INFORMATION LINE TITLE -->
 
               <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">Responsive</span></p>
+              <p class="information-line-text"><span class="bold">0767265780</span></p>
               <!-- /INFORMATION LINE TEXT -->
             </div>
             <!-- /INFORMATION LINE -->
 
-            <!-- INFORMATION LINE -->
-            <div class="information-line">
-              <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Tags</p>
-              <!-- /INFORMATION LINE TITLE -->
 
-              <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold"><a href="marketplace-category.html">Gaming</a>, <a href="marketplace-category.html">Magazine</a>, <a href="marketplace-category.html">Web</a>, <a href="marketplace-category.html">eSports</a>, <a href="marketplace-category.html">Template</a></span></p>
-              <!-- /INFORMATION LINE TEXT -->
-            </div>
-            <!-- /INFORMATION LINE -->
           </div>
           <!-- /INFORMATION LINE LIST -->
         </div>
         <!-- /SIDEBAR BOX ITEMS -->
 
         <!-- SIDEBAR BOX TITLE -->
-        <p class="sidebar-box-title medium-space">Item Share</p>
+        <p class="sidebar-box-title medium-space text-center" >Asante !</p>
         <!-- /SIDEBAR BOX TITLE -->
 
-        <!-- SIDEBAR BOX ITEMS -->
-        <div class="sidebar-box-items">
-          <!-- SOCIAL LINKS -->
-          <div class="social-links small align-left">
-            <!-- SOCIAL LINK -->
-            <a class="social-link small facebook" href="#">
-              <!-- SOCIAL LINK ICON -->
-              <svg class="social-link-icon icon-facebook">
-                <use xlink:href="#svg-facebook"></use>
-              </svg>
-              <!-- /SOCIAL LINK ICON -->
-            </a>
-            <!-- /SOCIAL LINK -->
-
-            <!-- SOCIAL LINK -->
-            <a class="social-link small twitter" href="#">
-              <!-- SOCIAL LINK ICON -->
-              <svg class="social-link-icon icon-twitter">
-                <use xlink:href="#svg-twitter"></use>
-              </svg>
-              <!-- /SOCIAL LINK ICON -->
-            </a>
-            <!-- /SOCIAL LINK -->
-          </div>
-          <!-- /SOCIAL LINKS -->
-        </div>
-        <!-- /SIDEBAR BOX ITEMS -->
       </div>
       <!-- /SIDEBAR BOX -->
     </div>
     <!-- /MARKETPLACE SIDEBAR -->
   </div>
   <!-- /GRID -->
+  @endforeach
 </div>
 <!-- /CONTENT GRID -->

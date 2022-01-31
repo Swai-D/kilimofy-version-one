@@ -1,9 +1,9 @@
 @extends('LayoutBladeFiles.app-layout')
 @section('title','Usafirishaji wa Bidhaa')
-@section('menu-status-driver','active')
+@section('menu-status-mashine','active')
 
 @section('mini-user-fundi-active')
-style="fill:yellow "
+<!-- style="fill:yellow " -->
 @endsection
 
 @section('discription-title')
@@ -115,7 +115,7 @@ style="fill:yellow "
               <!-- /SIDEBAR MENU HEADER CONTROL ICON -->
 
               <!-- SIDEBAR MENU HEADER TITLE -->
-              <p class="sidebar-menu-header-title">My Trips Store</p>
+              <p class="sidebar-menu-header-title">My Store</p>
               <!-- /SIDEBAR MENU HEADER TITLE -->
 
               <!-- SIDEBAR MENU HEADER TEXT -->
@@ -159,19 +159,31 @@ style="fill:yellow "
         <!-- SECTION HEADER INFO -->
         <div class="section-header-info">
           <!-- SECTION PRETITLE -->
-          <p class="section-pretitle">Safari</p>
+          <p class="section-pretitle">Duka la Mashine za kilimo Safari</p>
           <!-- /SECTION PRETITLE -->
 
           <!-- SECTION TITLE -->
-          <h2 class="section-title">Andaa Safari</h2>
+          <h2 class="section-title">Weka Mashine Dukani</h2>
           <!-- /SECTION TITLE -->
         </div>
         <!-- /SECTION HEADER INFO -->
       </div>
       <!-- /SECTION HEADER -->
 
+      @if($errors->any())
+      <h4 class="text-danger">{{$errors->first()}}</h4>
+      @endif
+
+      @if(session()->has('Message'))
+        <div class="alert alert" role = "alert">
+          <p class="lead" style="color: #f33155">
+            {{session()->get('Message')}}
+          </p>
+        </div>
+      @endif
+
       <!-- GRID -->
-      <div class="grid grid-3-3-3 centered-on-mobile">
+      <div class="grid  grid-4-4-4 centered-on-mobile">
         <!-- CREATE ENTITY BOX -->
         <div class="create-entity-box">
           <!-- CREATE ENTITY BOX COVER -->
@@ -191,70 +203,60 @@ style="fill:yellow "
           <!-- CREATE ENTITY BOX INFO -->
           <div class="create-entity-box-info">
             <!-- CREATE ENTITY BOX TITLE -->
-            <p class="create-entity-box-title">Andaa Safari</p>
+            <p class="create-entity-box-title">Mashine Za Kilimo</p>
             <!-- /CREATE ENTITY BOX TITLE -->
 
             <!-- CREATE ENTITY BOX TEXT -->
-            <p class="create-entity-box-text">Share your trip with others!</p>
+            <p class="create-entity-box-text">Share your Mashines with others!</p>
             <!-- /CREATE ENTITY BOX TEXT -->
 
             <!-- BUTTON -->
-            <p class="button secondary full popup-make-trip-trigger">Weka Mzigo</p>
+            <p class="button secondary full popup-make-trip-trigger">+Mashine</p>
             <!-- /BUTTON -->
           </div>
           <!-- /CREATE ENTITY BOX INFO -->
         </div>
         <!-- /CREATE ENTITY BOX -->
 
-        <!-- USER PREVIEW -->
-        <div class="user-preview small fixed-height-medium">
-          <!-- USER PREVIEW COVER -->
-          <figure class="user-preview-cover liquid">
-            <img src="img/cover/29.jpg" alt="cover-29">
-          </figure>
-          <!-- /USER PREVIEW COVER -->
+      @forelse($my_mashine_store as $mashine)
+      <!-- BADGE ITEM PREVIEW -->
+      <div class="badge-item-preview">
+        <!-- BADGE ITEM PREVIEW IMAGE -->
+        <img class="badge-item-preview-image" src="/Uploads/MashineImage/{{$mashine->Mashine_Image}}" alt="badge-gold-b" style="border-radius:10px;">
+        <!-- /BADGE ITEM PREVIEW IMAGE -->
 
-          <!-- USER PREVIEW INFO -->
-          <div class="user-preview-info">
-            <!-- USER SHORT DESCRIPTION -->
-            <div class="user-short-description small">
-              <!-- USER SHORT DESCRIPTION AVATAR -->
-              <a class="user-short-description-avatar user-avatar no-stats" href="group-timeline.html">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-100-108"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
+        <!-- BADGE ITEM PREVIEW INFO -->
+        <div class="badge-item-preview-info">
+          <!-- BADGE ITEM PREVIEW TITLE -->
+          <p class="badge-item-preview-title">{{$mashine->Mashine_Name}}</p>
+          <!-- /BADGE ITEM PREVIEW TITLE -->
 
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-84-92" data-src="img/avatar/24.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </a>
-              <!-- /USER SHORT DESCRIPTION AVATAR -->
+          <!-- BADGE ITEM PREVIEW TEXT -->
+          <p class="badge-item-preview-text">{{$mashine->Mashine_Work}}</p>
+          <!-- /BADGE ITEM PREVIEW TEXT -->
 
-              <!-- USER SHORT DESCRIPTION TITLE -->
-              <p class="user-short-description-title small"><a href="group-timeline.html">Cosplayers of the World</a></p>
-              <!-- /USER SHORT DESCRIPTION TITLE -->
+          <!-- BADGE ITEM PREVIEW TIMESTAMP -->
+          <p class="badge-item-preview-timestamp">Posted {{$mashine->created_at->diffForHumans()}}</p>
+          <!-- /BADGE ITEM PREVIEW TIMESTAMP -->
 
-              <!-- USER SHORT DESCRIPTION TEXT -->
-              <p class="user-short-description-text regular">Trip Organizer</p>
-              <!-- /USER SHORT DESCRIPTION TEXT -->
-            </div>
-            <!-- /USER SHORT DESCRIPTION -->
-
+          <div class="user-preview-actions">
             <!-- BUTTON -->
-            <p class="button white full popup-make-trip-trigger">Manage Store</p>
+            <a href="/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/Edit-Mashine-page/{{$mashine->id}}"  class="button secondary small " style="margin: 5px;">Edit</a>
+
+            <a href="/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/Delete-Mashine/{{$mashine->id}}" class="button  small " style="background-color:red;">Delete</a>
             <!-- /BUTTON -->
+
           </div>
-          <!-- /USER PREVIEW INFO -->
+
         </div>
-        <!-- /USER PREVIEW -->
+        <!-- /BADGE ITEM PREVIEW INFO -->
+      </div>
+      <!-- /BADGE ITEM PREVIEW -->
+      @empty
+      <p class="text-danger"> Huna Mashine yeyote ulioposti Dukani kwako kwa sasa!</p>
+      @endforelse
+
+
       </div>
       <!-- /GRID -->
     </div>
@@ -331,7 +333,7 @@ style="fill:yellow "
         <!-- SIDEBAR MENU BODY -->
         <div class="sidebar-menu-body secondary">
           <!-- SIDEBAR MENU LINK -->
-          <p class="sidebar-menu-link active">Group Info</p>
+          <p class="sidebar-menu-link active">Mashine Info</p>
           <!-- /SIDEBAR MENU LINK -->
 
           <!-- SIDEBAR MENU LINK -->
@@ -357,7 +359,7 @@ style="fill:yellow "
         <!-- /SIDEBAR MENU BODY -->
       </div>
       <!-- /SIDEBAR MENU ITEM -->
-     <form class="form" action="/kilimofy/Group/Create-Group" method="post" enctype="multipart/form-data">
+     <form class="form" action="/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/uza-mashine-za-kilimo" method="post" enctype="multipart/form-data">
        @csrf
       <!-- POPUP BOX SIDEBAR FOOTER -->
       <div class="popup-box-sidebar-footer">
@@ -378,7 +380,7 @@ style="fill:yellow "
       <!-- WIDGET BOX -->
       <div class="widget-box">
         <!-- WIDGET BOX TITLE -->
-        <p class="widget-box-title">Group Info</p>
+        <p class="widget-box-title">Mashine Info</p>
         <!-- /WIDGET BOX TITLE -->
 
         <!-- WIDGET BOX CONTENT -->
@@ -391,8 +393,8 @@ style="fill:yellow "
               <div class="form-item">
                 <!-- FORM INPUT -->
                 <div class="form-input small active">
-                  <label for="group-name">Jina la Grupu</label>
-                  <input type="text" id="group-name" name="Group_Name" >
+                  <label for="group-name">Jina la Mashine</label>
+                  <input type="text" id="group-name" name="Mashine_Name" value="{{old('Mashine_Name')}}" >
                 </div>
                 <!-- /FORM INPUT -->
               </div>
@@ -406,8 +408,23 @@ style="fill:yellow "
               <div class="form-item">
                 <!-- FORM INPUT -->
                 <div class="form-input small active">
-                  <label for="group-tagline">Ujumbe wa Grupu</label>
-                  <input type="text" id="group-tagline" name="Tagline" >
+                  <label for="group-name">Kazi ya Mashine</label>
+                  <input type="text" id="group-name" name="Mashine_Work" value="{{old('Mashine_Work')}}" >
+                </div>
+                <!-- /FORM INPUT -->
+              </div>
+              <!-- /FORM ITEM -->
+            </div>
+            <!-- /FORM ROW -->
+
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM INPUT -->
+                <div class="form-input small active">
+                  <label for="group-tagline">Garama</label>
+                  <input type="number" id="group-tagline" name="Mashine_Price"  min="0" value="{{old('Mashine_Price')}}" >
                 </div>
                 <!-- /FORM INPUT -->
               </div>
@@ -421,39 +438,11 @@ style="fill:yellow "
               <div class="form-item">
                 <!-- FORM INPUT -->
                 <div class="form-input small mid-textarea">
-                  <textarea id="group-description" name="Description" placeholder="Andika maelezo mafupi kuhusu grupu..."></textarea>
+                  <textarea id="group-description" name="Mashine_Description" placeholder="Andika maelezo mafupi kuhusu Mashine..."></textarea>
                 </div>
                 <!-- /FORM INPUT -->
               </div>
               <!-- /FORM ITEM -->
-            </div>
-            <!-- /FORM ROW -->
-
-
-
-            <!-- FORM ROW -->
-            <div class="form-row">
-              <!-- FORM ITEM -->
-              <div class="form-item">
-                <!-- FORM SELECT -->
-                <div class="form-select">
-                  <label for="item-category">Status ya Grupu</label>
-                  <select id="item-category" name="Status">
-                    <option selected disabled>--Chagua--</option>
-                    <option value="Public">Public</option>
-                    <option value="Private">Private</option>
-
-                  </select>
-                  <!-- FORM SELECT ICON -->
-                  <svg class="form-select-icon icon-small-arrow">
-                    <use xlink:href="#svg-small-arrow"></use>
-                  </svg>
-                  <!-- /FORM SELECT ICON -->
-                </div>
-                <!-- /FORM SELECT -->
-              </div>
-              <!-- /FORM ITEM -->
-            <div class="text-danger">{{$errors->first('item_category')}}</div>
             </div>
             <!-- /FORM ROW -->
 
@@ -463,11 +452,11 @@ style="fill:yellow "
               <div class="form-item">
                 <!-- FORM INPUT -->
                 <div class="form-input small active">
-                  <label for="group-tagline">Profile ya Grupu</label>
-                  <input type="file" id="group-tagline" name="Group_Image" >
-                  <input type="hidden"  name="Creator_Name" value="{{Auth::user()->name}}" >
-                  <input type="hidden"  name="Creator_Id" value="{{Auth::user()->id}}" >
-                  <input type="hidden"  name="Creator_Image_Path" value="{{Auth::user()->avatar}}" >
+                  <label for="group-tagline">Picha ya Mashine</label>
+                  <input type="file" id="group-tagline" name="Mashine_Image" >
+                  <input type="hidden"  name="Seller_Name" value="{{Auth::user()->name}}" >
+                  <input type="hidden"  name="Seller_Id" value="{{Auth::user()->id}}" >
+                  <input type="hidden"  name="Seller_Image_Path" value="{{Auth::user()->avatar}}" >
                 </div>
                 <!-- /FORM INPUT -->
               </div>

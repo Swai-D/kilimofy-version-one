@@ -2,7 +2,7 @@
 <div class="profile-header v2">
   <!-- PROFILE HEADER COVER -->
   <figure class="profile-header-cover liquid">
-    <img src="img/cover/29.jpg" alt="cover-29">
+    <img src="/Uploads/GroupProfile/{{$group_details->Group_Image}}" alt="cover-29">
   </figure>
   <!-- /PROFILE HEADER COVER -->
 
@@ -23,7 +23,7 @@
         <!-- USER AVATAR CONTENT -->
         <div class="user-avatar-content">
           <!-- HEXAGON -->
-          <div class="hexagon-image-124-136" data-src="img/avatar/24.jpg"></div>
+          <div class="hexagon-image-124-136" data-src="/Uploads/avatars/{{$group_details->Creator_Image_Path}}"></div>
           <!-- /HEXAGON -->
         </div>
         <!-- /USER AVATAR CONTENT -->
@@ -51,11 +51,11 @@
       <!-- /USER SHORT DESCRIPTION AVATAR -->
 
       <!-- USER SHORT DESCRIPTION TITLE -->
-      <p class="user-short-description-title"><a href="group-timeline.html">Cosplayers of the World</a></p>
+      <p class="user-short-description-title"><a href="group-timeline.html">{{$group_details->Group_Name}}</a></p>
       <!-- /USER SHORT DESCRIPTION TITLE -->
 
       <!-- USER SHORT DESCRIPTION TEXT -->
-      <p class="user-short-description-text">All cosplayers welcome!</p>
+      <p class="user-short-description-text">{{\Illuminate\Support\Str::limit($group_details->Tagline, 30, '...')}}</p>
       <!-- /USER SHORT DESCRIPTION TEXT -->
     </div>
     <!-- /USER SHORT DESCRIPTION -->
@@ -133,7 +133,7 @@
       <!-- PROFILE HEADER INFO ACTION -->
       <p class="profile-header-info-action button secondary">
         <!-- ICON JOIN GROUP -->
-        <svg class="icon-join-group">
+        <svg class="icon-join-group" style="margin-top:10px;" >
           <use xlink:href="#svg-join-group"></use>
         </svg>
         <!-- /ICON JOIN GROUP -->
@@ -143,7 +143,7 @@
       <!-- PROFILE HEADER INFO ACTION -->
       <a class="profile-header-info-action button" href="hub-group-management.html">
         <!-- ICON MORE DOTS -->
-        <svg class="icon-more-dots">
+        <svg class="icon-more-dots" style="margin-top:20px;" >
           <use xlink:href="#svg-more-dots"></use>
         </svg>
         <!-- /ICON MORE DOTS -->

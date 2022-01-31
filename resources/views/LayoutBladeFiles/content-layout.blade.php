@@ -1363,6 +1363,65 @@
           </div>
           <!-- /WIDGET BOX SETTINGS -->
 
+        <div class="row" style="display:flex;">
+          <div class="col-3">
+            <!-- WIDGET BOX TITLE -->
+            <p class="widget-box-title">
+              <img src="/Uploads/avatars/{{Auth::user()->avatar}}" alt="" style="border-radius:50%; width:50px; height:50px;">
+
+            </p>
+
+          </div>
+          <div class="col-9">
+            <div class="">
+              davyswai <span><img src="/assets/img/flag/tanzania.png" alt="" style="width:16px; height:16px;"> </span>
+
+            </div>
+            <div class="">
+              @Dr. swai
+            </div>
+          </div>
+
+        </div>
+
+          <!-- WIDGET BOX CONTENT -->
+          <div class="widget-box-content">
+            <!-- TWEET FEED -->
+            <div class="tweet-feed">We belive people with passion can change the narrative of Agriculture in Tanzania.And that is what kilimofy stands for.</div>
+            <!-- /TWEET FEED -->
+          </div>
+          <!-- /WIDGET BOX CONTENT -->
+        </div>
+        <!-- /WIDGET BOX -->
+
+        <!-- WIDGET BOX -->
+        <div class="widget-box">
+          <!-- WIDGET BOX SETTINGS -->
+          <div class="widget-box-settings">
+            <!-- POST SETTINGS WRAP -->
+            <div class="post-settings-wrap">
+              <!-- POST SETTINGS -->
+              <div class="post-settings widget-box-post-settings-dropdown-trigger">
+                <!-- POST SETTINGS ICON -->
+                <svg class="post-settings-icon icon-more-dots">
+                  <use xlink:href="#svg-more-dots"></use>
+                </svg>
+                <!-- /POST SETTINGS ICON -->
+              </div>
+              <!-- /POST SETTINGS -->
+
+              <!-- SIMPLE DROPDOWN -->
+              <div class="simple-dropdown widget-box-post-settings-dropdown">
+                <!-- SIMPLE DROPDOWN LINK -->
+                <p class="simple-dropdown-link">Widget Settings</p>
+                <!-- /SIMPLE DROPDOWN LINK -->
+              </div>
+              <!-- /SIMPLE DROPDOWN -->
+            </div>
+            <!-- /POST SETTINGS WRAP -->
+          </div>
+          <!-- /WIDGET BOX SETTINGS -->
+
           <!-- WIDGET BOX TITLE -->
           <p class="widget-box-title">Headlines <span class="highlighted"> {{$headlines_count}}</span></p>
           <!-- /WIDGET BOX TITLE -->

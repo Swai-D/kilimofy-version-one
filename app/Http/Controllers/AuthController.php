@@ -132,7 +132,7 @@ class AuthController extends Controller
             elseif (Auth::user()->user_ocupation == 'Muuza_Pembejeo')
             {
               Session::put('user_id',$user_id);
-              return redirect('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/home-page');
+              return redirect('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page');
             }
 
 
@@ -147,11 +147,11 @@ class AuthController extends Controller
             }
 
             elseif (Auth::user()->user_ocupation == 'Mashine_Za_Kilimo') {
-              return redirect('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page');
+              return redirect('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page');
             }
 
             elseif (Auth::user()->user_ocupation == 'Fundi') {
-              return redirect('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page');
+              return redirect('/kilimofy/Fundi-Wa-Mashine-Za-Kilimo/home-page');
             }
 
             elseif (Auth::user()->user_ocupation == 'Mtaalam') {

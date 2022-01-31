@@ -3,7 +3,7 @@
   <!-- SECTION MENU -->
   <div id="section-navigation-medium-slider" class="section-menu secondary">
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item active" href="group-timeline.html">
+    <a class="section-menu-item active" href="">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-timeline">
         <use xlink:href="#svg-timeline"></use>
@@ -17,7 +17,7 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item" href="group-info.html">
+    <a class="section-menu-item" href="">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-info">
         <use xlink:href="#svg-info"></use>
@@ -31,7 +31,7 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item" href="group-members.html">
+    <a class="section-menu-item" href="">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-members">
         <use xlink:href="#svg-members"></use>
@@ -87,7 +87,7 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item" href="group-events.html">
+    <a class="section-menu-item" href="">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-events">
         <use xlink:href="#svg-events"></use>

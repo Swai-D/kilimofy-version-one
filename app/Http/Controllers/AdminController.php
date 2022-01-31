@@ -30,7 +30,7 @@ class AdminController extends Controller
     //Admin register new staff blade Page
     Public function admin_register_new_staff()
     {
-      return view('AdminBladeFiles.admin-register-new-staff-form');
+      return view('AdminBladeFiles.Forms.admin-register-new-staff-form');
     }
 
     //Admin register new staff store method
@@ -112,17 +112,23 @@ class AdminController extends Controller
 
     public function forum_category_form()
     {
-      return view('AdminBladeFiles.New-Forum-Category-Form');
+      return view('AdminBladeFiles.Forms.New-Forum-Category-Form');
     }
 
     public function crops_price_form()
     {
-      return view('AdminBladeFiles.Crops-Price-Update-Form');
+      return view('AdminBladeFiles.Forms.Crops-Price-Update-Form');
     }
 
     public function headline_updates()
     {
-      return view('AdminBladeFiles.Headlines-Updates-Form');
+      return view('AdminBladeFiles.Forms.Headlines-Updates-Form');
+    }
+
+
+    public function market_products()
+    {
+      return view('AdminBladeFiles.Forms.Market-Product-List-Form');
     }
 
 

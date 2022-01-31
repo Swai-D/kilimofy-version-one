@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request as FacadesRequest;
 use Illuminate\Support\Str;
+
+
+use App\Models\Paticipant;
+use App\Models\Discussion;
+use App\Models\Driver;
+use App\Models\Comment;
+use App\Models\Mashine;
+use App\Models\Reply;
+use App\Models\Item;
+use App\Models\User;
+use App\Models\Post;
+use App\Models\Place;
+use App\Models\Group;
+
+
 class MessagesController extends Controller
 {
     protected $perPage = 30;
@@ -450,6 +465,8 @@ class MessagesController extends Controller
                 ->update(['messenger_color' => $messenger_color]);
         }
         // if there is a [file]
+
+        // save image
         if ($request->hasFile('avatar')) {
             // allowed extensions
             $allowed_images = Chatify::getAllowedImages();

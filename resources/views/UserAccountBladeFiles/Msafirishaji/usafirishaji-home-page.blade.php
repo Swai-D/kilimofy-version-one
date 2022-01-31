@@ -23,13 +23,14 @@
       <div class="sidebar-box no-padding">
         <!-- SIDEBAR MENU -->
         <div class="sidebar-menu round-borders">
+
           <!-- SIDEBAR MENU ITEM -->
           <div class="sidebar-menu-item">
             <!-- SIDEBAR MENU HEADER -->
             <div class="sidebar-menu-header accordion-trigger-linked">
               <!-- SIDEBAR MENU HEADER ICON -->
-              <svg class="sidebar-menu-header-icon icon-profile">
-                <use xlink:href="#svg-profile"></use>
+              <svg class="sidebar-menu-header-icon icon-store">
+                <use xlink:href="#svg-store"></use>
               </svg>
               <!-- /SIDEBAR MENU HEADER ICON -->
 
@@ -50,42 +51,36 @@
               <!-- /SIDEBAR MENU HEADER CONTROL ICON -->
 
               <!-- SIDEBAR MENU HEADER TITLE -->
-              <p class="sidebar-menu-header-title">My Profile</p>
+              <p class="sidebar-menu-header-title">My Store</p>
               <!-- /SIDEBAR MENU HEADER TITLE -->
 
               <!-- SIDEBAR MENU HEADER TEXT -->
-              <p class="sidebar-menu-header-text">Change your avatar &amp; cover, accept friends, read messages and more!</p>
+              <p class="sidebar-menu-header-text">Review your account, manage products check stats and much more!</p>
               <!-- /SIDEBAR MENU HEADER TEXT -->
             </div>
             <!-- /SIDEBAR MENU HEADER -->
 
             <!-- SIDEBAR MENU BODY -->
-            <div class="sidebar-menu-body accordion-content-linked">
+            <div class="sidebar-menu-body accordion-content-linked accordion-open">
               <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-profile-info.html">Profile Info</a>
+              <a class="sidebar-menu-link" href="hub-store-account.html">My Account</a>
               <!-- /SIDEBAR MENU LINK -->
 
               <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-profile-social.html">Social &amp; Stream</a>
+              <a class="sidebar-menu-link active" href="hub-store-statement.html">Bidhaa Sokoni</a>
               <!-- /SIDEBAR MENU LINK -->
 
               <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-profile-notifications.html">Notifications</a>
+              <!-- <a class="sidebar-menu-link active" href="hub-store-items.html">Bidhaa Sokoni</a> -->
               <!-- /SIDEBAR MENU LINK -->
 
               <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-profile-messages.html">Messages</a>
-              <!-- /SIDEBAR MENU LINK -->
-
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-profile-requests.html">Friend Requests</a>
+              <!-- <a class="sidebar-menu-link" href="hub-store-downloads.html">Downloads</a> -->
               <!-- /SIDEBAR MENU LINK -->
             </div>
             <!-- /SIDEBAR MENU BODY -->
           </div>
           <!-- /SIDEBAR MENU ITEM -->
-
-
         </div>
         <!-- /SIDEBAR MENU -->
       </div>

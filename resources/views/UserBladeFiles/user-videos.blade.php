@@ -47,7 +47,7 @@
           <!-- VIDEO BOX COVER -->
           <div class="video-box">
             <!-- VIDEO BOX COVER IMAGE -->
-            <video  style="width:100%;"  autoplay muted loop controls>
+            <video  style="width:100%;"  autoplay muted loop controls >
                   <source src="/Uploads/PostVideos/{{$user_latest_video->Video}}" type="video/mp4" >
            </video>
             <!-- /VIDEO BOX COVER IMAGE -->
@@ -58,11 +58,11 @@
           <!-- VIDEO BOX INFO -->
           <div class="video-box-info">
             <!-- VIDEO BOX TITLE -->
-            <p class="video-box-title">Mochi's Island Story Mode</p>
+            <p class="video-box-title">{{$user_latest_video->Caption}}</p>
             <!-- /VIDEO BOX TITLE -->
 
             <!-- VIDEO BOX TEXT -->
-            <p class="video-box-text">1 hour ago</p>
+            <p class="video-box-text">{{$user_latest_video->created_at->diffForHumans()}}</p>
             <!-- /VIDEO BOX TEXT -->
           </div>
           <!-- /VIDEO BOX INFO -->

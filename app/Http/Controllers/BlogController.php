@@ -10,6 +10,7 @@ class BlogController extends Controller
 {
     public function createBlog(Request $request)
     {
+       dd($request->summernote);
       $data = request()->validate([
         'user_name' => ['required', 'string'],
         'user_id' => ['required', 'string'],
@@ -18,7 +19,8 @@ class BlogController extends Controller
       ]);
 
       if (isset($data)) {
-      dd($request->summernote);
+      // dd($request->summernote);
+
       }
     }
 }

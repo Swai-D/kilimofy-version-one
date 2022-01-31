@@ -1,6 +1,9 @@
+@include('LayoutBladeFiles.summernote')
+
 @extends('LayoutBladeFiles.app-layout')
-@section('title','Usafirishaji wa Bidhaa')
-@section('menu-status-gardener','active')
+
+@section('title','Mtaalamu wa Kilimo')
+@section('menu-status-education','active')
 
 @section('discription-title')
  Akaunti ya {{Auth::user()->name}}
@@ -14,759 +17,350 @@
   @include('LayoutBladeFiles.title-layout')
   <!-- /SECTION BANNER -->
 
-  <!-- GRID -->
-  <div class="grid grid-3-9 medium-space">
-    <!-- GRID COLUMN -->
-    <div class="account-hub-sidebar">
-      <!-- SIDEBAR BOX -->
-      <div class="sidebar-box no-padding">
-        <!-- SIDEBAR MENU -->
-        <div class="sidebar-menu round-borders">
-          <!-- SIDEBAR MENU ITEM -->
-          <div class="sidebar-menu-item">
-            <!-- SIDEBAR MENU HEADER -->
-            <div class="sidebar-menu-header accordion-trigger-linked">
-              <!-- SIDEBAR MENU HEADER ICON -->
-              <svg class="sidebar-menu-header-icon icon-profile">
-                <use xlink:href="#svg-profile"></use>
-              </svg>
-              <!-- /SIDEBAR MENU HEADER ICON -->
 
-              <!-- SIDEBAR MENU HEADER CONTROL ICON -->
-              <div class="sidebar-menu-header-control-icon">
-                <!-- SIDEBAR MENU HEADER CONTROL ICON OPEN -->
-                <svg class="sidebar-menu-header-control-icon-open icon-minus-small">
-                  <use xlink:href="#svg-minus-small"></use>
-                </svg>
-                <!-- /SIDEBAR MENU HEADER CONTROL ICON OPEN -->
+  <!-- SECTION -->
+  <section class="section">
 
-                <!-- SIDEBAR MENU HEADER CONTROL ICON CLOSED -->
-                <svg class="sidebar-menu-header-control-icon-closed icon-plus-small">
-                  <use xlink:href="#svg-plus-small"></use>
-                </svg>
-                <!-- /SIDEBAR MENU HEADER CONTROL ICON CLOSED -->
-              </div>
-              <!-- /SIDEBAR MENU HEADER CONTROL ICON -->
+    <!-- SECTION HEADER -->
+    <div class="section-header">
+      <!-- SECTION HEADER INFO -->
+      <div class="section-header-info">
+        <!-- SECTION PRETITLE -->
+        <p class="section-pretitle">Welcome to</p>
+        <!-- /SECTION PRETITLE -->
 
-              <!-- SIDEBAR MENU HEADER TITLE -->
-              <p class="sidebar-menu-header-title">My Profile</p>
-              <!-- /SIDEBAR MENU HEADER TITLE -->
-
-              <!-- SIDEBAR MENU HEADER TEXT -->
-              <p class="sidebar-menu-header-text">Change your avatar &amp; cover, accept friends, read messages and more!</p>
-              <!-- /SIDEBAR MENU HEADER TEXT -->
-            </div>
-            <!-- /SIDEBAR MENU HEADER -->
-
-            <!-- SIDEBAR MENU BODY -->
-            <div class="sidebar-menu-body accordion-content-linked">
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-profile-info.html">Profile Info</a>
-              <!-- /SIDEBAR MENU LINK -->
-
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-profile-social.html">Social &amp; Stream</a>
-              <!-- /SIDEBAR MENU LINK -->
-
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-profile-notifications.html">Notifications</a>
-              <!-- /SIDEBAR MENU LINK -->
-
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-profile-messages.html">Messages</a>
-              <!-- /SIDEBAR MENU LINK -->
-
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-profile-requests.html">Friend Requests</a>
-              <!-- /SIDEBAR MENU LINK -->
-            </div>
-            <!-- /SIDEBAR MENU BODY -->
-          </div>
-          <!-- /SIDEBAR MENU ITEM -->
-
-          <!-- SIDEBAR MENU ITEM -->
-          <div class="sidebar-menu-item">
-            <!-- SIDEBAR MENU HEADER -->
-            <div class="sidebar-menu-header accordion-trigger-linked">
-              <!-- SIDEBAR MENU HEADER ICON -->
-              <svg class="sidebar-menu-header-icon icon-store">
-                <use xlink:href="#svg-store"></use>
-              </svg>
-              <!-- /SIDEBAR MENU HEADER ICON -->
-
-              <!-- SIDEBAR MENU HEADER CONTROL ICON -->
-              <div class="sidebar-menu-header-control-icon">
-                <!-- SIDEBAR MENU HEADER CONTROL ICON OPEN -->
-                <svg class="sidebar-menu-header-control-icon-open icon-minus-small">
-                  <use xlink:href="#svg-minus-small"></use>
-                </svg>
-                <!-- /SIDEBAR MENU HEADER CONTROL ICON OPEN -->
-
-                <!-- SIDEBAR MENU HEADER CONTROL ICON CLOSED -->
-                <svg class="sidebar-menu-header-control-icon-closed icon-plus-small">
-                  <use xlink:href="#svg-plus-small"></use>
-                </svg>
-                <!-- /SIDEBAR MENU HEADER CONTROL ICON CLOSED -->
-              </div>
-              <!-- /SIDEBAR MENU HEADER CONTROL ICON -->
-
-              <!-- SIDEBAR MENU HEADER TITLE -->
-              <p class="sidebar-menu-header-title">My Trips Store</p>
-              <!-- /SIDEBAR MENU HEADER TITLE -->
-
-              <!-- SIDEBAR MENU HEADER TEXT -->
-              <p class="sidebar-menu-header-text">Review your account, manage products check stats and much more!</p>
-              <!-- /SIDEBAR MENU HEADER TEXT -->
-            </div>
-            <!-- /SIDEBAR MENU HEADER -->
-
-            <!-- SIDEBAR MENU BODY -->
-            <div class="sidebar-menu-body accordion-content-linked">
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-store-account.html">My Account</a>
-              <!-- /SIDEBAR MENU LINK -->
-
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-store-statement.html">Sales Statement</a>
-              <!-- /SIDEBAR MENU LINK -->
-
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-store-items.html">Manage Items</a>
-              <!-- /SIDEBAR MENU LINK -->
-
-              <!-- SIDEBAR MENU LINK -->
-              <a class="sidebar-menu-link" href="hub-store-downloads.html">Downloads</a>
-              <!-- /SIDEBAR MENU LINK -->
-            </div>
-            <!-- /SIDEBAR MENU BODY -->
-          </div>
-          <!-- /SIDEBAR MENU ITEM -->
-        </div>
-        <!-- /SIDEBAR MENU -->
+        <!-- SECTION TITLE -->
+        <h2 class="section-title">Animation Watchtower</h2>
+        <!-- /SECTION TITLE -->
       </div>
-      <!-- /SIDEBAR BOX -->
+      <!-- /SECTION HEADER INFO -->
     </div>
-    <!-- /GRID COLUMN -->
-    <!-- GRID COLUMN -->
-    <div class="account-hub-content">
-      <!-- SECTION HEADER -->
-      <div class="section-header">
-        <!-- SECTION HEADER INFO -->
-        <div class="section-header-info">
-          <!-- SECTION PRETITLE -->
-          <p class="section-pretitle">My Library</p>
-          <!-- /SECTION PRETITLE -->
+    <!-- /SECTION HEADER -->
 
-          <!-- SECTION TITLE -->
-          <h2 class="section-title">Agriculture Documents </h2>
-          <!-- /SECTION TITLE -->
+    <!-- SECTION FILTERS BAR -->
+    <div class="section-filters-bar v7">
+      <!-- SECTION FILTERS BAR ACTIONS -->
+      <div class="section-filters-bar-actions">
+        <!-- SECTION FILTERS BAR INFO -->
+        <div class="section-filters-bar-info">
+          <!-- SECTION FILTERS BAR TITLE -->
+          <p class="section-filters-bar-title"><a href="">Makala</a><span class="separator"></span><a href="">Makala Category</a></p>
+          <!-- /SECTION FILTERS BAR TITLE -->
+
+          <!-- SECTION FILTERS BAR TEXT -->
+          <div class="section-filters-bar-text small-space">
+            Last post by
+            <!-- USER AVATAR -->
+            <a class="user-avatar micro no-stats" href="profile-timeline.html">
+              <!-- USER AVATAR BORDER -->
+              <div class="user-avatar-border">
+                <!-- HEXAGON -->
+                <div class="hexagon-22-24"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR BORDER -->
+
+              <!-- USER AVATAR CONTENT -->
+              <div class="user-avatar-content">
+                <!-- HEXAGON -->
+                <div class="hexagon-image-18-20" data-src="/Uploads/avatars/{{Auth::user()->avatar}}"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR CONTENT -->
+            </a>
+            <!-- /USER AVATAR -->
+            <a class="bold" href="profile-timeline.html">{{Auth::user()->username}}</a>
+            2 minutes ago
+          </div>
+          <!-- /SECTION FILTERS BAR TEXT -->
         </div>
-        <!-- /SECTION HEADER INFO -->
+        <!-- /SECTION FILTERS BAR INFO -->
       </div>
-      <!-- /SECTION HEADER -->
+      <!-- /SECTION FILTERS BAR ACTIONS -->
 
-      <!-- SECTION FILTERS BAR -->
-      <div class="section-filters-bar v6 v6-2">
-        <!-- SECTION FILTERS BAR ACTIONS -->
-        <div class="section-filters-bar-actions">
-          <!-- FORM -->
-          <form class="form">
-            <!-- FORM ITEM -->
-            <div class="form-item split">
-              <!-- FORM INPUT DECORATED -->
-              <div class="form-input-decorated">
-                <!-- FORM INPUT -->
-                <div class="form-input small active">
-                  <label for="statement-from-date">From Date</label>
-                  <input type="text" id="statement-from-date" name="statement_from_date" value="02/22/2019">
-                </div>
-                <!-- /FORM INPUT -->
-
-                <!-- FORM INPUT ICON -->
-                <svg class="form-input-icon icon-events">
-                  <use xlink:href="#svg-events"></use>
-                </svg>
-                <!-- /FORM INPUT ICON -->
-              </div>
-              <!-- /FORM INPUT DECORATED -->
-
-              <!-- FORM INPUT DECORATED -->
-              <div class="form-input-decorated">
-                <!-- FORM INPUT -->
-                <div class="form-input small active">
-                  <label for="statement-to-date">To Date</label>
-                  <input type="text" id="statement-to-date" name="statement_to_date" value="11/14/2019">
-                </div>
-                <!-- /FORM INPUT -->
-
-                <!-- FORM INPUT ICON -->
-                <svg class="form-input-icon icon-events">
-                  <use xlink:href="#svg-events"></use>
-                </svg>
-                <!-- /FORM INPUT ICON -->
-              </div>
-              <!-- /FORM INPUT DECORATED -->
-
-              <!-- BUTTON -->
-              <button class="button primary">
-                <!-- ICON MAGNIFYING GLASS -->
-                <svg class="icon-magnifying-glass">
-                  <use xlink:href="#svg-magnifying-glass"></use>
-                </svg>
-                <!-- /ICON MAGNIFYING GLASS -->
-              </button>
-              <!-- /BUTTON -->
+      <!-- SECTION FILTERS BAR ACTIONS -->
+      <div class="section-filters-bar-actions">
+        <!-- FORM -->
+        <form class="form">
+          <!-- FORM ITEM -->
+          <div class="form-item split">
+            <!-- FORM INPUT -->
+            <div class="form-input small">
+              <label for="forum-search">Search Forums</label>
+              <input type="text" id="forum-search" name="forum_search">
             </div>
-            <!-- /FORM ITEM -->
-          </form>
-          <!-- /FORM -->
-        </div>
-        <!-- /SECTION FILTERS BAR ACTIONS -->
+            <!-- /FORM INPUT -->
 
-        <!-- SECTION FILTERS BAR ACTIONS -->
-        <div class="section-filters-bar-actions">
+            <!-- BUTTON -->
+            <button class="button primary">
+              <!-- ICON MAGNIFYING GLASS -->
+              <svg class="icon-magnifying-glass">
+                <use xlink:href="#svg-magnifying-glass"></use>
+              </svg>
+              <!-- /ICON MAGNIFYING GLASS -->
+            </button>
+            <!-- /BUTTON -->
+          </div>
+          <!-- /FORM ITEM -->
+        </form>
+        <!-- /FORM -->
+
+        <!-- BUTTON -->
+        <p class="button secondary popup-album-creation-trigger">+ Create Makala</p>
+        <!-- /BUTTON -->
+      </div>
+      <!-- /SECTION FILTERS BAR ACTIONS -->
+    </div>
+    <!-- /SECTION FILTERS BAR -->
+
+    <!-- GRID -->
+    <div class="grid grid-4-4-4 centered">
+
+      <!-- POST PREVIEW -->
+      <div class="post-preview">
+        <!-- POST PREVIEW IMAGE -->
+        <figure class="post-preview-image liquid">
+          <img src="/assets/img/cover/07.jpg" alt="cover-07">
+        </figure>
+        <!-- /POST PREVIEW IMAGE -->
+
+        <!-- POST PREVIEW INFO -->
+        <div class="post-preview-info fixed-height">
+          <!-- POST PREVIEW INFO TOP -->
+          <div class="post-preview-info-top">
+            <!-- POST PREVIEW TIMESTAMP -->
+            <p class="post-preview-timestamp">1 month ago</p>
+            <!-- /POST PREVIEW TIMESTAMP -->
+
+            <!-- POST PREVIEW TITLE -->
+            <p class="post-preview-title">Old Super Mochi's Island is getting a remake!</p>
+            <!-- /POST PREVIEW TITLE -->
+          </div>
+          <!-- /POST PREVIEW INFO TOP -->
+
+          <!-- POST PREVIEW INFO BOTTOM -->
+          <div class="post-preview-info-bottom">
+            <!-- POST PREVIEW TEXT -->
+            <p class="post-preview-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut...</p>
+            <!-- /POST PREVIEW TEXT -->
+
+            <!-- POST PREVIEW LINK -->
+            <a class="post-preview-link" href="profile-post.html">Read more...</a>
+            <!-- /POST PREVIEW LINK -->
+          </div>
+          <!-- /POST PREVIEW INFO BOTTOM -->
+        </div>
+        <!-- /POST PREVIEW INFO -->
+
+        <!-- CONTENT ACTIONS -->
+        <div class="content-actions">
+          <!-- CONTENT ACTION -->
+          <div class="content-action">
+            <!-- META LINE -->
+            <div class="meta-line">
+              <!-- META LINE LIST -->
+              <div class="meta-line-list reaction-item-list">
+                <!-- REACTION ITEM -->
+                <div class="reaction-item">
+                  <!-- REACTION IMAGE -->
+                  <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/funny.png" alt="reaction-funny">
+                  <!-- /REACTION IMAGE -->
+
+                  <!-- SIMPLE DROPDOWN -->
+                  <div class="simple-dropdown padded reaction-item-dropdown">
+                    <!-- SIMPLE DROPDOWN TEXT -->
+                    <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/funny.png" alt="reaction-funny"> <span class="bold">Funny</span></p>
+                    <!-- /SIMPLE DROPDOWN TEXT -->
+
+                  </div>
+                  <!-- /SIMPLE DROPDOWN -->
+                </div>
+                <!-- /REACTION ITEM -->
+
+                <!-- REACTION ITEM -->
+                <div class="reaction-item">
+                  <!-- REACTION IMAGE -->
+                  <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/like.png" alt="reaction-like">
+                  <!-- /REACTION IMAGE -->
+
+                  <!-- SIMPLE DROPDOWN -->
+                  <div class="simple-dropdown padded reaction-item-dropdown">
+                    <!-- SIMPLE DROPDOWN TEXT -->
+                    <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
+                    <!-- /SIMPLE DROPDOWN TEXT -->
+
+                    <!-- SIMPLE DROPDOWN TEXT -->
+                    <p class="simple-dropdown-text">Jett Spiegel</p>
+                    <!-- /SIMPLE DROPDOWN TEXT -->
+
+                    <!-- SIMPLE DROPDOWN TEXT -->
+                    <p class="simple-dropdown-text">Jane Rodgers</p>
+                    <!-- /SIMPLE DROPDOWN TEXT -->
+                  </div>
+                  <!-- /SIMPLE DROPDOWN -->
+                </div>
+                <!-- /REACTION ITEM -->
+
+                <!-- REACTION ITEM -->
+                <div class="reaction-item">
+                  <!-- REACTION IMAGE -->
+                  <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/love.png" alt="reaction-love">
+                  <!-- /REACTION IMAGE -->
+
+                  <!-- SIMPLE DROPDOWN -->
+                  <div class="simple-dropdown padded reaction-item-dropdown">
+
+                  </div>
+                  <!-- /SIMPLE DROPDOWN -->
+                </div>
+                <!-- /REACTION ITEM -->
+              </div>
+              <!-- /REACTION ITEM LIST -->
+
+              <!-- META LINE TEXT -->
+              <p class="meta-line-text">15</p>
+              <!-- /META LINE TEXT -->
+            </div>
+            <!-- /META LINE -->
+          </div>
+          <!-- /CONTENT ACTION -->
+
+          <!-- CONTENT ACTION -->
+          <div class="content-action">
+            <!-- META LINE -->
+            <div class="meta-line">
+              <!-- META LINE LINK -->
+              <a class="meta-line-link" href="profile-post.html#comments">9 Comments</a>
+              <!-- /META LINE LINK -->
+            </div>
+            <!-- /META LINE -->
+
+            <!-- META LINE -->
+            <div class="meta-line">
+              <!-- META LINE TEXT -->
+              <p class="meta-line-text">0 Shares</p>
+              <!-- /META LINE TEXT -->
+            </div>
+            <!-- /META LINE -->
+          </div>
+          <!-- /CONTENT ACTION -->
+        </div>
+        <!-- /CONTENT ACTIONS -->
+
+        <div class="user-preview-actions">
           <!-- BUTTON -->
-          <p class="button secondary">Download Statement</p>
+          <a href="/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Edit-Trip/" class="button secondary full " style="padding:2px; margin:2px;">Edit </a>
           <!-- /BUTTON -->
+          <!-- BUTTON -->
+          <a href="/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Delete-Trip/" class="button full" style="padding:2px; background-color: red; margin:2px;">Delete </a>
         </div>
-        <!-- /SECTION FILTERS BAR ACTIONS -->
+        <br>
       </div>
-      <!-- /SECTION FILTERS BAR -->
-
-      <!-- TABLE WRAP -->
-      <div class="table-wrap" data-simplebar>
-        <!-- TABLE -->
-        <div class="table table-sales">
-          <!-- TABLE HEADER -->
-          <div class="table-header">
-            <!-- TABLE HEADER COLUMN -->
-            <div class="table-header-column">
-              <!-- TABLE HEADER TITLE -->
-              <p class="table-header-title">Date</p>
-              <!-- /TABLE HEADER TITLE -->
-            </div>
-            <!-- /TABLE HEADER COLUMN -->
-
-            <!-- TABLE HEADER COLUMN -->
-            <div class="table-header-column padded-left">
-              <!-- TABLE HEADER TITLE -->
-              <p class="table-header-title">Name</p>
-              <!-- /TABLE HEADER TITLE -->
-            </div>
-            <!-- /TABLE HEADER COLUMN -->
-
-            <!-- TABLE HEADER COLUMN -->
-            <div class="table-header-column centered padded">
-              <!-- TABLE HEADER TITLE -->
-              <p class="table-header-title">Type</p>
-              <!-- /TABLE HEADER TITLE -->
-            </div>
-            <!-- /TABLE HEADER COLUMN -->
-
-            <!-- TABLE HEADER COLUMN -->
-            <div class="table-header-column centered padded">
-              <!-- TABLE HEADER TITLE -->
-              <p class="table-header-title">Code</p>
-              <!-- /TABLE HEADER TITLE -->
-            </div>
-            <!-- /TABLE HEADER COLUMN -->
-
-            <!-- TABLE HEADER COLUMN -->
-            <div class="table-header-column centered padded">
-              <!-- TABLE HEADER TITLE -->
-              <p class="table-header-title">Price</p>
-              <!-- /TABLE HEADER TITLE -->
-            </div>
-            <!-- /TABLE HEADER COLUMN -->
-
-            <!-- TABLE HEADER COLUMN -->
-            <div class="table-header-column centered padded">
-              <!-- TABLE HEADER TITLE -->
-              <p class="table-header-title">Cut</p>
-              <!-- /TABLE HEADER TITLE -->
-            </div>
-            <!-- /TABLE HEADER COLUMN -->
-
-            <!-- TABLE HEADER COLUMN -->
-            <div class="table-header-column centered padded">
-              <!-- TABLE HEADER TITLE -->
-              <p class="table-header-title">Earning</p>
-              <!-- /TABLE HEADER TITLE -->
-            </div>
-            <!-- /TABLE HEADER COLUMN -->
-
-            <!-- TABLE HEADER COLUMN -->
-            <div class="table-header-column padded-left"></div>
-            <!-- /TABLE HEADER COLUMN -->
-          </div>
-          <!-- /TABLE HEADER -->
-
-          <!-- TABLE BODY -->
-          <div class="table-body same-color-rows">
-            <!-- TABLE ROW -->
-            <div class="table-row micro">
-              <!-- TABLE COLUMN -->
-              <div class="table-column">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">Nov 15th, 2019</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column padded-left">
-                <!-- TABLE LINK -->
-                <a class="table-link" href="marketplace-product.html"><span class="highlighted">Pixel Diamond Gaming Magazine</span></a>
-                <!-- /TABLE LINK -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">Sale</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">KMF-1287</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">$26</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">50%</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">$13</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column padded-left">
-                <!-- PERCENTAGE DIFF ICON WRAP -->
-                <div class="percentage-diff-icon-wrap positive">
-                  <!-- PERCENTAGE DIFF ICON -->
-                  <svg class="percentage-diff-icon icon-plus-small">
-                    <use xlink:href="#svg-plus-small"></use>
-                  </svg>
-                  <!-- /PERCENTAGE DIFF ICON -->
-                </div>
-                <!-- /PERCENTAGE DIFF ICON WRAP -->
-              </div>
-              <!-- /TABLE COLUMN -->
-            </div>
-            <!-- /TABLE ROW -->
-
-            <!-- TABLE ROW -->
-            <div class="table-row micro">
-              <!-- TABLE COLUMN -->
-              <div class="table-column">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">Nov 15th, 2019</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column padded-left">
-                <!-- TABLE LINK -->
-                <a class="table-link" href="marketplace-product.html"><span class="highlighted">Twitch Stream UI Pack</span></a>
-                <!-- /TABLE LINK -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">Sale</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">KMF-1364</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">$12</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">50%</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">$6</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column padded-left">
-                <!-- PERCENTAGE DIFF ICON WRAP -->
-                <div class="percentage-diff-icon-wrap positive">
-                  <!-- PERCENTAGE DIFF ICON -->
-                  <svg class="percentage-diff-icon icon-plus-small">
-                    <use xlink:href="#svg-plus-small"></use>
-                  </svg>
-                  <!-- /PERCENTAGE DIFF ICON -->
-                </div>
-                <!-- /PERCENTAGE DIFF ICON WRAP -->
-              </div>
-              <!-- /TABLE COLUMN -->
-            </div>
-            <!-- /TABLE ROW -->
-
-            <!-- TABLE ROW -->
-            <div class="table-row micro">
-              <!-- TABLE COLUMN -->
-              <div class="table-column">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">Nov 14th, 2019</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column padded-left">
-                <!-- TABLE LINK -->
-                <a class="table-link" href="marketplace-product.html"><span class="highlighted">Pixel Diamond Gaming Magazine</span></a>
-                <!-- /TABLE LINK -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">Sale</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">KMF-7638</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">$26</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">50%</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">$13</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column padded-left">
-                <!-- PERCENTAGE DIFF ICON WRAP -->
-                <div class="percentage-diff-icon-wrap positive">
-                  <!-- PERCENTAGE DIFF ICON -->
-                  <svg class="percentage-diff-icon icon-plus-small">
-                    <use xlink:href="#svg-plus-small"></use>
-                  </svg>
-                  <!-- /PERCENTAGE DIFF ICON -->
-                </div>
-                <!-- /PERCENTAGE DIFF ICON WRAP -->
-              </div>
-              <!-- /TABLE COLUMN -->
-            </div>
-            <!-- /TABLE ROW -->
-
-            <!-- TABLE ROW -->
-            <div class="table-row micro">
-              <!-- TABLE COLUMN -->
-              <div class="table-column">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">Nov 14th, 2019</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column padded-left">
-                <!-- TABLE LINK -->
-                <a class="table-link" href="marketplace-product.html"><span class="highlighted">Twitch Stream UI Pack</span></a>
-                <!-- /TABLE LINK -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">Sale</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">KMF-7285</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">$12</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">50%</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">$6</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column padded-left">
-                <!-- PERCENTAGE DIFF ICON WRAP -->
-                <div class="percentage-diff-icon-wrap positive">
-                  <!-- PERCENTAGE DIFF ICON -->
-                  <svg class="percentage-diff-icon icon-plus-small">
-                    <use xlink:href="#svg-plus-small"></use>
-                  </svg>
-                  <!-- /PERCENTAGE DIFF ICON -->
-                </div>
-                <!-- /PERCENTAGE DIFF ICON WRAP -->
-              </div>
-              <!-- /TABLE COLUMN -->
-            </div>
-            <!-- /TABLE ROW -->
-
-            <!-- TABLE ROW -->
-            <div class="table-row micro">
-              <!-- TABLE COLUMN -->
-              <div class="table-column">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">Nov 14th, 2019</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column padded-left">
-                <!-- TABLE LINK -->
-                <a class="table-link" href="marketplace-product.html"><span class="highlighted">Twitch Stream UI Pack</span></a>
-                <!-- /TABLE LINK -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">Sale</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">KMF-9673</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">$12</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TEXT -->
-                <p class="table-text"><span class="light">50%</span></p>
-                <!-- /TABLE TEXT -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column centered padded">
-                <!-- TABLE TITLE -->
-                <p class="table-title">$6</p>
-                <!-- /TABLE TITLE -->
-              </div>
-              <!-- /TABLE COLUMN -->
-
-              <!-- TABLE COLUMN -->
-              <div class="table-column padded-left">
-                <!-- PERCENTAGE DIFF ICON WRAP -->
-                <div class="percentage-diff-icon-wrap positive">
-                  <!-- PERCENTAGE DIFF ICON -->
-                  <svg class="percentage-diff-icon icon-plus-small">
-                    <use xlink:href="#svg-plus-small"></use>
-                  </svg>
-                  <!-- /PERCENTAGE DIFF ICON -->
-                </div>
-                <!-- /PERCENTAGE DIFF ICON WRAP -->
-              </div>
-              <!-- /TABLE COLUMN -->
-            </div>
-            <!-- /TABLE ROW -->
-
-          </div>
-          <!-- /TABLE BODY -->
-        </div>
-        <!-- /TABLE -->
-      </div>
-      <!-- /TABLE WRAP -->
-
-      <!-- SECTION PAGER BAR WRAP -->
-      <div class="section-pager-bar-wrap align-right">
-        <!-- SECTION PAGER BAR -->
-        <div class="section-pager-bar">
-          <!-- SECTION PAGER -->
-          <div class="section-pager">
-            <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item active">
-              <!-- SECTION PAGER ITEM TEXT -->
-              <p class="section-pager-item-text">01</p>
-              <!-- /SECTION PAGER ITEM TEXT -->
-            </div>
-            <!-- /SECTION PAGER ITEM -->
-
-            <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item">
-              <!-- SECTION PAGER ITEM TEXT -->
-              <p class="section-pager-item-text">02</p>
-              <!-- /SECTION PAGER ITEM TEXT -->
-            </div>
-            <!-- /SECTION PAGER ITEM -->
-
-            <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item">
-              <!-- SECTION PAGER ITEM TEXT -->
-              <p class="section-pager-item-text">03</p>
-              <!-- /SECTION PAGER ITEM TEXT -->
-            </div>
-            <!-- /SECTION PAGER ITEM -->
-
-            <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item">
-              <!-- SECTION PAGER ITEM TEXT -->
-              <p class="section-pager-item-text">04</p>
-              <!-- /SECTION PAGER ITEM TEXT -->
-            </div>
-            <!-- /SECTION PAGER ITEM -->
-
-            <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item">
-              <!-- SECTION PAGER ITEM TEXT -->
-              <p class="section-pager-item-text">05</p>
-              <!-- /SECTION PAGER ITEM TEXT -->
-            </div>
-            <!-- /SECTION PAGER ITEM -->
-
-            <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item">
-              <!-- SECTION PAGER ITEM TEXT -->
-              <p class="section-pager-item-text">06</p>
-              <!-- /SECTION PAGER ITEM TEXT -->
-            </div>
-            <!-- /SECTION PAGER ITEM -->
-          </div>
-          <!-- /SECTION PAGER -->
-
-          <!-- SECTION PAGER CONTROLS -->
-          <div class="section-pager-controls">
-            <!-- SLIDER CONTROL -->
-            <div class="slider-control left disabled">
-              <!-- SLIDER CONTROL ICON -->
-              <svg class="slider-control-icon icon-small-arrow">
-                <use xlink:href="#svg-small-arrow"></use>
-              </svg>
-              <!-- /SLIDER CONTROL ICON -->
-            </div>
-            <!-- /SLIDER CONTROL -->
-
-            <!-- SLIDER CONTROL -->
-            <div class="slider-control right">
-              <!-- SLIDER CONTROL ICON -->
-              <svg class="slider-control-icon icon-small-arrow">
-                <use xlink:href="#svg-small-arrow"></use>
-              </svg>
-              <!-- /SLIDER CONTROL ICON -->
-            </div>
-            <!-- /SLIDER CONTROL -->
-          </div>
-          <!-- /SECTION PAGER CONTROLS -->
-        </div>
-        <!-- /SECTION PAGER BAR -->
-      </div>
-      <!-- /SECTION PAGER BAR WRAP -->
+      <!-- /POST PREVIEW -->
     </div>
-    <!-- /GRID COLUMN -->
+    <!-- /GRID -->
+  </section>
+  <!-- /SECTION -->
 
-  </div>
-  <!-- /GRID -->
 </div>
 <!-- /CONTENT GRID -->
+
+
+<!-- POPUP BOX -->
+<div class="popup-box popup-album-creation">
+  <!-- POPUP CLOSE BUTTON -->
+  <div class="popup-close-button popup-album-creation-trigger">
+    <!-- POPUP CLOSE BUTTON ICON -->
+    <svg class="popup-close-button-icon icon-cross">
+      <use xlink:href="#svg-cross"></use>
+    </svg>
+    <!-- /POPUP CLOSE BUTTON ICON -->
+  </div>
+  <!-- /POPUP CLOSE BUTTON -->
+
+  <!-- POPUP BOX TITLE -->
+  <p class="popup-box-title ">+Create Makala</p>
+  <!-- /POPUP BOX TITLE -->
+
+  <!-- FORM -->
+  <form class="form" action="/kilimofy/Blog/User-Create-Blog-Post" method="post" enctype="multipart/form-data">
+    @csrf
+  <!-- FORM UPLOADABLES -->
+    <div class="row">
+
+       <div class="col-md-12">
+         <div class="card card-outline card-info">
+           <div class="card-header">
+             <h3 class="card-title center">
+               Makala
+             </h3>
+           </div>
+           <!-- /.card-header -->
+
+           <div class="card-body">
+           <br>
+             <div class="form-row">
+               <!-- FORM ITEM -->
+               <div class="form-item">
+                 <!-- FORM SELECT -->
+                 <div class="form-select">
+                   <label for="rating-reason">Usafir Gani ?</label>
+                   <select class="for" name="CarType">
+                     <option value="Kirikuu" >Kirikuu</option>
+                     <option value="Kenta">Kenta</option>
+                     <option value="Fuso">Fuso</option>
+                   </select>
+                   <!-- FORM SELECT ICON -->
+                   <svg class="form-select-icon icon-small-arrow">
+                     <use xlink:href="#svg-small-arrow"></use>
+                   </svg>
+                   <!-- /FORM SELECT ICON -->
+                 </div>
+                 <!-- /FORM SELECT -->
+               </div>
+               <!-- /FORM ITEM -->
+               <input type="hidden" name="user_name" value="{{Auth::user()->name}}">
+               <input type="hidden" name="avatar" value="{{Auth::user()->avatar}}">
+               <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+             </div>
+
+             <!-- FORM ROW -->
+             <div class="form-row">
+               <!-- FORM ITEM -->
+               <div class="form-item">
+                 <!-- FORM INPUT -->
+                 <div class="form-input small mid-textarea">
+                   <textarea id="item-tags" name="item_description" placeholder="Andika maelezo mafupi ukielezea biashara yako, yasiyozidi maneno(30)..."></textarea>
+                 </div>
+                 <!-- /FORM INPUT -->
+               </div>
+               <!-- /FORM ITEM -->
+             </div>
+             <!-- /FORM ROW -->
+           </div>
+           <div class="card-footer">
+
+           </div>
+         </div>
+       </div>
+
+      <!-- /.col-->
+    </div>
+    <!-- ./row -->
+    <!-- /FORM UPLOADABLES -->
+
+    <!-- POPUP BOX ACTIONS -->
+    <div class="popup-box-actions">
+      <!-- POPUP BOX ACTION -->
+      <button type="reset" class="popup-box-action button white popup-album-creation-trigger">Discard All</button>
+      <!-- /POPUP BOX ACTION -->
+
+      <!-- POPUP BOX ACTION -->
+      <button type="submit" class="popup-box-action button secondary">Post Makala!</button>
+      <!-- /POPUP BOX ACTION -->
+    </div>
+    <!-- /POPUP BOX ACTIONS -->
+  </form>
+  <!-- /FORM -->
+</div>
+<!-- /POPUP BOX -->

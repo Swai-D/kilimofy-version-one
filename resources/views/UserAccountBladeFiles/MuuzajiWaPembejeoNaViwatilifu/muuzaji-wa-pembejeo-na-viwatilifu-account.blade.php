@@ -1,7 +1,9 @@
 @extends('LayoutBladeFiles.app-layout')
 @section('title','Pembejeo Na Viwatilifu')
 @section('menu-status-store','active')
-@section('discription-title','Akaunti')
+@section('discription-title')
+Akaunti Ya {{Auth::user()->username}}
+@endsection
 @section('discription-details','kilimofy')
 <div class="content-grid">
 @include('LayoutBladeFiles.title-layout')
@@ -12,7 +14,7 @@
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
       <!-- SECTION PRETITLE -->
-      <p class="section-pretitle">Dukani kwa, <span style="color:#f33155"> {{Auth::user()->user_name}}</span></p>
+      <p class="section-pretitle">Dukani kwa, <span style="color:#f33155"> {{Auth::user()->username}}</span></p>
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
@@ -117,10 +119,10 @@
       <h4 class="text-danger">{{$errors->first()}}</h4>
       @endif
 
-      @if(session()->has('message'))
+      @if(session()->has('Message'))
         <div class="alert alert" role = "alert">
           <p class="lead" style="color: #f33155">
-            {{session()->get('message')}}
+            {{session()->get('Message')}}
           </p>
         </div>
       @endif
@@ -145,7 +147,7 @@
           <!-- CREATE ENTITY BOX INFO -->
           <div class="create-entity-box-info">
             <!-- BUTTON -->
-            <p class="button primary full popup-manage-item-trigger">Weka Bidhaa Mpya Sokoni!</p>
+            <p class="button secondary full popup-manage-item-trigger">+Bidhaa</p>
             <!-- /BUTTON -->
           </div>
           <!-- /CREATE ENTITY BOX INFO -->
@@ -177,9 +179,18 @@
             <p class="product-preview-category digital"><a href="marketplace-category.html">{{$store_details->item_category}}</a></p>
             <!-- /PRODUCT PREVIEW CATEGORY -->
 
-            <!-- BUTTON -->
-            <a href="" class="button white full popup-manage-item-trigger">Edit Item</a>
-            <!-- /BUTTON -->
+            <!-- USER PREVIEW ACTIONS -->
+            <div class="user-preview-actions">
+              <!-- BUTTON -->
+              <a href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/Edit-Item/{{$store_details->id}}" class="button full secondary">Edit</a>
+              <!-- /BUTTON -->
+
+              <!-- BUTTON -->
+              <a href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page/Delete-Item/{{$store_details->id}}"class="button full " style="background-color:red;">Delete</a>
+              <!-- /BUTTON -->
+            </div>
+            <!-- /USER PREVIEW ACTIONS -->
+
           </div>
           <!-- /PRODUCT PREVIEW INFO -->
         </div>
@@ -192,85 +203,9 @@
     <!-- /GRID COLUMN -->
   </div>
   <!-- /GRID -->
-  <!-- SECTION PAGER BAR -->
-  <div class="section-pager-bar">
-    <!-- SECTION PAGER -->
-    <div class="section-pager">
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item active">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">01</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
 
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">02</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
+  {{ $my_store->links('vendor.pagination.custom')}}
 
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">03</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
-
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">04</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
-
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">05</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
-
-      <!-- SECTION PAGER ITEM -->
-      <div class="section-pager-item">
-        <!-- SECTION PAGER ITEM TEXT -->
-        <p class="section-pager-item-text">06</p>
-        <!-- /SECTION PAGER ITEM TEXT -->
-      </div>
-      <!-- /SECTION PAGER ITEM -->
-    </div>
-    <!-- /SECTION PAGER -->
-
-    <!-- SECTION PAGER CONTROLS -->
-    <div class="section-pager-controls">
-      <!-- SLIDER CONTROL -->
-      <div class="slider-control left disabled">
-        <!-- SLIDER CONTROL ICON -->
-        <svg class="slider-control-icon icon-small-arrow">
-          <use xlink:href="#svg-small-arrow"></use>
-        </svg>
-        <!-- /SLIDER CONTROL ICON -->
-      </div>
-      <!-- /SLIDER CONTROL -->
-
-      <!-- SLIDER CONTROL -->
-      <div class="slider-control right">
-        <!-- SLIDER CONTROL ICON -->
-        <svg class="slider-control-icon icon-small-arrow">
-          <use xlink:href="#svg-small-arrow"></use>
-        </svg>
-        <!-- /SLIDER CONTROL ICON -->
-      </div>
-      <!-- /SLIDER CONTROL -->
-    </div>
-    <!-- /SECTION PAGER CONTROLS -->
-  </div>
-  <!-- /SECTION PAGER BAR -->
 </section>
 <!-- /SECTION -->
 
@@ -280,6 +215,218 @@
 <div class="popup-box mid popup-manage-item">
   <!-- POPUP CLOSE BUTTON -->
   <div class="popup-close-button popup-manage-item-trigger">
+    <!-- POPUP CLOSE BUTTON ICON -->
+    <svg class="popup-close-button-icon icon-cross">
+      <use xlink:href="#svg-cross"></use>
+    </svg>
+    <!-- /POPUP CLOSE BUTTON ICON -->
+  </div>
+  <!-- /POPUP CLOSE BUTTON -->
+
+  <!-- POPUP BOX BODY -->
+  <div class="popup-box-body">
+    <!-- POPUP BOX SIDEBAR -->
+    <div class="popup-box-sidebar">
+      <!-- PRODUCT PREVIEW -->
+      <div class="product-preview">
+        <!-- PRODUCT PREVIEW IMAGE -->
+        <a href="marketplace-product.html">
+          <figure class="product-preview-image liquid">
+            <img src="/assets/img/marketplace/items/04.jpg" alt="item-10">
+          </figure>
+        </a>
+        <!-- /PRODUCT PREVIEW IMAGE -->
+
+        <!-- PRODUCT PREVIEW INFO -->
+        <div class="product-preview-info">
+          <!-- TEXT STICKER -->
+          <!-- <p class="text-sticker"><span class="highlighted">$</span> 26.00</p> -->
+          <!-- /TEXT STICKER -->
+
+          <!-- PRODUCT PREVIEW TITLE -->
+          <p class="product-preview-title"><a href="">Duka Langu la,</a></p>
+          <!-- /PRODUCT PREVIEW TITLE -->
+
+          <!-- PRODUCT PREVIEW CATEGORY -->
+          <p class="product-preview-category digital"><a href="">Pembejeo na Viwatilifu</a></p>
+          <!-- /PRODUCT PREVIEW CATEGORY -->
+        </div>
+        <!-- /PRODUCT PREVIEW INFO -->
+      </div>
+      <!-- /PRODUCT PREVIEW -->
+
+      <!-- SIDEBAR MENU ITEM -->
+      <div class="sidebar-menu-item">
+        <!-- SIDEBAR MENU BODY -->
+        <div class="sidebar-menu-body">
+          <!-- SIDEBAR MENU LINK -->
+          <p class="sidebar-menu-link " style="color:green; font-size:16px;">Angalizo</p>
+          <!-- /SIDEBAR MENU LINK -->
+          <!-- SIDEBAR MENU LINK -->
+          <p class="sidebar-menu-link ">1.Picha Nzuri</p>
+          <!-- /SIDEBAR MENU LINK -->
+
+          <!-- SIDEBAR MENU LINK -->
+          <p class="sidebar-menu-link">2.Maelezo Fasaha</p>
+          <!-- /SIDEBAR MENU LINK -->
+
+          <!-- SIDEBAR MENU LINK -->
+          <p class="sidebar-menu-link">3.Bidhaa yakweli na Uhakika</p>
+          <!-- /SIDEBAR MENU LINK -->
+
+        </div>
+        <!-- /SIDEBAR MENU BODY -->
+      </div>
+      <!-- /SIDEBAR MENU ITEM -->
+
+    </div>
+    <!-- /POPUP BOX SIDEBAR -->
+
+    <!-- POPUP BOX CONTENT -->
+    <div class="popup-box-content limited" data-simplebar>
+      <!-- WIDGET BOX -->
+      <div class="widget-box">
+        <!-- WIDGET BOX TITLE -->
+        <p class="widget-box-title">Taarifa ya Bidhaa</p>
+        <!-- /WIDGET BOX TITLE -->
+
+        <!-- WIDGET BOX CONTENT -->
+        <div class="widget-box-content">
+          <!-- FORM -->
+
+          <form class="form" action="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/post-item-page/{{Auth::user()->id}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM INPUT -->
+                <div class="form-input small active">
+                  <label for="item-name">Jina La Bidhaa</label>
+                  <input type="text" id="item-name" name="item_name" value="{{old('item_name')}}" >
+                  <input type="hidden" id="item-name" name="seller_id" value="{{Auth::user()->id}}">
+                  <input type="hidden" id="item-name" name="seller_name" value="{{Auth::user()->name}}">
+                  <input type="hidden" id="item-name" name="seller_image_location" value="{{Auth::user()->avatar}}">
+                </div>
+                <!-- /FORM INPUT -->
+               <div class="text-danger">{{$errors->first('item_name')}}</div>
+              </div>
+              <!-- /FORM ITEM -->
+            </div>
+            <!-- /FORM ROW -->
+
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM SELECT -->
+                <div class="form-select">
+                  <label for="item-category">Aina ya Bidhaa</label>
+                  <select id="item-category" name="item_category">
+                    <option selected disabled>--Chagua--</option>
+                    <option value="Pembejeo">Pembejeo</option>
+                    <option value="Kiwatilifu">Kiwatilifu</option>
+                    <option value="Mashine">Mashine</option>
+                    <option value="Mbegu">Mbegu</option>
+                    <option value="Mbolea">Mbolea</option>
+                  </select>
+                  <!-- FORM SELECT ICON -->
+                  <svg class="form-select-icon icon-small-arrow">
+                    <use xlink:href="#svg-small-arrow"></use>
+                  </svg>
+                  <!-- /FORM SELECT ICON -->
+                </div>
+                <!-- /FORM SELECT -->
+              </div>
+              <!-- /FORM ITEM -->
+            <div class="text-danger">{{$errors->first('item_category')}}</div>
+            </div>
+            <!-- /FORM ROW -->
+
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM INPUT -->
+                <div class="form-input small active">
+                  <label for="item-url">Garama Ya Bidhaa</label>
+                  <input type="number" id="item-url" name="item_price" value="{{old('item_price')}}">
+                </div>
+                <!-- /FORM INPUT -->
+              </div>
+              <!-- /FORM ITEM -->
+
+            </div>
+            <!-- /FORM ROW -->
+
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM INPUT -->
+                <div class="form-input small active">
+                  <label for="item-url">Picha ya Bidhaa</label>
+                  <input type="file" id="item-url" name="item_image"  style="">
+                </div>
+                <!-- /FORM INPUT -->
+              </div>
+              <!-- /FORM ITEM -->
+            <div class="text-danger">{{$errors->first('item_image')}}</div>
+            </div>
+            <!-- /FORM ROW -->
+
+            <!-- FORM ROW -->
+            <div class="form-row">
+              <!-- FORM ITEM -->
+              <div class="form-item">
+                <!-- FORM INPUT -->
+                <div class="form-input small mid-textarea">
+                  <textarea id="item-tags" name="item_description" placeholder="Andika maelezo mafupi ukielezea biashara yako, yasiyozidi maneno(30)..."></textarea>
+                </div>
+                <!-- /FORM INPUT -->
+              </div>
+              <!-- /FORM ITEM -->
+            </div>
+            <!-- /FORM ROW -->
+            <br>
+            <!-- POPUP BOX SIDEBAR FOOTER -->
+            <div class="popup-box-sidebar-footer">
+              <!-- BUTTON -->
+
+            <div class="row">
+              <div class="col-6">
+                  <button type="submit" class="button primary  popup-manage-item-trigger" style="background-color:green">Tuma</button>
+              </div>
+              <div class="col-6">
+                  <button type="reset" class="button white  popup-manage-item-trigger" style="background-color:red">Futa</button>
+              </div>
+            </div>
+              <!-- /BUTTON -->
+
+              <!-- BUTTON -->
+
+              <!-- /BUTTON -->
+            </div>
+            <!-- /POPUP BOX SIDEBAR FOOTER -->
+
+          </form>
+          <!-- /FORM -->
+        </div>
+        <!-- WIDGET BOX CONTENT -->
+      </div>
+      <!-- /WIDGET BOX -->
+    </div>
+    <!-- /POPUP BOX CONTENT -->
+  </div>
+  <!-- /POPUP BOX BODY -->
+</div>
+<!-- /POPUP BOX -->
+
+
+<!-- POPUP BOX -->
+<div class="popup-box mid popup-manage-edit-item">
+  <!-- POPUP CLOSE BUTTON -->
+  <div class="popup-close-button popup-manage-edit-item-trigger">
     <!-- POPUP CLOSE BUTTON ICON -->
     <svg class="popup-close-button-icon icon-cross">
       <use xlink:href="#svg-cross"></use>
@@ -458,10 +605,10 @@
 
             <div class="row">
               <div class="col-6">
-                  <button type="submit" class="button primary  popup-manage-item-trigger" style="background-color:green">Tuma</button>
+                  <button type="submit" class="button primary  popup-manage-edit-item-trigger" style="background-color:green">Tuma</button>
               </div>
               <div class="col-6">
-                  <button type="reset" class="button white  popup-manage-item-trigger" style="background-color:red">Futa</button>
+                  <button type="reset" class="button white  popup-manage-edit-item-trigger" style="background-color:red">Futa</button>
               </div>
             </div>
               <!-- /BUTTON -->

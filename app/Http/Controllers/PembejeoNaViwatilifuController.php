@@ -18,6 +18,7 @@ use OpenWeather;
 use Session;
 use Image;
 use Auth;
+use File;
 
 
 
@@ -31,26 +32,88 @@ class PembejeoNaViwatilifuController extends Controller
     }
 
 
-    public function muuzaji_Wa_pembejeo_na_viwatilifu_account_page(User $user_id)
+    public function muuzaji_Wa_pembejeo_na_viwatilifu_account_page(Request $request)
     {
 
-      $user_id = User::where('id', '=', $user_id->id)->get();
+      $user_id = Auth::user()->id;
 
-      //Take id out of an array
-      foreach ($user_id as $user_id) {
-        $user_id = $user_id->id;
-      }
 
 
       $user_location = Auth::user()->user_location;
       //get what is inside my store
       $total_items_in_my_store = Item::where('seller_id', '=', $user_id)->count();
-      $my_store = Item::where('seller_id', '=', $user_id)->get();
+      $my_store = Item::where('seller_id', '=', $user_id)->paginate(3);
       $users = User::all();
 
       return view('UserAccountBladeFiles.MuuzajiWaPembejeoNaViwatilifu.muuzaji-wa-pembejeo-na-viwatilifu-account',
             compact('user_location', 'my_store', 'total_items_in_my_store', 'users'));
     }
+
+
+    public function muuzaji_Wa_pembejeo_na_viwatilifu_account_page_edit_item(Request $request, Item $item)
+    {
+
+      $user_id = Auth::user()->id;
+
+      // dd($user_id);
+
+      $item_to_edit = Item::where('id', '=', $item->id)->get();
+
+      return view('UserAccountBladeFiles.MuuzajiWaPembejeoNaViwatilifu.edit-pembejeo-na-viwatilifu', compact('item_to_edit'));
+    }
+
+
+
+    public function delete_item(Item $item)
+    {
+      Item::where('id', '=', $item->id)->delete();
+
+      return redirect('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page')->with('Message', 'Bidhaa Imeondolewa Ndani Ya Mfumo ! Asante,');
+    }
+
+
+    public function edit_item_store(Request $request, Item $item)
+    {
+      if (isset($request->item_name)) {
+            Item::where('id', '=', $item->id)->update(['item_name' => $request->item_name]);
+      }
+
+      if (isset($request->item_category)) {
+            Item::where('id', '=', $item->id)->update(['item_category' => $request->item_category]);
+      }
+
+
+      if (isset($request->item_price)) {
+            Item::where('id', '=', $item->id)->update(['item_price' => $request->item_price]);
+      }
+
+      if (isset($request->item_price)) {
+            Item::where('id', '=', $item->id)->update(['item_price' => $request->item_price]);
+      }
+
+      if (isset($request->item_image)) {
+
+          //Delete the Old IMAGE from Public Folder (Save Space)
+          File::delete([public_path('/Uploads/ItemImages/'.$item->item_image),]);
+
+          $item_image = request()->file('item_image');
+          $filename = time().'.'.$item_image->getClientOriginalExtension();
+          Image::make($item_image)->resize(600, 300)->save(public_path('/Uploads/ItemImages/'.$filename));
+          Item::where('id', '=', $item->id)->update(['item_image' => $filename]);
+
+
+      }
+
+      if (isset($request->item_description)) {
+            Item::where('id', '=', $item->id)->update(['item_description' => $request->item_description]);
+      }
+
+
+      return redirect('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page')->with('Message', 'Taarifa Zako Zimehifadhiwa ! Asante,');
+    }
+
+
+
 
     public function post_item_store_method(User $user_id)
     {
@@ -95,7 +158,7 @@ class PembejeoNaViwatilifuController extends Controller
         $my_store = Item::where('seller_id', '=', $user_id->id)->get();
         //dd($my_store);
       }
-      return redirect()-> back()->with('message', 'Bidhaa yake Imepostiwa, Asante!', compact('my_store'));
+      return redirect()-> back()->with('Message', 'Bidhaa yake Imepostiwa, Asante!', compact('my_store'));
     }
 
 

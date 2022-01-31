@@ -140,7 +140,7 @@
            <!-- USER SHORT DESCRIPTION -->
            <div class="user-short-description">
              <!-- USER SHORT DESCRIPTION AVATAR -->
-             <a class="user-short-description-avatar user-avatar medium no-stats" href="/kilimofy/Group/Group-Timeline">
+             <a class="user-short-description-avatar user-avatar medium no-stats" href="/kilimofy/Group/Group-Timeline/{{$group->id}}">
                <!-- USER AVATAR BORDER -->
                <div class="user-avatar-border">
                  <!-- HEXAGON -->

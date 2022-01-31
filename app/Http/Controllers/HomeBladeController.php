@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Models\Paticipant;
 use App\Models\Discussion;
+use App\Models\Driver;
 use App\Models\Comment;
+use App\Models\Mashine;
 use App\Models\Reply;
 use App\Models\Item;
 use App\Models\User;
@@ -100,6 +102,8 @@ class HomeBladeController extends Controller
              Comment::where('user_id', '=', $user_id->id)->update(['user_avatar' => $filename]);
              Reply::where('user_id', '=', $user_id->id)->update(['user_avatar' => $filename]);
              Item::where('seller_id', '=', $user_id->id)->update(['seller_image_location' => $filename]);
+             Driver::where('Driver_ID', '=', $user_id->id)->update(['DriverImageName' => $filename]);
+             Mashine::where('Seller_Id', '=', $user_id->id)->update(['Seller_Image_Path' => $filename]);
 
              //Delete the Old IMAGE from Public Folder (Save Space)
              File::delete([public_path('/Uploads/avatars/'.$user_id->avatar),]);
