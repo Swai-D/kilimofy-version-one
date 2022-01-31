@@ -20,7 +20,7 @@ class PostTableSeeder extends Seeder
          'name' => 'Kilimofy Tanzania',
          'username' => 'Kilimofy Tz',
          'User_Image_Profile' => 'default.jpg',
-         'Photo' => '1638130100.jpg',
+         'Photo' => '1643653793.jpg',
          'Video' => NULL,
          'Tag1' => NULL,
          'Tag2' => NULL,
