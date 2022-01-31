@@ -19,7 +19,7 @@ class PostTableSeeder extends Seeder
          'Caption' => 'We believe people with passion can change the narrative of agriculture in Tanzania,That\'s what Kilimofy represent',
          'name' => 'Kilimofy Tanzania',
          'username' => 'Kilimofy Tz',
-         'User_Image_Profile' => '1643653793.jpg',
+         'User_Image_Profile' => 'default.jpg',
          'Photo' => '1638130100.jpg',
          'Video' => NULL,
          'Tag1' => NULL,
