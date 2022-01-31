@@ -266,7 +266,7 @@ class MkulimaController extends Controller
       // dd($celsius);
 
       //Get icon pathinfo
-      $icon_path = $current['condition']['icon'] ?? 'default.jpg';
+      $icon_path = $current['condition']['icon'];
       //dd($icon_path);
 
 
