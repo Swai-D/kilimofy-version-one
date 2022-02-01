@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Place;
+use App\Models\Blog;
 use App\Models\User;
 use Auth;
 
@@ -18,7 +19,10 @@ class MtaalamController extends Controller
     $users = User::all();
     $places = Place::all();
     $user_account_details = User::where('id', '=', $user_id)->get();
-      return view('UserAccountBladeFiles.MtaalamWaKilimo.mtaalam-wa-kilimo-index-page', compact('user_location','user_account_details', 'users', 'places'));
+    $blog = Blog::where('user_id', '=', $user_id)->get();
+
+    // dd($blog);
+      return view('UserAccountBladeFiles.MtaalamWaKilimo.mtaalam-wa-kilimo-index-page', compact('user_location','user_account_details', 'users', 'places', 'blog'));
     }
 
 }

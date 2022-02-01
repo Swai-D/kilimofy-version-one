@@ -54,6 +54,7 @@ Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Buy-item/{item_id}-{slug}',
 Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Checkout-item/{item_id}-{slug}', [App\Http\Controllers\MkulimaController::class, 'pembejeo_na_viwatilifu_check_out_item'])->middleware('auth');
 Route::get('/kilimofy/Usafirisaji/Usafiri', [App\Http\Controllers\MkulimaController::class, 'usafiri'])->middleware('auth');
 Route::post('/kilimofy/Usafirisaji/Tafuta-Usafiri', [App\Http\Controllers\MkulimaController::class, 'tafuta_usafiri'])->middleware('auth');
+Route::get('/kilimofy/Blog/Blog-Post/{blog}', [App\Http\Controllers\MkulimaController::class, 'blog_post_show'])->middleware('auth');
 
 //**************************end*************************************************
 
@@ -155,6 +156,7 @@ Route::get('/kilimofy/Group/Group-Timeline/{group}', [App\Http\Controllers\Group
 
 //**************************BlogController*************************************************
 Route::post('/kilimofy/Blog/User-Create-Blog-Post', [App\Http\Controllers\BlogController::class, 'createBlog']);
+Route::get('/kilimofy/Blog/Edit-Blog-Post/{blog}', [App\Http\Controllers\BlogController::class, 'editBlog']);
 
 //**************************end*************************************************
 

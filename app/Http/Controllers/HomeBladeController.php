@@ -104,6 +104,7 @@ class HomeBladeController extends Controller
              Item::where('seller_id', '=', $user_id->id)->update(['seller_image_location' => $filename]);
              Driver::where('Driver_ID', '=', $user_id->id)->update(['DriverImageName' => $filename]);
              Mashine::where('Seller_Id', '=', $user_id->id)->update(['Seller_Image_Path' => $filename]);
+             Blog::where('user_id', '=', $user_id->id)->update(['avatar' => $filename]);
 
              //Delete the Old IMAGE from Public Folder (Save Space)
              File::delete([public_path('/Uploads/avatars/'.$user_id->avatar),]);

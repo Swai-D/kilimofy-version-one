@@ -1513,11 +1513,22 @@
              </h3>
            </div>
            <!-- /.card-header -->
+           <!-- FORM ROW -->
+
+
+           <!-- /FORM ROW -->
+
            <div class="card-body">
+             <div class="form-input ">
+                <label for="account-current-password">Title</label>
+                <input type="text" id="account-current-password" name="title">
+              </div>
+              <br>
              <input type="hidden" name="user_name" value="{{Auth::user()->name}}">
              <input type="hidden" name="avatar" value="{{Auth::user()->avatar}}">
              <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-              <textarea class="form-control" name="summernote" id="summernote"></textarea>
+
+              <textarea class="form-control" name="body" id="summernote"></textarea>
            </div>
            <div class="card-footer">
 

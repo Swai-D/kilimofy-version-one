@@ -14,6 +14,7 @@ use App\Models\Forum;
 use App\Models\Group;
 use App\Models\User;
 use App\Models\Item;
+use App\Models\Blog;
 
 use OpenWeather;
 use Auth;
@@ -234,6 +235,16 @@ class MkulimaController extends Controller
 
 
 
+    public function blog_post_show(Blog $blog)
+    {
+      $blog = Blog::where('id', '=', $blog->id)->get();
+      $related_blog = Blog::all();
+      // dd($related_blog);
+      return view('UserBladeFiles.user-blog-post', compact('blog', 'related_blog'));
+    }
+
+
+
 
     public function user_index_page_details()
     {
@@ -266,7 +277,7 @@ class MkulimaController extends Controller
       // dd($celsius);
 
       //Get icon pathinfo
-      $icon_path = $current['condition']['icon'];
+      $icon_path = $current['condition']['icon'] ?? 'default.jpg';
       //dd($icon_path);
 
 
