@@ -29,8 +29,8 @@ class AuthController extends Controller
           'name' => ['required', 'string', 'max:255'],
           'username' => ['required', 'string', 'max:255'],
           'user_phone_number' => ['required', 'string', 'max:13','unique:users'],
-          'user_ocupation' => ['string', 'max:255'],
-          'user_location' => ['string', 'max:255'],
+          'user_ocupation' => ['required'],
+          'user_location' => ['required'],
           'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
@@ -53,10 +53,11 @@ class AuthController extends Controller
           User::create([
             'name' => $data['name'],
             'username' => $data['username'],
-            'user_phone_number' => $std_user_phone_number,
             'user_ocupation' => $data['user_ocupation'],
             'user_location' => $data['user_location'],
             'password' => Hash::make($data['password']),
+            'user_phone_number' => $std_user_phone_number,
+
           ]);
 
           $error = 0;
