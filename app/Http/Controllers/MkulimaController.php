@@ -24,7 +24,86 @@ class MkulimaController extends Controller
     public function mkulima_index_page(Request $request)
     {
 
-       return $this-> user_index_page_details();
+      //Get User Location
+      $user_location = Auth::user()->user_location;
+      // dd($user_location);
+
+      // get regionName
+       $user_location_array = explode(', ', $user_location);
+
+       $user_region = $user_location_array[0];
+       $user_district = $user_location_array[1];
+
+        // dd($user_region);
+
+      //Weather API call for current forecast
+      $weather = new OpenWeather();
+      $current = $weather->getCurrentWeatherByCityName($user_region);
+       // dd($current);
+
+      //Temp in Celsus
+      $fahrenheit = $current['forecast']['temp'] ?? 84;
+      $fahrenheit_min = $current['forecast']['temp_min']?? 79;
+      $fahrenheit_max = $current['forecast']['temp_max']?? 84;
+
+      //Converting
+      $celsius=round(((5/9)*($fahrenheit-32)),0);
+      $celsius_min=round(((5/9)*($fahrenheit_min-32)),0);
+      $celsius_max=round(((5/9)*($fahrenheit_max-32)),0);
+      // dd($celsius);
+
+      //Get icon pathinfo
+      $icon_path = $current['condition']['icon'] ?? 'default.jpg';
+      //dd($icon_path);
+
+
+      //Weather API call for tomorrow
+      $future_weather_forecast = $weather->getForecastWeatherByCityName($user_region);
+      // dd($future_weather_forecast['forecast'][4]);
+
+      //Temp in Celsus
+      $tomorrow_fahrenheit = $future_weather_forecast['forecast'][4]['forecast']['temp'] ?? 83;
+      $tomorrow_fahrenheit_min = $future_weather_forecast['forecast'][4]['forecast']['temp_min'] ?? 76;
+      $tomorrow_fahrenheit_max = $future_weather_forecast['forecast'][4]['forecast']['temp_max'] ?? 83;
+
+      //Get icon pathinfo for tomorrow
+      $tomorrow_icon_path = $future_weather_forecast['forecast'][4]['condition']['icon'] ?? "default.jpg";
+      //dd($icon_path);
+
+      //Converting
+      $tomorrow_celsius=round(((5/9)*($tomorrow_fahrenheit-32)),0);
+      $tomorrow_celsius_min=round(((5/9)*($tomorrow_fahrenheit_min-32)),0);
+      $tomorrow_celsius_max=round(((5/9)*($tomorrow_fahrenheit_max-32)),0);
+      // dd($celsius);
+
+
+      //Groups LIST
+      $group_lists = Group::all();
+      $posts = Post::orderBy('created_at', 'desc')->get();
+
+      //places
+      $user_location_details = Place::where([['Region', '=', $user_region], ['District', '=', $user_district]] )->get();
+       // dd($user_location_details);
+
+      //Get Topics
+      $kilimo_topics_count_collection = Forum::where('Category', 'Kilimo')->count();
+       // dd($kilimo_topics_count_collection);
+
+      //Get Topics
+      $ufugaji_topics_count_collection = Forum::where('Category', 'Ufugaji')->count();
+      // dd($kilimo_topics_count_collection);
+
+      //Get Topics
+      $usafirishaji_topics_count_collection = Forum::where('Category', 'Usafirisaji')->count();
+      // dd($kilimo_topics_count_collection);
+
+
+      $users = User::where('username', '!=', 'kilimofy_supper_admin')->get();
+      $users_count = User::count();
+      $headlines = Headline::all();
+      $headlines_count = Headline::count();
+
+      return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'users', 'users_count', 'users', 'headlines', 'headlines_count', 'kilimo_topics_count_collection', 'ufugaji_topics_count_collection', 'usafirishaji_topics_count_collection'));
 
 
     }
