@@ -29,7 +29,7 @@ Route::get('/kilimofy/home/redirect-after-verify-code', [App\Http\Controllers\Ho
 
 //**************************AuthController*********************************
 
-Route::post('/kilimofy/user/register_form', [App\Http\Controllers\AuthController::class, 'create'])->name('register');
+Route::post('/kilimofy/user/register_form', [App\Http\Controllers\AuthController::class, 'create']);
 Route::post('/kilimofy/user/verify_form', [App\Http\Controllers\AuthController::class, 'verify'])->name('verify_user_phone_number');
 Route::any('/kilimofy/user/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');
 Route::post('/kilimofy/user/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');

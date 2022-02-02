@@ -44,7 +44,7 @@ class UserTableSeeder extends Seeder
           'username' => 'kilimofy_supper_admin',
           'usertype' => 'supper_admin',
           'description' => 'Hello, We are an agricultural platform that brings technology to the finger-tips of farmers, so that they can fight against Big Brothers in agriculture Business  ',
-          'user_phone_number' => '+255767265780',
+          'user_phone_number' => '+254',
           'isVerified' => 1,
           'user_ocupation' => 'Mkulima',
           'user_location' => 'Arusha, Arusha Mjini',
