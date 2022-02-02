@@ -20,6 +20,7 @@
         "overtrue/laravel-like": "^4.0",
         "pusher/pusher-php-server": "^7.0",
         "rtconner/laravel-likeable": "^3.2",
+        "silviolleite/laravelpwa": "^2.0",
         "stevebauman/location": "^6.2",
         "twilio/sdk": "^6.31"
     },

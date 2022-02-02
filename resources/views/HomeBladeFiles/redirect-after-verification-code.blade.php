@@ -81,10 +81,10 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="login-username">Jina</label>
-                <input type="text" id="login-username" name="name" value="{{old('name')}}">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" name="username" value="{{old('username')}}">
                 <p class="lead" style="color: #f33155">
-                  {{$errors->first('name')}}
+                  {{$errors->first('username')}}
                 </p>
               </div>
               <!-- /FORM INPUT -->

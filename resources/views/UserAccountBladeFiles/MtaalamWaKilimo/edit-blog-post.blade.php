@@ -38,7 +38,7 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input small">
-                  <input type="text" id="profile-job-2-title" name="title" value="{{old('title') ?? $blog->title}}">
+                  <input type="text" id="profile-job-2-title" name="title" value="{!! $blog->title !!}">
               </div>
               <!-- /FORM INPUT -->
             </div>
@@ -52,7 +52,7 @@
           <div class="form-row">
             <!-- FORM ITEM -->
             <div class="form-item">
-              <input type="text" id="summernote" class="form-control" name="body" >
+              <textarea type="text" name="body" id="summernote"  class="form-control" value="{!! $blog->body !!}"></textarea>
             </div>
             <!-- /FORM ITEM -->
           </div>
@@ -70,12 +70,6 @@
   </div>
   <!-- /CONTENT GRID -->
 
-  <script type="text/javascript">
-    $('#summernote').summernote({
-      placeholder: "{!!$blog->body!!}",
-      tabsize: 2,
-      height: 100
-  }).summernote('code', `{!!$blog->body!!}`);
-  </script>
+
   @include('LayoutBladeFiles.summernote')
 @endforeach

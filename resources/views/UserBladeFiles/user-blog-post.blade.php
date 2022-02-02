@@ -125,23 +125,23 @@
           <!-- TAG LIST -->
           <div class="tag-list">
             <!-- TAG ITEM -->
-            <a class="tag-item secondary" href="newsfeed.html">Streamer</a>
+            <a class="tag-item secondary" href="/kilimofy/Forum/Forum-Category-List">Kilimo</a>
             <!-- /TAG ITEM -->
 
             <!-- TAG ITEM -->
-            <a class="tag-item secondary" href="newsfeed.html">Gaming</a>
+            <a class="tag-item secondary" href="/kilimofy/Forum/Forum-Category-List">Ufugaji</a>
             <!-- /TAG ITEM -->
 
             <!-- TAG ITEM -->
-            <a class="tag-item secondary" href="newsfeed.html">Job</a>
+            <a class="tag-item secondary" href="/kilimofy/Forum/Forum-Category-List">Uvuvi</a>
             <!-- /TAG ITEM -->
 
             <!-- TAG ITEM -->
-            <a class="tag-item secondary" href="newsfeed.html">Life</a>
+            <a class="tag-item secondary" href="/kilimofy/Forum/Forum-Category-List">Kilimo Biashara</a>
             <!-- /TAG ITEM -->
 
             <!-- TAG ITEM -->
-            <a class="tag-item secondary" href="newsfeed.html">Experience</a>
+            <a class="tag-item secondary" href="newsfeed.html">Masoko</a>
             <!-- /TAG ITEM -->
           </div>
           <!-- /TAG LIST -->
