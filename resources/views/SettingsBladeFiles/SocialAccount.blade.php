@@ -1,4 +1,9 @@
 @extends('LayoutBladeFiles.settingsLayout')
+
+@section('discription-title')
+ Akaunti ya {{Auth::user()->name}}
+@endsection
+
 @section('mini-user-settings-active', 'unread')
 @section('profile-accordion-open', 'accordion-open')
 @section('sidebar-social-account-link-active', 'active')
@@ -20,9 +25,19 @@
     <!-- /SECTION HEADER INFO -->
   </div>
   <!-- /SECTION HEADER -->
-
+  @if(session()->has('Message'))
+    <div class="alert alert" role = "alert">
+      <p class="lead" style="color: #f33155">
+        {{session()->get('Message')}}
+      </p>
+    </div>
+  @endif
   <!-- GRID COLUMN -->
   <div class="grid-column">
+
+    <!-- FORM -->
+    <form class="form" action="/kilimofy/UserAccount-Social-Account-Settings/Update-Social-Link/{{Auth::user()->id}}" method="post">
+      @csrf
     <!-- WIDGET BOX -->
     <div class="widget-box">
       <!-- WIDGET BOX TITLE -->
@@ -31,8 +46,7 @@
 
       <!-- WIDGET BOX CONTENT -->
       <div class="widget-box-content">
-        <!-- FORM -->
-        <form class="form">
+
           <!-- FORM ROW -->
           <div class="form-row split">
             <!-- FORM ITEM -->
@@ -49,8 +63,8 @@
                 </div>
                 <!-- /SOCIAL LINK -->
 
-                <label for="social-account-facebook">Facebook Username</label>
-                <input type="text" id="social-account-facebook" name="social_account_facebook" value="marinavalentine182">
+                <label for="social-account-facebook">Facebook Link</label>
+                <input type="text" id="social-account-facebook" name="facebook" value="{{old('facebook') ?? Auth::user()->facebook }}">
               </div>
               <!-- /FORM INPUT -->
             </div>
@@ -70,8 +84,8 @@
                 </div>
                 <!-- /SOCIAL LINK -->
 
-                <label for="social-account-twitter">Twitter Username</label>
-                <input type="text" id="social-account-twitter" name="social_account_twitter" value="dghuntress">
+                <label for="social-account-twitter">Twitter Link</label>
+                <input type="text" id="social-account-twitter" name="twitter" value="{{old('twitter') ?? Auth::user()->twitter }}"twitter>
               </div>
               <!-- /FORM INPUT -->
             </div>
@@ -95,8 +109,8 @@
                 </div>
                 <!-- /SOCIAL LINK -->
 
-                <label for="social-account-instagram">Instagram Username</label>
-                <input type="text" id="social-account-instagram" name="social_account_instagram" value="mvalentine">
+                <label for="social-account-instagram">Instagram Link</label>
+                <input type="text" id="social-account-instagram" name="instagram" value="{{old('instagram') ?? Auth::user()->instagram }}">
               </div>
               <!-- /FORM INPUT -->
             </div>
@@ -116,25 +130,24 @@
                 </div>
                 <!-- /SOCIAL LINK -->
 
-                <label for="social-account-twitch">Youtube Username</label>
-                <input type="text" id="social-account-twitch" name="social_account_twitch" value="gamehuntress">
+                <label for="social-account-twitch">Youtube Link</label>
+                <input type="text" id="social-account-twitch" name="youtube" value="{{old('youtube') ?? Auth::user()->youtube }}">
               </div>
               <!-- /FORM INPUT -->
             </div>
             <!-- /FORM ITEM -->
           </div>
           <!-- /FORM ROW -->
-        </form>
-        <!-- /FORM -->
+
       </div>
       <!-- WIDGET BOX CONTENT -->
     </div>
     <!-- /WIDGET BOX -->
-
+     <br>
     <!-- WIDGET BOX -->
     <div class="widget-box">
       <!-- WIDGET BOX TITLE -->
-      <p class="widget-box-title">Twitter Feed</p>
+      <p class="widget-box-title">Social Link</p>
       <!-- /WIDGET BOX TITLE -->
 
       <!-- WIDGET BOX CONTENT -->
@@ -142,11 +155,11 @@
         <!-- SWITCH OPTION -->
         <div class="switch-option">
           <!-- SWITCH OPTION TITLE -->
-          <p class="switch-option-title">Enable Twitter Feed</p>
+          <p class="switch-option-title">Enable Social Link</p>
           <!-- /SWITCH OPTION TITLE -->
 
           <!-- SWITCH OPTION TEXT -->
-          <p class="switch-option-text">Turn on this switch to show your connected twitter account in your profile page</p>
+          <p class="switch-option-text">Turn on this switch to show your  social account in your profile page</p>
           <!-- /SWITCH OPTION TEXT -->
 
           <!-- FORM SWITCH -->
@@ -158,18 +171,18 @@
           <!-- /FORM SWITCH -->
 
           <!-- BUTTON -->
-          <a class="button twitter" href="#">
+          <button type="submit" class="button twitter" >
             <!-- BUTTON ICON -->
             <svg class="button-icon spaced icon-twitter">
-              <use xlink:href="#svg-twitter"></use>
+              <use xlink:href="#svg-share"></use>
             </svg>
             <!-- /BUTTON ICON -->
-            Link your Twitter Account
-          </a>
+            Share Your Accounts
+          </button>
           <!-- /BUTTON -->
 
           <!-- SWITCH OPTION META -->
-          <p class="switch-option-meta">Linked Account: <span class="bold">@dghuntress</span></p>
+          <p class="switch-option-meta">Account For: <span class="bold" style="color:green;">@ {{Auth::user()->username}}</span></p>
           <!-- /SWITCH OPTION META -->
         </div>
         <!-- /SWITCH OPTION -->
@@ -179,6 +192,8 @@
     <!-- /WIDGET BOX -->
   </div>
   <!-- /GRID COLUMN -->
+</form>
+<!-- /FORM -->
 
 </div>
 <!-- /GRID COLUMN -->

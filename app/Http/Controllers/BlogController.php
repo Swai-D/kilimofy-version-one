@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 
 use Image;
+use File;
 class BlogController extends Controller
 {
     public function createBlog(Request $request)
@@ -62,5 +63,18 @@ class BlogController extends Controller
     {
       $blog = Blog::where('id', '=', $blog->id)->get();
       return view('UserAccountBladeFiles.MtaalamWaKilimo.edit-blog-post', compact('blog'));
+    }
+
+    public function deleteBlog(Blog $blog)
+    {
+
+       Blog::where('id', '=', $blog->id)->delete();
+
+       //Delete Blog Image From Directory
+       $blogPathArray = explode('/', $blog->cover_image);
+       $blogImage = $blogPathArray[3];
+       File::delete([public_path('/Uploads/BlogPostImages/'.$blogImage),]);
+       
+      return redirect()->back()->with('Message', 'Blog Post Deleted Successfully!');
     }
 }

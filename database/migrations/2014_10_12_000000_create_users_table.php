@@ -32,6 +32,7 @@ class CreateUsersTable extends Migration
             $table->string('facebook')->default('NOT SET');
             $table->string('instagram')->default('NOT SET');
             $table->string('twitter')->default('NOT SET');
+            $table->string('youtube')->default('NOT SET');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

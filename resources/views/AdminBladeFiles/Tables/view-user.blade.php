@@ -1,8 +1,14 @@
 @extends('AdminLayoutFiles.admin-layout')
 
-@section('title', 'User\'s-List')
+@foreach($user as $user)
+
+@section('title')
+  {{$user->username}}'s Details
+@endsection
+
+
 @section('header')
-<!-- Google Font: Source Sans Pro -->
+<<!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="/admin-assets/plugins/fontawesome-free/css/all.min.css">
@@ -27,7 +33,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DataTables</h1>
+            <h1>{{$user->username}}'s Details</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -43,44 +49,90 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
-            <div class="card">
+          <div class="col-md-12">
+
+            <div class="card row">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <div class="image ">
+                  <img src="/Uploads/avatars/{{$user->avatar}}" class="img-circle elevation-2" alt="User Image" style="width:100px; height:100px;">
+                </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+              <div class="card-body p-0">
+
+                <table id="example1" class="table table-striped">
                   <thead>
-                  <tr>
-
-                    <th>SN</th>
-                    <th>Name</th>
-                    <th>Ocupation(s)</th>
-                    <th>Join</th>
-
-                  </tr>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Title</th>
+                      <th>Description</th>
+                      <th style="width: 40px">Status</th>
+                    </tr>
                   </thead>
                   <tbody>
-                    @foreach($user_list as $user)
                     <tr>
-
-                      <td>{{$loop->iteration}}</td>
-                      <td>{{$user->name}}</td>
-                      <td>{{$user->user_ocupation}}</td>
-                      <td>{{$user->created_at}}</td>
-
+                      <td>1.</td>
+                      <td>Name</td>
+                      <td>
+                        {{$user->name}}
+                      </td>
+                    <td><span class="badge bg-success">Good</span></td>
                     </tr>
-                    @endforeach
+                    <tr>
+                      <td>2.</td>
+                      <td>Username</td>
+                      <td>
+                        {{$user->username}}
+                      </td>
+                      <td><span class="badge bg-success">Good</span></td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td>Phone Number</td>
+                      <td>{{$user->user_phone_number}}</td>
+                      <td><span class="badge bg-success">Good</span></td>
+                    </tr>
+                    <tr>
+                      <td>4.</td>
+                      <td>Ocupation</td>
+                      <td>{{$user->user_ocupation}}</td>
+                      <td><span class="badge bg-success">Good</span></td>
+                    </tr>
+                    <tr>
+                      <td>5.</td>
+                      <td>Location</td>
+                      <td>{{$user->user_location}}</td>
+                      <td><span class="badge bg-success">Good</span></td>
+                    </tr>
+
+                    <tr>
+                      <td>6.</td>
+                      <td>Email</td>
+                      <td>{{$user->email}}</td>
+                      <td><span class="badge bg-primary">Normal</span></td>
+                    </tr>
+
+                    <tr>
+                      <td>7.</td>
+                      <td>Age</td>
+                      <td>{{$user->age}}</td>
+                      <td><span class="badge bg-primary">Normal</span></td>
+                    </tr>
+                    <tr>
+                      <td>8.</td>
+                      <td>Join</td>
+                      <td>{{$user->created_at->diffForHumans()}}</td>
+                      <td><span class="badge bg-success">Good</span></td>
+                    </tr>
+
                   </tbody>
+                  <br>
                   <tfoot>
                     <tr>
-
                       <th>SN</th>
-                      <th>Name</th>
-                      <th>Ocupation(s)</th>
-                      <th>Join</th>
-
+                      <th>Title</th>
+                      <th>Description</th>
+                      <th>Status</th>
                     </tr>
                   </tfoot>
                 </table>
@@ -89,11 +141,10 @@
             </div>
             <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
         <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
+
+      </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
@@ -142,3 +193,4 @@
   });
 </script>
 @endsection
+@endforeach

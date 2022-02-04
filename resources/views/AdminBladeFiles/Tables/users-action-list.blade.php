@@ -73,7 +73,7 @@
                       <td>{{$user->user_ocupation}}</td>
                       <td>{{$user->created_at}}</td>
                       <td>
-                        <a href="#" ><i class="fa fa-eye"></i></a>
+                        <a href="/kilimofy/Admin/view-user/{{$user->id}}" ><i class="fa fa-eye"></i></a>
                           &nbsp;
                           &nbsp;
                           &nbsp;
@@ -81,7 +81,7 @@
                           &nbsp;
                           &nbsp;
                           &nbsp;
-                        <a href="#" ><i class="fa fa-exclamation" style="color:#ff9900;"></i></a>
+                        <a href="#" ><i class="fa fa-edit" style="color:#ff9900;"></i></a>
                       </td>
                     </tr>
                     @endforeach

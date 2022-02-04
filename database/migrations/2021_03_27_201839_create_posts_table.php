@@ -22,9 +22,9 @@ class CreatePostsTable extends Migration
             $table->string('User_Image_Profile');
             $table->string('Photo')->nullable();
             $table->string('Video')->nullable();
-            $table->string('Tag1')->nullable();
-            $table->string('Tag2')->nullable();
-            $table->string('Tag3')->nullable();
+            $table->string('Make_It_Featured')->default(0);
+            $table->string('Report_Post')->default(0);
+            $table->string('Report_Author')->default(0);
             $table->integer('Likes')->default(0);
             $table->integer('Comments')->default(0);
             $table->timestamps();

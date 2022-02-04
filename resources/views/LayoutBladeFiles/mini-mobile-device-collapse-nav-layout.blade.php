@@ -501,7 +501,7 @@
    <br>
     <!-- MENU ITEM -->
     <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-driver')">
+    <li class="menu-item @yield('menu-status-mashine')">
       <!-- MENU ITEM LINK -->
       <a class="menu-item-link" href="/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page">
         <!-- MENU ITEM LINK ICON -->

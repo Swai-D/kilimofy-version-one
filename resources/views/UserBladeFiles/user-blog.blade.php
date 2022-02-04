@@ -21,7 +21,7 @@
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
-      <h2 class="section-title">Blog Posts <span class="highlighted">5</span></h2>
+      <h2 class="section-title">Blog Posts <span class="highlighted">{{$user_blog_post_count}}</span></h2>
       <!-- /SECTION TITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
@@ -42,6 +42,7 @@
   </div>
   <!-- /SECTION HEADER -->
 
+  @if($user_blog_post_count > 0)
   <!-- SECTION FILTERS BAR -->
   <div class="section-filters-bar v2">
     <!-- FORM -->
@@ -103,14 +104,25 @@
     <!-- /FORM -->
   </div>
   <!-- /SECTION FILTERS BAR -->
+  @endif
 
+  @if(session()->has('Message'))
+    <div class="alert alert" role = "alert">
+      <p class="lead" style="color: #f33155">
+        {{session()->get('Message')}}
+      </p>
+    </div>
+  @endif
+  
   <!-- GRID -->
   <div class="grid grid-4-4-4 centered">
+
+    @forelse($user_blog_post as $blog)
     <!-- POST PREVIEW -->
     <div class="post-preview">
       <!-- POST PREVIEW IMAGE -->
       <figure class="post-preview-image liquid">
-        <img src="/assets/img/cover/07.jpg" alt="cover-07">
+        <img src="{{$blog->cover_image}}" alt="cover-07">
       </figure>
       <!-- /POST PREVIEW IMAGE -->
 
@@ -119,11 +131,11 @@
         <!-- POST PREVIEW INFO TOP -->
         <div class="post-preview-info-top">
           <!-- POST PREVIEW TIMESTAMP -->
-          <p class="post-preview-timestamp">1 month ago</p>
+          <p class="post-preview-timestamp">{{$blog->created_at->diffForHumans()}}</p>
           <!-- /POST PREVIEW TIMESTAMP -->
 
           <!-- POST PREVIEW TITLE -->
-          <p class="post-preview-title">Old Super Mochi's Island is getting a remake!</p>
+          <p class="post-preview-title">{{$blog->title}}</p>
           <!-- /POST PREVIEW TITLE -->
         </div>
         <!-- /POST PREVIEW INFO TOP -->
@@ -131,11 +143,11 @@
         <!-- POST PREVIEW INFO BOTTOM -->
         <div class="post-preview-info-bottom">
           <!-- POST PREVIEW TEXT -->
-          <p class="post-preview-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut...</p>
+          <p class="post-preview-text">{!! \Illuminate\Support\Str::limit($blog->body, 150, '...') !!} </p>
           <!-- /POST PREVIEW TEXT -->
 
           <!-- POST PREVIEW LINK -->
-          <a class="post-preview-link" href="/kilimofy/UserAccount/user_blog_post_page/{{}}">Read more...</a>
+          <a class="post-preview-link" href="/kilimofy/Blog/Blog-Post/{{$blog->id}}">Read more...</a>
           <!-- /POST PREVIEW LINK -->
         </div>
         <!-- /POST PREVIEW INFO BOTTOM -->
@@ -162,21 +174,6 @@
                   <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/funny.png" alt="reaction-funny"> <span class="bold">Funny</span></p>
                   <!-- /SIMPLE DROPDOWN TEXT -->
 
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text">Neko Bebop</p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
-
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text">Nick Grissom</p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
-
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text">Sarah Diamond</p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
-
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text">Marcus Jhonson</p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
                 </div>
                 <!-- /SIMPLE DROPDOWN -->
               </div>
@@ -214,37 +211,7 @@
 
                 <!-- SIMPLE DROPDOWN -->
                 <div class="simple-dropdown padded reaction-item-dropdown">
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/love.png" alt="reaction-love"> <span class="bold">Love</span></p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
 
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text">Neko Bebop</p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
-
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text">Nick Grissom</p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
-
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text">Sarah Diamond</p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
-
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text">Jett Spiegel</p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
-
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text">Marcus Jhonson</p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
-
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text">Jane Rodgers</p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
-
-                  <!-- SIMPLE DROPDOWN TEXT -->
-                  <p class="simple-dropdown-text"><span class="bold">and 3 more...</span></p>
-                  <!-- /SIMPLE DROPDOWN TEXT -->
                 </div>
                 <!-- /SIMPLE DROPDOWN -->
               </div>
@@ -281,77 +248,29 @@
         <!-- /CONTENT ACTION -->
       </div>
       <!-- /CONTENT ACTIONS -->
+
+      <div class="user-preview-actions">
+        <!-- BUTTON -->
+        <!-- <a href="/kilimofy/Blog/Edit-Blog-Post/{{$blog->id}}" class="button secondary full " style="padding:2px; margin:2px;">Edit </a> -->
+        <!-- /BUTTON -->
+        <!-- BUTTON -->
+        <a href="/kilimofy/Blog/Delete-Blog-Post/{{$blog->id}}" class="button full" style="padding:2px; background-color: red; margin:2px;">Delete </a>
+      </div>
+      <br>
     </div>
     <!-- /POST PREVIEW -->
-
+    @empty
+    <p class="text-danger"> Hujachapisha Makala Yeyote kwa sasa !</p>
+    @endforelse
   </div>
   <!-- /GRID -->
 
-  @include('LayoutBladeFiles.page-bar')
+  <!-- include('LayoutBladeFiles.page-bar') -->
 </section>
 <!-- /SECTION -->
 @endsection
 @endforeach
 
 <!-- POPUP BOX -->
-<div class="popup-box popup-album-creation">
-  <!-- POPUP CLOSE BUTTON -->
-  <div class="popup-close-button popup-album-creation-trigger">
-    <!-- POPUP CLOSE BUTTON ICON -->
-    <svg class="popup-close-button-icon icon-cross">
-      <use xlink:href="#svg-cross"></use>
-    </svg>
-    <!-- /POPUP CLOSE BUTTON ICON -->
-  </div>
-  <!-- /POPUP CLOSE BUTTON -->
-
-  <!-- POPUP BOX TITLE -->
-  <p class="popup-box-title">Create Blog  +</p>
-  <!-- /POPUP BOX TITLE -->
-
-  <!-- FORM -->
-  <form class="form" action="/kilimofy/Blog/User-Create-Blog-Post" method="post" enctype="multipart/form-data">
-    @csrf
-  <!-- FORM UPLOADABLES -->
-    <div class="row">
-
-       <div class="col-md-12">
-         <div class="card card-outline card-info">
-           <div class="card-header">
-             <h3 class="card-title">
-               Blog Post
-             </h3>
-           </div>
-           <!-- /.card-header -->
-           <div class="card-body">
-             <input type="hidden" name="user_name" value="{{Auth::user()->name}}">
-             <input type="hidden" name="avatar" value="{{Auth::user()->avatar}}">
-             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-              <textarea class="form-control" name="summernote" id="summernote"></textarea>
-           </div>
-           <div class="card-footer">
-
-           </div>
-         </div>
-       </div>
-
-      <!-- /.col-->
-    </div>
-    <!-- ./row -->
-    <!-- /FORM UPLOADABLES -->
-
-    <!-- POPUP BOX ACTIONS -->
-    <div class="popup-box-actions">
-      <!-- POPUP BOX ACTION -->
-      <button type="reset" class="popup-box-action button white popup-album-creation-trigger">Discard All</button>
-      <!-- /POPUP BOX ACTION -->
-
-      <!-- POPUP BOX ACTION -->
-      <button type="submit" class="popup-box-action button secondary">Post Blog!</button>
-      <!-- /POPUP BOX ACTION -->
-    </div>
-    <!-- /POPUP BOX ACTIONS -->
-  </form>
-  <!-- /FORM -->
-</div>
+@include('LayoutBladeFiles.summernote-form')
 <!-- /POPUP BOX -->

@@ -62,7 +62,7 @@ Route::get('/kilimofy/Blog/Blog-Post/{blog}', [App\Http\Controllers\MkulimaContr
 Route::get('/kilimofy/Admin/admin_index_page', [App\Http\Controllers\AdminController::class, 'admin_index_page'])->middleware(['auth','supper_admin']);
 Route::get('/kilimofy/Admin/register-new-staff', [App\Http\Controllers\AdminController::class, 'admin_register_new_staff'])->middleware(['auth','supper_admin']);
 Route::post('/kilimofy/Admin/register-new-staff-store', [App\Http\Controllers\AdminController::class, 'admin_register_new_staff_store'])->middleware(['auth','supper_admin']);
-Route::get('/kilimofy/Admin/users-list', [App\Http\Controllers\AdminController::class, 'users_list'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/view-user/{user}', [App\Http\Controllers\AdminController::class, 'users_list'])->middleware(['auth','supper_admin']);
 Route::get('/kilimofy/Admin/users-action-list', [App\Http\Controllers\AdminController::class, 'users_action_list'])->middleware(['auth','supper_admin']);
 Route::get('/kilimofy/Admin/Headline-action-list', [App\Http\Controllers\AdminController::class, 'headline_action_list'])->middleware(['auth','supper_admin']);
 Route::get('/kilimofy/Admin/New-Forum-Category-Form', [App\Http\Controllers\AdminController::class, 'forum_category_form'])->middleware(['auth','supper_admin']);
@@ -157,6 +157,7 @@ Route::get('/kilimofy/Group/Group-Timeline/{group}', [App\Http\Controllers\Group
 //**************************BlogController*************************************************
 Route::post('/kilimofy/Blog/User-Create-Blog-Post', [App\Http\Controllers\BlogController::class, 'createBlog']);
 Route::get('/kilimofy/Blog/Edit-Blog-Post/{blog}', [App\Http\Controllers\BlogController::class, 'editBlog']);
+Route::get('/kilimofy/Blog/Delete-Blog-Post/{blog}', [App\Http\Controllers\BlogController::class, 'deleteBlog']);
 
 //**************************end*************************************************
 
@@ -197,6 +198,7 @@ Route::get('/kilimofy/Mtaalam-Wa-Kilimo/home-page', [App\Http\Controllers\Mtaala
 Route::get('/kilimofy/UserAccount-General-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'General_Settings']);
 Route::get('/kilimofy/UserAccount-Profile-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'My_Profile']);
 Route::get('/kilimofy/UserAccount-Social-Account-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'Social_Account']);
+Route::post('/kilimofy/UserAccount-Social-Account-Settings/Update-Social-Link/{user_id}', [App\Http\Controllers\SettingsController::class, 'Social_Account_Update']);
 
 //**************************end*************************************************
 

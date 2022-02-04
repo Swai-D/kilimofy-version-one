@@ -2,7 +2,7 @@
 @section('title','Usafirishaji wa Bidhaa')
 @section('menu-status-mashine','active')
 
-@section('mini-user-fundi-active')
+@section('mini-user-machine-active')
 <!-- style="fill:yellow " -->
 @endsection
 

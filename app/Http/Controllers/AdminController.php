@@ -87,11 +87,13 @@ class AdminController extends Controller
     }
 
     //Users list
-    Public function users_list()
+    Public function users_list(User $user)
     {
-      $user_list = User::all();
+
+      $user = User::where('id', '=', $user->id)->get();
+      // dd($user);
       // dd($user_list);
-      return view('AdminBladeFiles.users-list', compact('user_list'));
+      return view('AdminBladeFiles.Tables.view-user', compact('user'));
     }
 
     //Users list
@@ -99,7 +101,7 @@ class AdminController extends Controller
     {
       $user_list = User::all();
       // dd($user_list);
-      return view('AdminBladeFiles.users-action-list', compact('user_list'));
+      return view('AdminBladeFiles.Tables.users-action-list', compact('user_list'));
     }
 
     Public function headline_action_list()

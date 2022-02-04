@@ -31,6 +31,7 @@ class UserTableSeeder extends Seeder
             'facebook' => 'NOT SET',
             'instagram' => 'NOT SET',
             'twitter' => 'NOT SET',
+            'youtube' => 'NOT SET',
             'password' => '$2y$10$n/FcIAGFDIgfEeszGfMcZOLQlC5z3dnYx5cu5K2QhumJyL/JTLRuO',
             'remember_token' => NULL,
             'created_at' => '2021-09-26 15:58:06',

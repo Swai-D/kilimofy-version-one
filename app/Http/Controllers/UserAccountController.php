@@ -9,6 +9,7 @@ use App\Models\Place;
 use App\Models\Group;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Blog;
 
 use Auth;
 
@@ -127,8 +128,10 @@ class UserAccountController extends Controller
     public function user_blog_page(User $user_id)
     {   $user = User::where('id', '=', $user_id->id)->get();
         $users = User::where('id', '!=', $user_id->id)->get();
+        $user_blog_post = Blog::where('user_id', '=', $user_id->id)->get();
+        $user_blog_post_count = Blog::where('user_id', '=', $user_id->id)->count();
         $user_posts = Post::where('User_id', '=', $user_id->id)->count();
-        return view('UserBladeFiles.user-blog', compact('user', 'users', 'user_posts'));
+        return view('UserBladeFiles.user-blog', compact('user', 'users', 'user_posts', 'user_blog_post', 'user_blog_post_count'));
     }
 
     public function user_blog_post_page(User $user_id)

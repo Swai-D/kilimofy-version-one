@@ -122,52 +122,106 @@
       <!-- PROFILE HEADER SOCIAL LINKS -->
       <div id="profile-header-social-links-slider" class="profile-header-social-links">
         <div class="profile-header-social-link">
+        @if(Auth::user()->facebook != 'NOTE SET')
+        <!-- SOCIAL LINK -->
+        <a class="social-link facebook" href="{{Auth::user()->facebook}}" target="_blank">
+          <!-- ICON FACEBOOK -->
+          <svg class="icon-facebook">
+            <use xlink:href="#svg-facebook"></use>
+          </svg>
+          <!-- /ICON FACEBOOK -->
+        </a>
+        <!-- /SOCIAL LINK -->
+        @else
+        <!-- SOCIAL LINK -->
+        <a class="social-link facebook" href="#">
+          <!-- ICON FACEBOOK -->
+          <svg class="icon-facebook">
+            <use xlink:href="#svg-facebook"></use>
+          </svg>
+          <!-- /ICON FACEBOOK -->
+        </a>
+        <!-- /SOCIAL LINK -->
+        @endif
+
+        </div>
+
+        <div class="profile-header-social-link">
+          @if(Auth::user()->instagram != 'NOTE SET')
           <!-- SOCIAL LINK -->
-          <a class="social-link facebook" href="#">
+          <a class="social-link instagram" href="{{Auth::user()->instagram}}" target="_blank">
             <!-- ICON FACEBOOK -->
-            <svg class="icon-facebook">
-              <use xlink:href="#svg-facebook"></use>
+            <svg class="icon-instagram">
+              <use xlink:href="#svg-instagram"></use>
             </svg>
             <!-- /ICON FACEBOOK -->
           </a>
           <!-- /SOCIAL LINK -->
-        </div>
-
-        <div class="profile-header-social-link">
+          @else
           <!-- SOCIAL LINK -->
           <a class="social-link instagram" href="#">
-            <!-- ICON INSTAGRAM -->
+            <!-- ICON FACEBOOK -->
             <svg class="icon-instagram">
               <use xlink:href="#svg-instagram"></use>
             </svg>
-            <!-- /ICON INSTAGRAM -->
+            <!-- /ICON FACEBOOK -->
           </a>
           <!-- /SOCIAL LINK -->
+          @endif
+
         </div>
 
         <div class="profile-header-social-link">
+          @if(Auth::user()->twitter != 'NOTE SET')
           <!-- SOCIAL LINK -->
-          <a class="social-link twitter" href="#">
-            <!-- ICON TWITTER -->
+          <a class="social-link twitter" href="{{Auth::user()->twitter}}" target="_blank">
+            <!-- ICON FACEBOOK -->
             <svg class="icon-twitter">
               <use xlink:href="#svg-twitter"></use>
             </svg>
-            <!-- /ICON TWITTER -->
+            <!-- /ICON FACEBOOK -->
           </a>
           <!-- /SOCIAL LINK -->
+          @else
+          <!-- SOCIAL LINK -->
+          <a class="social-link twitter" href="#">
+            <!-- ICON FACEBOOK -->
+            <svg class="icon-twitter">
+              <use xlink:href="#svg-twitter"></use>
+            </svg>
+            <!-- /ICON FACEBOOK -->
+          </a>
+          <!-- /SOCIAL LINK -->
+          @endif
+
         </div>
 
 
 
         <div class="profile-header-social-link">
           <!-- SOCIAL LINK -->
-          <a class="social-link youtube" href="#">
-            <!-- ICON INSTAGRAM -->
+          @if(Auth::user()->youtube != 'NOTE SET')
+          <!-- SOCIAL LINK -->
+          <a class="social-link youtube" href="{{Auth::user()->youtube}}" target="_blank">
+            <!-- ICON FACEBOOK -->
             <svg class="icon-youtube">
               <use xlink:href="#svg-youtube"></use>
             </svg>
-            <!-- /ICON INSTAGRAM -->
+            <!-- /ICON FACEBOOK -->
           </a>
+          <!-- /SOCIAL LINK -->
+          @else
+          <!-- SOCIAL LINK -->
+          <a class="social-link youtube" href="#">
+            <!-- ICON FACEBOOK -->
+            <svg class="icon-youtube">
+              <use xlink:href="#svg-youtube"></use>
+            </svg>
+            <!-- /ICON FACEBOOK -->
+          </a>
+          <!-- /SOCIAL LINK -->
+          @endif
+
           <!-- /SOCIAL LINK -->
         </div>
 
