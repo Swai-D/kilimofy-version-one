@@ -62,7 +62,11 @@ Route::get('/kilimofy/Blog/Blog-Post/{blog}', [App\Http\Controllers\MkulimaContr
 Route::get('/kilimofy/Admin/admin_index_page', [App\Http\Controllers\AdminController::class, 'admin_index_page'])->middleware(['auth','supper_admin']);
 Route::get('/kilimofy/Admin/register-new-staff', [App\Http\Controllers\AdminController::class, 'admin_register_new_staff'])->middleware(['auth','supper_admin']);
 Route::post('/kilimofy/Admin/register-new-staff-store', [App\Http\Controllers\AdminController::class, 'admin_register_new_staff_store'])->middleware(['auth','supper_admin']);
-Route::get('/kilimofy/Admin/view-user/{user}', [App\Http\Controllers\AdminController::class, 'users_list'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/view-user/{user}', [App\Http\Controllers\AdminController::class, 'view_user'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/edit-user-info/{user}', [App\Http\Controllers\AdminController::class, 'edit_user_info'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Admin/edit-user-info/{user}', [App\Http\Controllers\AdminController::class, 'edit_user_info_store'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/comfirm-delete-user/{user}', [App\Http\Controllers\AdminController::class, 'comfirm_delete_user'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/delete-user/{user}', [App\Http\Controllers\AdminController::class, 'delete_user'])->middleware(['auth','supper_admin']);
 Route::get('/kilimofy/Admin/users-action-list', [App\Http\Controllers\AdminController::class, 'users_action_list'])->middleware(['auth','supper_admin']);
 Route::get('/kilimofy/Admin/Headline-action-list', [App\Http\Controllers\AdminController::class, 'headline_action_list'])->middleware(['auth','supper_admin']);
 Route::get('/kilimofy/Admin/New-Forum-Category-Form', [App\Http\Controllers\AdminController::class, 'forum_category_form'])->middleware(['auth','supper_admin']);

@@ -28,7 +28,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DataTables</h1>
+            <h1>Kilimofy Users List</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -47,10 +47,15 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title">All Kilimofy Users Table List</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                @if(session()->has('Message'))
+                  <div class="alert alert" role = "alert">
+                    <p class="lead text-center" style="color: #f33155;font-size:24px;">{{session()->get('Message')}}</p>
+                  </div>
+                @endif
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
@@ -71,17 +76,17 @@
                       <td>{{$loop->iteration}}</td>
                       <td>{{$user->name}}</td>
                       <td>{{$user->user_ocupation}}</td>
-                      <td>{{$user->created_at}}</td>
+                      <td>{{$user->created_at->diffForHumans()}}</td>
                       <td>
                         <a href="/kilimofy/Admin/view-user/{{$user->id}}" ><i class="fa fa-eye"></i></a>
                           &nbsp;
                           &nbsp;
                           &nbsp;
-                        <a href="#" ><i class="fa fa-trash" style="color:red;"></i></a>
+                        <a href="/kilimofy/Admin/comfirm-delete-user/{{$user->id}}" ><i class="fa fa-trash" style="color:red;"></i></a>
                           &nbsp;
                           &nbsp;
                           &nbsp;
-                        <a href="#" ><i class="fa fa-edit" style="color:#ff9900;"></i></a>
+                        <a href="/kilimofy/Admin/edit-user-info/{{$user->id}}" ><i class="fa fa-edit" style="color:#ff9900;"></i></a>
                       </td>
                     </tr>
                     @endforeach

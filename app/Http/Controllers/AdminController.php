@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Headline;
 use App\Models\Forum;
+use App\Models\Place;
 use App\Models\User;
 use App\Models\Staff;
 use App\Models\Item;
@@ -56,7 +57,7 @@ class AdminController extends Controller
          ]);
       }
 
-      return redirect()->back()->with('Message', 'New Staff Added Succesfuly !');
+      return redirect()->back()->with('Message', '*New Staff Added Succesfuly !*');
     }
 
 
@@ -87,7 +88,7 @@ class AdminController extends Controller
     }
 
     //Users list
-    Public function users_list(User $user)
+    Public function view_user(User $user)
     {
 
       $user = User::where('id', '=', $user->id)->get();
@@ -95,6 +96,84 @@ class AdminController extends Controller
       // dd($user_list);
       return view('AdminBladeFiles.Tables.view-user', compact('user'));
     }
+
+
+    Public function edit_user_info(User $user)
+    {
+
+      $user = User::where('id', '=', $user->id)->get();
+      $places = Place::all();
+
+      return view('AdminBladeFiles.Tables.edit-user-info', compact('user','places'));
+    }
+
+
+    Public function edit_user_info_store(Request $request, User $user)
+    {
+
+      // dd($user);
+      //Update Individual
+      if (isset($request->name)) {
+          User::where('id', '=', $user->id)->update(['name' => $request->name]);
+
+      }
+
+      if (isset($request->username)) {
+          User::where('id', '=', $user->id)->update(['username' => $request->username]);
+
+      }
+
+      if (isset($request->user_phone_number)) {
+        // $user_phone_number = substr($request->user_phone_number, 1);
+        // dd($user_phone_number);
+        // $std_user_phone_number = '+255'.$user_phone_number;
+          User::where('id', '=', $user->id)->update(['user_phone_number' => $request->user_phone_number]);
+
+      }
+
+      if (isset($request->user_ocupation)) {
+          User::where('id', '=', $user->id)->update(['user_ocupation' => $request->user_ocupation]);
+
+      }
+
+      if (isset($request->usertype)) {
+          User::where('id', '=', $user->id)->update(['usertype' => $request->usertype]);
+
+      }
+
+      if (isset($request->user_location)) {
+          User::where('id', '=', $user->id)->update(['name' => $request->user_location]);
+
+      }
+
+
+      return redirect('/kilimofy/Admin/view-user/'.$user->id)->with('Message', 'User Information Was Updated Succesfuly !');
+    }
+
+
+    //Users list
+    Public function comfirm_delete_user(User $user)
+    {
+
+      $user = User::where('id', '=', $user->id)->get();
+      // dd($user);
+      // dd($user_list);
+      return view('AdminBladeFiles.Tables.comfirm-delete-user', compact('user'));
+    }
+
+    Public function delete_user(User $user)
+    {
+
+        if (Auth::user()->usertype == 'supper_admin') {
+          User::where('id', '=', $user->id)->delete();
+          return redirect('/kilimofy/Admin/users-action-list')->with('Message', '*The User Information Was Succesfuly Deleted!* ');
+        }
+        else {
+          return redirect()->back()->with('Message', '*You have No Mandatory to Perform This Action*');
+        }
+
+    }
+
 
     //Users list
     Public function users_action_list()

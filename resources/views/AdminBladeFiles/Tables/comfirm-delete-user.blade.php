@@ -12,13 +12,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="/admin-assets/plugins/fontawesome-free/css/all.min.css">
-<!-- DataTables -->
-<link rel="stylesheet" href="/admin-assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="/admin-assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="/admin-assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 <!-- Theme style -->
-<link rel="stylesheet" href="/admin-assets/dist/css/adminlte.min.css">
-@endsection
+<link rel="stylesheet" href="/admin-assets/dist/css/adminlte.min.css">@endsection
 
 @section('active-table', 'active')
 
@@ -63,7 +58,12 @@
                   <div class="alert alert" role = "alert">
                     <p class="lead text-center" style="color: #f33155;font-size:24px;">{{session()->get('Message')}}</p>
                   </div>
+                  @else
+                  <div class="alert alert" role = "alert">
+                    <p class="lead text-center" style="color: #f33155;font-size:24px;">Are You Sure You Want To Perform This Action ? User Information Will Be Permanet Lost !</p>
+                  </div>
                 @endif
+
                 <table id="example1" class="table table-striped">
                   <thead>
                     <tr>
@@ -130,11 +130,12 @@
                     </tr>
 
                   </tbody>
-                  <br><br>
+                  <br>
                   <tfoot>
+                    <br>
                     <tr>
-                      <td colspan="2"><a href="/kilimofy/Admin/users-action-list" class="btn btn-lg btn-info"><i class="fa fa-reply" style="color:#ff9900;"></i> Back To List</a> </td>
-                      <td colspan="2"><a href="/kilimofy/Admin/edit-user-info/{{$user->id}}" class="btn btn-lg btn-success"><i class="fa fa-edit" style="color:#ff9900;"></i> Edit User Info</a> </td>
+                      <th><a href="/kilimofy/Admin/users-action-list" class="btn btn-lg btn-primary ">Cancel</a></th>
+                      <th><a href="/kilimofy/Admin/delete-user/{{$user->id}}" class="btn btn-lg btn-danger">Delete</a> </th>
                     </tr>
                   </tfoot>
                 </table>
@@ -159,40 +160,9 @@
 <script src="/admin-assets/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="/admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- DataTables  & Plugins -->
-<script src="/admin-assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/admin-assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="/admin-assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="/admin-assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="/admin-assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="/admin-assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="/admin-assets/plugins/jszip/jszip.min.js"></script>
-<script src="/admin-assets/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="/admin-assets/plugins/pdfmake/vfs_fonts.js"></script>
-<script src="/admin-assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="/admin-assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="/admin-assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/admin-assets/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/admin-assets/dist/js/demo.js"></script>
-<!-- Page specific script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
 @endsection
 @endforeach
