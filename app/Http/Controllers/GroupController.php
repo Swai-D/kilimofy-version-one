@@ -126,6 +126,7 @@ class GroupController extends Controller
 
     public function delete_group(Group $group)
     {
+        File::delete([public_path('/Uploads/GroupProfile/'.$group->Group_Image),]);
         Group::where('id', '=', $group->id)->delete();
 
       return redirect()->back()->with('Message', 'Grupu limefutwa ! Asante,');

@@ -16,7 +16,7 @@
   <!-- code editors -->
   <link rel="stylesheet" href="/admin-assets/plugins/summernote/summernote-bs4.min.css">
   <!-- favicon -->
-
+  @yield('location-header')
   <!-- fullcalendar -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css">
   @yield('summernote-header-script')

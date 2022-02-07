@@ -144,6 +144,7 @@ Route::get('/kilimofy/test-send-message', [App\Http\Controllers\MessageControlle
 
 //******************************Bwana Shamba************************************************
 Route::get('/kilimofy/Afisa-Ugavi/home-page', [App\Http\Controllers\BwanaShambaController::class, 'Bwana_Shamba_Home_Page']);
+Route::post('/kilimofy/Afisa-Ugavi/create-event', [App\Http\Controllers\BwanaShambaController::class, 'createEvent']);
 //**************************end*************************************************
 
 

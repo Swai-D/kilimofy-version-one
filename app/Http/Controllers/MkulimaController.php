@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Stevebauman\Location\Facades\Location;
 
+use App\Models\BwanaShambaEvent;
 use App\Models\Headline;
 use App\Models\Driver;
 use App\Models\Mashine;
@@ -124,9 +125,12 @@ class MkulimaController extends Controller
       $user_location = Auth::user()->user_location;
       $user_id = Auth::user()->id;
       $bwana_shamba_list = User::where([['user_ocupation', '=', 'Bwana_Shamba'],['user_location', '=', $user_location], ['id', '!=', $user_id]])->get();
+
+      //we be changed in the future
+      $bwana_shamba_events_list = BwanaShambaEvent::paginate(5);
       // dd($bwana_shamba_list);
       $total_bwana_shamba_list = User::where([['user_ocupation', '=', 'Bwana_Shamba'],['user_location', '=', $user_location]])->count();
-      return view('UserAccountBladeFiles.Mkulima.bwana-shamba', compact('bwana_shamba_list', 'total_bwana_shamba_list', 'user_location', 'users'));
+      return view('UserAccountBladeFiles.Mkulima.bwana-shamba', compact('bwana_shamba_list', 'total_bwana_shamba_list', 'user_location', 'users', 'bwana_shamba_events_list'));
     }
 
     public function pembejeo_na_viwatilifu(Request $request)

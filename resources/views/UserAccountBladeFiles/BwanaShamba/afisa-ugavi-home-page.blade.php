@@ -1,5 +1,9 @@
 @extends('LayoutBladeFiles.app-layout')
 
+@section('location-header')
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+@endsection
+
 @section('meta-token')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
@@ -283,533 +287,7 @@
   <!-- /SECTION FILTERS BAR -->
 
   <!-- CALENDAR WIDGET -->
-  <div class="calendar-widget">
-    <!-- CALENDAR WIDGET HEADER -->
-    <div class="calendar-widget-header">
-      <!-- CALENDAR WIDGET HEADER ACTIONS -->
-      <div class="calendar-widget-header-actions">
-        <!-- SLIDER CONTROLS -->
-        <div class="slider-controls">
-          <!-- SLIDER CONTROL -->
-          <div class="slider-control left">
-            <!-- SLIDER CONTROL ICON -->
-            <svg class="slider-control-icon icon-big-arrow">
-              <use xlink:href="#svg-big-arrow"></use>
-            </svg>
-            <!-- /SLIDER CONTROL ICON -->
-          </div>
-          <!-- /SLIDER CONTROL -->
 
-          <!-- SLIDER CONTROL -->
-          <div class="slider-control right">
-            <!-- SLIDER CONTROL ICON -->
-            <svg class="slider-control-icon icon-big-arrow">
-              <use xlink:href="#svg-big-arrow"></use>
-            </svg>
-            <!-- /SLIDER CONTROL ICON -->
-          </div>
-          <!-- /SLIDER CONTROL -->
-        </div>
-        <!-- /SLIDER CONTROLS -->
-
-        <!-- CALENDAR WIDGET TITLE -->
-        <p class="calendar-widget-title">August 2019</p>
-        <!-- /CALENDAR WIDGET TITLE -->
-      </div>
-      <!-- /CALENDAR WIDGET HEADER ACTIONS -->
-
-      <!-- CALENDAR WIDGET HEADER ACTIONS -->
-      <div class="calendar-widget-header-actions">
-        <!-- VIEW ACTIONS -->
-        <div class="view-actions">
-          <!-- VIEW ACTION -->
-          <a class="view-action text-tooltip-tft-medium active" href="events.html" data-title="Monthly">
-            <!-- VIEW ACTION ICON -->
-            <svg class="view-action-icon icon-events-monthly">
-              <use xlink:href="#svg-events-monthly"></use>
-            </svg>
-            <!-- /VIEW ACTION ICON -->
-          </a>
-          <!-- /VIEW ACTION -->
-
-          <!-- VIEW ACTION -->
-          <a class="view-action text-tooltip-tft-medium" href="" data-title="Weekly">
-            <!-- VIEW ACTION ICON -->
-            <svg class="view-action-icon icon-events-weekly">
-              <use xlink:href="#svg-events-weekly"></use>
-            </svg>
-            <!-- /VIEW ACTION ICON -->
-          </a>
-          <!-- /VIEW ACTION -->
-
-          <!-- VIEW ACTION -->
-          <a class="view-action text-tooltip-tft-medium" href="" data-title="Daily">
-            <!-- VIEW ACTION ICON -->
-            <svg class="view-action-icon icon-events-daily">
-              <use xlink:href="#svg-events-daily"></use>
-            </svg>
-            <!-- /VIEW ACTION ICON -->
-          </a>
-          <!-- /VIEW ACTION -->
-        </div>
-        <!-- /VIEW ACTIONS -->
-      </div>
-      <!-- /CALENDAR WIDGET HEADER ACTIONS -->
-    </div>
-    <!-- /CALENDAR WIDGET HEADER -->
-
-    <!-- CALENDAR -->
-    <div class="calendar full">
-      <!-- CALENDAR WEEK -->
-      <div class="calendar-week">
-        <!-- CALENDAR WEEK DAY -->
-        <p class="calendar-week-day"><span class="week-day-short">Sun</span><span class="week-day-long">Sunday</span></p>
-        <!-- /CALENDAR WEEK DAY -->
-
-        <!-- CALENDAR WEEK DAY -->
-        <p class="calendar-week-day"><span class="week-day-short">Mon</span><span class="week-day-long">Monday</span></p>
-        <!-- /CALENDAR WEEK DAY -->
-
-        <!-- CALENDAR WEEK DAY -->
-        <p class="calendar-week-day"><span class="week-day-short">Tue</span><span class="week-day-long">Tuesday</span></p>
-        <!-- /CALENDAR WEEK DAY -->
-
-        <!-- CALENDAR WEEK DAY -->
-        <p class="calendar-week-day"><span class="week-day-short">Wed</span><span class="week-day-long">Wednesday</span></p>
-        <!-- /CALENDAR WEEK DAY -->
-
-        <!-- CALENDAR WEEK DAY -->
-        <p class="calendar-week-day"><span class="week-day-short">Thu</span><span class="week-day-long">Thursday</span></p>
-        <!-- /CALENDAR WEEK DAY -->
-
-        <!-- CALENDAR WEEK DAY -->
-        <p class="calendar-week-day"><span class="week-day-short">Fri</span><span class="week-day-long">Friday</span></p>
-        <!-- /CALENDAR WEEK DAY -->
-
-        <!-- CALENDAR WEEK DAY -->
-        <p class="calendar-week-day"><span class="week-day-short">Sat</span><span class="week-day-long">Saturday</span></p>
-        <!-- /CALENDAR WEEK DAY -->
-      </div>
-      <!-- /CALENDAR WEEK -->
-
-      <!-- CALENDAR DAYS -->
-      <div class="calendar-days">
-        <!-- CALENDAR DAY ROW -->
-        <div class="calendar-day-row">
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day inactive">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">29</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day inactive">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">30</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day inactive">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">31</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">1</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">2</p>
-            <!-- /CALENDAR DAY NUMBER -->
-
-            <!-- CALENDARY DAY EVENTS -->
-            <div class="calendar-day-events">
-              <!-- CALENDAR DAY EVENT -->
-              <p class="calendar-day-event primary popup-event-information-trigger"><span class="calendar-day-event-text">Dex's Birthday</span></p>
-              <!-- /CALENDAR DAY EVENT -->
-
-              <!-- CALENDAR DAY EVENT -->
-              <p class="calendar-day-event secondary popup-event-information-trigger"><span class="calendar-day-event-text">Sara's Big Stream</span></p>
-              <!-- /CALENDAR DAY EVENT -->
-
-              <!-- CALENDAR DAY EVENT -->
-              <p class="calendar-day-event secondary popup-event-information-trigger"><span class="calendar-day-event-text">Striker GO Release</span></p>
-              <!-- /CALENDAR DAY EVENT -->
-            </div>
-            <!-- /CALENDARY DAY EVENTS -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">3</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">4</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-        </div>
-        <!-- /CALENDAR DAY ROW -->
-
-        <!-- CALENDAR DAY ROW -->
-        <div class="calendar-day-row">
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">5</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">6</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day current">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">7</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">8</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">9</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">10</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">11</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-        </div>
-        <!-- /CALENDAR DAY ROW -->
-
-        <!-- CALENDAR DAY ROW -->
-        <div class="calendar-day-row">
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">12</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day active">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">13</p>
-            <!-- /CALENDAR DAY NUMBER -->
-
-            <!-- CALENDARY DAY EVENTS -->
-            <div class="calendar-day-events">
-              <!-- CALENDAR DAY EVENT -->
-              <p class="calendar-day-event secondary popup-event-information-trigger"><span class="calendar-day-event-text">Breakfast with Neko</span></p>
-              <!-- /CALENDAR DAY EVENT -->
-
-              <!-- CALENDAR DAY EVENT -->
-              <p class="calendar-day-event primary popup-event-information-trigger"><span class="calendar-day-event-text">Streaming Party</span></p>
-              <!-- /CALENDAR DAY EVENT -->
-            </div>
-            <!-- /CALENDAR DAY EVENTS -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">14</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">15</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">16</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">17</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">18</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-        </div>
-        <!-- /CALENDAR DAY ROW -->
-
-        <!-- CALENDAR DAY ROW -->
-        <div class="calendar-day-row">
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">19</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">20</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">21</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">22</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">23</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">24</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">25</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-        </div>
-        <!-- /CALENDAR DAY ROW -->
-
-        <!-- CALENDAR DAY ROW -->
-        <div class="calendar-day-row">
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">26</p>
-            <!-- /CALENDAR DAY NUMBER -->
-
-            <!-- CALENDARY DAY EVENTS -->
-            <div class="calendar-day-events">
-              <!-- CALENDAR DAY EVENT -->
-              <p class="calendar-day-event primary popup-event-information-trigger"><span class="calendar-day-event-text">CosWorld 2019 After...</span></p>
-              <!-- /CALENDAR DAY EVENT -->
-            </div>
-            <!-- /CALENDARY DAY EVENTS -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">27</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">28</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">29</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">30</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day inactive">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">1</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-
-          <!-- CALENDAR DAY -->
-          <div class="calendar-day inactive">
-            <!-- CALENDAR DAY NUMBER -->
-            <p class="calendar-day-number">2</p>
-            <!-- /CALENDAR DAY NUMBER -->
-          </div>
-          <!-- /CALENDAR DAY -->
-        </div>
-        <!-- /CALENDAR DAY ROW -->
-      </div>
-      <!-- /CALENDAR DAYS -->
-    </div>
-    <!-- /CALENDAR -->
-
-    <!-- CALENDAR EVENTS PREVIEW -->
-    <div class="calendar-events-preview">
-      <!-- CALENDAR EVENTS PREVIEW TITLE -->
-      <p class="calendar-events-preview-title">Monday, August 13th - 2019</p>
-      <!-- /CALENDAR EVENTS PREVIEW TITLE -->
-
-      <!-- CALENDAR EVENT PREVIEW LIST -->
-      <div class="calendar-event-preview-list">
-        <!-- CALENDAR EVENT PREVIEW -->
-        <div class="calendar-event-preview secondary">
-          <!-- CALENDAR EVENT PREVIEW START TIME -->
-          <div class="calendar-event-preview-start-time">
-            <!-- CALENDAR EVENT PREVIEW START TIME TITLE -->
-            <p class="calendar-event-preview-start-time-title">8:30</p>
-            <!-- /CALENDAR EVENT PREVIEW START TIME TITLE -->
-
-            <!-- CALENDAR EVENT PREVIEW START TIME TEXT -->
-            <p class="calendar-event-preview-start-time-text">AM</p>
-            <!-- /CALENDAR EVENT PREVIEW START TIME TEXT -->
-          </div>
-          <!-- /CALENDAR EVENT PREVIEW START TIME -->
-
-          <!-- CALENDAR EVENT PREVIEW INFO -->
-          <div class="calendar-event-preview-info">
-            <!-- CALENDAR EVENT PREVIEW TITLE -->
-            <p class="calendar-event-preview-title popup-event-information-trigger">Breakfast with Neko</p>
-            <!-- /CALENDAR EVENT PREVIEW TITLE -->
-
-            <!-- CALENDAR EVENT PREVIEW TEXT -->
-            <p class="calendar-event-preview-text">Hi Neko! I'm creating this event to invite you to have breakfast before work. Meet me at Coffebucks.</p>
-            <!-- /CALENDAR EVENT PREVIEW TEXT -->
-
-            <!-- CALENDAR EVENT PREVIEW TITLE -->
-            <p class="calendar-event-preview-time"><span class="bold">8:30</span> AM</p>
-            <!-- /CALENDAR EVENT PREVIEW TITLE -->
-          </div>
-          <!-- /CALENDAR EVENT PREVIEW INFO -->
-        </div>
-        <!-- /CALENDAR EVENT PREVIEW -->
-
-        <!-- CALENDAR EVENT PREVIEW -->
-        <div class="calendar-event-preview primary">
-          <!-- CALENDAR EVENT PREVIEW START TIME -->
-          <div class="calendar-event-preview-start-time">
-            <!-- CALENDAR EVENT PREVIEW START TIME TITLE -->
-            <p class="calendar-event-preview-start-time-title">10:00</p>
-            <!-- /CALENDAR EVENT PREVIEW START TIME TITLE -->
-
-            <!-- CALENDAR EVENT PREVIEW START TIME TEXT -->
-            <p class="calendar-event-preview-start-time-text">PM</p>
-            <!-- /CALENDAR EVENT PREVIEW START TIME TEXT -->
-          </div>
-          <!-- /CALENDAR EVENT PREVIEW START TIME -->
-
-          <!-- CALENDAR EVENT PREVIEW INFO -->
-          <div class="calendar-event-preview-info">
-            <!-- CALENDAR EVENT PREVIEW TITLE -->
-            <p class="calendar-event-preview-title popup-event-information-trigger">Streaming Party</p>
-            <!-- /CALENDAR EVENT PREVIEW TITLE -->
-
-            <!-- CALENDAR EVENT PREVIEW TEXT -->
-            <p class="calendar-event-preview-text">The biggest party for Twitch streamers! Come and join us at Shenron Arena.</p>
-            <!-- /CALENDAR EVENT PREVIEW TEXT -->
-
-            <!-- CALENDAR EVENT PREVIEW TITLE -->
-            <p class="calendar-event-preview-time"><span class="bold">10:00</span> PM - <span class="bold">11:30</span> PM</p>
-            <!-- /CALENDAR EVENT PREVIEW TITLE -->
-          </div>
-          <!-- /CALENDAR EVENT PREVIEW INFO -->
-        </div>
-        <!-- /CALENDAR EVENT PREVIEW -->
-      </div>
-      <!-- /CALENDAR EVENT PREVIEW LIST -->
-    </div>
-    <!-- /CALENDAR EVENTS PREVIEW -->
-  </div>
   <!-- /CALENDAR WIDGET -->
 
   <!-- SECTION HEADER -->
@@ -830,650 +308,195 @@
 
   <!-- GRID -->
   <div class="grid grid-3-3-3-3 centered">
-    <!-- EVENT PREVIEW -->
-    <div class="event-preview">
-      <!-- EVENT PREVIEW COVER -->
-      <figure class="event-preview-cover liquid">
-        <img src="/assets/img/cover/47.jpg" alt="cover-47">
-      </figure>
-      <!-- /EVENT PREVIEW COVER -->
 
-      <!-- EVENT PREVIEW INFO -->
-      <div class="event-preview-info">
-        <!-- EVENT PREVIEW INFO TOP -->
-        <div class="event-preview-info-top">
-          <!-- DATE STICKER -->
-          <div class="date-sticker">
-            <!-- DATE STICKER DAY -->
-            <p class="date-sticker-day">13</p>
-            <!-- /DATE STICKER DAY -->
+  @forelse($user_account_event_details as $event)
+  <!-- EVENT PREVIEW -->
+  <div class="event-preview">
+    <!-- EVENT PREVIEW COVER -->
+    <figure class="event-preview-cover liquid">
+      <img src="/Uploads/BwanaShambaEventCoverPage/{{$event->event_cover_photo}}" alt="cover-23">
+    </figure>
+    <!-- /EVENT PREVIEW COVER -->
 
-            <!-- DATE STICKER MONTH -->
-            <p class="date-sticker-month">Aug</p>
-            <!-- /DATE STICKER MONTH -->
-          </div>
-          <!-- /DATE STICKER -->
+    <!-- EVENT PREVIEW INFO -->
+    <div class="event-preview-info">
+      <!-- EVENT PREVIEW INFO TOP -->
+      <div class="event-preview-info-top">
+        <!-- DATE STICKER -->
+        <div class="date-sticker">
+          <!-- DATE STICKER DAY -->
+          <p class="date-sticker-day">{{date('d', strtotime($event->event_date))}}</p>
+          <!-- /DATE STICKER DAY -->
 
-          <!-- EVENT PREVIEW TITLE -->
-          <p class="event-preview-title popup-event-information-trigger">Breakfast with Neko</p>
-          <!-- /EVENT PREVIEW TITLE -->
-
-          <!-- EVENT PREVIEW TIMESTAMP -->
-          <p class="event-preview-timestamp"><span class="bold">8:30</span> AM</p>
-          <!-- /EVENT PREVIEW TIMESTAMP -->
-
-          <!-- EVENT PREVIEW TEXT -->
-          <p class="event-preview-text">Hi Neko! I'm creating this event to invite you to have breakfast before work. Meet me at Coffebucks.</p>
-          <!-- /EVENT PREVIEW TEXT -->
+          <!-- DATE STICKER MONTH -->
+          <p class="date-sticker-month">{{date('M', strtotime($event->event_date))}}</p>
+          <!-- /DATE STICKER MONTH -->
         </div>
-        <!-- /EVENT PREVIEW INFO TOP -->
+        <!-- /DATE STICKER -->
 
-        <!-- EVENT PREVIEW INFO BOTTOM -->
-        <div class="event-preview-info-bottom">
-          <!-- DECORATED TEXT -->
-          <div class="decorated-text">
-            <!-- DECORATED TEXT ICON -->
-            <svg class="decorated-text-icon icon-pin">
-              <use xlink:href="#svg-pin"></use>
-            </svg>
-            <!-- /DECORATED TEXT ICON -->
+        <!-- EVENT PREVIEW TITLE -->
+        <p class="event-preview-title popup-event-information-trigger">{{$event->event_name}}</p>
+        <!-- /EVENT PREVIEW TITLE -->
 
-            <!-- DECORATED TEXT CONTENT -->
-            <p class="decorated-text-content">Downtown Coffeebucks</p>
-            <!-- /DECORATED TEXT CONTENT -->
-          </div>
-          <!-- /DECORATED TEXT -->
+        <!-- EVENT PREVIEW TIMESTAMP -->
+        <p class="event-preview-timestamp"><span class="bold">{{$event->event_start}}</span> {{$event->event_start_time_annotation}} - <span class="bold">{{$event->event_end}}</span> {{$event->event_end_time_annotation}}</p>
+        <!-- /EVENT PREVIEW TIMESTAMP -->
 
-          <!-- META LINE -->
-          <div class="meta-line">
-            <!-- META LINE LIST -->
-            <div class="meta-line-list user-avatar-list">
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
+        <!-- EVENT PREVIEW TEXT -->
+        <p class="event-preview-text">{{$event->event_description}}</p>
+        <!-- /EVENT PREVIEW TEXT -->
+      </div>
+      <!-- /EVENT PREVIEW INFO TOP -->
 
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/05.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
+      <!-- EVENT PREVIEW INFO BOTTOM -->
+      <div class="event-preview-info-bottom">
+        <!-- DECORATED TEXT -->
+        <div class="decorated-text">
+          <!-- DECORATED TEXT ICON -->
+          <svg class="decorated-text-icon icon-pin">
+            <use xlink:href="#svg-pin"></use>
+          </svg>
+          <!-- /DECORATED TEXT ICON -->
+
+          <!-- DECORATED TEXT CONTENT -->
+          <p class="decorated-text-content">{{$event->event_location}}</p>
+          <!-- /DECORATED TEXT CONTENT -->
+        </div>
+        <!-- /DECORATED TEXT -->
+
+        <!-- META LINE -->
+        <div class="meta-line">
+          <!-- META LINE LIST -->
+          <div class="meta-line-list user-avatar-list">
+            <!-- USER AVATAR -->
+            <div class="user-avatar micro no-stats">
+              <!-- USER AVATAR BORDER -->
+              <div class="user-avatar-border">
+                <!-- HEXAGON -->
+                <div class="hexagon-22-24"></div>
+                <!-- /HEXAGON -->
               </div>
-              <!-- /USER AVATAR -->
+              <!-- /USER AVATAR BORDER -->
 
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/01.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
+              <!-- USER AVATAR CONTENT -->
+              <div class="user-avatar-content">
+                <!-- HEXAGON -->
+                <div class="hexagon-image-18-20" data-src="/assets/img/avatar/13.jpg"></div>
+                <!-- /HEXAGON -->
               </div>
-              <!-- /USER AVATAR -->
+              <!-- /USER AVATAR CONTENT -->
             </div>
-            <!-- /META LINE LIST -->
+            <!-- /USER AVATAR -->
 
-            <!-- META LINE TEXT -->
-            <p class="meta-line-text">will assist</p>
-            <!-- /META LINE TEXT -->
+            <!-- USER AVATAR -->
+            <div class="user-avatar micro no-stats">
+              <!-- USER AVATAR BORDER -->
+              <div class="user-avatar-border">
+                <!-- HEXAGON -->
+                <div class="hexagon-22-24"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR BORDER -->
+
+              <!-- USER AVATAR CONTENT -->
+              <div class="user-avatar-content">
+                <!-- HEXAGON -->
+                <div class="hexagon-image-18-20" data-src="/assets/img/avatar/12.jpg"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR CONTENT -->
+            </div>
+            <!-- /USER AVATAR -->
+
+            <!-- USER AVATAR -->
+            <div class="user-avatar micro no-stats">
+              <!-- USER AVATAR BORDER -->
+              <div class="user-avatar-border">
+                <!-- HEXAGON -->
+                <div class="hexagon-22-24"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR BORDER -->
+
+              <!-- USER AVATAR CONTENT -->
+              <div class="user-avatar-content">
+                <!-- HEXAGON -->
+                <div class="hexagon-image-18-20" data-src="/assets/img/avatar/11.jpg"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR CONTENT -->
+            </div>
+            <!-- /USER AVATAR -->
+
+            <!-- USER AVATAR -->
+            <div class="user-avatar micro no-stats">
+              <!-- USER AVATAR BORDER -->
+              <div class="user-avatar-border">
+                <!-- HEXAGON -->
+                <div class="hexagon-22-24"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR BORDER -->
+
+              <!-- USER AVATAR CONTENT -->
+              <div class="user-avatar-content">
+                <!-- HEXAGON -->
+                <div class="hexagon-image-18-20" data-src="/assets/img/avatar/03.jpg"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR CONTENT -->
+            </div>
+            <!-- /USER AVATAR -->
+
+            <!-- USER AVATAR -->
+            <div class="user-avatar micro no-stats">
+              <!-- USER AVATAR BORDER -->
+              <div class="user-avatar-border">
+                <!-- HEXAGON -->
+                <div class="hexagon-22-24"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR BORDER -->
+
+              <!-- USER AVATAR CONTENT -->
+              <div class="user-avatar-content">
+                <!-- HEXAGON -->
+                <div class="hexagon-image-18-20" data-src="/assets/img/avatar/04.jpg"></div>
+                <!-- /HEXAGON -->
+              </div>
+              <!-- /USER AVATAR CONTENT -->
+            </div>
+            <!-- /USER AVATAR -->
           </div>
-          <!-- /META LINE -->
+          <!-- /META LINE LIST -->
 
+          <!-- META LINE TEXT -->
+          <p class="meta-line-text">+17 will assist</p>
+          <!-- /META LINE TEXT -->
+        </div>
+        <!-- /META LINE -->
+        <br>
+        <div class="user-preview-actions">
           <!-- BUTTON -->
-          <p class="button white white-tertiary">Remove from Calendar</p>
+          <a class="button secondary full" style="color:white;  margin:4px;">Edit Event</a>
           <!-- /BUTTON -->
 
-        </div>
-        <!-- /EVENT PREVIEW INFO BOTTOM -->
-      </div>
-      <!-- /EVENT PREVIEW INFO -->
-    </div>
-    <!-- /EVENT PREVIEW -->
-
-    <!-- EVENT PREVIEW -->
-    <div class="event-preview">
-      <!-- EVENT PREVIEW COVER -->
-      <figure class="event-preview-cover liquid">
-        <img src="/assets/img/cover/23.jpg" alt="cover-23">
-      </figure>
-      <!-- /EVENT PREVIEW COVER -->
-
-      <!-- EVENT PREVIEW INFO -->
-      <div class="event-preview-info">
-        <!-- EVENT PREVIEW INFO TOP -->
-        <div class="event-preview-info-top">
-          <!-- DATE STICKER -->
-          <div class="date-sticker">
-            <!-- DATE STICKER DAY -->
-            <p class="date-sticker-day">13</p>
-            <!-- /DATE STICKER DAY -->
-
-            <!-- DATE STICKER MONTH -->
-            <p class="date-sticker-month">Aug</p>
-            <!-- /DATE STICKER MONTH -->
-          </div>
-          <!-- /DATE STICKER -->
-
-          <!-- EVENT PREVIEW TITLE -->
-          <p class="event-preview-title popup-event-information-trigger">Streaming Party</p>
-          <!-- /EVENT PREVIEW TITLE -->
-
-          <!-- EVENT PREVIEW TIMESTAMP -->
-          <p class="event-preview-timestamp"><span class="bold">10:00</span> PM - <span class="bold">11:30</span> PM</p>
-          <!-- /EVENT PREVIEW TIMESTAMP -->
-
-          <!-- EVENT PREVIEW TEXT -->
-          <p class="event-preview-text">The biggest party for Twitch streamers! Come and join us at Shenron Arena.</p>
-          <!-- /EVENT PREVIEW TEXT -->
-        </div>
-        <!-- /EVENT PREVIEW INFO TOP -->
-
-        <!-- EVENT PREVIEW INFO BOTTOM -->
-        <div class="event-preview-info-bottom">
-          <!-- DECORATED TEXT -->
-          <div class="decorated-text">
-            <!-- DECORATED TEXT ICON -->
-            <svg class="decorated-text-icon icon-pin">
-              <use xlink:href="#svg-pin"></use>
-            </svg>
-            <!-- /DECORATED TEXT ICON -->
-
-            <!-- DECORATED TEXT CONTENT -->
-            <p class="decorated-text-content">Shenron Arena</p>
-            <!-- /DECORATED TEXT CONTENT -->
-          </div>
-          <!-- /DECORATED TEXT -->
-
-          <!-- META LINE -->
-          <div class="meta-line">
-            <!-- META LINE LIST -->
-            <div class="meta-line-list user-avatar-list">
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/09.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/08.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/12.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/16.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/06.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-            </div>
-            <!-- /META LINE LIST -->
-
-            <!-- META LINE TEXT -->
-            <p class="meta-line-text">+31 will assist</p>
-            <!-- /META LINE TEXT -->
-          </div>
-          <!-- /META LINE -->
-
           <!-- BUTTON -->
-          <p class="button white white-tertiary">Remove from Calendar</p>
+          <a class="button white white-tertiary" style="color:white; background-color: red; margin:4px;">Remove Event</a>
           <!-- /BUTTON -->
         </div>
-        <!-- /EVENT PREVIEW INFO BOTTOM -->
+
       </div>
-      <!-- /EVENT PREVIEW INFO -->
+      <!-- /EVENT PREVIEW INFO BOTTOM -->
+      <br>
     </div>
-    <!-- /EVENT PREVIEW -->
+    <!-- /EVENT PREVIEW INFO -->
+  </div>
+  <!-- /EVENT PREVIEW -->
+  @empty
+    <p>Hellow</p>
+  @endforelse
 
-    <!-- EVENT PREVIEW -->
-    <div class="event-preview">
-      <!-- EVENT PREVIEW COVER -->
-      <figure class="event-preview-cover liquid">
-        <img src="/assets/img/cover/33.jpg" alt="cover-33">
-      </figure>
-      <!-- /EVENT PREVIEW COVER -->
-
-      <!-- EVENT PREVIEW INFO -->
-      <div class="event-preview-info">
-        <!-- EVENT PREVIEW INFO TOP -->
-        <div class="event-preview-info-top">
-          <!-- DATE STICKER -->
-          <div class="date-sticker">
-            <!-- DATE STICKER DAY -->
-            <p class="date-sticker-day">26</p>
-            <!-- /DATE STICKER DAY -->
-
-            <!-- DATE STICKER MONTH -->
-            <p class="date-sticker-month">Aug</p>
-            <!-- /DATE STICKER MONTH -->
-          </div>
-          <!-- /DATE STICKER -->
-
-          <!-- EVENT PREVIEW TITLE -->
-          <p class="event-preview-title popup-event-information-trigger">CosWorld 2019 After Party</p>
-          <!-- /EVENT PREVIEW TITLE -->
-
-          <!-- EVENT PREVIEW TIMESTAMP -->
-          <p class="event-preview-timestamp"><span class="bold">11:00</span> PM</p>
-          <!-- /EVENT PREVIEW TIMESTAMP -->
-
-          <!-- EVENT PREVIEW TEXT -->
-          <p class="event-preview-text">Join us at the CosWorld after party! We'll be eating, drinking and having a great time exchanging experiences...</p>
-          <!-- /EVENT PREVIEW TEXT -->
-        </div>
-        <!-- /EVENT PREVIEW INFO TOP -->
-
-        <!-- EVENT PREVIEW INFO BOTTOM -->
-        <div class="event-preview-info-bottom">
-          <!-- DECORATED TEXT -->
-          <div class="decorated-text">
-            <!-- DECORATED TEXT ICON -->
-            <svg class="decorated-text-icon icon-pin">
-              <use xlink:href="#svg-pin"></use>
-            </svg>
-            <!-- /DECORATED TEXT ICON -->
-
-            <!-- DECORATED TEXT CONTENT -->
-            <p class="decorated-text-content">CosWorld Arena</p>
-            <!-- /DECORATED TEXT CONTENT -->
-          </div>
-          <!-- /DECORATED TEXT -->
-
-          <!-- META LINE -->
-          <div class="meta-line">
-            <!-- META LINE LIST -->
-            <div class="meta-line-list user-avatar-list">
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/06.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/07.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/02.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/10.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/05.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-            </div>
-            <!-- /META LINE LIST -->
-
-            <!-- META LINE TEXT -->
-            <p class="meta-line-text">+24 will assist</p>
-            <!-- /META LINE TEXT -->
-          </div>
-          <!-- /META LINE -->
-
-          <!-- BUTTON -->
-          <p class="button white white-tertiary">Remove from Calendar</p>
-          <!-- /BUTTON -->
-        </div>
-        <!-- /EVENT PREVIEW INFO BOTTOM -->
-      </div>
-      <!-- /EVENT PREVIEW INFO -->
-    </div>
-    <!-- /EVENT PREVIEW -->
-
-    <!-- EVENT PREVIEW -->
-    <div class="event-preview">
-      <!-- EVENT PREVIEW COVER -->
-      <figure class="event-preview-cover liquid">
-        <img src="/assets/img/cover/40.jpg" alt="cover-40">
-      </figure>
-      <!-- /EVENT PREVIEW COVER -->
-
-      <!-- EVENT PREVIEW INFO -->
-      <div class="event-preview-info">
-        <!-- EVENT PREVIEW INFO TOP -->
-        <div class="event-preview-info-top">
-          <!-- DATE STICKER -->
-          <div class="date-sticker">
-            <!-- DATE STICKER DAY -->
-            <p class="date-sticker-day">9</p>
-            <!-- /DATE STICKER DAY -->
-
-            <!-- DATE STICKER MONTH -->
-            <p class="date-sticker-month">Sep</p>
-            <!-- /DATE STICKER MONTH -->
-          </div>
-          <!-- /DATE STICKER -->
-
-          <!-- EVENT PREVIEW TITLE -->
-          <p class="event-preview-title popup-event-information-trigger">Artistic Painting Course</p>
-          <!-- /EVENT PREVIEW TITLE -->
-
-          <!-- EVENT PREVIEW TIMESTAMP -->
-          <p class="event-preview-timestamp"><span class="bold">6:00</span> PM</p>
-          <!-- /EVENT PREVIEW TIMESTAMP -->
-
-          <!-- EVENT PREVIEW TEXT -->
-          <p class="event-preview-text">Come to have a great time with us at our artistic painting course! Begginers and experts welcome!</p>
-          <!-- /EVENT PREVIEW TEXT -->
-        </div>
-        <!-- /EVENT PREVIEW INFO TOP -->
-
-        <!-- EVENT PREVIEW INFO BOTTOM -->
-        <div class="event-preview-info-bottom">
-          <!-- DECORATED TEXT -->
-          <div class="decorated-text">
-            <!-- DECORATED TEXT ICON -->
-            <svg class="decorated-text-icon icon-pin">
-              <use xlink:href="#svg-pin"></use>
-            </svg>
-            <!-- /DECORATED TEXT ICON -->
-
-            <!-- DECORATED TEXT CONTENT -->
-            <p class="decorated-text-content">Xavier's Art Center</p>
-            <!-- /DECORATED TEXT CONTENT -->
-          </div>
-          <!-- /DECORATED TEXT -->
-
-          <!-- META LINE -->
-          <div class="meta-line">
-            <!-- META LINE LIST -->
-            <div class="meta-line-list user-avatar-list">
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/13.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/12.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/11.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/03.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-
-              <!-- USER AVATAR -->
-              <div class="user-avatar micro no-stats">
-                <!-- USER AVATAR BORDER -->
-                <div class="user-avatar-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-22-24"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR BORDER -->
-
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/assets/img/avatar/04.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-            </div>
-            <!-- /META LINE LIST -->
-
-            <!-- META LINE TEXT -->
-            <p class="meta-line-text">+17 will assist</p>
-            <!-- /META LINE TEXT -->
-          </div>
-          <!-- /META LINE -->
-
-          <!-- BUTTON -->
-          <p class="button white white-tertiary">Remove from Calendar</p>
-          <!-- /BUTTON -->
-        </div>
-        <!-- /EVENT PREVIEW INFO BOTTOM -->
-      </div>
-      <!-- /EVENT PREVIEW INFO -->
-    </div>
-    <!-- /EVENT PREVIEW -->
   </div>
   <!-- /GRID -->
 </div>
@@ -1719,7 +742,8 @@
   <!-- /POPUP BOX TITLE -->
 
   <!-- FORM -->
-  <form class="form">
+  <form class="form" action="/kilimofy/Afisa-Ugavi/create-event" method="post" enctype="multipart/form-data">
+    @csrf
     <!-- FORM ROW -->
     <div class="form-row">
       <!-- FORM ITEM -->
@@ -1728,10 +752,8 @@
         <div class="form-select">
           <label for="event-category">Category</label>
           <select id="event-category" name="event_category">
-            <option value="0">Big Events</option>
-            <option value="1">Small Events</option>
-            <option value="2">Gaming Events</option>
-            <option value="3">Cosplay Events</option>
+            <option value="Small Events">Small Events</option>
+            <option value="Big Events">Big Events</option>
           </select>
           <!-- FORM SELECT ICON -->
           <svg class="form-select-icon icon-small-arrow">
@@ -1769,7 +791,7 @@
           <!-- FORM INPUT -->
           <div class="form-input small">
             <label for="event-location">Event Location</label>
-            <input type="text" id="event-location" name="event_location">
+            <input type="text" id="pac-input" name="event_location">
           </div>
           <!-- /FORM INPUT -->
 
@@ -1793,8 +815,7 @@
         <div class="form-input-decorated">
           <!-- FORM INPUT -->
           <div class="form-input small">
-            <label for="event-date">Event Date</label>
-            <input type="text" id="event-date" name="event_date">
+            <input type="date" id="event-date" name="event_date">
           </div>
           <!-- /FORM INPUT -->
 
@@ -1817,15 +838,15 @@
         <!-- FORM SELECT -->
         <div class="form-select">
           <label for="event-time-start">Start Time</label>
-          <select id="event-time-start" name="event_time-start">
-            <option value="0">1:00</option>
-            <option value="1">2:00</option>
-            <option value="2">3:00</option>
-            <option value="3">4:00</option>
-            <option value="4">5:00</option>
-            <option value="5">6:00</option>
-            <option value="6">7:00</option>
-            <option value="7">8:00</option>
+          <select id="event-time-start" name="event_start">
+            <option value="1:00">1:00</option>
+            <option value="2:00">2:00</option>
+            <option value="3:00">3:00</option>
+            <option value="4:00">4:00</option>
+            <option value="5:00">5:00</option>
+            <option value="6:00">6:00</option>
+            <option value="7:00">7:00</option>
+            <option value="8:00">8:00</option>
           </select>
           <!-- FORM SELECT ICON -->
           <svg class="form-select-icon icon-small-arrow">
@@ -1838,9 +859,53 @@
         <!-- FORM SELECT -->
         <div class="form-select">
           <label for="event-time-annotation">AM - PM</label>
-          <select id="event-time-annotation" name="event_time-annotation">
-            <option value="0">PM</option>
-            <option value="1">AM</option>
+          <select id="event-time-annotation" name="event_start_time_annotation">
+            <option value="PM">PM</option>
+            <option value="AM">AM</option>
+          </select>
+          <!-- FORM SELECT ICON -->
+          <svg class="form-select-icon icon-small-arrow">
+            <use xlink:href="#svg-small-arrow"></use>
+          </svg>
+          <!-- /FORM SELECT ICON -->
+        </div>
+        <!-- /FORM SELECT -->
+      </div>
+      <!-- /FORM ITEM -->
+    </div>
+    <!-- /FORM ROW -->
+
+    <!-- FORM ROW -->
+    <div class="form-row">
+      <!-- FORM ITEM -->
+      <div class="form-item split join-on-mobile medium">
+        <!-- FORM SELECT -->
+        <div class="form-select">
+          <label for="event-time-start">End Time</label>
+          <select id="event-time-start" name="event_end">
+            <option value="1:00">1:00</option>
+            <option value="2:00">2:00</option>
+            <option value="3:00">3:00</option>
+            <option value="4:00">4:00</option>
+            <option value="5:00">5:00</option>
+            <option value="6:00">6:00</option>
+            <option value="7:00">7:00</option>
+            <option value="8:00">8:00</option>
+          </select>
+          <!-- FORM SELECT ICON -->
+          <svg class="form-select-icon icon-small-arrow">
+            <use xlink:href="#svg-small-arrow"></use>
+          </svg>
+          <!-- /FORM SELECT ICON -->
+        </div>
+        <!-- /FORM SELECT -->
+
+        <!-- FORM SELECT -->
+        <div class="form-select">
+          <label for="event-time-annotation">AM - PM</label>
+          <select id="event-time-annotation" name="event_end_time_annotation">
+            <option value="PM">PM</option>
+            <option value="AM">AM</option>
           </select>
           <!-- FORM SELECT ICON -->
           <svg class="form-select-icon icon-small-arrow">
@@ -1861,6 +926,7 @@
         <!-- CHECKBOX WRAP -->
         <div class="checkbox-wrap">
           <input type="checkbox" id="event-add-end-time" name="event_add-end-time">
+          <input type="hidden" id="event-add-end-time" name="user_id" value="{{Auth::user()->id}}">
           <!-- CHECKBOX BOX -->
           <div class="checkbox-box">
             <!-- ICON CROSS -->
@@ -1900,9 +966,9 @@
         <!-- FORM INPUT DECORATED -->
         <div class="form-input-decorated">
           <!-- FORM INPUT -->
+          <label for="event-cover-photo">Event Cover Photo</label>
           <div class="form-input small">
-            <label for="event-cover-photo">Event Cover Photo</label>
-            <input type="text" id="event-cover-photo" name="event_cover_photo">
+            <input type="file" id="event-cover-photo" name="event_cover_photo">
           </div>
           <!-- /FORM INPUT -->
 
@@ -2071,7 +1137,7 @@
     <!-- POPUP BOX ACTIONS -->
     <div class="popup-box-actions medium void">
       <!-- POPUP BOX ACTION -->
-      <button class="popup-box-action full button secondary">Create Event!</button>
+      <button type="submit" class="popup-box-action full button secondary">Create Event!</button>
       <!-- /POPUP BOX ACTION -->
     </div>
     <!-- /POPUP BOX ACTIONS -->
@@ -2079,16 +1145,7 @@
   <!-- /FORM -->
 </div>
 <!-- /POPUP BOX -->
+@section('location-footer')
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initAutocomplete&libraries=places&v=weekly" async></script>
 
-<script type="text/javascript">
-
-$(document).ready(function() {
-  $.ajaxSetup(
-    headers:{
-      'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content');
-    }
-  );
-
-  var calendar = $('#calendar-widget').fullcalendar();
-});
-</script>
+@endsection

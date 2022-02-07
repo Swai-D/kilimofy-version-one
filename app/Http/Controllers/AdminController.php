@@ -142,12 +142,12 @@ class AdminController extends Controller
       }
 
       if (isset($request->user_location)) {
-          User::where('id', '=', $user->id)->update(['name' => $request->user_location]);
+          User::where('id', '=', $user->id)->update(['user_location' => $request->user_location]);
 
       }
 
 
-      return redirect('/kilimofy/Admin/view-user/'.$user->id)->with('Message', 'User Information Was Updated Succesfuly !');
+      // return redirect()->back()->with('Message', 'User Information Was Updated Succesfuly !');
     }
 
 

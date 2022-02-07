@@ -15,14 +15,17 @@ class CreateBwanaShambaEventsTable extends Migration
     {
         Schema::create('bwana_shamba_events', function (Blueprint $table) {
             $table->id();
-            $table->string('event_category');
+            $table->string('user_id');
+            $table->string('event_category')->default('Small Events');
             $table->string('event_name');
             $table->string('event_location');
-            $table->string('event_date');
-            $table->date('event_start');
-            $table->date('event_end');
+            $table->datetime('event_date');
+            $table->string('event_start');
+            $table->string('event_start_time_annotation');
+            $table->string('event_end');
+            $table->string('event_end_time_annotation');
             $table->string('event_description');
-            $table->string('event_cover_photo')->default('event.jpg');
+            $table->string('event_cover_photo')->default('event_cover_photo.jpg');
             $table->timestamps();
         });
     }

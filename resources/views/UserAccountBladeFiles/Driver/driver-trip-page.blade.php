@@ -413,14 +413,24 @@
 
             <!-- FORM ROW -->
             <div class="form-row split">
+            
               <!-- FORM ITEM -->
               <div class="form-item">
-                <!-- FORM SELECT -->
-                <div class="form-select">
-                  <label for="group-tagline">Tarehe</label>
-                  <input type="date" id="group-tagline" name="Date" value="{{old('Date')}}">
+                <!-- FORM INPUT DECORATED -->
+                <div class="form-input-decorated">
+                  <!-- FORM INPUT -->
+                  <div class="form-input small">
+                    <input type="date" id="event-date" name="Date" value="{{old('Date')}}">
+                  </div>
+                  <!-- /FORM INPUT -->
+
+                  <!-- FORM INPUT ICON -->
+                  <svg class="form-input-icon icon-events">
+                    <use xlink:href="#svg-events"></use>
+                  </svg>
+                  <!-- /FORM INPUT ICON -->
                 </div>
-                <!-- /FORM SELECT -->
+                <!-- /FORM INPUT DECORATED -->
                   {{$errors->first('Date')}}
               </div>
               <!-- /FORM ITEM -->
