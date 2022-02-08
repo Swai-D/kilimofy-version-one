@@ -315,7 +315,7 @@
       <!-- /PROFILE HEADER INFO ACTION -->
 
       <!-- PROFILE HEADER INFO ACTION -->
-      <p class="profile-header-info-action button primary"><span class="hide-text-mobile">Send</span> Message</p>
+      <a href="/Kilimofy-Messenger" class="profile-header-info-action button primary"><span class="hide-text-mobile">Send</span> Message</a>
       <!-- /PROFILE HEADER INFO ACTION -->
     </div>
     @endif
