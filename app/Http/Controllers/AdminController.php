@@ -147,7 +147,13 @@ class AdminController extends Controller
       }
 
 
-      // return redirect()->back()->with('Message', 'User Information Was Updated Succesfuly !');
+      if (isset($request->isVerified)) {
+          User::where('id', '=', $user->id)->update(['isVerified' => $request->isVerified]);
+
+      }
+
+
+      return redirect()->back()->with('Message', 'User Information Was Updated Succesfuly !');
     }
 
 

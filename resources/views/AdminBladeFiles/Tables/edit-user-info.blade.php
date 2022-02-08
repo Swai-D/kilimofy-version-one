@@ -139,6 +139,19 @@
 
 
                       <tr>
+                        <td>6.</td>
+                        <td>Verify</td>
+                        <td colspan="2">
+                          <select name="isVerified" class="form-control select2" style="width: 100%;">
+                            <option value="0" {{ $user->isVerified == false ? 'selected' : '' }}>False</option>
+                            <option value="1" {{ $user->isVerified == true ? 'selected' : '' }}>True</option>
+                          </select>
+                        </td>
+                      </tr>
+
+
+
+                      <tr>
                         <td>7.</td>
                         <td>Join</td>
                         <td>{{$user->created_at}}</td>
