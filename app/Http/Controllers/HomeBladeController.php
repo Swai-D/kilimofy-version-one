@@ -12,6 +12,7 @@ use App\Models\Comment;
 use App\Models\Mashine;
 use App\Models\Reply;
 use App\Models\Item;
+use App\Models\Blog;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Place;
