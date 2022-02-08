@@ -3,6 +3,8 @@
 @section('content-parent', 'Users')
 @section('content-details', 'All Users')
 @section('admin-content')
+
+
 <!-- Container-fluid starts-->
 <div class="container-fluid product-wrapper">
   <div class="product-grid">

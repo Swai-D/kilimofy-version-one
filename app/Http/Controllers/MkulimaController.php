@@ -299,9 +299,11 @@ class MkulimaController extends Controller
       $user_location = Auth::user()->user_location;
       $user_id = Auth::user()->id;
       $mtaalam_list = User::where([['user_ocupation', '=', 'Mtaalam'],['id', '!=', $user_id]])->get();
+      $blogs = Blog::paginate(3);
+
       // dd($bwana_shamba_list);
       $total_mtaalam_list = User::where([['user_ocupation', '=', 'Mtaalam'],['id', '!=', $user_id]])->count();
-      return view('UserAccountBladeFiles.Mkulima.mtaalam-wa-kilimo', compact('mtaalam_list', 'total_mtaalam_list', 'user_location', 'users'));
+      return view('UserAccountBladeFiles.Mkulima.mtaalam-wa-kilimo', compact('mtaalam_list', 'total_mtaalam_list', 'user_location', 'users', 'blogs'));
     }
 
 

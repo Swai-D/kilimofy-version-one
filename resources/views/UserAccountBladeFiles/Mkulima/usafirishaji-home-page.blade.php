@@ -35,7 +35,7 @@
           <div class="form-item split medium">
             <!-- FORM SELECT -->
             <div class="form-select">
-              <label for="rating-reason">Akauti Mpya</label>
+              <label for="rating-reason">Kutoka</label>
               <select class="for" name="kutoka">
                 <option value="" selected disabled>Mkoa &amp; Wilaya ? </option>
 
@@ -55,7 +55,7 @@
 
             <!-- FORM SELECT -->
             <div class="form-select">
-              <label for="rating-reason">Akauti Mpya</label>
+              <label for="rating-reason">Kwenda</label>
               <select class="for" name="kwenda">
                 <option value="" selected disabled>Mkoa &amp; Wilaya ? </option>
 
