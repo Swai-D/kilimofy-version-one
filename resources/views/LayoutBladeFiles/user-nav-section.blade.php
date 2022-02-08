@@ -115,17 +115,17 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item @yield('store-menu-active')" href="/kilimofy/UserAccount/user_store_page/{{$user->id}}-{{$user->name}}'s-Store-in-Kilimofy-Platform">
+    <!-- <a class="section-menu-item @yield('store-menu-active')" href="/kilimofy/UserAccount/user_store_page/{{$user->id}}-{{$user->name}}'s-Store-in-Kilimofy-Platform"> -->
       <!-- SECTION MENU ITEM ICON -->
-      <svg class="section-menu-item-icon icon-store">
-        <use xlink:href="#svg-store"></use>
-      </svg>
+      <!-- <svg class="section-menu-item-icon icon-store"> -->
+        <!-- <use xlink:href="#svg-store"></use> -->
+      <!-- </svg> -->
       <!-- /SECTION MENU ITEM ICON -->
 
       <!-- SECTION MENU ITEM TEXT -->
-      <p class="section-menu-item-text">Store</p>
+      <!-- <p class="section-menu-item-text">Store</p> -->
       <!-- /SECTION MENU ITEM TEXT -->
-    </a>
+    <!-- </a> -->
 
   </div>
   <!-- /SECTION MENU -->
