@@ -26,68 +26,75 @@
       </div>
       <!-- /SECTION HEADER -->
 
-      <!-- SECTION FILTERS BAR -->
-      <div class="section-filters-bar v2">
-        <!-- FORM -->
-        <form class="form" action="/kilimofy/Usafirisaji/Tafuta-Usafiri" method="post">
-          @csrf
-          <!-- FORM ITEM -->
-          <div class="form-item split medium">
-            <!-- FORM SELECT -->
-            <div class="form-select">
-              <label for="rating-reason">Kutoka</label>
-              <select class="for" name="kutoka">
-                <option value="" selected disabled>Mkoa &amp; Wilaya ? </option>
+    @if(count($trip) > 0 )
+    <!-- SECTION FILTERS BAR -->
+    <div class="section-filters-bar v2">
+      <!-- FORM -->
+      <form class="form" action="/kilimofy/Usafirisaji/Tafuta-Usafiri" method="post">
+        @csrf
+        <!-- FORM ITEM -->
+        <div class="form-item split medium">
+          <!-- FORM SELECT -->
+          <div class="form-select">
+            <label for="rating-reason">Kutoka</label>
+            <select class="for" name="kutoka">
+              <option value="" selected disabled>Mkoa &amp; Wilaya ? </option>
 
-                @foreach($places as $place)
-                  <option value="{{$place->Region}}, {{$place->District}}">{{$place->Region}} ({{$place->District}}) </option>
-                @endforeach
+              @foreach($places as $place)
+                <option value="{{$place->Region}}, {{$place->District}}">{{$place->Region}} ({{$place->District}}) </option>
+              @endforeach
 
-              </select>
-              <!-- FORM SELECT ICON -->
-              <svg class="form-select-icon icon-small-arrow">
-                <use xlink:href="#svg-small-arrow"></use>
-              </svg>
-              <!-- /FORM SELECT ICON -->
-                {{$errors->first('kutoka')}}
-            </div>
-            <!-- /FORM SELECT -->
-
-            <!-- FORM SELECT -->
-            <div class="form-select">
-              <label for="rating-reason">Kwenda</label>
-              <select class="for" name="kwenda">
-                <option value="" selected disabled>Mkoa &amp; Wilaya ? </option>
-
-                @foreach($places as $place)
-                  <option value="{{$place->Region}}, {{$place->District}}">{{$place->Region}} ({{$place->District}}) </option>
-                @endforeach
-
-              </select>
-              <!-- FORM SELECT ICON -->
-              <svg class="form-select-icon icon-small-arrow">
-                <use xlink:href="#svg-small-arrow"></use>
-              </svg>
-              <!-- /FORM SELECT ICON -->
-                {{$errors->first('kwenda')}}
-            </div>
-            <!-- /FORM SELECT -->
-
-            <!-- FORM SELECT -->
-            <div class="form-select">
-            </div>
-            <!-- /FORM SELECT -->
-            <!-- /FORM SELECT -->
-
-            <!-- BUTTON -->
-            <button type="submit" class="button secondary">Tafuta</button>
-            <!-- /BUTTON -->
+            </select>
+            <!-- FORM SELECT ICON -->
+            <svg class="form-select-icon icon-small-arrow">
+              <use xlink:href="#svg-small-arrow"></use>
+            </svg>
+            <!-- /FORM SELECT ICON -->
+              {{$errors->first('kutoka')}}
           </div>
-          <!-- /FORM ITEM -->
-        </form>
-        <!-- /FORM -->
-      </div>
-      <!-- /SECTION FILTERS BAR -->
+          <!-- /FORM SELECT -->
+
+          <!-- FORM SELECT -->
+          <div class="form-select">
+            <label for="rating-reason">Kwenda</label>
+            <select class="for" name="kwenda">
+              <option value="" selected disabled>Mkoa &amp; Wilaya ? </option>
+
+              @foreach($places as $place)
+                <option value="{{$place->Region}}, {{$place->District}}">{{$place->Region}} ({{$place->District}}) </option>
+              @endforeach
+
+            </select>
+            <!-- FORM SELECT ICON -->
+            <svg class="form-select-icon icon-small-arrow">
+              <use xlink:href="#svg-small-arrow"></use>
+            </svg>
+            <!-- /FORM SELECT ICON -->
+              {{$errors->first('kwenda')}}
+          </div>
+          <!-- /FORM SELECT -->
+
+          <!-- FORM SELECT -->
+          <div class="form-select">
+          </div>
+          <!-- /FORM SELECT -->
+          <!-- /FORM SELECT -->
+
+          <!-- BUTTON -->
+          <button type="submit" class="button secondary">Tafuta</button>
+          <!-- /BUTTON -->
+        </div>
+        <!-- /FORM ITEM -->
+      </form>
+      <!-- /FORM -->
+    </div>
+    <!-- /SECTION FILTERS BAR -->
+    @else
+    <br>
+    <br>
+    <p class="lead text-danger text-center"> Hakuna Safari iliyoandaliwa na Dereva Kwa Sasa!</p>
+
+    @endif
 
 
 
