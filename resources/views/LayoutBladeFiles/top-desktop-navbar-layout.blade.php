@@ -77,7 +77,7 @@
   <div class="header-actions search-bar">
     <!-- INTERACTIVE INPUT -->
     <div class="interactive-input dark">
-      <input type="text" id="search-main" name="search_main" placeholder="Search here for people or groups">
+      <input type="text" id="search-main" name="search_main" placeholder="Search here for people or post">
       <!-- INTERACTIVE INPUT ICON WRAP -->
       <div class="interactive-input-icon-wrap">
         <!-- INTERACTIVE INPUT ICON -->
@@ -252,53 +252,7 @@
       </div>
       <!-- /DROPDOWN BOX LIST -->
 
-      <!-- DROPDOWN BOX CATEGORY -->
-      <div class="dropdown-box-category">
-        <!-- DROPDOWN BOX CATEGORY TITLE -->
-        <p class="dropdown-box-category-title">Marketplace</p>
-        <!-- /DROPDOWN BOX CATEGORY TITLE -->
-      </div>
-      <!-- /DROPDOWN BOX CATEGORY -->
 
-      <!-- DROPDOWN BOX LIST -->
-      <div class="dropdown-box-list small no-scroll">
-        <!-- DROPDOWN BOX LIST ITEM -->
-        <a class="dropdown-box-list-item" href="marketplace-product.html">
-          <!-- USER STATUS -->
-          <div class="user-status no-padding-top">
-            <!-- USER STATUS AVATAR -->
-            <div class="user-status-avatar">
-              <!-- PICTURE -->
-              <figure class="picture small round liquid">
-                <img src="/assets/img/marketplace/items/07.jpg" alt="item-07">
-              </figure>
-              <!-- /PICTURE -->
-            </div>
-            <!-- /USER STATUS AVATAR -->
-
-            <!-- USER STATUS TITLE -->
-            <p class="user-status-title"><span class="bold">Mercenaries White Frame</span></p>
-            <!-- /USER STATUS TITLE -->
-
-            <!-- USER STATUS TEXT -->
-            <p class="user-status-text">By Neko Bebop</p>
-            <!-- /USER STATUS TEXT -->
-
-            <!-- USER STATUS ICON -->
-            <div class="user-status-icon">
-              <!-- ICON MARKETPLACE -->
-              <svg class="icon-marketplace">
-                <use xlink:href="#svg-marketplace"></use>
-              </svg>
-              <!-- /ICON MARKETPLACE -->
-            </div>
-            <!-- /USER STATUS ICON -->
-          </div>
-          <!-- /USER STATUS -->
-        </a>
-        <!-- /DROPDOWN BOX LIST ITEM -->
-      </div>
-      <!-- /DROPDOWN BOX LIST -->
     </div>
     <!-- /DROPDOWN BOX -->
   </div>
@@ -846,3 +800,21 @@
 <!-- POPUP BOX -->
 @include('LayoutBladeFiles.change-profile-form')
 <!-- /POPUP BOX -->
+
+<script type="text/javascript">
+  $('#search-main').on('keyup',function(){
+  $value=$(this).val();
+  $.ajax({
+    type : 'get',
+    url : '{{URL::to('search')}}',
+    data:{'search':$value},
+    success:function(data){
+    $('tbody').html(data);
+    }
+    });
+  })
+</script>
+
+<script type="text/javascript">
+$.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+</script>

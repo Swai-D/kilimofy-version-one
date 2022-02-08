@@ -24,13 +24,13 @@
       <!-- LOGO -->
       <div class="logo">
         <!-- ICON LOGO VIKINGER -->
-        <img src="/assets/img/logo/logo_white.png" alt="" style="width:30%;height:30%;">
+        <img src="/assets/img/logo/logo_white.png" alt="" style="width:20%;height:20%;">
         <!-- /ICON LOGO VIKINGER -->
       </div>
       <!-- /LOGO -->
 
       <!-- LANDING INFO PRETITLE -->
-      <h2 class="landing-info-pretitle">Karibu</h2>
+      <h2 class="landing-info-pretitle">Welcome</h2>
       <!-- /LANDING INFO PRETITLE -->
 
       <!-- LANDING INFO TITLE -->
@@ -38,7 +38,7 @@
       <!-- /LANDING INFO TITLE -->
 
       <!-- LANDING INFO TEXT -->
-      <p class="landing-info-text">Ulimwengu wa kidigitali</p>
+      <p class="landing-info-text">In Digital World of Agriculture</p>
       <!-- /LANDING INFO TEXT -->
 
       <!-- TAB SWITCH -->
@@ -99,7 +99,7 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="login-password">Neno la siri</label>
+                <label for="login-password">Password</label>
                 <input type="password" id="login-password" name="password">
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('password')}}
@@ -127,7 +127,7 @@
                   <!-- /ICON CROSS -->
                 </div>
                 <!-- /CHECKBOX BOX -->
-                <label for="login-remember">Weka Kumbukumbu</label>
+                <label for="login-remember">Remember Token</label>
               </div>
               <!-- /CHECKBOX WRAP -->
             </div>
@@ -136,7 +136,7 @@
             <!-- FORM ITEM -->
             <div class="form-item">
               <!-- FORM LINK -->
-              <a class="form-link" href="#">Umesahau neno la siri?</a>
+              <a class="form-link" href="#">Forgot Password?</a>
               <!-- /FORM LINK -->
             </div>
             <!-- /FORM ITEM -->
@@ -148,7 +148,7 @@
             <!-- FORM ITEM -->
             <div class="form-item">
               <!-- BUTTON -->
-              <button type="submit" class="button medium secondary">Ingia!</button>
+              <button type="submit" class="button medium secondary">Sign In!</button>
               <!-- /BUTTON -->
             </div>
             <!-- /FORM ITEM -->
@@ -223,7 +223,7 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="register-email">Jina kamili <span style="font-size:16px; color:red;">*</span> </label>
+                <label for="register-email">Full Name <span style="font-size:16px; color:red;">*</span> </label>
                 <input type="text" id="register-email" name="name" value="{{old('name')}}">
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('name')}}
@@ -260,7 +260,7 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-select">
-                <label for="register-username">Unajishuhulisha na? <span style="font-size:16px; color:red;">*</span></label>
+                <label for="register-username">Occupation ? <span style="font-size:16px; color:red;">*</span></label>
                 <select class="for" name="user_ocupation">
                   <option  selected disabled>Kazi ?</option>
                   <option value="Mkulima">Mkulima</option>
@@ -286,7 +286,7 @@
             <div class="form-item">
               <!-- FORM SELECT -->
               <div class="form-select">
-                <label for="rating-reason">Kutokea ?<span style="font-size:16px; color:red;">*</span></label>
+                <label for="rating-reason">From ?<span style="font-size:16px; color:red;">*</span></label>
                 <select class="for" name="user_location">
                   <option value="" selected disabled>Mkoa &amp; Wilaya ? </option>
 
@@ -316,7 +316,7 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="register-username">Nambari ya Simu <span style="font-size:16px; color:red;">*</span></label>
+                <label for="register-username">Phone #<span style="font-size:16px; color:red;">*</span></label>
                 <input type="number" id="register-username" name="user_phone_number"  value="{{old('user_phone_number')}}"/>
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('user_phone_number')}}
@@ -334,7 +334,7 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="register-username">Neno la siri <span style="font-size:16px; color:red;">*</span></label>
+                <label for="register-username">Password<span style="font-size:16px; color:red;">*</span></label>
                 <input type="password" id="register-username" name="password">
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('password')}}
@@ -352,7 +352,7 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="register-username">Rudia tena Neno la siri <span style="font-size:16px; color:red;">*</span></label>
+                <label for="register-username">Cormfirm Password<span style="font-size:16px; color:red;">*</span></label>
                 <input type="password" id="register-username" name="password_confirmation">
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('password_confirmation')}}
@@ -369,7 +369,7 @@
             <!-- FORM ITEM -->
             <div class="form-item">
               <!-- BUTTON -->
-              <button type="submit" class="button medium secondary">Jiunge sasa!</button>
+              <button type="submit" class="button medium secondary">Sign Up!</button>
               <!-- /BUTTON -->
             </div>
             <!-- /FORM ITEM -->

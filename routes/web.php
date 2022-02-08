@@ -214,3 +214,10 @@ Route::get('/kilimofy/Market-place-buy-item/{bidhaa_info_id}', [App\Http\Control
 Route::get('/kilimofy/UserAccount-Social-Account-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'Social_Account']);
 
 //**************************end*************************************************
+
+
+
+//**************************SearchController*************************************************
+Route::get('/search', [App\Http\Controllers\SearchController::class, 'search']);
+
+//**************************end*************************************************
