@@ -215,7 +215,14 @@
         <!-- /MENU ITEM -->
     <br>
     <br>
-    <p class="navigation-widget-section-title">logout</p>
+    <div class="row">
+      <div class="col-8 pull-left">
+        <p class="navigation-widget-section-title">logout</p>
+      </div>
+      <div class="col-1 pull-right">
+        <p class="navigation-widget-section-title">switch</p>
+      </div>
+    </div>
     <hr>
 
     <!-- MENU ITEM -->
@@ -289,7 +296,14 @@
    <br>
     <!-- MENU ITEM -->
     <br>
-    <p class="navigation-widget-section-title">logout</p>
+    <div class="row">
+      <div class="col-8 pull-left">
+        <p class="navigation-widget-section-title">logout</p>
+      </div>
+      <div class="col-1 pull-right">
+        <p class="navigation-widget-section-title">switch</p>
+      </div>
+    </div>
     <hr>
 
     <!-- MENU ITEM -->
@@ -363,7 +377,14 @@
    <br>
     <!-- MENU ITEM -->
     <br>
-    <p class="navigation-widget-section-title">logout</p>
+    <div class="row">
+      <div class="col-8 pull-left">
+        <p class="navigation-widget-section-title">logout</p>
+      </div>
+      <div class="col-1 pull-right">
+        <p class="navigation-widget-section-title">switch</p>
+      </div>
+    </div>
     <hr>
 
     <!-- MENU ITEM -->
@@ -439,7 +460,14 @@
    <br>
     <!-- MENU ITEM -->
     <br>
-    <p class="navigation-widget-section-title">logout</p>
+    <div class="row">
+      <div class="col-8 pull-left">
+        <p class="navigation-widget-section-title">logout</p>
+      </div>
+      <div class="col-1 pull-right">
+        <p class="navigation-widget-section-title">switch</p>
+      </div>
+    </div>
     <hr>
 
     <!-- MENU ITEM -->
@@ -515,7 +543,14 @@
    <br>
     <!-- MENU ITEM -->
     <br>
-    <p class="navigation-widget-section-title">logout</p>
+    <div class="row">
+      <div class="col-8 pull-left">
+        <p class="navigation-widget-section-title">logout</p>
+      </div>
+      <div class="col-1 pull-right">
+        <p class="navigation-widget-section-title">switch</p>
+      </div>
+    </div>
     <hr>
 
     <!-- MENU ITEM -->
@@ -590,7 +625,14 @@
    <br>
     <!-- MENU ITEM -->
     <br>
-    <p class="navigation-widget-section-title">logout</p>
+    <div class="row">
+      <div class="col-8 pull-left">
+        <p class="navigation-widget-section-title">logout</p>
+      </div>
+      <div class="col-1 pull-right">
+        <p class="navigation-widget-section-title">switch</p>
+      </div>
+    </div>
     <hr>
 
     <!-- MENU ITEM -->
@@ -665,7 +707,14 @@
    <br>
     <!-- MENU ITEM -->
     <br>
-    <p class="navigation-widget-section-title">logout</p>
+    <div class="row">
+      <div class="col-8 pull-left">
+        <p class="navigation-widget-section-title">logout</p>
+      </div>
+      <div class="col-1 pull-right">
+        <p class="navigation-widget-section-title">switch</p>
+      </div>
+    </div>
     <hr>
 
     <!-- MENU ITEM -->
