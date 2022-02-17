@@ -29,7 +29,7 @@
         <!-- /SECTION PRETITLE -->
 
         <!-- SECTION TITLE -->
-        <h2 class="section-title">Animation Watchtower</h2>
+        <h2 class="section-title">Kilimofy  Makala</h2>
         <!-- /SECTION TITLE -->
       </div>
       <!-- /SECTION HEADER INFO -->
@@ -264,7 +264,7 @@
         <!-- <a href="/kilimofy/Blog/Edit-Blog-Post/{{$blog->id}}" class="button secondary full " style="padding:2px; margin:2px;">Edit </a> -->
         <!-- /BUTTON -->
         <!-- BUTTON -->
-        <a href="/kilimofy/Blog/Delete-Blog-Post/{{$bog->id}}" class="button full" style="padding:2px; background-color: red; margin:2px;">Delete </a>
+        <a href="/kilimofy/Blog/Delete-Blog-Post/{{$blog->id}}" class="button full" style="padding:2px; background-color: red; margin:2px;">Delete </a>
       </div>
       <br>
     </div>

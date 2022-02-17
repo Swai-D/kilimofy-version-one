@@ -465,7 +465,7 @@
                 <!-- /HEXAGON -->
               </div>
               <!-- /USER AVATAR CONTENT -->
-            </div>
+            </div>!
             <!-- /USER AVATAR -->
           </div>
           <!-- /META LINE LIST -->
@@ -494,7 +494,7 @@
   </div>
   <!-- /EVENT PREVIEW -->
   @empty
-    <p>Hellow</p>
+  <p class="text-danger"> Huna Event Yeyote kwa sasa !</p>
   @endforelse
 
   </div>

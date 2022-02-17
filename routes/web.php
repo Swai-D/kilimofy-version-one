@@ -43,6 +43,7 @@ Route::get('/kilimofy/Mkulima/home-page', [App\Http\Controllers\MkulimaControlle
 Route::get('/kilimofy/Mkulima/Mashine-za-kilimo', [App\Http\Controllers\MkulimaController::class, 'mashine_za_kilimo'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Mashine-za-kilimo/shopping-cart', [App\Http\Controllers\MkulimaController::class, 'mashine_za_kilimo_shopping_cart'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Bwana-Shamba', [App\Http\Controllers\MkulimaController::class, 'mabwana_shamba'])->middleware('auth');
+Route::get('/kilimofy/Mkulima/Bwana-Shamba/Event-View-Page/{event}', [App\Http\Controllers\MkulimaController::class, 'view_event'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Fundi-Wa-Mashine-Shamba', [App\Http\Controllers\MkulimaController::class, 'fundi_wa_mashine'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Mtaalam-Wa-Kilimo', [App\Http\Controllers\MkulimaController::class, 'mtaalam_wa_kilimo'])->middleware('auth');
 Route::get('/kilimofy/Mkulima/Vibarua', [App\Http\Controllers\MkulimaController::class, 'vibarua'])->middleware('auth');

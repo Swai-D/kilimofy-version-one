@@ -60,7 +60,7 @@
         <!-- MENU MAIN ITEM -->
         <li class="menu-main-item">
           <!-- MENU MAIN ITEM LINK -->
-          <a class="menu-main-item-link" href="#">Home</a>
+          <a class="menu-main-item-link" href="/">Home</a>
           <!-- /MENU MAIN ITEM LINK -->
         </li>
         <!-- /MENU MAIN ITEM -->
@@ -77,7 +77,7 @@
   <div class="header-actions search-bar">
     <!-- INTERACTIVE INPUT -->
     <div class="interactive-input dark">
-      <input type="text" id="search-main" name="search_main" placeholder="Search here for people or post">
+      <input type="text" id="search-main" name="search_main" placeholder="Search here for people, post or blog">
       <!-- INTERACTIVE INPUT ICON WRAP -->
       <div class="interactive-input-icon-wrap">
         <!-- INTERACTIVE INPUT ICON -->
@@ -123,7 +123,7 @@
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
-                  <div class="hexagon-image-30-32" data-src="/assets/img/avatar/05.jpg"></div>
+                  <div class="hexagon-image-30-32" data-src="/assets/img/avatar/04.jpg"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->
@@ -195,60 +195,6 @@
         <!-- /DROPDOWN BOX LIST ITEM -->
 
 
-      </div>
-      <!-- /DROPDOWN BOX LIST -->
-
-      <!-- DROPDOWN BOX CATEGORY -->
-      <div class="dropdown-box-category">
-        <!-- DROPDOWN BOX CATEGORY TITLE -->
-        <p class="dropdown-box-category-title">Groups</p>
-        <!-- /DROPDOWN BOX CATEGORY TITLE -->
-      </div>
-      <!-- /DROPDOWN BOX CATEGORY -->
-
-      <!-- DROPDOWN BOX LIST -->
-      <div class="dropdown-box-list small no-scroll">
-        <!-- DROPDOWN BOX LIST ITEM -->
-        <a class="dropdown-box-list-item" href="group-timeline.html">
-          <!-- USER STATUS -->
-          <div class="user-status notification">
-            <!-- USER STATUS AVATAR -->
-            <div class="user-status-avatar">
-              <!-- USER AVATAR -->
-              <div class="user-avatar small no-border">
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-40-44" data-src="/assets/img/avatar/24.jpg"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR CONTENT -->
-              </div>
-              <!-- /USER AVATAR -->
-            </div>
-            <!-- /USER STATUS AVATAR -->
-
-            <!-- USER STATUS TITLE -->
-            <p class="user-status-title"><span class="bold">Cosplayers of the World</span></p>
-            <!-- /USER STATUS TITLE -->
-
-            <!-- USER STATUS TEXT -->
-            <p class="user-status-text">139 members</p>
-            <!-- /USER STATUS TEXT -->
-
-            <!-- USER STATUS ICON -->
-            <div class="user-status-icon">
-              <!-- ICON GROUP -->
-              <svg class="icon-group">
-                <use xlink:href="#svg-group"></use>
-              </svg>
-              <!-- /ICON GROUP -->
-            </div>
-            <!-- /USER STATUS ICON -->
-          </div>
-          <!-- /USER STATUS -->
-        </a>
-        <!-- /DROPDOWN BOX LIST ITEM -->
       </div>
       <!-- /DROPDOWN BOX LIST -->
 

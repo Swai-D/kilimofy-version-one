@@ -12,10 +12,8 @@
 
 :after,
 :before {
-
     display: block
 }
-
 
 ol,
 ul {
@@ -10418,10 +10416,7 @@ figure>img {
     box-shadow: 0 0 40px 0 rgba(94, 92, 154, .06)
 }
 
-.product-category-box.category-mbegu {
-
-}
-
+.product-category-box.category-mbegu {}
 
 .product-category-box.category-all .product-category-box-tag {
     color: #009a4e
@@ -13463,7 +13458,7 @@ figure>img {
     width: 100%;
     height: 60px;
     background-color: #009a4e;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     left: 0;
     z-index: 10000;

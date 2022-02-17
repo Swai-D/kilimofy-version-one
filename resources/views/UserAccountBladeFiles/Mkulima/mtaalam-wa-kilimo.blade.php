@@ -244,7 +244,7 @@
 </div>
 <!-- /POST PREVIEW -->
 @empty
-<p class="text-danger"> Hujachapisha Makala Yeyote kwa sasa !</p>
+<p class="text-danger"> Hakuna Makala Yeyote kwa sasa !</p>
 @endforelse
 </div>
 <!-- /GRID -->

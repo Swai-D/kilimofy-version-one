@@ -133,6 +133,13 @@ class MkulimaController extends Controller
       return view('UserAccountBladeFiles.Mkulima.bwana-shamba', compact('bwana_shamba_list', 'total_bwana_shamba_list', 'user_location', 'users', 'bwana_shamba_events_list'));
     }
 
+
+    public function view_event(BwanaShambaEvent $event)
+    {
+      // dd($event);
+      return view('UserAccountBladeFiles.Mkulima.bwana-shamba-event-show');
+    }
+
     public function pembejeo_na_viwatilifu(Request $request)
     {
 
