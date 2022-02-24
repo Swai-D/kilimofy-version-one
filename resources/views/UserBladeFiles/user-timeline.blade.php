@@ -145,74 +145,79 @@
 
       <!-- WIDGET BOX CONTENT -->
       <div class="widget-box-content">
+
         <!-- USER STATUS LIST -->
         <div class="user-status-list">
           @forelse($users as $user)
-          <!-- USER STATUS -->
-          <div class="user-status request-small">
-            <!-- USER STATUS AVATAR -->
-            <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-about-{{$user->name}}">
-              <!-- USER AVATAR -->
-              <div class="user-avatar small no-outline">
-                <!-- USER AVATAR CONTENT -->
-                <div class="user-avatar-content">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$user->avatar}}"></div>
-                  <!-- /HEXAGON -->
+             @if($loop->index < 5)
+            <!-- USER STATUS -->
+            <div class="user-status request-small">
+              <!-- USER STATUS AVATAR -->
+              <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-about-{{$user->name}}">
+                <!-- USER AVATAR -->
+                <div class="user-avatar small no-outline">
+                  <!-- USER AVATAR CONTENT -->
+                  <div class="user-avatar-content">
+                    <!-- HEXAGON -->
+                    <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$user->avatar}}"></div>
+                    <!-- /HEXAGON -->
+                  </div>
+                  <!-- /USER AVATAR CONTENT -->
+
+                  <!-- USER AVATAR PROGRESS -->
+                  <div class="user-avatar-progress">
+                    <!-- HEXAGON -->
+                    <div class="hexagon-progress-40-44"></div>
+                    <!-- /HEXAGON -->
+                  </div>
+                  <!-- /USER AVATAR PROGRESS -->
+
+                  <!-- USER AVATAR PROGRESS BORDER -->
+                  <div class="user-avatar-progress-border">
+                    <!-- HEXAGON -->
+                    <div class="hexagon-border-40-44"></div>
+                    <!-- /HEXAGON -->
+                  </div>
+                  <!-- /USER AVATAR PROGRESS BORDER -->
+
+
                 </div>
-                <!-- /USER AVATAR CONTENT -->
+                <!-- /USER AVATAR -->
+              </a>
+              <!-- /USER STATUS AVATAR -->
 
-                <!-- USER AVATAR PROGRESS -->
-                <div class="user-avatar-progress">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-progress-40-44"></div>
-                  <!-- /HEXAGON -->
+              <!-- USER STATUS TITLE -->
+              <p class="user-status-title"><a class="bold" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-about-{{$user->name}}">{{$user->name}}</a></p>
+              <!-- /USER STATUS TITLE -->
+
+              <!-- USER STATUS TEXT -->
+              <p class="user-status-text small">2 friends in common</p>
+              <!-- /USER STATUS TEXT -->
+
+              <!-- ACTION REQUEST LIST -->
+              <div class="action-request-list">
+                <!-- ACTION REQUEST -->
+                <div class="action-request accept">
+                  <!-- ACTION REQUEST ICON -->
+                  <svg class="action-request-icon icon-add-friend">
+                    <use xlink:href="#svg-add-friend"></use>
+                  </svg>
+                  <!-- /ACTION REQUEST ICON -->
                 </div>
-                <!-- /USER AVATAR PROGRESS -->
-
-                <!-- USER AVATAR PROGRESS BORDER -->
-                <div class="user-avatar-progress-border">
-                  <!-- HEXAGON -->
-                  <div class="hexagon-border-40-44"></div>
-                  <!-- /HEXAGON -->
-                </div>
-                <!-- /USER AVATAR PROGRESS BORDER -->
-
-
+                <!-- /ACTION REQUEST -->
               </div>
-              <!-- /USER AVATAR -->
-            </a>
-            <!-- /USER STATUS AVATAR -->
-
-            <!-- USER STATUS TITLE -->
-            <p class="user-status-title"><a class="bold" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-about-{{$user->name}}">{{$user->name}}</a></p>
-            <!-- /USER STATUS TITLE -->
-
-            <!-- USER STATUS TEXT -->
-            <p class="user-status-text small">2 friends in common</p>
-            <!-- /USER STATUS TEXT -->
-
-            <!-- ACTION REQUEST LIST -->
-            <div class="action-request-list">
-              <!-- ACTION REQUEST -->
-              <div class="action-request accept">
-                <!-- ACTION REQUEST ICON -->
-                <svg class="action-request-icon icon-add-friend">
-                  <use xlink:href="#svg-add-friend"></use>
-                </svg>
-                <!-- /ACTION REQUEST ICON -->
-              </div>
-              <!-- /ACTION REQUEST -->
+              <!-- ACTION REQUEST LIST -->
             </div>
-            <!-- ACTION REQUEST LIST -->
-          </div>
-          <!-- /USER STATUS -->
+            <!-- /USER STATUS -->
+            @endif
+
           @empty
           <p class="progress-arc-summary-subtitle text-center text-danger">Hatuna Rafiki wakukupatia kwasasa !</p>
 
           @endforelse
         </div>
         <!-- /USER STATUS LIST -->
+
       </div>
       <!-- WIDGET BOX CONTENT -->
 
@@ -1178,71 +1183,10 @@
     <!-- /WIDGET BOX -->
 
     <!-- WIDGET BOX -->
-    <div class="widget-box">
-      <!-- WIDGET BOX SETTINGS -->
-      <div class="widget-box-settings">
-        <!-- POST SETTINGS WRAP -->
-        <div class="post-settings-wrap">
-          <!-- POST SETTINGS -->
-          <div class="post-settings widget-box-post-settings-dropdown-trigger">
-            <!-- POST SETTINGS ICON -->
-            <svg class="post-settings-icon icon-more-dots">
-              <use xlink:href="#svg-more-dots"></use>
-            </svg>
-            <!-- /POST SETTINGS ICON -->
-          </div>
-          <!-- /POST SETTINGS -->
 
-          <!-- SIMPLE DROPDOWN -->
-          <div class="simple-dropdown widget-box-post-settings-dropdown">
-            <!-- SIMPLE DROPDOWN LINK -->
-            <p class="simple-dropdown-link">Widget Settings</p>
-            <!-- /SIMPLE DROPDOWN LINK -->
-          </div>
-          <!-- /SIMPLE DROPDOWN -->
-        </div>
-        <!-- /POST SETTINGS WRAP -->
-      </div>
-      <!-- /WIDGET BOX SETTINGS -->
-
-      <!-- WIDGET BOX TITLE -->
-      <p class="widget-box-title">Latest Item</p>
-      <!-- /WIDGET BOX TITLE -->
-
-      <!-- WIDGET BOX CONTENT -->
-      <div class="widget-box-content">
-        <!-- PRODUCT PREVIEW -->
-        <div class="product-preview small">
-          <!-- PRODUCT PREVIEW IMAGE -->
-          <a href="marketplace-product.html">
-            <figure class="product-preview-image liquid">
-              <img src="/assets/img/marketplace/items/01.jpg" alt="item-01">
-            </figure>
-          </a>
-          <!-- /PRODUCT PREVIEW IMAGE -->
-
-          <!-- PRODUCT PREVIEW INFO -->
-          <div class="product-preview-info">
-            <!-- TEXT STICKER -->
-            <p class="text-sticker"><span class="highlighted">$</span> 12.00</p>
-            <!-- /TEXT STICKER -->
-
-            <!-- PRODUCT PREVIEW TITLE -->
-            <p class="product-preview-title"><a href="marketplace-product.html">Twitch Stream UI Pack</a></p>
-            <!-- /PRODUCT PREVIEW TITLE -->
-
-            <!-- PRODUCT PREVIEW CATEGORY -->
-            <p class="product-preview-category digital"><a href="marketplace-category.html">Stream Packs</a></p>
-            <!-- /PRODUCT PREVIEW CATEGORY -->
-          </div>
-          <!-- /PRODUCT PREVIEW INFO -->
-        </div>
-        <!-- /PRODUCT PREVIEW -->
-      </div>
-      <!-- /WIDGET BOX CONTENT -->
-    </div>
     <!-- /WIDGET BOX -->
   </div>
+
   <!-- /GRID COLUMN -->
 </div>
 <!-- /GRID -->

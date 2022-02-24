@@ -35,6 +35,7 @@ class UserAccountController extends Controller
     public function user_timeline_page(User $user_id)
     {
         $user = User::where('id', '=', $user_id->id)->get();
+        $users = User::all();
         $posts = Post::where('User_id', '=', $user_id->id)->orderBy('created_at', 'desc')->get();
         $users = User::where('id', '!=', $user_id->id)->get();
         $group_lists = Group::all();
@@ -46,17 +47,20 @@ class UserAccountController extends Controller
           $user_id = $user_details['id'];
         }
 
+
+
         if (isset($user_id)) {
-          $user_photo_gallery = Post::where([['User_id', '=', $user_id], ['Photo','!=', NULL]])->limit(11)->get();
+          // dd($user_id);
+          $user_photo_gallery = Post::where([['User_id', '=', $user_id], ['Photo','!=', NULL]])->get();
           // dd($user_photo_gallery);
           $user_photo_gallery_count = Post::where([['User_id', '=', $user_id], ['Photo','!=', NULL]])->count();
           $user_latest_video = Post::where([['User_id', '=', $user_id], ['Video','!=', NULL]])->orderBy('created_at', 'desc')->get();
           $user_latest_video_count = Post::where([['User_id', '=', $user_id], ['Video','!=', NULL]])->count();
 
+          return view('UserBladeFiles.user-timeline', compact('user', 'users', 'posts', 'users_count', 'user_latest_video', 'user_latest_video_count', 'user_photo_gallery', 'user_photo_gallery_count', 'group_lists', 'group_lists_count', 'user_posts'));
 
         }
 
-        return view('UserBladeFiles.user-timeline', compact('user', 'users', 'posts', 'users_count', 'user_latest_video', 'user_latest_video_count', 'user_photo_gallery', 'user_photo_gallery_count', 'group_lists', 'group_lists_count', 'user_posts'));
 
     }
 

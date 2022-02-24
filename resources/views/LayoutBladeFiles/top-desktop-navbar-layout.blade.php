@@ -277,7 +277,7 @@
                     <!-- USER AVATAR CONTENT -->
                     <div class="user-avatar-content">
                       <!-- HEXAGON -->
-                      <div class="hexagon-image-30-32" data-src="/assets/img/avatar/03.jpg"></div>
+                      <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{Auth::user()->avatar}}"></div>
                       <!-- /HEXAGON -->
                     </div>
                     <!-- /USER AVATAR CONTENT -->
@@ -398,7 +398,7 @@
                     <!-- USER AVATAR CONTENT -->
                     <div class="user-avatar-content">
                       <!-- HEXAGON -->
-                      <div class="hexagon-image-30-32" data-src="/assets/img/avatar/04.jpg"></div>
+                      <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{Auth::user()->avatar}}"></div>
                       <!-- /HEXAGON -->
                     </div>
                     <!-- /USER AVATAR CONTENT -->
@@ -521,7 +521,7 @@
                     <!-- USER AVATAR CONTENT -->
                     <div class="user-avatar-content">
                       <!-- HEXAGON -->
-                      <div class="hexagon-image-30-32" data-src="/assets/img/avatar/03.jpg"></div>
+                      <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{Auth::user()->avatar}}"></div>
                       <!-- /HEXAGON -->
                     </div>
                     <!-- /USER AVATAR CONTENT -->
@@ -571,7 +571,7 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <p class="user-status-title"><a class="bold" href="#">Welcome to Kilimofy</a> notification <a class="highlighted" href="#">we will include notification in the comming version</a></p>
+                <p class="user-status-title"><a class="bold" href="/Ki">Welcome to Kilimofy</a> notification <a class="highlighted" href="#">we will include notification in the comming version</a></p>
                 <!-- /USER STATUS TITLE -->
 
                 <!-- USER STATUS TIMESTAMP -->
@@ -746,21 +746,3 @@
 <!-- POPUP BOX -->
 @include('LayoutBladeFiles.change-profile-form')
 <!-- /POPUP BOX -->
-
-<script type="text/javascript">
-  $('#search-main').on('keyup',function(){
-  $value=$(this).val();
-  $.ajax({
-    type : 'get',
-    url : '{{URL::to('search')}}',
-    data:{'search':$value},
-    success:function(data){
-    $('tbody').html(data);
-    }
-    });
-  })
-</script>
-
-<script type="text/javascript">
-$.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
-</script>

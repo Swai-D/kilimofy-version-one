@@ -540,23 +540,23 @@
           <!-- /SIDEBAR MENU LINK -->
 
           <!-- SIDEBAR MENU LINK -->
-          <p class="sidebar-menu-link">1.Avatar and Cover</p>
+          <p class="sidebar-menu-link">1.Zingatia Maudhui</p>
           <!-- /SIDEBAR MENU LINK -->
 
           <!-- SIDEBAR MENU LINK -->
-          <p class="sidebar-menu-link">2.Social Networks</p>
+          <p class="sidebar-menu-link">2.Zingatia Maadili</p>
           <!-- /SIDEBAR MENU LINK -->
 
           <!-- SIDEBAR MENU LINK -->
-          <p class="sidebar-menu-link">3.Settings</p>
+          <p class="sidebar-menu-link">3.Tumia Lugha fasaha</p>
           <!-- /SIDEBAR MENU LINK -->
 
           <!-- SIDEBAR MENU LINK -->
-          <p class="sidebar-menu-link">4.Members</p>
+          <!-- <p class="sidebar-menu-link">4.Members</p> -->
           <!-- /SIDEBAR MENU LINK -->
 
           <!-- SIDEBAR MENU LINK -->
-          <p class="sidebar-menu-link">5.Delete Group</p>
+          <!-- <p class="sidebar-menu-link">5.Delete Group</p> -->
           <!-- /SIDEBAR MENU LINK -->
         </div>
         <!-- /SIDEBAR MENU BODY -->
@@ -622,7 +622,7 @@
                 <!-- FORM INPUT -->
                 <div class="form-input small active">
                   <label for="group-tagline">Mada/Swali la Mjadala ?</label>
-                  <input type="text" id="group-tagline" name="Topic" >
+                  <textarea name="Topic" id="group-tagline" rows="8" cols="80"></textarea>
                 </div>
                 <!-- /FORM INPUT -->
               </div>

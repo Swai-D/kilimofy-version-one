@@ -162,7 +162,7 @@ class MkulimaController extends Controller
           $user_location_pembejeo_na_viwatilifu_sellers_count = Item::where('seller_id', '=', $user_location_pembejeo_na_viwatilifu_seller['id'])->count();
         }
 
-        $places =  Place::paginate(5);
+        $places =  Place::paginate(25);
         $users = User::all();
 
         return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu-home-page', compact('user_location',  'user_location_pembejeo_na_viwatilifu_sellers','user_location_pembejeo_na_viwatilifu_sellers_count', 'places', 'users'));
@@ -171,7 +171,7 @@ class MkulimaController extends Controller
 
       else {
 
-        $places =  Place::paginate(5);
+        $places =  Place::paginate(25);
         $user_location_pembejeo_na_viwatilifu_sellers_count = 0;
         $user_location_pembejeo_na_viwatilifu_sellers = [];
         $users = User::all();

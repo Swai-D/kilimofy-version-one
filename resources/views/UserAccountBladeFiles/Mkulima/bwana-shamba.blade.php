@@ -464,7 +464,7 @@
         <!-- /META LINE -->
         <br>
         <!-- BUTTON -->
-        <a href="/kilimofy/Mkulima/Bwana-Shamba/Event-View-Page/{{$event->id}}" class="button secondary white-tertiary">View from Calendar</a>
+        <a href="/kilimofy/Mkulima/Bwana-Shamba/Event-View-Page/{{$event->id}}" class="button secondary white-tertiary popup-event-information-trigger">View from Calendar</a>
         <!-- /BUTTON -->
       </div>
       <!-- /EVENT PREVIEW INFO BOTTOM -->
