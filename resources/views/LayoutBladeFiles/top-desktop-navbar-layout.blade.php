@@ -927,7 +927,10 @@
 @include('LayoutBladeFiles.change-profile-form')
 <!-- /POPUP BOX -->
 @endauth
+
+@guest
 <!-- HEADER -->
+
 <header class="header">
   <!-- HEADER ACTIONS -->
   <div class="header-actions">
@@ -1763,6 +1766,4 @@
   <!-- /HEADER ACTIONS -->
 </header>
 <!-- /HEADER -->
-@guest
-
 @endguest
