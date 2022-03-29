@@ -177,7 +177,7 @@ class HomeBladeController extends Controller
            if(strstr($mime, "image/")){
 
 
-             if ($user_id->avatar !=) {
+             if ($user_id->avatar != NULL) {
 
                //Delete the Old IMAGE AVATAR from  avatar Folder (Save Space)
                $imagePath = explode('/', $user_id->avatar);
