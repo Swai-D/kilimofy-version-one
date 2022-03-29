@@ -344,7 +344,7 @@
       <!-- DROPDOWN BOX LIST -->
       <div class="dropdown-box-list small no-scroll">
         <!-- DROPDOWN BOX LIST ITEM -->
-        <a class="dropdown-box-list-item" href="marketplace-product.html">
+        <a class="dropdown-box-list-item" href="">
           <!-- USER STATUS -->
           <div class="user-status no-padding-top">
             <!-- USER STATUS AVATAR -->
@@ -927,6 +927,8 @@
 @include('LayoutBladeFiles.change-profile-form')
 <!-- /POPUP BOX -->
 @endauth
+
+
 
 @guest
 <!-- HEADER -->
