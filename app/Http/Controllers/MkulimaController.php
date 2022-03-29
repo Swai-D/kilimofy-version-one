@@ -82,6 +82,7 @@ class MkulimaController extends Controller
       $group_lists = Group::all();
       $posts = Post::orderBy('created_at', 'desc')->get();
 
+      // dd($posts);
       //places
       $user_location_details = Place::where([['Region', '=', $user_region], ['District', '=', $user_district]] )->get();
        // dd($user_location_details);
@@ -103,6 +104,7 @@ class MkulimaController extends Controller
       $users_count = User::count();
       $headlines = Headline::all();
       $headlines_count = Headline::count();
+      // dd(Auth::user()->avatar);
 
       return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'users', 'users_count', 'users', 'headlines', 'headlines_count', 'kilimo_topics_count_collection', 'ufugaji_topics_count_collection', 'usafirishaji_topics_count_collection'));
 
@@ -136,8 +138,8 @@ class MkulimaController extends Controller
 
     public function view_event(BwanaShambaEvent $event)
     {
-      // dd($event);
-      return view('UserAccountBladeFiles.Mkulima.bwana-shamba-event-show');
+      $event = BwanaShambaEvent::where('id', '=', $event->id)->get();
+      return view('UserAccountBladeFiles.Mkulima.bwana-shamba-event-show', compact('event'));
     }
 
     public function pembejeo_na_viwatilifu(Request $request)

@@ -113,7 +113,7 @@
 
            <!-- WIDGET BOX PICTURE -->
            <figure class="widget-box-picture popup-picture-trigger">
-             <img src="/Uploads/PostPhotos/{{$post_detail->Photo}}" alt="cover-04" style="width:100%; height:auto;">
+             <img src="{{$post_detail->Photo}}" alt="cover-04" style="width:100%; height:auto;">
            </figure>
            <!-- /WIDGET BOX PICTURE -->
 
@@ -153,221 +153,75 @@
               <div class="content-action">
                 <!-- META LINE -->
                 <div class="meta-line">
-                  <!-- META LINE LIST -->
-                  <div class="meta-line-list reaction-item-list">
-                    <!-- REACTION ITEM -->
-                    <div class="reaction-item">
-                      <!-- REACTION IMAGE -->
-                      <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/love.png" alt="reaction-love">
-                      <!-- /REACTION IMAGE -->
+                  <form class="" action="{{ route('like.post', $post_detail->id) }}" method="post">
+                    @csrf
+                    <!-- META LINE LIST -->
+                    <div class="meta-line-list reaction-item-list">
+                      <!-- REACTION ITEM -->
+                      <div class="reaction-item">
+                        <!-- REACTION IMAGE -->
+                        <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/love.png" alt="reaction-love">
+                        <!-- /REACTION IMAGE -->
 
-                      <!-- SIMPLE DROPDOWN -->
-                      <div class="simple-dropdown padded reaction-item-dropdown">
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/love.png" alt="reaction-love"> <span class="bold">Love</span></p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
+                        <!-- SIMPLE DROPDOWN -->
+                        <div class="simple-dropdown padded reaction-item-dropdown">
+                          <!-- SIMPLE DROPDOWN TEXT -->
+                          <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/love.png" alt="reaction-love"> <span class="bold">Love</span></p>
+                          <!-- /SIMPLE DROPDOWN TEXT -->
 
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text">Destroy Dex</p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
-
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text">The Green Goo</p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
-
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text">Bearded Wonder</p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
-
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text">Sandra Strange</p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
-
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text">Matt Parker</p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
-
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text">James Murdock</p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
-
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text"><span class="bold">and 14 more...</span></p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
+                        </div>
+                        <!-- /SIMPLE DROPDOWN -->
                       </div>
-                      <!-- /SIMPLE DROPDOWN -->
-                    </div>
-                    <!-- /REACTION ITEM -->
+                      <!-- /REACTION ITEM -->
 
-                    <!-- REACTION ITEM -->
-                    <div class="reaction-item">
-                      <!-- REACTION IMAGE -->
-                      <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/wow.png" alt="reaction-wow">
-                      <!-- /REACTION IMAGE -->
+                      <!-- REACTION ITEM -->
+                      <div class="reaction-item">
+                        <!-- REACTION IMAGE -->
+                        <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/happy.png" alt="reaction-happy">
+                        <!-- /REACTION IMAGE -->
 
-                      <!-- SIMPLE DROPDOWN -->
-                      <div class="simple-dropdown padded reaction-item-dropdown">
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/wow.png" alt="reaction-wow"> <span class="bold">Wow</span></p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
+                        <!-- SIMPLE DROPDOWN -->
+                        <div class="simple-dropdown padded reaction-item-dropdown">
+                          <!-- SIMPLE DROPDOWN TEXT -->
+                          <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/happy.png" alt="reaction-happy"> <span class="bold">Happy</span></p>
+                          <!-- /SIMPLE DROPDOWN TEXT -->
 
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text">Jett Spiegel</p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
+
+                        </div>
+                        <!-- /SIMPLE DROPDOWN -->
                       </div>
-                      <!-- /SIMPLE DROPDOWN -->
-                    </div>
-                    <!-- /REACTION ITEM -->
+                      <!-- /REACTION ITEM -->
 
-                    <!-- REACTION ITEM -->
-                    <div class="reaction-item">
-                      <!-- REACTION IMAGE -->
-                      <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/like.png" alt="reaction-like">
-                      <!-- /REACTION IMAGE -->
+                      <!-- REACTION ITEM -->
+                      <div class="reaction-item">
+                        <!-- REACTION IMAGE -->
+                        <img class="reaction-image reaction-item-dropdown-trigger" src="/assets/img/reaction/like.png" alt="reaction-like">
+                        <!-- /REACTION IMAGE -->
 
-                      <!-- SIMPLE DROPDOWN -->
-                      <div class="simple-dropdown padded reaction-item-dropdown">
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
+                        <!-- SIMPLE DROPDOWN -->
+                        <div class="simple-dropdown padded reaction-item-dropdown">
+                          <!-- SIMPLE DROPDOWN TEXT -->
+                          <p class="simple-dropdown-text"><img class="reaction" src="/assets/img/reaction/like.png" alt="reaction-like"> <span class="bold">Like</span></p>
+                          <!-- /SIMPLE DROPDOWN TEXT -->
 
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text">Neko Bebop</p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
+                        </div>
 
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text">Nick Grissom</p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
-
-                        <!-- SIMPLE DROPDOWN TEXT -->
-                        <p class="simple-dropdown-text">Sarah Diamond</p>
-                        <!-- /SIMPLE DROPDOWN TEXT -->
+                        <!-- /SIMPLE DROPDOWN -->
                       </div>
-                      <!-- /SIMPLE DROPDOWN -->
+                      <!-- /REACTION ITEM -->
                     </div>
-                    <!-- /REACTION ITEM -->
-                  </div>
-                  <!-- /META LINE LIST -->
+                    <!-- /META LINE LIST -->
+
+                  </form>
 
                   <!-- META LINE TEXT -->
-                  <p class="meta-line-text">{{$post_detail->Likes}}</p>
+                  <p class="meta-line-text"> {{ $post_detail->likeCount }}</p>
+
                   <!-- /META LINE TEXT -->
                 </div>
                 <!-- /META LINE -->
 
-                <!-- META LINE -->
-                <div class="meta-line">
-                  <!-- META LINE LIST -->
-                  <div class="meta-line-list user-avatar-list">
-                    <!-- USER AVATAR -->
-                    <div class="user-avatar micro no-stats">
-                      <!-- USER AVATAR BORDER -->
-                      <div class="user-avatar-border">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-22-24"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR BORDER -->
 
-                      <!-- USER AVATAR CONTENT -->
-                      <div class="user-avatar-content">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/07.jpg"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR CONTENT -->
-                    </div>
-                    <!-- /USER AVATAR -->
-
-                    <!-- USER AVATAR -->
-                    <div class="user-avatar micro no-stats">
-                      <!-- USER AVATAR BORDER -->
-                      <div class="user-avatar-border">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-22-24"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR BORDER -->
-
-                      <!-- USER AVATAR CONTENT -->
-                      <div class="user-avatar-content">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/13.jpg"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR CONTENT -->
-                    </div>
-                    <!-- /USER AVATAR -->
-
-                    <!-- USER AVATAR -->
-                    <div class="user-avatar micro no-stats">
-                      <!-- USER AVATAR BORDER -->
-                      <div class="user-avatar-border">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-22-24"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR BORDER -->
-
-                      <!-- USER AVATAR CONTENT -->
-                    @foreach($post_detail->comments as $post_comment)
-                    <div class="user-avatar-content">
-                      <!-- HEXAGON -->
-                      <div class="hexagon-image-18-20" data-src="/Uploads/avatars/{{$post_comment->user_avatar}}"></div>
-                      <!-- /HEXAGON -->
-                    </div>
-                    @endforeach
-                      <!-- /USER AVATAR CONTENT -->
-                    </div>
-                    <!-- /USER AVATAR -->
-
-                    <!-- USER AVATAR -->
-                    <div class="user-avatar micro no-stats">
-                      <!-- USER AVATAR BORDER -->
-                      <div class="user-avatar-border">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-22-24"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR BORDER -->
-
-                      <!-- USER AVATAR CONTENT -->
-                      <div class="user-avatar-content">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/10.jpg"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR CONTENT -->
-                    </div>
-                    <!-- /USER AVATAR -->
-
-                    <!-- USER AVATAR -->
-                    <div class="user-avatar micro no-stats">
-                      <!-- USER AVATAR BORDER -->
-                      <div class="user-avatar-border">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-22-24"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR BORDER -->
-
-                      <!-- USER AVATAR CONTENT -->
-                      <div class="user-avatar-content">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/08.jpg"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR CONTENT -->
-                    </div>
-                    <!-- /USER AVATAR -->
-                  </div>
-                  <!-- /META LINE LIST -->
-
-                  <!-- META LINE TEXT -->
-                  <p class="meta-line-text">19 Participants</p>
-                  <!-- /META LINE TEXT -->
-                </div>
-                <!-- /META LINE -->
               </div>
               <!-- /CONTENT ACTION -->
 

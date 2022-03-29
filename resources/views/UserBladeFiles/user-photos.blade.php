@@ -22,7 +22,7 @@
          <!-- /SECTION PRETITLE -->
 
          <!-- SECTION TITLE -->
-         <h2 class="section-title">Photo(s) </h2>
+         <h2 class="section-title">Photo(s) <span class="highlighted">[{{$user_latest_photo_count}}]</span>  </h2>
          <!-- /SECTION TITLE -->
        </div>
        <!-- /SECTION HEADER INFO -->
@@ -46,13 +46,13 @@
 
      <!-- GRID -->
      <div class="grid grid-3-3-3-3 centered">
-       @foreach($user_photo_gallery as $user_photo)
+       @forelse($user_photo_gallery as $user_photo)
          @if($user_photo->Photo !=NULL)
          <!-- ALBUM PREVIEW -->
          <a class="album-preview" href="/kilimofy/Post/read_comments/{{$user_photo->id}}-about-{{$user->name}}'s-post">
            <!-- ALBUM PREVIEW IMAGE -->
            <figure class="album-preview-image liquid">
-             <img src="/Uploads/PostPhotos/{{$user_photo->Photo}}" alt="album-image-">
+             <img src="{{$user_photo->Photo}}" alt="album-image-">
            </figure>
            <!-- /ALBUM PREVIEW IMAGE -->
 
@@ -75,10 +75,15 @@
          </a>
          <!-- /ALBUM PREVIEW -->
          @endif
-        @endforeach
+
+         @empty
+         <p class="progress-arc-summary-subtitle text-center text-danger"> Hakuna Picha Yako Yeyote Kwenye Albam Kwa Sasa !</p>
+        @endforelse
      </div>
      <!-- /GRID -->
-   @include('LayoutBladeFiles.page-bar')
+     @if($user_latest_photo_count != 0)
+       @include('LayoutBladeFiles.page-bar')
+     @endif
    </section>
    <!-- /SECTION -->
  </div>

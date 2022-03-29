@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 //**************************HomeBladeController*********************************
-Route::get('/', [App\Http\Controllers\HomeBladeController::class, 'welcome']);
-Route::get('/home', [App\Http\Controllers\HomeBladeController::class, 'welcome'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeBladeController::class, 'guestRoute'])->middleware('guest');
+Route::get('/home', [App\Http\Controllers\HomeBladeController::class, 'loginForm'])->name('home');
 Route::get('/kilimofy/home/verify', [App\Http\Controllers\HomeBladeController::class, 'verify'])->name('verify');
 Route::post('kilimofy/Change-Account/{user_id}', [App\Http\Controllers\HomeBladeController::class, 'switch_account']);
 Route::post('kilimofy/Change-Profile/{user_id}', [App\Http\Controllers\HomeBladeController::class, 'update_profile']);
@@ -79,11 +79,11 @@ Route::post('/kilimofy/Admin/New-Forum-Category-Form-Store', [App\Http\Controlle
 
 
 Route::get('/kilimofy/Admin/items-waiting-list', [App\Http\Controllers\AdminController::class, 'items_waiting_list']);
-Route::get('/kilimofy/Admin/items-details/{item_id}', [App\Http\Controllers\AdminController::class, 'items_details']);
-Route::get('/kilimofy/Admin/admin-all-forms', [App\Http\Controllers\AdminController::class, 'admin_all_forms']);
-Route::get('/kilimofy/Admin/items-feedback/{item_id}', [App\Http\Controllers\AdminController::class, 'items_feedback_form']);
-Route::post('/kilimofy/Admin/items-feedback-update', [App\Http\Controllers\AdminController::class, 'items_feedback_update']);
-Route::get('/kilimofy/Admin/accept_item_to_market/{item_id}', [App\Http\Controllers\AdminController::class, 'accept_item_to_market']);
+Route::get('/kilimofy/Admin/items-details/{item_id}', [App\Http\Controllers\AdminController::class, 'items_details'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/admin-all-forms', [App\Http\Controllers\AdminController::class, 'admin_all_forms'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/items-feedback/{item_id}', [App\Http\Controllers\AdminController::class, 'items_feedback_form'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Admin/items-feedback-update', [App\Http\Controllers\AdminController::class, 'items_feedback_update'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Admin/accept_item_to_market/{item_id}', [App\Http\Controllers\AdminController::class, 'accept_item_to_market'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************
 
@@ -99,27 +99,27 @@ Route::post('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/post-item-page/{user_id
 
 
 //**************************ForumController*************************************************
-Route::get('/kilimofy/Forum/Forum-Category-List', [App\Http\Controllers\ForumController::class, 'forum_categories_page']);
-Route::get('/kilimofy/Forum/Forum-Category-Topics/{forum_id}', [App\Http\Controllers\ForumController::class, 'forum_category_topics_page']);
-Route::get('/kilimofy/Forum/Forum-Discussion/{discussion_id}', [App\Http\Controllers\ForumController::class, 'forum_topics_discussion']);
-Route::post('/kilimofy/Forum/Forum-Discussion/Join_Discussion', [App\Http\Controllers\ForumController::class, 'join_discussion']);
-Route::post('/kilimofy/Forum/Create-Discussion', [App\Http\Controllers\ForumController::class, 'create_discussion']);
+Route::get('/kilimofy/Forum/Forum-Category-List', [App\Http\Controllers\ForumController::class, 'forum_categories_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Forum/Forum-Category-Topics/{forum_id}', [App\Http\Controllers\ForumController::class, 'forum_category_topics_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Forum/Forum-Discussion/{discussion_id}', [App\Http\Controllers\ForumController::class, 'forum_topics_discussion'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Forum/Forum-Discussion/Join_Discussion', [App\Http\Controllers\ForumController::class, 'join_discussion'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Forum/Create-Discussion', [App\Http\Controllers\ForumController::class, 'create_discussion'])->middleware(['auth','supper_admin']);
 //**************************end*************************************************
 
 
 
 //**************************UserAccountController*********************************
-Route::get('/kilimofy/UserAccount/about_user_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'about_user_page']);
-Route::get('/kilimofy/UserAccount/user_timeline_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_timeline_page']);
-Route::get('/kilimofy/UserAccount/user_friends_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_friends_page']);
-Route::get('/kilimofy/UserAccount/user_groups_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_groups_page']);
-Route::get('/kilimofy/UserAccount/user_photos_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_photos_page']);
-Route::get('/kilimofy/UserAccount/user_videos_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_videos_page']);
-Route::get('/kilimofy/UserAccount/user_blog_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_blog_page']);
-Route::get('/kilimofy/UserAccount/user_blog_post_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_blog_post_page']);
-Route::get('/kilimofy/UserAccount/user_forum_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_forum_page']);
-Route::get('/kilimofy/UserAccount/user_store_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_store_page']);
-Route::get('/kilimofy/UserAccount/user_setting_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_setting_page']);
+Route::get('/kilimofy/UserAccount/about_user_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'about_user_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount/user_timeline_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_timeline_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount/user_friends_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_friends_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount/user_groups_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_groups_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount/user_photos_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_photos_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount/user_videos_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_videos_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount/user_blog_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_blog_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount/user_blog_post_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_blog_post_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount/user_forum_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_forum_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount/user_store_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_store_page'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount/user_setting_page/{user_id}-{slug}', [App\Http\Controllers\UserAccountController::class, 'user_setting_page'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************
 
@@ -139,86 +139,86 @@ Route::post('/kilimofy/Admin/admin-all-forms-post', [App\Http\Controllers\PostCo
 //**************************end*************************************************
 
 //**************************ChatController*************************************************
-Route::get('/kilimofy/test-send-message', [App\Http\Controllers\MessageController::class, 'getMessage']);
+Route::get('/kilimofy/test-send-message', [App\Http\Controllers\MessageController::class, 'getMessage'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************
 
 //******************************Bwana Shamba************************************************
-Route::get('/kilimofy/Afisa-Ugavi/home-page', [App\Http\Controllers\BwanaShambaController::class, 'Bwana_Shamba_Home_Page']);
-Route::post('/kilimofy/Afisa-Ugavi/create-event', [App\Http\Controllers\BwanaShambaController::class, 'createEvent']);
+Route::get('/kilimofy/Afisa-Ugavi/home-page', [App\Http\Controllers\BwanaShambaController::class, 'Bwana_Shamba_Home_Page'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Afisa-Ugavi/create-event', [App\Http\Controllers\BwanaShambaController::class, 'createEvent'])->middleware(['auth','supper_admin']);
 //**************************end*************************************************
 
 
 //**************************GroupController*************************************************
-Route::get('/kilimofy/Group/Group-Lists', [App\Http\Controllers\GroupController::class, 'group_list_page']);
-Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupController::class, 'create_group']);
-Route::get('/kilimofy/Group/Edit-Group/{group}', [App\Http\Controllers\GroupController::class, 'edit_group']);
-Route::post('/kilimofy/Group/Edit-Group-Store/{group}', [App\Http\Controllers\GroupController::class, 'edit_group_store']);
-Route::get('/kilimofy/Group/Delete-Group/{group}', [App\Http\Controllers\GroupController::class, 'delete_group']);
-Route::get('/kilimofy/Group/Group-Timeline/{group}', [App\Http\Controllers\GroupController::class, 'group_timeline']);
+Route::get('/kilimofy/Group/Group-Lists', [App\Http\Controllers\GroupController::class, 'group_list_page'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Group/Create-Group', [App\Http\Controllers\GroupController::class, 'create_group'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Group/Edit-Group/{group}', [App\Http\Controllers\GroupController::class, 'edit_group'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Group/Edit-Group-Store/{group}', [App\Http\Controllers\GroupController::class, 'edit_group_store'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Group/Delete-Group/{group}', [App\Http\Controllers\GroupController::class, 'delete_group'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Group/Group-Timeline/{group}', [App\Http\Controllers\GroupController::class, 'group_timeline'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************
 
 
 //**************************BlogController*************************************************
-Route::post('/kilimofy/Blog/User-Create-Blog-Post', [App\Http\Controllers\BlogController::class, 'createBlog']);
-Route::get('/kilimofy/Blog/Edit-Blog-Post/{blog}', [App\Http\Controllers\BlogController::class, 'editBlog']);
-Route::get('/kilimofy/Blog/Delete-Blog-Post/{blog}', [App\Http\Controllers\BlogController::class, 'deleteBlog']);
+Route::post('/kilimofy/Blog/User-Create-Blog-Post', [App\Http\Controllers\BlogController::class, 'createBlog'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Blog/Edit-Blog-Post/{blog}', [App\Http\Controllers\BlogController::class, 'editBlog'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Blog/Delete-Blog-Post/{blog}', [App\Http\Controllers\BlogController::class, 'deleteBlog'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************
 
 
 //**************************DriverController*************************************************
-Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page', [App\Http\Controllers\DriverController::class, 'Driver_Index_Page']);
-Route::post('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Make-Trip', [App\Http\Controllers\DriverController::class, 'MakeTrip']);
-Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Edit-Trip/{trip_id}', [App\Http\Controllers\DriverController::class, 'EditTrip']);
-Route::post('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Edit-Trip/{trip_id}', [App\Http\Controllers\DriverController::class, 'UpdateTrip']);
-Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Delete-Trip/{trip_id}', [App\Http\Controllers\DriverController::class, 'DeleteTrip']);
+Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page', [App\Http\Controllers\DriverController::class, 'Driver_Index_Page'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Make-Trip', [App\Http\Controllers\DriverController::class, 'MakeTrip'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Edit-Trip/{trip_id}', [App\Http\Controllers\DriverController::class, 'EditTrip'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Edit-Trip/{trip_id}', [App\Http\Controllers\DriverController::class, 'UpdateTrip'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/Delete-Trip/{trip_id}', [App\Http\Controllers\DriverController::class, 'DeleteTrip'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************
 
 
 //**************************MashineController*************************************************
-Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page', [App\Http\Controllers\MashineController::class, 'MashineHomePage']);
-Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/Edit-Mashine-page/{mashine}', [App\Http\Controllers\MashineController::class, 'EditMashine']);
-Route::post('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/Edit-Mashine-Store/{mashine}', [App\Http\Controllers\MashineController::class, 'EditMashineStore']);
-Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/Delete-Mashine/{mashine}', [App\Http\Controllers\MashineController::class, 'DeleteMashine']);
-Route::post('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/uza-mashine-za-kilimo', [App\Http\Controllers\MashineController::class, 'SellMashine']);
+Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page', [App\Http\Controllers\MashineController::class, 'MashineHomePage'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/Edit-Mashine-page/{mashine}', [App\Http\Controllers\MashineController::class, 'EditMashine'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/Edit-Mashine-Store/{mashine}', [App\Http\Controllers\MashineController::class, 'EditMashineStore'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/Delete-Mashine/{mashine}', [App\Http\Controllers\MashineController::class, 'DeleteMashine'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/uza-mashine-za-kilimo', [App\Http\Controllers\MashineController::class, 'SellMashine'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************
 
 
 
 //**************************RepairController*************************************************
-Route::get('/kilimofy/Fundi-Wa-Mashine-Za-Kilimo/home-page', [App\Http\Controllers\RepairController::class, 'RepairMashineHomePage']);
+Route::get('/kilimofy/Fundi-Wa-Mashine-Za-Kilimo/home-page', [App\Http\Controllers\RepairController::class, 'RepairMashineHomePage'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************
 
 
 //**************************MtaalamWaKilimoController*************************************************
-Route::get('/kilimofy/Mtaalam-Wa-Kilimo/home-page', [App\Http\Controllers\MtaalamController::class, 'Mtaalam_Index_Page']);
+Route::get('/kilimofy/Mtaalam-Wa-Kilimo/home-page', [App\Http\Controllers\MtaalamController::class, 'Mtaalam_Index_Page'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************
 
 //**************************SettingsController*************************************************
-Route::get('/kilimofy/UserAccount-General-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'General_Settings']);
-Route::get('/kilimofy/UserAccount-Profile-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'My_Profile']);
-Route::get('/kilimofy/UserAccount-Social-Account-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'Social_Account']);
-Route::post('/kilimofy/UserAccount-Social-Account-Settings/Update-Social-Link/{user_id}', [App\Http\Controllers\SettingsController::class, 'Social_Account_Update']);
+Route::get('/kilimofy/UserAccount-General-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'General_Settings'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount-Profile-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'My_Profile'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount-Social-Account-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'Social_Account'])->middleware(['auth','supper_admin']);
+Route::post('/kilimofy/UserAccount-Social-Account-Settings/Update-Social-Link/{user_id}', [App\Http\Controllers\SettingsController::class, 'Social_Account_Update'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************
 
 
 //**************************MarketPlaceController*************************************************
-Route::get('/kilimofy/Market-place-index-page', [App\Http\Controllers\MarketPlaceController::class, 'index']);
-Route::get('/kilimofy/Market-place-buy-item/{bidhaa_info_id}', [App\Http\Controllers\MarketPlaceController::class, 'item_shopping_cart']);
-Route::get('/kilimofy/UserAccount-Social-Account-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'Social_Account']);
+Route::get('/kilimofy/Market-place-index-page', [App\Http\Controllers\MarketPlaceController::class, 'index'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/Market-place-buy-item/{bidhaa_info_id}', [App\Http\Controllers\MarketPlaceController::class, 'item_shopping_cart'])->middleware(['auth','supper_admin']);
+Route::get('/kilimofy/UserAccount-Social-Account-Settings/{user_id}', [App\Http\Controllers\SettingsController::class, 'Social_Account'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************
 
 
 
 //**************************SearchController*************************************************
-Route::get('/search', [App\Http\Controllers\SearchController::class, 'search']);
+Route::post('/search', [App\Http\Controllers\SearchController::class, 'search'])->middleware(['auth','supper_admin']);
 
 //**************************end*************************************************

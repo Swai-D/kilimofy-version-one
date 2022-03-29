@@ -36,7 +36,7 @@
       <!-- SECTION FILTERS BAR INFO -->
       <div class="section-filters-bar-info">
         <!-- SECTION FILTERS BAR TITLE -->
-        <p class="section-filters-bar-title"><a href="forums.html">Mjadala</a><span class="separator"></span><a href="forums-category.html">{{$discussion->Forum_Category_Name}}</a><span class="separator"></span><a href="forums-discussion.html">{{$discussion->Topic}}</a></p>
+        <p class="section-filters-bar-title"><a href="forums.html">Mjadala</a><span class="separator"></span><a href="forums-category.html">{{$discussion->Forum_Category_Name}}</a><span class="separator"></span><a href="">{{$discussion->Topic}}</a></p>
         <!-- /SECTION FILTERS BAR TITLE -->
 
       @foreach($last_participant_created_at as $last_participant_created_at)
@@ -56,7 +56,7 @@
             <!-- USER AVATAR CONTENT -->
             <div class="user-avatar-content">
               <!-- HEXAGON -->
-              <div class="hexagon-image-18-20" data-src="/Uploads/avatars/{{$last_participant_created_at->Author_Image_Name}}"></div>
+              <div class="hexagon-image-18-20" data-src="{{$last_participant_created_at->Author_Image_Name}}"></div>
               <!-- /HEXAGON -->
             </div>
             <!-- /USER AVATAR CONTENT -->
@@ -126,7 +126,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-68-74" data-src="/Uploads/avatars/{{$discussion->Author_Image_Name}}"></div>
+                    <div class="hexagon-image-68-74" data-src="{{$discussion->Author_Image_Name}}"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -156,7 +156,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$discussion->Author_Image_Name}}"></div>
+                    <div class="hexagon-image-30-32" data-src="{{$discussion->Author_Image_Name}}"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -228,7 +228,7 @@
 
                 @if($discussion->Discussion_Image != NULL && $discussion->Discussion_Video == NULL)
                 <!-- FORUM POST IMAGE -->
-                <img class="forum-post-image" src="/Uploads/ForumDiscussionImages/{{$discussion->Discussion_Image}}" alt="cover-01">
+                <img class="forum-post-image" src="{{$discussion->Discussion_Image}}" alt="cover-01">
                 <!-- /FORUM POST IMAGE -->
 
                 @elseif($discussion->Discussion_Video != NULL && $discussion->Discussion_Image == NULL)
@@ -239,7 +239,7 @@
                   <div class="video-box">
                     <!-- VIDEO BOX COVER IMAGE -->
                     <video  style="width:100%;"  autoplay muted loop controls>
-                          <source src="/Uploads/ForumDiscussionVideos/{{$discussion->Discussion_Video}}" type="video/mp4" >
+                          <source src="{{$paticipant_reply->Discussion_Video}}" type="video/mp4" >
                    </video>
                     <!-- /VIDEO BOX COVER IMAGE -->
 
@@ -272,6 +272,8 @@
           <!-- /FORUM POST -->
 
          @foreach($paticipant_comments as $paticipant_reply)
+
+         @if($paticipant_reply->Post_Image != NULL && $paticipant_reply->Post_Video == NULL)
           <!-- FORUM POST -->
           <div class="forum-post">
             <!-- FORUM POST META -->
@@ -300,11 +302,11 @@
               <!-- FORUM POST USER -->
               <div class="forum-post-user">
                 <!-- USER AVATAR -->
-                <a class="user-avatar no-outline" href="profile-timeline.html">
+                <a class="user-avatar no-outline" href="">
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-68-74" data-src="/Uploads/avatars/{{$paticipant_reply->Author_Image_Name}}"></div>
+                    <div class="hexagon-image-68-74" data-src="{{$paticipant_reply->Author_Image_Name}}"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -334,7 +336,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$paticipant_reply->Author_Image_Name}}"></div>
+                    <div class="hexagon-image-30-32" data-src="{{$paticipant_reply->Author_Image_Name}}"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -360,11 +362,11 @@
                 <!-- /USER AVATAR -->
 
                 <!-- FORUM POST USER TITLE -->
-                <p class="forum-post-user-title"><a href="profile-timeline.html">{{$paticipant_reply->Author_Name}}</a></p>
+                <p class="forum-post-user-title"><a href="">{{$paticipant_reply->Author_Name}}</a></p>
                 <!-- /FORUM POST USER TITLE -->
 
                 <!-- FORUM POST USER TITLE -->
-                <p class="forum-post-user-text"><a href="profile-timeline.html">@ {{strtolower($paticipant_reply->Author_Name)}}</a></p>
+                <p class="forum-post-user-text"><a href="">@ {{strtolower($paticipant_reply->Author_Name)}}</a></p>
                 <!-- /FORUM POST USER TITLE -->
 
                 <!-- FORUM POST USER TAG -->
@@ -381,7 +383,7 @@
 
                 @if($paticipant_reply->Post_Image != NULL)
                 <!-- FORUM POST IMAGE -->
-                <img class="forum-post-image" src="/Uploads/ForumDiscussionImages/{{$paticipant_reply->Post_Image}}" alt="cover-01">
+                <img class="forum-post-image" src="{{$paticipant_reply->Post_Image}}" alt="cover-01">
                 <!-- /FORUM POST IMAGE -->
                 @endif
               </div>
@@ -391,6 +393,37 @@
 
           </div>
           <!-- /FORUM POST -->
+          @elseif($paticipant_reply->Post_Video != NULL && $paticipant_reply->Post_Image == NULL)
+          <br>
+          <!-- VIDEO BOX -->
+          <div class="video-box">
+            <!-- VIDEO BOX COVER -->
+            <div class="video-box">
+              <!-- VIDEO BOX COVER IMAGE -->
+              <video  style="width:100%;"  autoplay muted loop controls>
+                    <source src="{{$paticipant_reply->Post_Video}}" type="video/mp4" >
+             </video>
+              <!-- /VIDEO BOX COVER IMAGE -->
+
+            </div>
+            <!-- /VIDEO BOX COVER -->
+
+            <!-- VIDEO BOX INFO -->
+            <div class="video-box-info">
+              <!-- VIDEO BOX TITLE -->
+              <p class="video-box-title">{{$paticipant_reply->Post_Content}}</p>
+              <!-- /VIDEO BOX TITLE -->
+
+              <!-- VIDEO BOX TEXT -->
+              <p class="video-box-text">{{$paticipant_reply->created_at->diffForHumans()}}</p>
+              <p class="video-box-text">by {{strtolower($paticipant_reply->Author_Name)}}</p>
+              <!-- /VIDEO BOX TEXT -->
+            </div>
+            <!-- /VIDEO BOX INFO -->
+          </div>
+          <!-- /VIDEO BOX -->
+
+          @endif
           @endforeach
 
         </div>

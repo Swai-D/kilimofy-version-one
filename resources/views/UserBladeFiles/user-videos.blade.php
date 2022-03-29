@@ -48,7 +48,7 @@
           <div class="video-box">
             <!-- VIDEO BOX COVER IMAGE -->
             <video  style="width:100%;"  autoplay muted loop controls >
-                  <source src="/Uploads/PostVideos/{{$user_latest_video->Video}}" type="video/mp4" >
+                  <source src="{{$user_latest_video->Video}}" type="video/mp4" >
            </video>
             <!-- /VIDEO BOX COVER IMAGE -->
 

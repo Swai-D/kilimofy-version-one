@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Post;
 use App\Models\User;
@@ -33,9 +34,6 @@ class PostController extends Controller
        if (isset($data)) {
          $post = new Post();
          $post->Caption = $request->Caption;
-         $post->Tag1 = $request->Tag1;
-         $post->Tag2 = $request->Tag2;
-         $post->Tag3 = $request->Tag3;
          $post->User_id = $request->User_id;
          $post->name = $request->name;
          $post->username = $request->username;
@@ -48,17 +46,21 @@ class PostController extends Controller
           if(strstr($mime, "video/")){
             $post_video = $request->file('File');
             $post_video_name = time().'.'.$post_video->getClientOriginalExtension();
-            $path = public_path().'/Uploads/PostVideos/';
-            $post_video->move($path, $post_video_name);
-            $post->Video = $post_video_name;
+            $path = 'Uploads/PostVideos/'.$post_video_name;
+            Storage::disk('s3')->put($path, file_get_contents($post_video));
+            $filePath = Storage::disk('s3')->url($path);
+            $post->Video = $filePath;
             //dd("It Works");
           }
 
           else if(strstr($mime, "image/")){
             $post_image = $request->file('File');
             $filename = time().'.'.$post_image->getClientOriginalExtension();
-            Image::make($post_image)->resize(1920, 1280)->save(public_path('/Uploads/PostPhotos/'.$filename));
-            $post->Photo = $filename;
+            $image = Image::make($post_image)->resize(1920, 1280);
+            $filePath = 'Uploads/PostPhotos/'.$filename;
+            Storage::disk('s3')->put($filePath, file_get_contents($post_image));
+            $filePath = Storage::disk('s3')->url($filePath);
+            $post->Photo = $filePath;
           }
 
         }

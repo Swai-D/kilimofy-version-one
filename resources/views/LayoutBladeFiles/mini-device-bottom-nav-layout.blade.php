@@ -20,6 +20,7 @@
   </div>
   <!-- /BAR ACTIONS -->
 
+@auth
 
 @if(Auth::user()->user_ocupation == 'Mkulima')
 <!-- BAR ACTIONS -->
@@ -471,3 +472,68 @@
 <!-- POPUP BOX -->
 @include('LayoutBladeFiles.switch-account-form')
 <!-- /POPUP BOX -->
+@endauth
+
+@guest
+<!-- BAR ACTIONS -->
+<div class="bar-actions">
+  <!-- ACTION LIST -->
+  <div class="action-list dark">
+    <!-- ACTION LIST ITEM -->
+    <a class="action-list-item " href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu">
+      <!-- ACTION LIST ITEM ICON -->
+      <svg class="action-list-item-icon icon-shopping-bag" @yield('mini-user-pembejeo-active')>
+        <use xlink:href="#svg-shopping-bag"></use>
+      </svg>
+      <!-- /ACTION LIST ITEM ICON -->
+    </a>
+    <!-- /ACTION LIST ITEM -->
+
+    <!-- ACTION LIST ITEM -->
+    <a class="action-list-item " href="/kilimofy/Group/Group-Lists">
+      <!-- ACTION LIST ITEM ICON -->
+      <svg class="action-list-item-icon icon-group" @yield('mini-user-chat-menu')>
+        <use xlink:href="#svg-group"></use>
+      </svg>
+      <!-- /ACTION LIST ITEM ICON -->
+    </a>
+    <!-- /ACTION LIST ITEM -->
+
+    <!-- ACTION LIST ITEM -->
+    <a class="action-list-item " href="/kilimofy/Group/Group-Lists">
+      <!-- ACTION LIST ITEM ICON -->
+      <svg class="action-list-item-icon icon-magnifying-glass" @yield('mini-user-chat-menu')>
+        <use xlink:href="#svg-magnifying-glass"></use>
+      </svg>
+      <!-- /ACTION LIST ITEM ICON -->
+    </a>
+    <!-- /ACTION LIST ITEM -->
+
+    <!-- ACTION LIST ITEM -->
+    <a class="action-list-item " href="/Kilimofy-Messenger">
+      <!-- ACTION LIST ITEM ICON -->
+      <svg class="action-list-item-icon icon-messages" @yield('mini-user-forum-active')>
+        <use xlink:href="#svg-messages"></use>
+      </svg>
+      <!-- /ACTION LIST ITEM ICON -->
+    </a>
+    <!-- /ACTION LIST ITEM -->
+
+
+
+    <!-- ACTION LIST ITEM -->
+    <a class="action-list-item " href="/home">
+      <!-- ACTION LIST ITEM ICON -->
+      <svg class="action-list-item-icon icon-profile" @yield('mini-user-profile-active')>
+        <use xlink:href="#svg-profile"></use>
+      </svg>
+      <!-- /ACTION LIST ITEM ICON -->
+    </a>
+    <!-- /ACTION LIST ITEM -->
+
+      </div>
+      <!-- /ACTION LIST -->
+
+</div>
+<!-- /BAR ACTIONS -->
+@endguest

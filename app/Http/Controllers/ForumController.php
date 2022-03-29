@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Discussion;
 use App\Models\Paticipant;
@@ -65,16 +66,22 @@ class ForumController extends Controller
 
               $discussions_image = $request->file('Discussion_File');
               $filename = time().'.'.$discussions_image->getClientOriginalExtension();
-              Image::make($discussions_image)->resize(528, 280)->save(public_path('/Uploads/ForumDiscussionImages/'.$filename));
-              $new_discussion->Discussion_Image = $filename;
+              Image::make($discussions_image)->resize(528, 280);
+              $filePath = 'Uploads/ForumDiscussionImages/'.$filename;
+              Storage::disk('s3')->put($filePath, file_get_contents($discussions_image));
+              $filePath = Storage::disk('s3')->url($filePath);
+              $new_discussion->Discussion_Image = $filePath;
             }
 
             else if(strstr($mime,  "video/")){
+
               $discussions_video = $request->file('Discussion_File');
               $discussions_video_name = time().'.'.$discussions_video->getClientOriginalExtension();
-              $path = public_path().'/Uploads/ForumDiscussionVideos/';
-              $discussions_video->move($path, $discussions_video_name);
-              $new_discussion->Discussion_Video = $discussions_video_name;
+              $path = 'Uploads/ForumDiscussionVideos/'.$discussions_video_name;
+              Storage::disk('s3')->put($path, file_get_contents($discussions_video));
+              $filePath = Storage::disk('s3')->url($path);
+              $new_discussion->Discussion_Video = $filePath;
+
             }
           }
 
@@ -157,16 +164,20 @@ class ForumController extends Controller
 
               $post_image = $request->file('File');
               $filename = time().'.'.$post_image->getClientOriginalExtension();
-              Image::make($post_image)->resize(528, 280)->save(public_path('/Uploads/ForumDiscussionImages/'.$filename));
-              $paticipant_reply->Post_Image = $filename;
+              Image::make($post_image)->resize(528, 280);
+              $filePath = 'Uploads/ForumDiscussionImages/'.$filename;
+              Storage::disk('s3')->put($filePath, file_get_contents($post_image));
+              $filePath = Storage::disk('s3')->url($filePath);
+              $paticipant_reply->Post_Image = $filePath;
             }
 
             else if(strstr($mime,  "video/")){
               $post_video = $request->file('File');
               $post_video_name = time().'.'.$post_video->getClientOriginalExtension();
-              $path = public_path().'/Uploads/ForumDiscussionVideos/';
-              $post_video->move($path, $post_video_name);
-              $paticipant_reply->Post_Video = $post_video_name;
+              $path = 'Uploads/ForumDiscussionVideos/'.$post_video_name;
+              Storage::disk('s3')->put($path, file_get_contents($post_video));
+              $filePath = Storage::disk('s3')->url($path);
+              $paticipant_reply->Post_Video = $filePath;
             }
         }
 

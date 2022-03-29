@@ -22,7 +22,7 @@
         <!-- USER AVATAR CONTENT -->
         <div class="user-avatar-content">
           <!-- HEXAGON -->
-          <div class="hexagon-image-100-110" data-src="/Uploads/avatars/{{$user->avatar}}"></div>
+          <div class="hexagon-image-100-110" data-src="{{$user->avatar}}"></div>
           <!-- /HEXAGON -->
         </div>
         <!-- /USER AVATAR CONTENT -->

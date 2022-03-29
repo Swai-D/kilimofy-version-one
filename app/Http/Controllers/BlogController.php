@@ -74,7 +74,7 @@ class BlogController extends Controller
        $blogPathArray = explode('/', $blog->cover_image);
        $blogImage = $blogPathArray[3];
        File::delete([public_path('/Uploads/BlogPostImages/'.$blogImage),]);
-       
+
       return redirect()->back()->with('Message', 'Blog Post Deleted Successfully!');
     }
 }

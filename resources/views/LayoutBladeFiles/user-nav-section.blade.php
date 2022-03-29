@@ -16,17 +16,17 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item @yield('timeline-menu-active')" href="/kilimofy/UserAccount/user_timeline_page/{{$user->id}}-{{$user->name}}'s-Timeline-in-Kilimofy-Platform">
+    <!-- <a class="section-menu-item @yield('timeline-menu-active')" href="/kilimofy/UserAccount/user_timeline_page/{{$user->id}}-{{$user->name}}'s-Timeline-in-Kilimofy-Platform"> -->
       <!-- SECTION MENU ITEM ICON -->
-      <svg class="section-menu-item-icon icon-timeline">
-        <use xlink:href="#svg-timeline"></use>
-      </svg>
+      <!-- <svg class="section-menu-item-icon icon-timeline"> -->
+        <!-- <use xlink:href="#svg-timeline"></use> -->
+      <!-- </svg> -->
       <!-- /SECTION MENU ITEM ICON -->
 
       <!-- SECTION MENU ITEM TEXT -->
-      <p class="section-menu-item-text">Timeline</p>
+      <!-- <p class="section-menu-item-text">Timeline</p> -->
       <!-- /SECTION MENU ITEM TEXT -->
-    </a>
+    <!-- </a> -->
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->

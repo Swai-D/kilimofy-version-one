@@ -1,3 +1,4 @@
+@auth
 <div class="popup-box small popup-change-profile">
   <!-- POPUP CLOSE BUTTON -->
   <div class="popup-close-button popup-change-profile-trigger">
@@ -85,3 +86,4 @@
   </form>
   <!-- /FORM -->
 </div>
+@endauth
