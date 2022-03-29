@@ -176,17 +176,14 @@ class HomeBladeController extends Controller
 
            if(strstr($mime, "image/")){
 
-
-             if ($user_id->avatar != NULL) {
-
-               //Delete the Old IMAGE AVATAR from  avatar Folder (Save Space)
-               $imagePath = explode('/', $user_id->avatar);
-               $avatarName = $imagePath[5];
-               Storage::disk('s3')->delete('Uploads/avatars/'.$avatarName);
+             //Delete the Old IMAGE AVATAR from  avatar Folder (Save Space)
+             $imagePath = explode('/', $user_id->avatar);
+             
+             if ($imagePath[] > 0) {
+                 $avatarName = $imagePath[5];
+                 Storage::disk('s3')->delete('Uploads/avatars/'.$avatarName);
 
              }
-
-
              //store another avatar
              $user_image = request()->file('avatar');
              $filename = time().'.'.$user_image->getClientOriginalExtension();
