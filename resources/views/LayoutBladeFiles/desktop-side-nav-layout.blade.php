@@ -817,20 +817,7 @@
     <!-- MENU ITEM -->
 
 
-    <hr><br>
-    <!-- MENU ITEM -->
-    <li class="menu-item">
-      <!-- MENU ITEM LINK -->
-        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" data-title="logout">
-          <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:24; height:24;">
-        </a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          @csrf
-      </form>
-      <!-- /MENU ITEM LINK -->
-    </li>
-    <!-- /MENU ITEM -->
-  </ul>
+    </ul>
   <!-- /MENU -->
 </nav>
 
