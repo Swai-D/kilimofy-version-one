@@ -21,7 +21,7 @@ class GroupTableSeeder extends Seeder
          'Members' => 0,
          'Post' => 0,
          'Vistors' => 0,
-         'Group_Image' => 'group.jpg',
+         'Group_Image' => 'https://kilimofy.s3.amazonaws.com/Uploads/avatars/default.png',
          'Status' => 'Public',
          'Creator_Name' => 'Kilimofy Tz',
          'Creator_Id' => 1,
