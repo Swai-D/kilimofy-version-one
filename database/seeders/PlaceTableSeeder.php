@@ -2785,6 +2785,243 @@ class PlaceTableSeeder extends Seeder
 
 
 
+          //Tanga
+           \App\Models\Place::create([
+               'Region' => 'Tanga',
+               'District' => 'Muheza',
+               'SoilPh' => '4-7',
+               'SoilType' => 'Mchanganyiko mwekundu, Mfinyanzi,Tifutifu na kichanga wenye rutuba tofauti',
+               'PriorityCashCrops_1' => 'Chai',
+               'PriorityCashCrops_2' => 'Viungo/ spices',
+               'PriorityCashCrops_3' => 'Mkonge',
+               'PriorityFoodCrops_1' => 'Muhogo',
+               'PriorityFoodCrops_2' => 'Ndizi',
+               'PriorityFoodCrops_3' => NULL,
+               'LessPriorityCashCrops_1' => 'Korosho',
+               'LessPriorityCashCrops_2' => 'Kakao',
+               'LessPriorityCashCrops_3' => 'Ufuta',
+               'LessPriorityFoodCrops_1' => 'Mpunga',
+               'LessPriorityFoodCrops_2' => 'Mahindi',
+               'LessPriorityFoodCrops_3' => NULL,
+               'created_at' => '2020-09-24 18:18:15',
+               'updated_at' => '2020-09-24 18:18:15',
+           ]);
+
+
+
+           //Tanga
+            \App\Models\Place::create([
+                'Region' => 'Tanga',
+                'District' => 'Pangani',
+                'SoilPh' => '4-7',
+                'SoilType' => 'Mchanganyiko mwekundu, Kichanga, Tifutifu, na Mfinyanzi wenye rutuba',
+                'PriorityCashCrops_1' => 'Ndizi',
+                'PriorityCashCrops_2' => NULL,
+                'PriorityCashCrops_3' => NULL,
+                'PriorityFoodCrops_1' => 'Mpunga',
+                'PriorityFoodCrops_2' => 'Muhogo',
+                'PriorityFoodCrops_3' => NULL,
+                'LessPriorityCashCrops_1' => 'Viungo/ Spices',
+                'LessPriorityCashCrops_2' => 'Korosho',
+                'LessPriorityCashCrops_3' => NULL,
+                'LessPriorityFoodCrops_1' => 'Mtama',
+                'LessPriorityFoodCrops_2' => 'Muhogo',
+                'LessPriorityFoodCrops_3' => NULL,
+                'created_at' => '2020-09-24 18:18:15',
+                'updated_at' => '2020-09-24 18:18:15',
+            ]);
+
+
+
+            //Tanga
+             \App\Models\Place::create([
+                 'Region' => 'Tanga',
+                 'District' => 'Tanga',
+                 'SoilPh' => '5-7',
+                 'SoilType' => 'Mchanganyiko mwekundu, Kichanga, Tifutifu, na Mfinyanzi  wenye rutuba',
+                 'PriorityCashCrops_1' => 'Mkonge',
+                 'PriorityCashCrops_2' => 'Nazi',
+                 'PriorityCashCrops_3' => NULL,
+                 'PriorityFoodCrops_1' => 'Muhogo',
+                 'PriorityFoodCrops_2' => NULL,
+                 'PriorityFoodCrops_3' => NULL,
+                 'LessPriorityCashCrops_1' => 'Korosho',
+                 'LessPriorityCashCrops_2' => 'Mazao ya Bustani',
+                 'LessPriorityCashCrops_3' => NULL,
+                 'LessPriorityFoodCrops_1' => 'Mikunde',
+                 'LessPriorityFoodCrops_2' => 'Mtama',
+                 'LessPriorityFoodCrops_3' => 'Viazi Vitamu',
+                 'created_at' => '2020-09-24 18:18:15',
+                 'updated_at' => '2020-09-24 18:18:15',
+             ]);
+
+
+
+
+
+             //Dodoma
+              \App\Models\Place::create([
+                  'Region' => 'Dodoma',
+                  'District' => 'Bahi',
+                  'SoilPh' => '6-8',
+                  'SoilType' => 'Mwekundu, Mfinyanzi, Kichanga wenye rutuba hafifu',
+                  'PriorityCashCrops_1' => 'Zabibu',
+                  'PriorityCashCrops_2' => 'Mpunga',
+                  'PriorityCashCrops_3' => NULL,
+                  'PriorityFoodCrops_1' => 'Mtama',
+                  'PriorityFoodCrops_2' => 'Uwele',
+                  'PriorityFoodCrops_3' => NULL,
+                  'LessPriorityCashCrops_1' => 'Alizeti',
+                  'LessPriorityCashCrops_2' => 'Karanga',
+                  'LessPriorityCashCrops_3' => NULL,
+                  'LessPriorityFoodCrops_1' => 'Viazi Vitamu',
+                  'LessPriorityFoodCrops_2' => NULL,
+                  'LessPriorityFoodCrops_3' => NULL,
+                  'created_at' => '2020-09-24 18:18:15',
+                  'updated_at' => '2020-09-24 18:18:15',
+              ]);
+
+
+              //Dodoma
+               \App\Models\Place::create([
+                   'Region' => 'Dodoma',
+                   'District' => 'Chamwino',
+                   'SoilPh' => '5-7',
+                   'SoilType' => 'Kichanga,Tifutifu wenye rutuba ya kiasi',
+                   'PriorityCashCrops_1' => 'Zabibu',
+                   'PriorityCashCrops_2' => 'Ufuta',
+                   'PriorityCashCrops_3' => NULL,
+                   'PriorityFoodCrops_1' => 'Mtama',
+                   'PriorityFoodCrops_2' => 'Njugumawe',
+                   'PriorityFoodCrops_3' => NULL,
+                   'LessPriorityCashCrops_1' => 'Alizeti',
+                   'LessPriorityCashCrops_2' => 'Karanga',
+                   'LessPriorityCashCrops_3' => NULL,
+                   'LessPriorityFoodCrops_1' => 'Mpunga',
+                   'LessPriorityFoodCrops_2' => 'Viazi Vitamu',
+                   'LessPriorityFoodCrops_3' => NULL,
+                   'created_at' => '2020-09-24 18:18:15',
+                   'updated_at' => '2020-09-24 18:18:15',
+               ]);
+
+
+               //Dodoma
+                \App\Models\Place::create([
+                    'Region' => 'Dodoma',
+                    'District' => 'Chemba',
+                    'SoilPh' => '5-7',
+                    'SoilType' => 'Kichanga, Tifutifu na Mfinyanzi',
+                    'PriorityCashCrops_1' => 'Alizeti',
+                    'PriorityCashCrops_2' => 'Ufuta',
+                    'PriorityCashCrops_3' => NULL,
+                    'PriorityFoodCrops_1' => 'Muhogo',
+                    'PriorityFoodCrops_2' => 'Mtama',
+                    'PriorityFoodCrops_3' => NULL,
+                    'LessPriorityCashCrops_1' => 'Karanga',
+                    'LessPriorityCashCrops_2' => NULL,
+                    'LessPriorityCashCrops_3' => NULL,
+                    'LessPriorityFoodCrops_1' => 'Viazi Vitamu',
+                    'LessPriorityFoodCrops_2' => NULL,
+                    'LessPriorityFoodCrops_3' => NULL,
+                    'created_at' => '2020-09-24 18:18:15',
+                    'updated_at' => '2020-09-24 18:18:15',
+                ]);
+
+
+
+                //Dodoma
+                 \App\Models\Place::create([
+                     'Region' => 'Dodoma',
+                     'District' => 'Dodoma',
+                     'SoilPh' => '6.5-8.5',
+                     'SoilType' => 'Tifutifu, Kichanga, na Mfinyanzi',
+                     'PriorityCashCrops_1' => 'Zabibu',
+                     'PriorityCashCrops_2' => NULL,
+                     'PriorityCashCrops_3' => NULL,
+                     'PriorityFoodCrops_1' => 'Mtama',
+                     'PriorityFoodCrops_2' => 'Uwele',
+                     'PriorityFoodCrops_3' => 'Muhogo',
+                     'LessPriorityCashCrops_1' => 'Alizeti',
+                     'LessPriorityCashCrops_2' => 'Karanga',
+                     'LessPriorityCashCrops_3' => NULL,
+                     'LessPriorityFoodCrops_1' => 'Mahindi',
+                     'LessPriorityFoodCrops_2' => 'Viazi Vitamu',
+                     'LessPriorityFoodCrops_3' => 'Mikunde',
+                     'created_at' => '2020-09-24 18:18:15',
+                     'updated_at' => '2020-09-24 18:18:15',
+                 ]);
+
+
+
+                 //Dodoma
+                  \App\Models\Place::create([
+                      'Region' => 'Dodoma',
+                      'District' => 'Kondoa',
+                      'SoilPh' => '6.0-8.5',
+                      'SoilType' => 'Kichanga, tifutifu na udongo mwekundu',
+                      'PriorityCashCrops_1' => 'Alizeti',
+                      'PriorityCashCrops_2' => 'Ufuta',
+                      'PriorityCashCrops_3' => 'Mbaazi',
+                      'PriorityFoodCrops_1' => 'Mtama',
+                      'PriorityFoodCrops_2' => 'Mahindi',
+                      'PriorityFoodCrops_3' => 'Muhogo',
+                      'LessPriorityCashCrops_1' => 'Ufuta',
+                      'LessPriorityCashCrops_2' => 'Karanga',
+                      'LessPriorityCashCrops_3' => NULL,
+                      'LessPriorityFoodCrops_1' => 'Mahindi',
+                      'LessPriorityFoodCrops_2' => 'Viazi Vitamu',
+                      'LessPriorityFoodCrops_3' => 'Mikunde',
+                      'created_at' => '2020-09-24 18:18:15',
+                      'updated_at' => '2020-09-24 18:18:15',
+                  ]);
+
+
+
+                  //Dodoma
+                   \App\Models\Place::create([
+                       'Region' => 'Dodoma',
+                       'District' => 'Mpwapwa',
+                       'SoilPh' => '6.0-8.5',
+                       'SoilType' => 'Kichanga, tifutifu na udongo mwekundu',
+                       'PriorityCashCrops_1' => 'Alizeti',
+                       'PriorityCashCrops_2' => 'Karanga',
+                       'PriorityCashCrops_3' => NULL,
+                       'PriorityFoodCrops_1' => 'Mtama',
+                       'PriorityFoodCrops_2' => 'Njugumawe',
+                       'PriorityFoodCrops_3' => NULL,
+                       'LessPriorityCashCrops_1' => 'Ufuta',
+                       'LessPriorityCashCrops_2' => 'Karanga',
+                       'LessPriorityCashCrops_3' => NULL,
+                       'LessPriorityFoodCrops_1' => 'Mahindi',
+                       'LessPriorityFoodCrops_2' => 'Muhogo',
+                       'LessPriorityFoodCrops_3' => 'Mikunde',
+                       'created_at' => '2020-09-24 18:18:15',
+                       'updated_at' => '2020-09-24 18:18:15',
+                   ]);
+
+
+
+                   //Dodoma
+                    \App\Models\Place::create([
+                        'Region' => 'Dodoma',
+                        'District' => 'Kongwa',
+                        'SoilPh' => '6-8.5',
+                        'SoilType' => 'Tifutifu, Kichanga na Mfinyanzi mwekundu wenye rutuba kiasi',
+                        'PriorityCashCrops_1' => 'Alizeti',
+                        'PriorityCashCrops_2' => 'Karanga',
+                        'PriorityCashCrops_3' => NULL,
+                        'PriorityFoodCrops_1' => 'Mtama',
+                        'PriorityFoodCrops_2' => 'Njugumawe',
+                        'PriorityFoodCrops_3' => 'Muhogo',
+                        'LessPriorityCashCrops_1' => NULL,
+                        'LessPriorityCashCrops_2' => NULL,
+                        'LessPriorityCashCrops_3' => NULL,
+                        'LessPriorityFoodCrops_1' => 'Mikunde',
+                        'LessPriorityFoodCrops_2' => 'Mbaazi',
+                        'LessPriorityFoodCrops_3' => NULL,
+                        'created_at' => '2020-09-24 18:18:15',
+                        'updated_at' => '2020-09-24 18:18:15',
+                    ]);
 
 
 
