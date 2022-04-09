@@ -118,6 +118,7 @@ class AuthController extends Controller
         if ($verification_code == $token) {
             $user = tap(User::where('user_phone_number', $data['user_phone_number']))->update(['isVerified' => true]);
             /* Authenticate user */
+
             Auth::login($user->first());
 
             if (Auth::user()->user_ocupation == 'Mkulima') {
@@ -126,13 +127,13 @@ class AuthController extends Controller
 
             elseif (Auth::user()->user_ocupation == 'Muuza_Pembejeo')
             {
-              Session::put('user_id',$user_id);
+
               return redirect('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page');
             }
 
 
             elseif (Auth::user()->user_ocupation == 'Bwana_Shamba') {
-              Session::put('user_id',$user_id);
+
               return redirect('/kilimofy/Afisa-Ugavi/home-page');
             }
 
@@ -157,12 +158,12 @@ class AuthController extends Controller
 
       }
 
-        $std_user_phone_number = $request->user_phone_number;
-        $error = 1;
-        //Sending data to another controler via session
-        Session::put('std_user_phone_number', $std_user_phone_number);
-        Session::put('error', $error);
-        return redirect('/kilimofy/home/verify');
+        // $std_user_phone_number = $request->user_phone_number;
+        // $error = 1;
+        // //Sending data to another controler via session
+        // Session::put('std_user_phone_number', $std_user_phone_number);
+        // Session::put('error', $error);
+        // return redirect('/kilimofy/home/verify');
     }
 
 
