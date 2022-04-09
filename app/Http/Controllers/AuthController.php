@@ -118,8 +118,41 @@ class AuthController extends Controller
         if ($verification_code == $token) {
             $user = tap(User::where('user_phone_number', $data['user_phone_number']))->update(['isVerified' => true]);
             /* Authenticate user */
-            // Auth::login($user->first());
-            return redirect()->route('home');
+            Auth::login($user->first());
+
+            if (Auth::user()->user_ocupation == 'Mkulima') {
+              return redirect('/kilimofy/Mkulima/home-page');
+            }
+
+            elseif (Auth::user()->user_ocupation == 'Muuza_Pembejeo')
+            {
+              Session::put('user_id',$user_id);
+              return redirect('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page');
+            }
+
+
+            elseif (Auth::user()->user_ocupation == 'Bwana_Shamba') {
+              Session::put('user_id',$user_id);
+              return redirect('/kilimofy/Afisa-Ugavi/home-page');
+            }
+
+
+            elseif (Auth::user()->user_ocupation == 'Dereva') {
+              return redirect('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page');
+            }
+
+            elseif (Auth::user()->user_ocupation == 'Mashine_Za_Kilimo') {
+              return redirect('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page');
+            }
+
+            elseif (Auth::user()->user_ocupation == 'Fundi') {
+              return redirect('/kilimofy/Fundi-Wa-Mashine-Za-Kilimo/home-page');
+            }
+
+            elseif (Auth::user()->user_ocupation == 'Mtaalam') {
+              return redirect('/kilimofy/Mtaalam-Wa-Kilimo/home-page');
+            }
+
         }
 
       }
