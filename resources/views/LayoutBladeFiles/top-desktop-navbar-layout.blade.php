@@ -114,7 +114,7 @@
       <!-- DROPDOWN BOX LIST -->
       <div class="dropdown-box-list small no-scroll">
         <!-- DROPDOWN BOX LIST ITEM -->
-        <a class="dropdown-box-list-item" href="profile-timeline.html">
+        <a class="dropdown-box-list-item" href="">
           <!-- USER STATUS -->
           <div class="user-status notification">
             <!-- USER STATUS AVATAR -->
@@ -752,7 +752,7 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <p class="user-status-title"><a class="bold" href="/Ki">Welcome to Kilimofy</a> notification <a class="highlighted" href="#">we will include notification in the comming version</a></p>
+                <p class="user-status-title"><a class="bold" href="/">Welcome to Kilimofy</a> notification <a class="highlighted" href="#">we will include notification in the comming version</a></p>
                 <!-- /USER STATUS TITLE -->
 
                 <!-- USER STATUS TIMESTAMP -->
@@ -1222,7 +1222,7 @@
       <!-- DROPDOWN BOX LIST -->
       <div class="dropdown-box-list small no-scroll">
         <!-- DROPDOWN BOX LIST ITEM -->
-        <a class="dropdown-box-list-item" href="group-timeline.html">
+        <a class="dropdown-box-list-item" href="">
           <!-- USER STATUS -->
           <div class="user-status notification">
             <!-- USER STATUS AVATAR -->
@@ -1276,7 +1276,7 @@
       <!-- DROPDOWN BOX LIST -->
       <div class="dropdown-box-list small no-scroll">
         <!-- DROPDOWN BOX LIST ITEM -->
-        <a class="dropdown-box-list-item" href="marketplace-product.html">
+        <a class="dropdown-box-list-item" href="">
           <!-- USER STATUS -->
           <div class="user-status no-padding-top">
             <!-- USER STATUS AVATAR -->

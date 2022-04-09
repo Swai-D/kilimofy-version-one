@@ -38,17 +38,46 @@ class AuthController extends Controller
           //change user phone number to STD formart for msg verifications
           $user_phone_number = substr($request->user_phone_number, 1);
           $std_user_phone_number = '+255'.$user_phone_number;
+          $message = mt_rand(100000,999999);
+          $phone = $std_user_phone_number;
+          $sender = 'Kilimofy';
+          $key = 'RGF2aWQgU3dhaTpkYXZ5c3dhaTE5OTU=';
 
-          // dd($std_user_phone_number);
+          //Send sms
+          // $curl = curl_init();
+          //
+          //   curl_setopt_array($curl, array(
+          //       CURLOPT_URL => "https://messaging-service.co.tz/api/sms/v1/text/single",
+          //       CURLOPT_RETURNTRANSFER => true,
+          //       CURLOPT_ENCODING => "",
+          //       CURLOPT_MAXREDIRS => 10,
+          //       CURLOPT_TIMEOUT => 30,
+          //       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          //       CURLOPT_CUSTOMREQUEST => "POST",
+          //       CURLOPT_POSTFIELDS => "{ \"from\":\"{$sender}\", \"to\":\"{$phone}\", \"text\":\"{$message}\" }",
+          //       CURLOPT_HTTPHEADER => array(
+          //           "accept: application/json",
+          //           "authorization: Basic $key",
+          //           "content-type: application/json"
+          //       ),
+          //   ));
+          //
+          //   $response = curl_exec($curl);
+          //   $err = curl_error($curl);
+          //
+          //   curl_close($curl);
+          //
+          //   if ($err) {
+          //
+          //       $return = "cURL Error #:" . $err;
+          //
+          //   } else {
+          //       $return = $response;
+          //   }
+          //
+          //   return $return;
+          //
 
-          /* Get credentials from .env */
-          $token = getenv("TWILIO_AUTH_TOKEN");
-          $twilio_sid = getenv("TWILIO_SID");
-          $twilio_verify_sid = getenv("TWILIO_VERIFY_SID");
-          $twilio = new Client($twilio_sid, $token);
-          $twilio->verify->v2->services($twilio_verify_sid)
-              ->verifications
-              ->create($std_user_phone_number, "sms");
 
           User::create([
             'name' => $data['name'],
@@ -61,8 +90,10 @@ class AuthController extends Controller
           ]);
 
           $error = 0;
+
           //Sending data to another controler via session
           Session::put('std_user_phone_number', $std_user_phone_number);
+          Session::put('message', $message);
           Session::put('error', $error);
           return redirect('/kilimofy/home/verify');
         }
@@ -82,17 +113,12 @@ class AuthController extends Controller
 
       if (isset($data)) {
         /* Get credentials from .env */
-        $token = getenv("TWILIO_AUTH_TOKEN");
-        $twilio_sid = getenv("TWILIO_SID");
-        $twilio_verify_sid = getenv("TWILIO_VERIFY_SID");
-        $twilio = new Client($twilio_sid, $token);
-        $verification = $twilio->verify->v2->services($twilio_verify_sid)
-            ->verificationChecks
-            ->create($data['verification_code'], array('to' => $data['user_phone_number']));
-        if ($verification->valid) {
+        $token = Session::get('message');
+        $verification_code   = $request->verification_code;
+        if ($verification_code == $token) {
             $user = tap(User::where('user_phone_number', $data['user_phone_number']))->update(['isVerified' => true]);
             /* Authenticate user */
-            Auth::login($user->first());
+            // Auth::login($user->first());
             return redirect()->route('home');
         }
 
@@ -109,6 +135,7 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+
         $this->validate($request, [
             'username' => 'required|string',
             'password' => 'required',
@@ -121,10 +148,11 @@ class AuthController extends Controller
           ])
         )
 
+
+
         {
             //Globle user Id Variable
             $user_id = $request->user()->id;
-
 
             if (Auth::user()->user_ocupation == 'Mkulima') {
               return redirect('/kilimofy/Mkulima/home-page');
@@ -159,10 +187,13 @@ class AuthController extends Controller
               return redirect('/kilimofy/Mtaalam-Wa-Kilimo/home-page');
             }
 
+            dd('No where to go');
+
         }
 
        return redirect()->back()->withErrors('Taarifa ulizoingiza sio sahihi, Jaribu Tena !');
     }
+
 
     public function logout(Request $request)
     {
@@ -174,4 +205,6 @@ class AuthController extends Controller
 
         return  redirect('/');
     }
+
+
 }

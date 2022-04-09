@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
+
 
 use App\Models\Blog;
 
@@ -33,8 +36,9 @@ class BlogController extends Controller
           list(, $data)      = explode(',', $data);
           $imgeData = base64_decode($data);
           $image_name= "/Uploads/BlogPostImages/" . time().$item.'.png';
+          $imgNameCode = time().$item.'.png';
           $path = public_path() . $image_name;
-          $data =  file_put_contents($path, $imgeData);
+          file_put_contents($path, $imgeData);
           $image->removeAttribute('src');
           $image->setAttribute('src', $image_name);
 
@@ -42,16 +46,21 @@ class BlogController extends Controller
        }
 
        $content = $dom->saveHTML();
+       $imageBlog = File::delete([public_path('/Uploads/BlogPostImages/'.$imgNameCode),]);
+       return $imageBlog;
 
+        //Save in Databse
        $blog = Blog::create([
          'title' => $request->title,
          'user_name' => $request->user_name,
          'user_id' => $request->user_id,
          'avatar' => $request->avatar,
-         'cover_image' => $image_name,
+         'cover_image' => $filePath,
          'body' => $content
 
     ]);
+
+
 
       return redirect()->back()->with('Message', 'Makala imechapishwa, Asante!');
 

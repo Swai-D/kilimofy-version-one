@@ -104,9 +104,10 @@ class MkulimaController extends Controller
       $users_count = User::count();
       $headlines = Headline::all();
       $headlines_count = Headline::count();
+      $blogs = Blog::all();
       // dd(Auth::user()->avatar);
 
-      return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'users', 'users_count', 'users', 'headlines', 'headlines_count', 'kilimo_topics_count_collection', 'ufugaji_topics_count_collection', 'usafirishaji_topics_count_collection'));
+      return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'users', 'users_count', 'users', 'headlines', 'headlines_count', 'kilimo_topics_count_collection', 'ufugaji_topics_count_collection', 'usafirishaji_topics_count_collection', 'blogs'));
 
 
     }

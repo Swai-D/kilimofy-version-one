@@ -232,15 +232,6 @@
     <!-- /CONTENT ACTION -->
   </div>
   <!-- /CONTENT ACTIONS -->
-
-  <div class="user-preview-actions">
-    <!-- BUTTON -->
-    <!-- <a href="/kilimofy/Blog/Edit-Blog-Post/{{$blog->id}}" class="button secondary full " style="padding:2px; margin:2px;">Edit </a> -->
-    <!-- /BUTTON -->
-    <!-- BUTTON -->
-    <a href="/kilimofy/Blog/Delete-Blog-Post/{{$bog->id}}" class="button full" style="padding:2px; background-color: red; margin:2px;">Delete </a>
-  </div>
-  <br>
 </div>
 <!-- /POST PREVIEW -->
 @empty

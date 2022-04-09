@@ -814,6 +814,19 @@
       <!-- /MENU ITEM LINK -->
     </li>
     <!-- /MENU ITEM -->
+
+
+    <hr>
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-home')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link text-tooltip-tfr" href="/home" data-title="Vibarua">
+        <!-- MENU ITEM LINK ICON -->
+      <img src="/assets/img/user_icon/login.png" alt="" style="width:34; height:34;">
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
     <!-- MENU ITEM -->
 
 
