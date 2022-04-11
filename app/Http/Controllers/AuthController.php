@@ -119,7 +119,7 @@ class AuthController extends Controller
             $user = tap(User::where('user_phone_number', $data['user_phone_number']))->update(['isVerified' => true]);
             /* Authenticate user */
 
-            Auth::login($user->first());
+            
 
             if (Auth::user()->user_ocupation == 'Mkulima') {
               return redirect('/kilimofy/Mkulima/home-page');
