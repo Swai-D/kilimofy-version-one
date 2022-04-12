@@ -317,7 +317,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$post_comment->user_avatar}}"></div>
+                    <div class="hexagon-image-30-32" data-src="{{$post_comment->user_avatar}}"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->

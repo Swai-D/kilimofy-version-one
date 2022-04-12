@@ -69,11 +69,11 @@
 
         <!-- FORM -->
 
-        <form class="form" method="POST" action="{{ route('login') }}">
+        <form class="form" method="POST" action="/kilimofy/user/login">
           @csrf
 
           @if($errors->any())
-          <h4 class="text-danger">{{$errors->first()}}</h4>
+          <h4 class="form-box-title text-danger">{{$errors->first()}}</h4>
           @endif
           <!-- FORM ROW -->
           <div class="form-row">
@@ -99,7 +99,7 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="login-password">Neno la siri</label>
+                <label for="login-password">Password</label>
                 <input type="password" id="login-password" name="password">
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('password')}}
@@ -127,7 +127,7 @@
                   <!-- /ICON CROSS -->
                 </div>
                 <!-- /CHECKBOX BOX -->
-                <label for="login-remember">Weka Kumbukumbu</label>
+                <label for="login-remember">Remember Token</label>
               </div>
               <!-- /CHECKBOX WRAP -->
             </div>
@@ -136,7 +136,7 @@
             <!-- FORM ITEM -->
             <div class="form-item">
               <!-- FORM LINK -->
-              <a class="form-link" href="#">Umesahau neno la siri?</a>
+              <a class="form-link" href="#">Forgot Password?</a>
               <!-- /FORM LINK -->
             </div>
             <!-- /FORM ITEM -->
@@ -148,7 +148,7 @@
             <!-- FORM ITEM -->
             <div class="form-item">
               <!-- BUTTON -->
-              <button type="submit" class="button medium secondary">Ingia!</button>
+              <button type="submit" class="button medium secondary">Sign In!</button>
               <!-- /BUTTON -->
             </div>
             <!-- /FORM ITEM -->
