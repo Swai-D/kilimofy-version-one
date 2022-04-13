@@ -651,19 +651,27 @@
                 <!-- /USER STATUS -->
 
                 @if($post->Photo == NULL && $post->Video == NULL)
-                <!-- QUOTE BOX -->
-                <blockquote class="quote-box">
-                  <!-- QUOTE BOX ICON -->
-                  <svg class="quote-box-icon icon-quote">
-                    <use xlink:href="#svg-quote"></use>
-                  </svg>
-                  <!-- /QUOTE BOX ICON -->
 
-                  <!-- QUOTE BOX TEXT -->
-                  <p class="quote-box-text">{{$post->Caption}}</p>
-                  <!-- /QUOTE BOX TEXT -->
-                </blockquote>
-                <!-- /QUOTE BOX -->
+                    @if(strlen($post->Caption) < 250)
+                    <!-- QUOTE BOX -->
+                    <blockquote class="quote-box">
+                      <!-- QUOTE BOX ICON -->
+                      <svg class="quote-box-icon icon-quote">
+                        <use xlink:href="#svg-quote"></use>
+                      </svg>
+                      <!-- /QUOTE BOX ICON -->
+
+                      <!-- QUOTE BOX TEXT -->
+                      <p class="quote-box-text">{{$post->Caption}}</p>
+                      <!-- /QUOTE BOX TEXT -->
+                    </blockquote>
+                    <!-- /QUOTE BOX -->
+                    
+                    @else
+                    <!-- WIDGET BOX STATUS TEXT -->
+                    <p class="widget-box-status-text">{{$post->Caption}}</p>
+                    <!-- /WIDGET BOX STATUS TEXT -->
+                    @endif
 
 
                  @elseif($post->Photo != NULL && $post->Video == NULL)
