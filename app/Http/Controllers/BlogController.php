@@ -39,6 +39,7 @@ class BlogController extends Controller
           $imgNameCode = time().$item.'.png';
           $path = public_path() . $image_name;
           file_put_contents($path, $imgeData);
+          
           $image->removeAttribute('src');
           $image->setAttribute('src', $image_name);
 
@@ -46,10 +47,7 @@ class BlogController extends Controller
        }
 
        $content = $dom->saveHTML();
-       $imageBlog = File::delete([public_path('/Uploads/BlogPostImages/'.$imgNameCode),]);
-       return $imageBlog;
-
-        //Save in Databse
+               //Save in Databse
        $blog = Blog::create([
          'title' => $request->title,
          'user_name' => $request->user_name,
