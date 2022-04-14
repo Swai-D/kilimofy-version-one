@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Stevebauman\Location\Facades\Location;
 use Hashids\Hashids;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Stevebauman\Location\Facades\Location;
+
+
 
 use App\Models\Headline;
 use App\Models\Group;
@@ -146,7 +149,11 @@ class PembejeoNaViwatilifuController extends Controller
 
     public function delete_item(Item $item)
     {
+      $imagePathArray = parse_url($item->item_image);
+      $imagePathExplodeArray = $imagePathArray['path'];
+      Storage::disk('s3')->delete($imagePathExplodeArray);
       Item::where('id', '=', $item->id)->delete();
+
 
       return redirect('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page')->with('Message', 'Bidhaa Imeondolewa Ndani Ya Mfumo ! Asante,');
     }
@@ -173,14 +180,20 @@ class PembejeoNaViwatilifuController extends Controller
 
       if (isset($request->item_image)) {
 
-          //Delete the Old IMAGE from Public Folder (Save Space)
-          File::delete([public_path('/Uploads/ItemImages/'.$item->item_image),]);
+          // //Delete the Old IMAGE from Public Folder (Save Space)
+          // File::delete([public_path('/Uploads/ItemImages/'.$item->item_image),]);
+          $imagePathArray = parse_url($item->item_image);
+          $imagePathExplodeArray = $imagePathArray['path'];
+          Storage::disk('s3')->delete($imagePathExplodeArray);
 
           $item_image = request()->file('item_image');
           $filename = time().'.'.$item_image->getClientOriginalExtension();
-          Image::make($item_image)->resize(600, 300)->save(public_path('/Uploads/ItemImages/'.$filename));
-          Item::where('id', '=', $item->id)->update(['item_image' => $filename]);
+          Image::make($item_image)->resize(600, 300);
+          $filePath = 'Uploads/ItemImages/'.$filename;
+          Storage::disk('s3')->put($filePath, file_get_contents($item_image));
+          $filePath = Storage::disk('s3')->url($filePath);
 
+          Item::where('id', '=', $item->id)->update(['item_image' => $filePath]);
 
       }
 
@@ -224,9 +237,13 @@ class PembejeoNaViwatilifuController extends Controller
         // save image
         if(request()->hasFile('item_image')){
         $item_image = request()->file('item_image');
-        $filename = time().','.$item_image->getClientOriginalExtension();
-        Image::make($item_image)->resize(600, 300)->save(public_path('/Uploads/ItemImages/'.$filename));
-        $item->item_image = $filename;
+        $filename = time().'.'.$item_image->getClientOriginalExtension();
+        Image::make($item_image)->resize(600, 300);
+        $filePath = 'Uploads/ItemImages/'.$filename;
+        Storage::disk('s3')->put($filePath, file_get_contents($item_image));
+        $filePath = Storage::disk('s3')->url($filePath);
+
+        $item->item_image = $filePath;
 
         //save item in Database
         $item->save();

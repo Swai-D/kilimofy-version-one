@@ -281,8 +281,8 @@ style="fill:yellow "
 
   <!-- GRID -->
   <div class="grid grid-3-3-3-3 centered">
-
-    @forelse($user_location_pembejeo_na_viwatilifu_sellers as $bidhaa_info)
+  
+    @forelse($user_location_pembejeo_na_viwatilifu_sellers as $key => $bidhaa_info)
       <!-- PRODUCT PREVIEW -->
       <div class="product-preview">
         <!-- PRODUCT PREVIEW IMAGE -->

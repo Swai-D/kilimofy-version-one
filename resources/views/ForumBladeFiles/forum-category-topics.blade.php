@@ -1,4 +1,5 @@
 @extends('LayoutBladeFiles.app-layout')
+@include('LayoutBladeFiles.summernote')
 @section('title','Jukwaani')
 
 
@@ -316,7 +317,7 @@
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
-                  <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$discussions->Author_Image_Name}}"></div>
+                  <div class="hexagon-image-30-32" data-src="{{$discussions->Author_Image_Name}}"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->
@@ -470,9 +471,13 @@
 
 
 <!-- POPUP BOX -->
-<div class="popup-box mid popup-create-discussion">
+@include('LayoutBladeFiles.forum-discusion-form')
+<!-- /POPUP BOX -->
+
+<!-- POPUP BOX -->
+<div class="popup-box large ">
   <!-- POPUP CLOSE BUTTON -->
-  <div class="popup-close-button popup-create-discussion-trigger">
+  <div class="popup-close-button ">
     <!-- POPUP CLOSE BUTTON ICON -->
     <svg class="popup-close-button-icon icon-cross">
       <use xlink:href="#svg-cross"></use>
@@ -615,49 +620,33 @@
               </div>
               <!-- /FORM ROW -->
 
+              <!-- FORM ROW -->
+              <div class="form-row">
+                <!-- FORM ITEM -->
+                <div class="form-item">
+                  <!-- FORM INPUT -->
+                  <div class="form-input">
+                    <label for="login-username">Mada/Swali la Mjadala ?</label>
+                    <input type="text" id="login-username" name="username" value="{{old('username')}}">
+                    <p class="lead" style="color: #f33155">
+                      {{$errors->first('username')}}
+                    </p>
+                  </div>
+                  <!-- /FORM INPUT -->
+                </div>
+                <!-- /FORM ITEM -->
+              </div>
+              <!-- /FORM ROW -->
+
             <!-- FORM ROW -->
             <div class="form-row">
               <!-- FORM ITEM -->
               <div class="form-item">
-                <!-- FORM INPUT -->
-                <div class="form-input small active">
-                  <label for="group-tagline">Mada/Swali la Mjadala ?</label>
-                  <textarea name="Topic" id="group-tagline" rows="8" cols="80"></textarea>
-                </div>
-                <!-- /FORM INPUT -->
+                   <textarea class="form-control" name="body" id="summernote"></textarea>
               </div>
               <!-- /FORM ITEM -->
             </div>
             <!-- /FORM ROW -->
-
-          <!-- FORM ROW -->
-            <div class="form-row">
-              <!-- FORM ITEM -->
-              <div class="form-item">
-              <p class="widget-box-text">Discussion Photo/Video (Optional)</p>
-                <!-- FORM INPUT DECORATED -->
-                <div class="form-input-decorated">
-                  <!-- FORM INPUT -->
-                  <div class="form-input small">
-                    <label for="event-location"></label>
-                    <input type="file" id="event-location" name="Discussion_File" >
-                  </div>
-                  <!-- /FORM INPUT -->
-
-                  <!-- FORM INPUT ICON -->
-                  <svg class="form-input-icon icon-camera">
-                    <use xlink:href="#svg-camera"></use>
-                  </svg>
-                  <!-- /FORM INPUT ICON -->
-
-                </div>
-                <!-- /FORM INPUT DECORATED -->
-              </div>
-              <!-- /FORM ITEM -->
-            </div>
-            <!-- /FORM ROW -->
-
-
           </form>
           <!-- /FORM -->
         </div>

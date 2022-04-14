@@ -18,7 +18,7 @@ Akaunti Ya {{Auth::user()->username}}
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
-      <h5 class="section-title">Jumla ya Bidhaa <span class="highlighted">({{$total_items_in_my_store}})</span>, </h5>
+      <h5 class="section-title">Jumla ya Bidhaa <span class="highlighted">({{$total_items_in_my_store}})</span></h5>
       <!-- /SECTION TITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
@@ -127,7 +127,7 @@ Akaunti Ya {{Auth::user()->username}}
         </div>
       @endif
       <!-- GRID -->
-      <div class="grid grid-3-3-3 centered-on-mobile">
+      <div class="grid grid-4-4-4 centered-on-mobile">
         <!-- CREATE ENTITY BOX -->
         <div class="create-entity-box v2">
           <!-- CREATE ENTITY BOX COVER -->
@@ -156,11 +156,11 @@ Akaunti Ya {{Auth::user()->username}}
 
        @forelse($my_store as $store_details)
         <!-- PRODUCT PREVIEW -->
-        <div class="product-preview fixed-height">
+        <div class="product-preview ">
           <!-- PRODUCT PREVIEW IMAGE -->
           <a href="">
             <figure class="product-preview-image liquid">
-              <img src="/Uploads/ItemImages/{{$store_details->item_image}}" alt="item-01">
+              <img src="{{$store_details->item_image}}" alt="item-01">
             </figure>
           </a>
           <!-- /PRODUCT PREVIEW IMAGE -->
@@ -230,7 +230,7 @@ Akaunti Ya {{Auth::user()->username}}
       <!-- PRODUCT PREVIEW -->
       <div class="product-preview">
         <!-- PRODUCT PREVIEW IMAGE -->
-        <a href="marketplace-product.html">
+        <a href="#">
           <figure class="product-preview-image liquid">
             <img src="/assets/img/marketplace/items/04.jpg" alt="item-10">
           </figure>

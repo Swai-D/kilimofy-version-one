@@ -151,7 +151,7 @@ class MkulimaController extends Controller
 
       //Get all the sellers accross user location
       $user_location_pembejeo_na_viwatilifu_list = User::where([['user_location', $user_location],['user_ocupation', 'Muuza_Pembejeo'], ['id', '!=', $user_id]])->get();
-       // dd($user_location_pembejeo_na_viwatilifu_list);
+      // dd($user_location_pembejeo_na_viwatilifu_list->count());
 
       //find the seller in item model
       if ( $user_location_pembejeo_na_viwatilifu_list->count() > 0 ) {
@@ -163,16 +163,22 @@ class MkulimaController extends Controller
          // dd($user_location_pembejeo_na_viwatilifu_sellers);
           //Get Item Count
           $user_location_pembejeo_na_viwatilifu_sellers_count = Item::where('seller_id', '=', $user_location_pembejeo_na_viwatilifu_seller['id'])->count();
-        }
+          // dd($user_location_pembejeo_na_viwatilifu_sellers_count);
 
+        }
+          // $user_location_pembejeo_na_viwatilifu_sellers = collection($user_location_pembejeo_na_viwatilifu_sellers);
+      
         $places =  Place::paginate(25);
         $users = User::all();
+
 
         return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu-home-page', compact('user_location',  'user_location_pembejeo_na_viwatilifu_sellers','user_location_pembejeo_na_viwatilifu_sellers_count', 'places', 'users'));
 
       }
 
+
       else {
+
 
         $places =  Place::paginate(25);
         $user_location_pembejeo_na_viwatilifu_sellers_count = 0;
