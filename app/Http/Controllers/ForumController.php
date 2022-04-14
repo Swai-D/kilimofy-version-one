@@ -62,6 +62,7 @@ class ForumController extends Controller
           if ($request->file('Discussion_File')) {
             //save discussion image
             $mime = $request->file('Discussion_File')->getMimeType();
+            
             if(strstr($mime, "image/")){
 
               $discussions_image = $request->file('Discussion_File');

@@ -196,7 +196,7 @@
         <!-- /DROPDOWN BOX LIST ITEM -->
 
         <!-- DROPDOWN BOX LIST ITEM -->
-        <a class="dropdown-box-list-item" href="profile-timeline.html">
+        <a class="dropdown-box-list-item" href="#">
           <!-- USER STATUS -->
           <div class="user-status notification">
             <!-- USER STATUS AVATAR -->

@@ -36,7 +36,7 @@
       <!-- SECTION FILTERS BAR INFO -->
       <div class="section-filters-bar-info">
         <!-- SECTION FILTERS BAR TITLE -->
-        <p class="section-filters-bar-title"><a href="forums.html">Mjadala</a><span class="separator"></span><a href="forums-category.html">{{$discussion->Forum_Category_Name}}</a><span class="separator"></span><a href="">{{$discussion->Topic}}</a></p>
+        <p class="section-filters-bar-title"><a href="forums.html">Mjadala</a><span class="separator"></span><a href="#">{{$discussion->Forum_Category_Name}}</a><span class="separator"></span><a href="">{{$discussion->Topic}}</a></p>
         <!-- /SECTION FILTERS BAR TITLE -->
 
       @foreach($last_participant_created_at as $last_participant_created_at)
@@ -44,7 +44,7 @@
         <div class="section-filters-bar-text small-space">
           Last post by
           <!-- USER AVATAR -->
-          <a class="user-avatar micro no-stats" href="profile-timeline.html">
+          <a class="user-avatar micro no-stats" href="#">
             <!-- USER AVATAR BORDER -->
             <div class="user-avatar-border">
               <!-- HEXAGON -->
