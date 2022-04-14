@@ -156,7 +156,7 @@
           <div class="forum-category">
             <!-- FORUM CATEGORY IMAGE -->
             <a href="forums-category.html">
-              <img class="forum-category-image" src="/Uploads/ForumCategoryImage/{{$forum->Category_Image}}" alt="category-07">
+              <img class="forum-category-image" src="{{$forum->Category_Image}}" alt="category-07">
             </a>
             <!-- /FORUM CATEGORY IMAGE -->
 
