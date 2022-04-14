@@ -328,7 +328,7 @@
                      <!-- USER AVATAR CONTENT -->
                      <div class="user-avatar-content">
                        <!-- HEXAGON -->
-                       <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$user->avatar}}"></div>
+                       <div class="hexagon-image-30-32" data-src="{{$user->avatar}}"></div>
                        <!-- /HEXAGON -->
                      </div>
                      <!-- /USER AVATAR CONTENT -->
@@ -666,7 +666,7 @@
                       <!-- /QUOTE BOX TEXT -->
                     </blockquote>
                     <!-- /QUOTE BOX -->
-                    
+
                     @else
                     <!-- WIDGET BOX STATUS TEXT -->
                     <p class="widget-box-status-text">{{$post->Caption}}</p>

@@ -57,7 +57,7 @@
             <!-- USER AVATAR CONTENT -->
             <div class="user-avatar-content">
               <!-- HEXAGON -->
-              <div class="hexagon-image-18-20" data-src="/Uploads/avatars/{{$last_created_at->Author_Image_Name}}"></div>
+              <div class="hexagon-image-18-20" data-src="{{$last_created_at->Author_Image_Name}}"></div>
               <!-- /HEXAGON -->
             </div>
             <!-- /USER AVATAR CONTENT -->
