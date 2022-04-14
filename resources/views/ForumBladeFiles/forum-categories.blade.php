@@ -130,7 +130,7 @@
           <div class="forum-category">
             <!-- FORUM CATEGORY IMAGE -->
             <a href="/kilimofy/Forum/Forum-Category-Topics/{{$category->id}}">
-              <img class="forum-category-image" src="/Uploads/ForumCategoryImage/{{$category->Category_Image}}" alt="category-01">
+              <img class="forum-category-image" src="{{$category->Category_Image}}" alt="category-01">
             </a>
             <!-- /FORUM CATEGORY IMAGE -->
 
