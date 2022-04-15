@@ -104,7 +104,7 @@ class MkulimaController extends Controller
       $users_count = User::count();
       $headlines = Headline::all();
       $headlines_count = Headline::count();
-      $blogs = Blog::all();
+      $blogs = Blog::orderBy('created_at', 'desc')->get();
       // dd(Auth::user()->avatar);
 
       return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'users', 'users_count', 'users', 'headlines', 'headlines_count', 'kilimo_topics_count_collection', 'ufugaji_topics_count_collection', 'usafirishaji_topics_count_collection', 'blogs'));
@@ -167,7 +167,7 @@ class MkulimaController extends Controller
 
         }
           // $user_location_pembejeo_na_viwatilifu_sellers = collection($user_location_pembejeo_na_viwatilifu_sellers);
-      
+
         $places =  Place::paginate(25);
         $users = User::all();
 

@@ -41,8 +41,11 @@ class BlogController extends Controller
           file_put_contents($path, $imgeData);
 
           // It Took me weeks to figureout hoew to implement this function Praise the Lord
+          // return $image;
+          $filePath = "Uploads/BlogPostImages/" .$imgNameCode;
           Storage::disk('s3')->put($filePath, File::get(public_path('/Uploads/BlogPostImages/'.$imgNameCode)));
           $filePath = Storage::disk('s3')->url($filePath);
+
           $image->removeAttribute('src');
           $image->setAttribute('src', $filePath);
           //Delete Image From  Public Folder

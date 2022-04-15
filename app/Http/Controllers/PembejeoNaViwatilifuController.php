@@ -104,7 +104,7 @@ class PembejeoNaViwatilifuController extends Controller
       $usafirishaji_topics_count_collection = Forum::where('Category', 'Usafirisaji')->count();
       // dd($kilimo_topics_count_collection);
 
-      $blogs = Blog::all();
+      $blogs = Blog::orderBy('created_at', 'desc')->get();
       $users = User::paginate(5);
       $users_count = User::count();
       $headlines = Headline::all();
