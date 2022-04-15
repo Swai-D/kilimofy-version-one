@@ -174,11 +174,11 @@
               <!-- /DISCUSSION PREVIEW META TEXT -->
 
               <!-- USER AVATAR -->
-              <a class="user-avatar micro no-border" href="profile-timeline.html">
+              <a class="user-avatar micro no-border" href="#">
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="/Uploads/avatars/{{$discussions->Author_Image_Name}}"></div>
+                  <div class="hexagon-image-18-20" data-src="{{$discussions->Author_Image_Name}}"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->
@@ -186,7 +186,7 @@
               <!-- /USER AVATAR -->
 
               <!-- DISCUSSION PREVIEW META TEXT -->
-              <p class="discussion-preview-meta-text"><a href="profile-timeline.html">{{$discussions->Author_Name}}</a> {{$discussions->created_at->diffForHumans()}}</p>
+              <p class="discussion-preview-meta-text"><a href="#">{{$discussions->Author_Name}}</a> {{$discussions->created_at->diffForHumans()}}</p>
               <!-- /DISCUSSION PREVIEW META TEXT -->
             </div>
             <!-- /DISCUSSION PREVIEW META -->
@@ -222,7 +222,7 @@
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
-                  <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$discussions->Author_Image_Name}}"></div>
+                  <div class="hexagon-image-30-32" data-src="{{$discussions->Author_Image_Name}}"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->
@@ -272,7 +272,7 @@
             <!-- /USER STATUS AVATAR -->
 
             <!-- USER STATUS TITLE -->
-            <p class="user-status-title"><a class="bold" href="profile-timeline.html">{{$discussions->Author_Name}}</a></p>
+            <p class="user-status-title"><a class="bold" href="#">{{$discussions->Author_Name}}</a></p>
             <!-- /USER STATUS TITLE -->
 
             <!-- USER STATUS TEXT -->
