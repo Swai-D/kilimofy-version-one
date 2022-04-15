@@ -717,7 +717,7 @@
                 <!-- /POST PREVIEW TITLE -->
 
                 <!-- POST PREVIEW TEXT -->
-                <p class="post-preview-text">{!! \Illuminate\Support\Str::limit($blog->body, 150, '...') !!} </p>
+                <p class="post-preview-text">{!! \Illuminate\Support\Str::limit($blog->body, 600, '...') !!} </p>
                 <!-- /POST PREVIEW TEXT -->
 
 
@@ -1072,7 +1072,7 @@
         </div>
         <!-- /WIDGET BOX -->
         @endforeach
-        
+
         <!-- LOADER BARS -->
        <div class="loader-bars">
          <div class="loader-bar"></div>
