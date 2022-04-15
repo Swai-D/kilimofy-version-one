@@ -16,6 +16,7 @@ use App\Models\Forum;
 use App\Models\Post;
 use App\Models\Item;
 use App\Models\User;
+use App\Models\Blog;
 
 use OpenWeather;
 use Session;
@@ -103,14 +104,14 @@ class PembejeoNaViwatilifuController extends Controller
       $usafirishaji_topics_count_collection = Forum::where('Category', 'Usafirisaji')->count();
       // dd($kilimo_topics_count_collection);
 
-
+      $blogs = Blog::all();
       $users = User::paginate(5);
       $users_count = User::count();
       $headlines = Headline::all();
       $headlines_count = Headline::count();
 
 
-      return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'users', 'users_count','headlines', 'headlines_count', 'kilimo_topics_count_collection','ufugaji_topics_count_collection', 'usafirishaji_topics_count_collection'));
+      return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('blogs','posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'users', 'users_count','headlines', 'headlines_count', 'kilimo_topics_count_collection','ufugaji_topics_count_collection', 'usafirishaji_topics_count_collection'));
 
     }
 

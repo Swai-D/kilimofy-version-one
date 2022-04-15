@@ -1055,7 +1055,7 @@
               <!-- USER STATUS -->
               <div class="user-status">
                 <!-- USER STATUS AVATAR -->
-                <a class="user-status-avatar" href="profile-timeline.html">
+                <a class="user-status-avatar" href="#">
                   <!-- USER AVATAR -->
                   <div class="user-avatar small no-outline">
                     <!-- USER AVATAR CONTENT -->
@@ -1111,11 +1111,11 @@
                 <!-- /USER STATUS AVATAR -->
 
                 <!-- USER STATUS TITLE -->
-                <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">Marina Valentine</a> wrote a <span class="bold">Blog Post</span></p>
+                <p class="user-status-title medium"><a class="bold" href="#">{{$blog->user_name}}</a> wrote a <span class="bold">Blog Post</span></p>
                 <!-- /USER STATUS TITLE -->
 
                 <!-- USER STATUS TEXT -->
-                <p class="user-status-text small">{{$blog->created_at->diffForHumans()}}{{$blog->title}}</p>
+                <p class="user-status-text small">{{$blog->created_at->diffForHumans()}}</p>
                 <!-- /USER STATUS TEXT -->
               </div>
               <!-- /USER STATUS -->
@@ -1137,7 +1137,7 @@
                 <!-- /POST PREVIEW TIMESTAMP -->
 
                 <!-- POST PREVIEW TITLE -->
-                <p class="post-preview-title">Here's the how and why did I became a full time Gaming Streamer</p>
+                <p class="post-preview-title">{{$blog->title}}</p>
                 <!-- /POST PREVIEW TITLE -->
 
                 <!-- POST PREVIEW TEXT -->
@@ -1312,7 +1312,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                           <!-- HEXAGON -->
-                          <div class="hexagon-image-18-20" data-src="img/avatar/13.jpg"></div>
+                          <div class="hexagon-image-18-20" data-src="/assets/img/avatar/13.jpg"></div>
                           <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -1332,7 +1332,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                           <!-- HEXAGON -->
-                          <div class="hexagon-image-18-20" data-src="img/avatar/12.jpg"></div>
+                          <div class="hexagon-image-18-20" data-src="/assets/img/avatar/12.jpg"></div>
                           <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -1352,7 +1352,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                           <!-- HEXAGON -->
-                          <div class="hexagon-image-18-20" data-src="img/avatar/11.jpg"></div>
+                          <div class="hexagon-image-18-20" data-src="/assets/img/avatar/11.jpg"></div>
                           <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -1372,7 +1372,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                           <!-- HEXAGON -->
-                          <div class="hexagon-image-18-20" data-src="img/avatar/03.jpg"></div>
+                          <div class="hexagon-image-18-20" data-src="/assets/img/avatar/03.jpg"></div>
                           <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -1392,7 +1392,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                           <!-- HEXAGON -->
-                          <div class="hexagon-image-18-20" data-src="img/avatar/04.jpg"></div>
+                          <div class="hexagon-image-18-20" data-src="/assets/img/avatar/04.jpg"></div>
                           <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->
@@ -1458,7 +1458,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Like">
                   <!-- REACTION OPTION IMAGE -->
-                  <img class="reaction-option-image" src="img/reaction/like.png" alt="reaction-like">
+                  <img class="reaction-option-image" src="/assets/img/reaction/like.png" alt="reaction-like">
                   <!-- /REACTION OPTION IMAGE -->
                 </div>
                 <!-- /REACTION OPTION -->
@@ -1466,7 +1466,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Love">
                   <!-- REACTION OPTION IMAGE -->
-                  <img class="reaction-option-image" src="img/reaction/love.png" alt="reaction-love">
+                  <img class="reaction-option-image" src="/assets/img/reaction/love.png" alt="reaction-love">
                   <!-- /REACTION OPTION IMAGE -->
                 </div>
                 <!-- /REACTION OPTION -->
@@ -1474,7 +1474,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                   <!-- REACTION OPTION IMAGE -->
-                  <img class="reaction-option-image" src="img/reaction/dislike.png" alt="reaction-dislike">
+                  <img class="reaction-option-image" src="/assets/img/reaction/dislike.png" alt="reaction-dislike">
                   <!-- /REACTION OPTION IMAGE -->
                 </div>
                 <!-- /REACTION OPTION -->
@@ -1482,7 +1482,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Happy">
                   <!-- REACTION OPTION IMAGE -->
-                  <img class="reaction-option-image" src="img/reaction/happy.png" alt="reaction-happy">
+                  <img class="reaction-option-image" src="/assets/img/reaction/happy.png" alt="reaction-happy">
                   <!-- /REACTION OPTION IMAGE -->
                 </div>
                 <!-- /REACTION OPTION -->
@@ -1490,7 +1490,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Funny">
                   <!-- REACTION OPTION IMAGE -->
-                  <img class="reaction-option-image" src="img/reaction/funny.png" alt="reaction-funny">
+                  <img class="reaction-option-image" src="/assets/img/reaction/funny.png" alt="reaction-funny">
                   <!-- /REACTION OPTION IMAGE -->
                 </div>
                 <!-- /REACTION OPTION -->
@@ -1498,7 +1498,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Wow">
                   <!-- REACTION OPTION IMAGE -->
-                  <img class="reaction-option-image" src="img/reaction/wow.png" alt="reaction-wow">
+                  <img class="reaction-option-image" src="/assets/img/reaction/wow.png" alt="reaction-wow">
                   <!-- /REACTION OPTION IMAGE -->
                 </div>
                 <!-- /REACTION OPTION -->
@@ -1506,7 +1506,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Angry">
                   <!-- REACTION OPTION IMAGE -->
-                  <img class="reaction-option-image" src="img/reaction/angry.png" alt="reaction-angry">
+                  <img class="reaction-option-image" src="/assets/img/reaction/angry.png" alt="reaction-angry">
                   <!-- /REACTION OPTION IMAGE -->
                 </div>
                 <!-- /REACTION OPTION -->
@@ -1514,7 +1514,7 @@
                 <!-- REACTION OPTION -->
                 <div class="reaction-option text-tooltip-tft" data-title="Sad">
                   <!-- REACTION OPTION IMAGE -->
-                  <img class="reaction-option-image" src="img/reaction/sad.png" alt="reaction-sad">
+                  <img class="reaction-option-image" src="/assets/img/reaction/sad.png" alt="reaction-sad">
                   <!-- /REACTION OPTION IMAGE -->
                 </div>
                 <!-- /REACTION OPTION -->

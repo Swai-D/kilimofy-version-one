@@ -39,9 +39,15 @@ class BlogController extends Controller
           $imgNameCode = time().$item.'.png';
           $path = public_path() . $image_name;
           file_put_contents($path, $imgeData);
-          
+
+          // It Took me weeks to figureout hoew to implement this function Praise the Lord
+          Storage::disk('s3')->put($filePath, File::get(public_path('/Uploads/BlogPostImages/'.$imgNameCode)));
+          $filePath = Storage::disk('s3')->url($filePath);
           $image->removeAttribute('src');
-          $image->setAttribute('src', $image_name);
+          $image->setAttribute('src', $filePath);
+          //Delete Image From  Public Folder
+          File::delete([public_path('/Uploads/BlogPostImages/'.$imgNameCode),]);
+
 
 
        }
@@ -59,7 +65,7 @@ class BlogController extends Controller
     ]);
 
 
-
+      // dd($blog);
       return redirect()->back()->with('Message', 'Makala imechapishwa, Asante!');
 
 
