@@ -1718,16 +1718,10 @@
                 <!-- /TAG ITEM -->
 
                 <!-- TAG ITEM -->
-                <a class="tag-item secondary" href="/kilimofy/Mkulima/home-page">Job</a>
-                <!-- /TAG ITEM -->
-
-                <!-- TAG ITEM -->
                 <a class="tag-item secondary" href="/kilimofy/Mkulima/home-page">Life</a>
                 <!-- /TAG ITEM -->
 
-                <!-- TAG ITEM -->
-                <a class="tag-item secondary" href="/kilimofy/Mkulima/home-page">Experience</a>
-                <!-- /TAG ITEM -->
+
               </div>
               <!-- /TAG LIST -->
 

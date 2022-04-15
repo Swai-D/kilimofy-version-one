@@ -62,13 +62,13 @@
               <!-- USER AVATAR CONTENT -->
               <div class="user-avatar-content">
                 <!-- HEXAGON -->
-                <div class="hexagon-image-18-20" data-src="/Uploads/avatars/{{Auth::user()->avatar}}"></div>
+                <div class="hexagon-image-18-20" data-src="{{Auth::user()->avatar}}"></div>
                 <!-- /HEXAGON -->
               </div>
               <!-- /USER AVATAR CONTENT -->
             </a>
             <!-- /USER AVATAR -->
-            <a class="bold" href="profile-timeline.html">{{Auth::user()->username}}</a>
+            <a class="bold" href="">{{Auth::user()->username}}</a>
             2 minutes ago
           </div>
           <!-- /SECTION FILTERS BAR TEXT -->
