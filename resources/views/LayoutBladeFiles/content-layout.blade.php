@@ -1072,7 +1072,19 @@
         </div>
         <!-- /WIDGET BOX -->
         @endforeach
-
+        
+        <!-- LOADER BARS -->
+       <div class="loader-bars">
+         <div class="loader-bar"></div>
+         <div class="loader-bar"></div>
+         <div class="loader-bar"></div>
+         <div class="loader-bar"></div>
+         <div class="loader-bar"></div>
+         <div class="loader-bar"></div>
+         <div class="loader-bar"></div>
+         <div class="loader-bar"></div>
+       </div>
+       <!-- /LOADER BARS -->
 
         @foreach($posts as $post)
 
