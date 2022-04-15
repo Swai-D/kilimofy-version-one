@@ -38,7 +38,7 @@
             <!-- USER AVATAR CONTENT -->
             <div class="user-avatar-content">
               <!-- HEXAGON -->
-              <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$blog->avatar}}"></div>
+              <div class="hexagon-image-30-32" data-src="{{$blog->avatar}}"></div>
               <!-- /HEXAGON -->
             </div>
             <!-- /USER AVATAR CONTENT -->
@@ -569,7 +569,7 @@
           <!-- /USER AVATAR -->
 
           <!-- POST COMMENT TEXT -->
-          <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">Bearded Wonder</a>It's really inspiring to read about this and how you managed to get all up and running! Super awesome! Congratz <a href="profile-timeline.html">@MarinaValentine</a>!</p>
+          <p class="post-comment-text"><a class="post-comment-text-author" href="">Bearded Wonder</a>It's really inspiring to read about this and how you managed to get all up and running! Super awesome! Congratz <a href="profile-timeline.html">@MarinaValentine</a>!</p>
           <!-- /POST COMMENT TEXT -->
 
           <!-- CONTENT ACTIONS -->
@@ -991,7 +991,7 @@
             <!-- USER AVATAR CONTENT -->
             <div class="user-avatar-content">
               <!-- HEXAGON -->
-              <div class="hexagon-image-30-32" data-src="/assets/img/avatar/01.jpg"></div>
+              <div class="hexagon-image-30-32" data-src="{{Auth::user()->avatar}}"></div>
               <!-- /HEXAGON -->
             </div>
             <!-- /USER AVATAR CONTENT -->
