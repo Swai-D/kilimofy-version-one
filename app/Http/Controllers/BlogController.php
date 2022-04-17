@@ -38,7 +38,7 @@ class BlogController extends Controller
           $imgeData = base64_decode($data);
           $image_name= "/Uploads/BlogPostImages/" . time().$item.'.png';
           $imgNameCode = time().$item.'.png';
-          $path = public_path() . $image_name;
+          $path = "/Uploads/BlogPostImages/" . $image_name;
           file_put_contents($path, $imgeData);
 
           // It Took me weeks to figureout hoew to implement this function Praise the Lord
