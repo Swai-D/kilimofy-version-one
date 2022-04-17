@@ -26,7 +26,6 @@ class BlogController extends Controller
       $content = $request->body;
 
       $dom = new \DomDocument();
-
       $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
       $imageFile = $dom->getElementsByTagName('img');
 
@@ -38,7 +37,7 @@ class BlogController extends Controller
           $imgeData = base64_decode($data);
           $image_name= "/Uploads/BlogPostImages/" . time().$item.'.png';
           $imgNameCode = time().$item.'.png';
-          $path = "/Uploads/BlogPostImages/" . $image_name;
+          $path = public_path() . $image_name;
           file_put_contents($path, $imgeData);
 
           // It Took me weeks to figureout hoew to implement this function Praise the Lord
