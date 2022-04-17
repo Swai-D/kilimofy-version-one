@@ -717,7 +717,7 @@
                 <!-- /POST PREVIEW TITLE -->
 
                 <!-- POST PREVIEW TEXT -->
-                <p class="post-preview-text">{!! \Illuminate\Support\Str::limit($blog->body, 600, '...') !!} </p>
+                <p class="post-preview-text">{!! \Illuminate\Support\Str::limit($blog->body, 300, '...') !!} </p>
                 <!-- /POST PREVIEW TEXT -->
 
 

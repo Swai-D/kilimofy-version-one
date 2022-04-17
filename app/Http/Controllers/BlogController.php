@@ -26,6 +26,7 @@ class BlogController extends Controller
       $content = $request->body;
 
       $dom = new \DomDocument();
+      libxml_use_internal_errors(true);
       $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
       $imageFile = $dom->getElementsByTagName('img');
 
