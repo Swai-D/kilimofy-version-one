@@ -20,119 +20,81 @@ class AuthController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(Request $request)
-    {
+     protected function create(Request $request)
+     {
 
-        $data = $request->validate([
-          'name' => ['required', 'string', 'max:255'],
-          'username' => ['required', 'string', 'max:255'],
-          'user_phone_number' => ['required', 'string', 'max:13','unique:users'],
-          'user_ocupation' => ['string', 'max:255'],
-          'user_location' => ['string', 'max:255'],
-          'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+         $data = $request->validate([
+           'name' => ['required', 'string', 'max:255'],
+           'username' => ['required', 'string', 'max:255'],
+           'user_phone_number' => ['required', 'string', 'max:13','unique:users'],
+           'user_ocupation' => ['string', 'max:255'],
+           'user_location' => ['string', 'max:255'],
+           'password' => ['required', 'string', 'min:8', 'confirmed'],
+         ]);
 
-        if (isset($data)) {
-          //change user phone number to STD formart for msg verifications
-          $user_phone_number = substr($request->user_phone_number, 1);
-          $std_user_phone_number = '+255'.$user_phone_number;
-          $message = mt_rand(1000000, 9999999);
+         if (isset($data)) {
+           //change user phone number to STD formart for msg verifications
+           $user_phone_number = substr($request->user_phone_number, 1);
+           $std_user_phone_number = '+255'.$user_phone_number;
 
-          // dd($std_user_phone_number);
+           // dd($std_user_phone_number);
 
-          /* Get credentials from .env */
+           /* Get credentials from .env */
+           $token = getenv("TWILIO_AUTH_TOKEN");
+           $twilio_sid = getenv("TWILIO_SID");
+           $twilio_verify_sid = getenv("TWILIO_VERIFY_SID");
+           $twilio = new Client($twilio_sid, $token);
+           $twilio->verify->v2->services($twilio_verify_sid)
+               ->verifications
+               ->create($std_user_phone_number, "sms");
 
-            // $curl = curl_init();
-            //
-            // curl_setopt_array($curl, array(
-            //   CURLOPT_URL => 'https://messaging-service.co.tz/api/sms/v1/test/text/single',
-            //   CURLOPT_RETURNTRANSFER => true,
-            //   CURLOPT_ENCODING => '',
-            //   CURLOPT_MAXREDIRS => 10,
-            //   CURLOPT_TIMEOUT => 0,
-            //   CURLOPT_FOLLOWLOCATION => true,
-            //   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            //   CURLOPT_CUSTOMREQUEST => 'POST',
-            //   CURLOPT_POSTFIELDS =>'{"from":"NEXTSMS", "to":"255788224901",  "text": "WELCOME Mr. Davy Swai"}',
-            //   CURLOPT_HTTPHEADER => array(
-            //     'Authorization: Basic ZGF2eXN3YWk6ZGF2eXN3YWkxOTk1',
-            //     'Content-Type: application/json',
-            //     'Accept: application/json'
-            //   ),
-            // ));
-            //
-            // $response = curl_exec($curl);
-            //
-            // curl_close($curl);
-            // return $response;
+           User::create([
+             'name' => $data['name'],
+             'username' => $data['username'],
+             'user_phone_number' => $std_user_phone_number,
+             'user_ocupation' => $data['user_ocupation'],
+             'user_location' => $data['user_location'],
+             'password' => Hash::make($data['password']),
+           ]);
 
-            User::create([
-                'name' => $data['name'],
-                'username' => $data['username'],
-                'user_ocupation' => $data['user_ocupation'],
-                'user_location' => $data['user_location'],
-                'password' => Hash::make($data['password']),
-                'user_phone_number' => $std_user_phone_number,
+           $error = 0;
+           //Sending data to another controler via session
+           Session::put('std_user_phone_number', $std_user_phone_number);
+           Session::put('error', $error);
+           return redirect('/kilimofy/home/verify');
+         }
 
-              ]);
-
-          $error = 0;
-          //Sending data to another controler via session
-          Session::put('std_user_phone_number', $std_user_phone_number);
-          Session::put('message', $message);
-          Session::put('error', $error);
-          return redirect('/kilimofy/home/verify');
-        }
-
-        return redirect()->back();
-    }
+         return redirect()->back();
+     }
 
 
 
 
-    protected function verify(Request $request)
+
+
+     protected function verify(Request $request)
     {
         $data = $request->validate([
             'verification_code' => ['required', 'numeric'],
             'user_phone_number' => ['required', 'string'],
         ]);
 
-      // if (isset($data)) {
-      //   /* Get credentials from .env */
-      //   $token = getenv("TWILIO_AUTH_TOKEN");
-      //   $twilio_sid = getenv("TWILIO_SID");
-      //   $twilio_verify_sid = getenv("TWILIO_VERIFY_SID");
-      //   $twilio = new Client($twilio_sid, $token);
-      //   $verification = $twilio->verify->v2->services($twilio_verify_sid)
-      //       ->verificationChecks
-      //       ->create($data['verification_code'], array('to' => $data['user_phone_number']));
-      //   if ($verification->valid) {
-      //       $user = tap(User::where('user_phone_number', $data['user_phone_number']))->update(['isVerified' => true]);
-      //       /* Authenticate user */
-      //       Auth::login($user->first());
-      //       return redirect()->route('home');
-      //   }
-      //
-      // }
-
-
       if (isset($data)) {
+        
         /* Get credentials from .env */
-        $verification_token = Session::get('message');
-        $user_token = $request->verification_code;
-        if ($verification_token == $user_token) {
+        $token = getenv("TWILIO_AUTH_TOKEN");
+        $twilio_sid = getenv("TWILIO_SID");
+        $twilio_verify_sid = getenv("TWILIO_VERIFY_SID");
+        $twilio = new Client($twilio_sid, $token);
+        $verification = $twilio->verify->v2->services($twilio_verify_sid)
+            ->verificationChecks
+            ->create($data['verification_code'], array('to' => $data['user_phone_number']));
+        if ($verification->valid) {
             $user = tap(User::where('user_phone_number', $data['user_phone_number']))->update(['isVerified' => true]);
             /* Authenticate user */
             Auth::login($user->first());
-            return redirect()->route('home-page');
+            return redirect()->route('home');
         }
-
-        $std_user_phone_number = $request->user_phone_number;
-        $error = 1;
-        //Sending data to another controler via session
-        Session::put('std_user_phone_number', $std_user_phone_number);
-        Session::put('error', $error);
-        return redirect('/kilimofy/home/verify');
 
       }
 

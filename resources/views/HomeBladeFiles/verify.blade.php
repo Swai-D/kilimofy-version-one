@@ -44,7 +44,7 @@ r<!DOCTYPE html>
           <!-- FORM ROW -->
           <div class="form-row">
 
-            <h6 class="landing-info-text">Ingiza tarakimu <span style="color:red;">{{$message}}</span> </h6>
+            <h6 class="landing-info-text">Ingiza tarakimu <span style="color:red;">{{$std_user_phone_number}}</span> </h6>
             <br>
             <!-- FORM ITEM -->
             <div class="form-item">
