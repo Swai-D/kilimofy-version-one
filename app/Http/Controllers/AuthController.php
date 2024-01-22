@@ -79,16 +79,19 @@ class AuthController extends Controller
             'user_phone_number' => ['required', 'string'],
         ]);
 
+       // dd($data);
       if (isset($data)) {
-        
+
         /* Get credentials from .env */
         $token = getenv("TWILIO_AUTH_TOKEN");
         $twilio_sid = getenv("TWILIO_SID");
         $twilio_verify_sid = getenv("TWILIO_VERIFY_SID");
         $twilio = new Client($twilio_sid, $token);
         $verification = $twilio->verify->v2->services($twilio_verify_sid)
-            ->verificationChecks
-            ->create($data['verification_code'], array('to' => $data['user_phone_number']));
+        ->verificationChecks
+        ->create(['code' => $data['verification_code'], 'to' => $data['user_phone_number']]);
+
+
         if ($verification->valid) {
             $user = tap(User::where('user_phone_number', $data['user_phone_number']))->update(['isVerified' => true]);
             /* Authenticate user */
@@ -175,5 +178,43 @@ class AuthController extends Controller
         }
 
         return  redirect('/');
+    }
+
+    public function redirectUserFromChatify()
+    
+    {
+      if (Auth::user()->user_ocupation == 'Mkulima') {
+        return redirect('/kilimofy/Mkulima/home-page');
+      }
+
+      elseif (Auth::user()->user_ocupation == 'Muuza_Pembejeo')
+      {
+
+        return redirect('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page');
+      }
+
+
+      elseif (Auth::user()->user_ocupation == 'Bwana_Shamba') {
+
+        return redirect('/kilimofy/Afisa-Ugavi/home-page');
+      }
+
+
+      elseif (Auth::user()->user_ocupation == 'Dereva') {
+        return redirect('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page');
+      }
+
+      elseif (Auth::user()->user_ocupation == 'Mashine_Za_Kilimo') {
+        return redirect('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page');
+      }
+
+      elseif (Auth::user()->user_ocupation == 'Fundi') {
+        return redirect('/kilimofy/Fundi-Wa-Mashine-Za-Kilimo/home-page');
+      }
+
+      elseif (Auth::user()->user_ocupation == 'Mtaalam') {
+        return redirect('/kilimofy/Mtaalam-Wa-Kilimo/home-page');
+      }
+
     }
 }

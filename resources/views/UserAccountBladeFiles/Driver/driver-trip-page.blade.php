@@ -361,6 +361,7 @@
                   <!-- /FORM SELECT ICON -->
                 </div>
                 <!-- /FORM SELECT -->
+                  {{$errors->first('From')}}
               </div>
               <!-- /FORM ITEM -->
 
@@ -385,6 +386,7 @@
                 <!-- /FORM SELECT -->
               </div>
               <!-- /FORM ITEM -->
+              {{$errors->first('To')}}
             </div>
             <!-- /FORM ROW -->
 
@@ -413,7 +415,7 @@
 
             <!-- FORM ROW -->
             <div class="form-row split">
-            
+
               <!-- FORM ITEM -->
               <div class="form-item">
                 <!-- FORM INPUT DECORATED -->
@@ -489,7 +491,7 @@
               <div class="form-item">
                 <!-- FORM SELECT -->
                 <div class="form-select">
-                  <label for="item-category">Aina ya Sarafi</label>
+                  <label for="item-category">Aina ya Safafi</label>
                   <select id="item-category" name="TripType">
                     <option selected disabled>--Chagua--</option>
                     <option value="Kwenda Tu">Kwenda tu</option>

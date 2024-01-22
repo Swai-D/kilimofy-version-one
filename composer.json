@@ -17,14 +17,14 @@
         "laravel/ui": "^3.3",
         "league/flysystem-aws-s3-v3": "~1.0",
         "livewire/livewire": "^2.8",
-        "munafio/chatify": "^1.3",
+        "munafio/chatify": "^1.6",
         "overtrue/laravel-like": "^4.0",
         "pear/http_request2": "^2.5",
         "pusher/pusher-php-server": "^7.0",
         "rtconner/laravel-likeable": "^3.2",
         "silviolleite/laravelpwa": "^2.0",
         "stevebauman/location": "^6.2",
-        "twilio/sdk": "^6.31"
+        "twilio/sdk": "^7.13"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

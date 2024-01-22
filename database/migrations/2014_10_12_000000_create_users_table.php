@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->boolean('isVerified')->default(false);
             $table->string('user_ocupation')->default('Mkulima');
             $table->string('user_location');
-            $table->string('avatar')->default('https://kilimofy.s3.amazonaws.com/Uploads/avatars/default.png');
+            $table->string('avatar')->default('default.jpg');
             $table->integer('age')->nullable();
             $table->string('email')->default('NOT SET');
             $table->date('birthday')->nullable();

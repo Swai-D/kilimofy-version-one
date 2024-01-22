@@ -16,7 +16,7 @@ class PostTableSeeder extends Seeder
       //first Post
      \App\Models\Post::create([
          'User_id' => 1,
-         'Caption' => 'Tunaamini watu wenye nia wanaweza kubadili nadharia za kilimo na sisi kilimofy tuko hapa kwajili hiyo,'
+         'Caption' => 'Tunaamini watu wenye nia wanaweza kubadili nadharia za kilimo na sisi kilimofy tuko hapa kwajili ya hiyo',
          'name' => 'Kilimofy Tanzania',
          'username' => 'Kilimofy Tz',
          'User_Image_Profile' => 'https://kilimofy.s3.amazonaws.com/Uploads/avatars/default.png',
