@@ -2087,11 +2087,11 @@
           </div>
           <div class="col-9">
             <div class="">
-              davyswai <span><img src="/assets/img/flag/tanzania.png" alt="" style="width:16px; height:16px;"> </span>
+              Davy Swai <span><img src="/assets/img/flag/tanzania.png" alt="" style="width:16px; height:16px;"> </span>
 
             </div>
             <div class="">
-              @Dr. swai
+              @davyswai
             </div>
           </div>
 
